@@ -1,0 +1,10 @@
+C:\Users\swe08030365\source\repos\SF\SF\bin\Debug\SF.exe.config
+C:\Users\swe08030365\source\repos\SF\SF\bin\Debug\SF.exe
+C:\Users\swe08030365\source\repos\SF\SF\bin\Debug\SF.pdb
+C:\Users\swe08030365\source\repos\SF\SF\obj\Debug\SF.csprojAssemblyReference.cache
+C:\Users\swe08030365\source\repos\SF\SF\obj\Debug\SF.Form1.resources
+C:\Users\swe08030365\source\repos\SF\SF\obj\Debug\SF.Properties.Resources.resources
+C:\Users\swe08030365\source\repos\SF\SF\obj\Debug\SF.csproj.GenerateResource.cache
+C:\Users\swe08030365\source\repos\SF\SF\obj\Debug\SF.csproj.CoreCompileInputs.cache
+C:\Users\swe08030365\source\repos\SF\SF\obj\Debug\SF.exe
+C:\Users\swe08030365\source\repos\SF\SF\obj\Debug\SF.pdb

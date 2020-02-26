@@ -63,6 +63,16 @@ namespace SF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap customerLogoPSBlack {
+            get {
+                object obj = ResourceManager.GetObject("customerLogoPSBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customerLogoPSBlue {
             get {
                 object obj = ResourceManager.GetObject("customerLogoPSBlue", resourceCulture);
@@ -153,6 +163,16 @@ namespace SF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap jobLogoPSBlack {
+            get {
+                object obj = ResourceManager.GetObject("jobLogoPSBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jobLogoPSBlue {
             get {
                 object obj = ResourceManager.GetObject("jobLogoPSBlue", resourceCulture);
@@ -183,9 +203,39 @@ namespace SF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap niceHouseTrans {
+            get {
+                object obj = ResourceManager.GetObject("niceHouseTrans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NIGEL {
             get {
                 object obj = ResourceManager.GetObject("NIGEL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap returnBLACKANDBLUE {
+            get {
+                object obj = ResourceManager.GetObject("returnBLACKANDBLUE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap returnBLUE {
+            get {
+                object obj = ResourceManager.GetObject("returnBLUE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +273,26 @@ namespace SF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SFTitle {
+            get {
+                object obj = ResourceManager.GetObject("SFTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SFTitle1 {
+            get {
+                object obj = ResourceManager.GetObject("SFTitle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stockLogo3 {
             get {
                 object obj = ResourceManager.GetObject("stockLogo3", resourceCulture);
@@ -236,6 +306,16 @@ namespace SF.Properties {
         internal static System.Drawing.Bitmap stockLogo31 {
             get {
                 object obj = ResourceManager.GetObject("stockLogo31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stockLogoBlack {
+            get {
+                object obj = ResourceManager.GetObject("stockLogoBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

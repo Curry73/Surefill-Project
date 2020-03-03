@@ -12,9 +12,36 @@ namespace SF
 {
     public partial class frmCustomers : Form
     {
+
+        SqlDataAdapter daCustomer;
+        DataSet dsSurefill = new DataSet();
+        SqlCommandBuilder cmdBCustomer;
+        DataRow drCustomer;
+        String connStr, sqlCustomer;
+        int selectedTab = 0;
+        bool custSelected = false;
+        int custNoSelected = 0;
+
         public frmCustomers()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill;
+Integrated Security = true";
+
+            sqlCustomer = @"select * from Customer";
+            daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
+            cmdBCustomer = new SqlCommandBuilder(daCustomer);
+            daCustomer.FillSchema(dsSurefill, SchemaType.Source,
+                "Customer");
+            daCustomer.Fill(dsSurefill, "Customer");
+            dataGridViewCustomer.DataSource = dsSurefill.Tables["Customer"];
+            dataGridViewCustomer.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            tabCustomer.SelectedIndex = 1;
+            tabCustomer.SelectedIndex = 0;
         }
 
         private void tmrBanner_Tick(object sender, EventArgs e)

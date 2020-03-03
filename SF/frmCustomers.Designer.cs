@@ -42,8 +42,28 @@
             this.pnlReturn = new System.Windows.Forms.Panel();
             this.lblReturnMenu = new System.Windows.Forms.Label();
             this.btnReturnMenu = new System.Windows.Forms.Button();
+            this.pnlAddCust = new System.Windows.Forms.Panel();
+            this.lblActualCustNo = new System.Windows.Forms.Label();
+            this.txtCustEmail = new System.Windows.Forms.TextBox();
+            this.txtCustTelNo = new System.Windows.Forms.TextBox();
+            this.txtCustCounty = new System.Windows.Forms.TextBox();
+            this.txtCustPostcode = new System.Windows.Forms.TextBox();
+            this.txtCustTown = new System.Windows.Forms.TextBox();
+            this.txtCustStreet = new System.Windows.Forms.TextBox();
+            this.txtCustSurname = new System.Windows.Forms.TextBox();
+            this.txtCustForename = new System.Windows.Forms.TextBox();
+            this.lblCustCounty = new System.Windows.Forms.Label();
+            this.lblCustTelephoneNo = new System.Windows.Forms.Label();
+            this.lblCustEmail = new System.Windows.Forms.Label();
+            this.lblCustPostcode = new System.Windows.Forms.Label();
+            this.lblCustTown = new System.Windows.Forms.Label();
+            this.lblCustStreet = new System.Windows.Forms.Label();
+            this.lblCustSurname = new System.Windows.Forms.Label();
+            this.lblCustForename = new System.Windows.Forms.Label();
+            this.lblCustNo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.pnlReturn.SuspendLayout();
+            this.pnlAddCust.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEditCustomer
@@ -184,12 +204,184 @@
             this.btnReturnMenu.TabIndex = 43;
             this.btnReturnMenu.UseVisualStyleBackColor = false;
             // 
+            // pnlAddCust
+            // 
+            this.pnlAddCust.Controls.Add(this.lblActualCustNo);
+            this.pnlAddCust.Controls.Add(this.txtCustEmail);
+            this.pnlAddCust.Controls.Add(this.txtCustTelNo);
+            this.pnlAddCust.Controls.Add(this.txtCustCounty);
+            this.pnlAddCust.Controls.Add(this.txtCustPostcode);
+            this.pnlAddCust.Controls.Add(this.txtCustTown);
+            this.pnlAddCust.Controls.Add(this.txtCustStreet);
+            this.pnlAddCust.Controls.Add(this.txtCustSurname);
+            this.pnlAddCust.Controls.Add(this.txtCustForename);
+            this.pnlAddCust.Controls.Add(this.lblCustCounty);
+            this.pnlAddCust.Controls.Add(this.lblCustTelephoneNo);
+            this.pnlAddCust.Controls.Add(this.lblCustEmail);
+            this.pnlAddCust.Controls.Add(this.lblCustPostcode);
+            this.pnlAddCust.Controls.Add(this.lblCustTown);
+            this.pnlAddCust.Controls.Add(this.lblCustStreet);
+            this.pnlAddCust.Controls.Add(this.lblCustSurname);
+            this.pnlAddCust.Controls.Add(this.lblCustForename);
+            this.pnlAddCust.Controls.Add(this.lblCustNo);
+            this.pnlAddCust.Location = new System.Drawing.Point(278, 69);
+            this.pnlAddCust.Name = "pnlAddCust";
+            this.pnlAddCust.Size = new System.Drawing.Size(279, 297);
+            this.pnlAddCust.TabIndex = 63;
+            // 
+            // lblActualCustNo
+            // 
+            this.lblActualCustNo.AutoSize = true;
+            this.lblActualCustNo.Location = new System.Drawing.Point(152, 5);
+            this.lblActualCustNo.Name = "lblActualCustNo";
+            this.lblActualCustNo.Size = new System.Drawing.Size(54, 13);
+            this.lblActualCustNo.TabIndex = 80;
+            this.lblActualCustNo.Text = "NUMBER";
+            // 
+            // txtCustEmail
+            // 
+            this.txtCustEmail.Location = new System.Drawing.Point(155, 272);
+            this.txtCustEmail.Name = "txtCustEmail";
+            this.txtCustEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtCustEmail.TabIndex = 79;
+            // 
+            // txtCustTelNo
+            // 
+            this.txtCustTelNo.Location = new System.Drawing.Point(155, 237);
+            this.txtCustTelNo.Name = "txtCustTelNo";
+            this.txtCustTelNo.Size = new System.Drawing.Size(100, 20);
+            this.txtCustTelNo.TabIndex = 78;
+            // 
+            // txtCustCounty
+            // 
+            this.txtCustCounty.Location = new System.Drawing.Point(155, 207);
+            this.txtCustCounty.Name = "txtCustCounty";
+            this.txtCustCounty.Size = new System.Drawing.Size(100, 20);
+            this.txtCustCounty.TabIndex = 77;
+            // 
+            // txtCustPostcode
+            // 
+            this.txtCustPostcode.Location = new System.Drawing.Point(155, 175);
+            this.txtCustPostcode.Name = "txtCustPostcode";
+            this.txtCustPostcode.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPostcode.TabIndex = 76;
+            // 
+            // txtCustTown
+            // 
+            this.txtCustTown.Location = new System.Drawing.Point(155, 145);
+            this.txtCustTown.Name = "txtCustTown";
+            this.txtCustTown.Size = new System.Drawing.Size(100, 20);
+            this.txtCustTown.TabIndex = 75;
+            // 
+            // txtCustStreet
+            // 
+            this.txtCustStreet.Location = new System.Drawing.Point(155, 111);
+            this.txtCustStreet.Name = "txtCustStreet";
+            this.txtCustStreet.Size = new System.Drawing.Size(100, 20);
+            this.txtCustStreet.TabIndex = 74;
+            // 
+            // txtCustSurname
+            // 
+            this.txtCustSurname.Location = new System.Drawing.Point(155, 76);
+            this.txtCustSurname.Name = "txtCustSurname";
+            this.txtCustSurname.Size = new System.Drawing.Size(100, 20);
+            this.txtCustSurname.TabIndex = 73;
+            // 
+            // txtCustForename
+            // 
+            this.txtCustForename.Location = new System.Drawing.Point(155, 33);
+            this.txtCustForename.Name = "txtCustForename";
+            this.txtCustForename.Size = new System.Drawing.Size(100, 20);
+            this.txtCustForename.TabIndex = 72;
+            // 
+            // lblCustCounty
+            // 
+            this.lblCustCounty.AutoSize = true;
+            this.lblCustCounty.Location = new System.Drawing.Point(24, 214);
+            this.lblCustCounty.Name = "lblCustCounty";
+            this.lblCustCounty.Size = new System.Drawing.Size(40, 13);
+            this.lblCustCounty.TabIndex = 71;
+            this.lblCustCounty.Text = "County";
+            // 
+            // lblCustTelephoneNo
+            // 
+            this.lblCustTelephoneNo.AutoSize = true;
+            this.lblCustTelephoneNo.Location = new System.Drawing.Point(24, 240);
+            this.lblCustTelephoneNo.Name = "lblCustTelephoneNo";
+            this.lblCustTelephoneNo.Size = new System.Drawing.Size(98, 13);
+            this.lblCustTelephoneNo.TabIndex = 70;
+            this.lblCustTelephoneNo.Text = "Telephone Number";
+            // 
+            // lblCustEmail
+            // 
+            this.lblCustEmail.AutoSize = true;
+            this.lblCustEmail.Location = new System.Drawing.Point(24, 275);
+            this.lblCustEmail.Name = "lblCustEmail";
+            this.lblCustEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblCustEmail.TabIndex = 69;
+            this.lblCustEmail.Text = "Email";
+            // 
+            // lblCustPostcode
+            // 
+            this.lblCustPostcode.AutoSize = true;
+            this.lblCustPostcode.Location = new System.Drawing.Point(24, 182);
+            this.lblCustPostcode.Name = "lblCustPostcode";
+            this.lblCustPostcode.Size = new System.Drawing.Size(52, 13);
+            this.lblCustPostcode.TabIndex = 68;
+            this.lblCustPostcode.Text = "Postcode";
+            // 
+            // lblCustTown
+            // 
+            this.lblCustTown.AutoSize = true;
+            this.lblCustTown.Location = new System.Drawing.Point(24, 148);
+            this.lblCustTown.Name = "lblCustTown";
+            this.lblCustTown.Size = new System.Drawing.Size(34, 13);
+            this.lblCustTown.TabIndex = 67;
+            this.lblCustTown.Text = "Town";
+            // 
+            // lblCustStreet
+            // 
+            this.lblCustStreet.AutoSize = true;
+            this.lblCustStreet.Location = new System.Drawing.Point(24, 111);
+            this.lblCustStreet.Name = "lblCustStreet";
+            this.lblCustStreet.Size = new System.Drawing.Size(35, 13);
+            this.lblCustStreet.TabIndex = 66;
+            this.lblCustStreet.Text = "Street";
+            // 
+            // lblCustSurname
+            // 
+            this.lblCustSurname.AutoSize = true;
+            this.lblCustSurname.Location = new System.Drawing.Point(24, 79);
+            this.lblCustSurname.Name = "lblCustSurname";
+            this.lblCustSurname.Size = new System.Drawing.Size(49, 13);
+            this.lblCustSurname.TabIndex = 65;
+            this.lblCustSurname.Text = "Surname";
+            // 
+            // lblCustForename
+            // 
+            this.lblCustForename.AutoSize = true;
+            this.lblCustForename.Location = new System.Drawing.Point(24, 40);
+            this.lblCustForename.Name = "lblCustForename";
+            this.lblCustForename.Size = new System.Drawing.Size(54, 13);
+            this.lblCustForename.TabIndex = 64;
+            this.lblCustForename.Text = "Forename";
+            // 
+            // lblCustNo
+            // 
+            this.lblCustNo.AutoSize = true;
+            this.lblCustNo.Location = new System.Drawing.Point(24, 5);
+            this.lblCustNo.Name = "lblCustNo";
+            this.lblCustNo.Size = new System.Drawing.Size(91, 13);
+            this.lblCustNo.TabIndex = 63;
+            this.lblCustNo.Text = "Customer Number";
+            // 
             // frmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(880, 405);
+            this.Controls.Add(this.pnlAddCust);
             this.Controls.Add(this.pnlReturn);
             this.Controls.Add(this.lblSearchCustomer);
             this.Controls.Add(this.lblDeleteCustomer);
@@ -207,6 +399,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.pnlReturn.ResumeLayout(false);
             this.pnlReturn.PerformLayout();
+            this.pnlAddCust.ResumeLayout(false);
+            this.pnlAddCust.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +420,24 @@
         private System.Windows.Forms.Panel pnlReturn;
         private System.Windows.Forms.Label lblReturnMenu;
         private System.Windows.Forms.Button btnReturnMenu;
+        private System.Windows.Forms.Panel pnlAddCust;
+        private System.Windows.Forms.Label lblActualCustNo;
+        private System.Windows.Forms.TextBox txtCustEmail;
+        private System.Windows.Forms.TextBox txtCustTelNo;
+        private System.Windows.Forms.TextBox txtCustCounty;
+        private System.Windows.Forms.TextBox txtCustPostcode;
+        private System.Windows.Forms.TextBox txtCustTown;
+        private System.Windows.Forms.TextBox txtCustStreet;
+        private System.Windows.Forms.TextBox txtCustSurname;
+        private System.Windows.Forms.TextBox txtCustForename;
+        private System.Windows.Forms.Label lblCustCounty;
+        private System.Windows.Forms.Label lblCustTelephoneNo;
+        private System.Windows.Forms.Label lblCustEmail;
+        private System.Windows.Forms.Label lblCustPostcode;
+        private System.Windows.Forms.Label lblCustTown;
+        private System.Windows.Forms.Label lblCustStreet;
+        private System.Windows.Forms.Label lblCustSurname;
+        private System.Windows.Forms.Label lblCustForename;
+        private System.Windows.Forms.Label lblCustNo;
     }
 }

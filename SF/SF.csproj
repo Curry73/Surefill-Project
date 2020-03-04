@@ -92,6 +92,7 @@
       <DependentUpon>FrmSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="MyCustomer.cs" />
+    <Compile Include="MyException.cs" />
     <Compile Include="MyJob.cs" />
     <Compile Include="MyJobDetails.cs" />
     <Compile Include="MyJobType.cs" />

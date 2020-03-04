@@ -43,6 +43,8 @@
             this.lblReturnMenu = new System.Windows.Forms.Label();
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.pnlAdd = new System.Windows.Forms.Panel();
+            this.btnCancelAddCust = new System.Windows.Forms.Button();
+            this.btnConfirmAddCust = new System.Windows.Forms.Button();
             this.lblADD = new System.Windows.Forms.Label();
             this.txtAddCustEmail = new System.Windows.Forms.TextBox();
             this.txtAddCustTelephoneNo = new System.Windows.Forms.TextBox();
@@ -63,7 +65,13 @@
             this.lblAddCustForename = new System.Windows.Forms.Label();
             this.lblAddCustNo = new System.Windows.Forms.Label();
             this.pnlEdit = new System.Windows.Forms.Panel();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.lblSearchCustText = new System.Windows.Forms.Label();
+            this.lblSEARCH = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlDelete = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtEditCustEmail = new System.Windows.Forms.TextBox();
             this.txtEditCustTelephoneNo = new System.Windows.Forms.TextBox();
             this.txtEditCustPostcode = new System.Windows.Forms.TextBox();
@@ -82,21 +90,13 @@
             this.lblEditCustSurname = new System.Windows.Forms.Label();
             this.lblEditCustForename = new System.Windows.Forms.Label();
             this.lblEditCustNo = new System.Windows.Forms.Label();
-            this.pnlDelete = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pnlSearch = new System.Windows.Forms.Panel();
-            this.lblSearchCustText = new System.Windows.Forms.Label();
-            this.lblSEARCH = new System.Windows.Forms.Label();
-            this.btnConfirmAddCust = new System.Windows.Forms.Button();
-            this.btnCancelAddCust = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.pnlReturn.SuspendLayout();
             this.pnlAdd.SuspendLayout();
             this.pnlEdit.SuspendLayout();
-            this.pnlDelete.SuspendLayout();
             this.pnlSearch.SuspendLayout();
+            this.pnlDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -269,6 +269,24 @@
             this.pnlAdd.Name = "pnlAdd";
             this.pnlAdd.Size = new System.Drawing.Size(309, 335);
             this.pnlAdd.TabIndex = 45;
+            // 
+            // btnCancelAddCust
+            // 
+            this.btnCancelAddCust.Location = new System.Drawing.Point(223, 305);
+            this.btnCancelAddCust.Name = "btnCancelAddCust";
+            this.btnCancelAddCust.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelAddCust.TabIndex = 20;
+            this.btnCancelAddCust.Text = "Cancel";
+            this.btnCancelAddCust.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmAddCust
+            // 
+            this.btnConfirmAddCust.Location = new System.Drawing.Point(142, 305);
+            this.btnConfirmAddCust.Name = "btnConfirmAddCust";
+            this.btnConfirmAddCust.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmAddCust.TabIndex = 19;
+            this.btnConfirmAddCust.Text = "Add";
+            this.btnConfirmAddCust.UseVisualStyleBackColor = true;
             // 
             // lblADD
             // 
@@ -455,6 +473,33 @@
             this.pnlEdit.Size = new System.Drawing.Size(251, 301);
             this.pnlEdit.TabIndex = 46;
             // 
+            // pnlSearch
+            // 
+            this.pnlSearch.Controls.Add(this.lblSearchCustText);
+            this.pnlSearch.Controls.Add(this.lblSEARCH);
+            this.pnlSearch.Location = new System.Drawing.Point(146, 85);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(196, 85);
+            this.pnlSearch.TabIndex = 48;
+            // 
+            // lblSearchCustText
+            // 
+            this.lblSearchCustText.AutoSize = true;
+            this.lblSearchCustText.Location = new System.Drawing.Point(76, 44);
+            this.lblSearchCustText.Name = "lblSearchCustText";
+            this.lblSearchCustText.Size = new System.Drawing.Size(42, 13);
+            this.lblSearchCustText.TabIndex = 20;
+            this.lblSearchCustText.Text = "Please ";
+            // 
+            // lblSEARCH
+            // 
+            this.lblSEARCH.AutoSize = true;
+            this.lblSEARCH.Location = new System.Drawing.Point(82, 14);
+            this.lblSEARCH.Name = "lblSEARCH";
+            this.lblSEARCH.Size = new System.Drawing.Size(51, 13);
+            this.lblSEARCH.TabIndex = 19;
+            this.lblSEARCH.Text = "SEARCH";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -463,6 +508,33 @@
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "EDIT";
+            // 
+            // pnlDelete
+            // 
+            this.pnlDelete.Controls.Add(this.label13);
+            this.pnlDelete.Controls.Add(this.label12);
+            this.pnlDelete.Location = new System.Drawing.Point(125, 247);
+            this.pnlDelete.Name = "pnlDelete";
+            this.pnlDelete.Size = new System.Drawing.Size(158, 85);
+            this.pnlDelete.TabIndex = 47;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(76, 44);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "DELETE";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(82, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "DELETE";
             // 
             // txtEditCustEmail
             // 
@@ -525,9 +597,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(143, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "NUMBER";
+            this.label2.Text = "NUMBEr";
             // 
             // lblEditCustEmail
             // 
@@ -610,79 +682,6 @@
             this.lblEditCustNo.TabIndex = 0;
             this.lblEditCustNo.Text = "Customer No";
             // 
-            // pnlDelete
-            // 
-            this.pnlDelete.Controls.Add(this.label13);
-            this.pnlDelete.Controls.Add(this.label12);
-            this.pnlDelete.Location = new System.Drawing.Point(125, 247);
-            this.pnlDelete.Name = "pnlDelete";
-            this.pnlDelete.Size = new System.Drawing.Size(158, 85);
-            this.pnlDelete.TabIndex = 47;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(82, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 13);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "DELETE";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(76, 44);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 13);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "DELETE";
-            // 
-            // pnlSearch
-            // 
-            this.pnlSearch.Controls.Add(this.lblSearchCustText);
-            this.pnlSearch.Controls.Add(this.lblSEARCH);
-            this.pnlSearch.Location = new System.Drawing.Point(146, 85);
-            this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(196, 85);
-            this.pnlSearch.TabIndex = 48;
-            // 
-            // lblSearchCustText
-            // 
-            this.lblSearchCustText.AutoSize = true;
-            this.lblSearchCustText.Location = new System.Drawing.Point(76, 44);
-            this.lblSearchCustText.Name = "lblSearchCustText";
-            this.lblSearchCustText.Size = new System.Drawing.Size(42, 13);
-            this.lblSearchCustText.TabIndex = 20;
-            this.lblSearchCustText.Text = "Please ";
-            // 
-            // lblSEARCH
-            // 
-            this.lblSEARCH.AutoSize = true;
-            this.lblSEARCH.Location = new System.Drawing.Point(82, 14);
-            this.lblSEARCH.Name = "lblSEARCH";
-            this.lblSEARCH.Size = new System.Drawing.Size(51, 13);
-            this.lblSEARCH.TabIndex = 19;
-            this.lblSEARCH.Text = "SEARCH";
-            // 
-            // btnConfirmAddCust
-            // 
-            this.btnConfirmAddCust.Location = new System.Drawing.Point(142, 305);
-            this.btnConfirmAddCust.Name = "btnConfirmAddCust";
-            this.btnConfirmAddCust.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmAddCust.TabIndex = 19;
-            this.btnConfirmAddCust.Text = "Add";
-            this.btnConfirmAddCust.UseVisualStyleBackColor = true;
-            this.btnConfirmAddCust.Click += new System.EventHandler(this.btnConfirmAddCust_Click);
-            // 
-            // btnCancelAddCust
-            // 
-            this.btnCancelAddCust.Location = new System.Drawing.Point(223, 305);
-            this.btnCancelAddCust.Name = "btnCancelAddCust";
-            this.btnCancelAddCust.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelAddCust.TabIndex = 20;
-            this.btnCancelAddCust.Text = "Cancel";
-            this.btnCancelAddCust.UseVisualStyleBackColor = true;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -717,10 +716,10 @@
             this.pnlAdd.PerformLayout();
             this.pnlEdit.ResumeLayout(false);
             this.pnlEdit.PerformLayout();
-            this.pnlDelete.ResumeLayout(false);
-            this.pnlDelete.PerformLayout();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
+            this.pnlDelete.ResumeLayout(false);
+            this.pnlDelete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -179,7 +179,7 @@ namespace SF
             catch (MyException MyEx)
             {
                 ok = false;
-                ErrorProvider.SetError(txtAddCustForename, MyEx.toString());
+                ErrorProvider1.SetError(txtAddCustForename, MyEx.toString());
             }
             }
 

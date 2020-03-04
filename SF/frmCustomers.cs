@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SF
 {
@@ -26,11 +27,9 @@ namespace SF
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmCustomers_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill;
-Integrated Security = true";
+            connStr = @"Data Source = .; Initial Catalog = Surefill; Integrated Security = true";
 
             sqlCustomer = @"select * from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
@@ -38,10 +37,19 @@ Integrated Security = true";
             daCustomer.FillSchema(dsSurefill, SchemaType.Source,
                 "Customer");
             daCustomer.Fill(dsSurefill, "Customer");
-            dataGridViewCustomer.DataSource = dsSurefill.Tables["Customer"];
-            dataGridViewCustomer.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            tabCustomer.SelectedIndex = 1;
-            tabCustomer.SelectedIndex = 0;
+            dgvCustomers.DataSource = dsSurefill.Tables["Customer"];
+            dgvCustomers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //tabCustomer.SelectedIndex = 1;
+            //tabCustomer.SelectedIndex = 0;
+            pnlAdd.Visible = false;
+            pnlEdit.Visible = false;
+            pnlDelete.Visible = false;
+            pnlSearch.Visible = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void tmrBanner_Tick(object sender, EventArgs e)
@@ -61,12 +69,12 @@ Integrated Security = true";
 
         private void lblEditCustomer_Click(object sender, EventArgs e)
         {
-
+            pnlEdit.Visible = true;
         }
 
         private void lblAddCustomer_Click(object sender, EventArgs e)
         {
-
+            pnlAdd.Visible = true;
         }
 
         private void btnAddCustomer_MouseEnter(object sender, EventArgs e)
@@ -76,7 +84,7 @@ Integrated Security = true";
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            
+            pnlAdd.Visible = true;
         }
 
         private void btnAddCustomer_MouseLeave(object sender, EventArgs e)
@@ -86,7 +94,7 @@ Integrated Security = true";
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
         {
-            
+            pnlEdit.Visible = true;
         }
 
         private void btnEditCustomer_MouseEnter(object sender, EventArgs e)
@@ -113,6 +121,67 @@ Integrated Security = true";
         {
             lblSearchCustomer.ForeColor = Color.FromArgb(15, 117, 189);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblADD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            pnlDelete.Visible = true;
+        }
+
+        private void lblDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            pnlDelete.Visible = true;
+        }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            pnlSearch.Visible = true;
+        }
+
+        private void lblSearchCustomer_Click(object sender, EventArgs e)
+        {
+            pnlSearch.Visible = true;
+            
+        }
+
+        private void btnConfirmAddCust_Click(object sender, EventArgs e)
+        {
+            MyCustomer myCustomer = new MyCustomer();
+            bool ok = true;
+            //ErrorProvider.Clear();
+
+            try
+            {
+                myCustomer.CustomerNo = lblActualCustomerNo.Text.Trim();                  
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                //ErrorProvider.SetError(lblActualCustomerNo, MyEx.toString());
+
+            }
+
+            try
+            {
+                myCustomer.Forename = txtAddCustForename.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                ErrorProvider.SetError(txtAddCustForename, MyEx.toString());
+            }
+            }
 
         private void btnSearchCustomer_MouseLeave(object sender, EventArgs e)
         {

@@ -33,16 +33,19 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.lblJobs = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlSide = new System.Windows.Forms.Panel();
+            this.lblSupplier = new System.Windows.Forms.Label();
             this.picBoxTitle = new System.Windows.Forms.PictureBox();
+            this.picBoxSupplier = new System.Windows.Forms.PictureBox();
             this.picBoxStock = new System.Windows.Forms.PictureBox();
             this.picBoxCust = new System.Windows.Forms.PictureBox();
             this.picBoxJob = new System.Windows.Forms.PictureBox();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTitle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSupplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCust)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxJob)).BeginInit();
@@ -63,7 +66,7 @@
             this.lblCust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCust.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCust.ForeColor = System.Drawing.Color.White;
-            this.lblCust.Location = new System.Drawing.Point(7, 308);
+            this.lblCust.Location = new System.Drawing.Point(6, 269);
             this.lblCust.Name = "lblCust";
             this.lblCust.Size = new System.Drawing.Size(90, 29);
             this.lblCust.TabIndex = 13;
@@ -77,7 +80,7 @@
             this.lblStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblStock.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.ForeColor = System.Drawing.Color.White;
-            this.lblStock.Location = new System.Drawing.Point(20, 433);
+            this.lblStock.Location = new System.Drawing.Point(16, 364);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(65, 29);
             this.lblStock.TabIndex = 15;
@@ -91,7 +94,7 @@
             this.lblJobs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblJobs.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobs.ForeColor = System.Drawing.Color.White;
-            this.lblJobs.Location = new System.Drawing.Point(20, 192);
+            this.lblJobs.Location = new System.Drawing.Point(20, 167);
             this.lblJobs.Name = "lblJobs";
             this.lblJobs.Size = new System.Drawing.Size(57, 25);
             this.lblJobs.TabIndex = 11;
@@ -111,9 +114,21 @@
             this.pnlTop.Size = new System.Drawing.Size(864, 97);
             this.pnlTop.TabIndex = 15;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(42, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // pnlSide
             // 
             this.pnlSide.BackColor = System.Drawing.Color.DimGray;
+            this.pnlSide.Controls.Add(this.lblSupplier);
+            this.pnlSide.Controls.Add(this.picBoxSupplier);
             this.pnlSide.Controls.Add(this.lblCust);
             this.pnlSide.Controls.Add(this.lblStock);
             this.pnlSide.Controls.Add(this.picBoxStock);
@@ -127,6 +142,20 @@
             this.pnlSide.Size = new System.Drawing.Size(102, 499);
             this.pnlSide.TabIndex = 14;
             // 
+            // lblSupplier
+            // 
+            this.lblSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.lblSupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplier.ForeColor = System.Drawing.Color.White;
+            this.lblSupplier.Location = new System.Drawing.Point(6, 469);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(90, 29);
+            this.lblSupplier.TabIndex = 18;
+            this.lblSupplier.Text = "Supplier";
+            this.lblSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSupplier.Click += new System.EventHandler(this.lblSupplier_Click);
+            // 
             // picBoxTitle
             // 
             this.picBoxTitle.BackgroundImage = global::SF.Properties.Resources.SFTitle1;
@@ -136,10 +165,21 @@
             this.picBoxTitle.TabIndex = 7;
             this.picBoxTitle.TabStop = false;
             // 
+            // picBoxSupplier
+            // 
+            this.picBoxSupplier.Image = global::SF.Properties.Resources.SupplierBLUE;
+            this.picBoxSupplier.Location = new System.Drawing.Point(16, 396);
+            this.picBoxSupplier.Name = "picBoxSupplier";
+            this.picBoxSupplier.Size = new System.Drawing.Size(71, 70);
+            this.picBoxSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxSupplier.TabIndex = 17;
+            this.picBoxSupplier.TabStop = false;
+            this.picBoxSupplier.Click += new System.EventHandler(this.picBoxSupplier_Click);
+            // 
             // picBoxStock
             // 
             this.picBoxStock.Image = global::SF.Properties.Resources.stockLogo31;
-            this.picBoxStock.Location = new System.Drawing.Point(16, 360);
+            this.picBoxStock.Location = new System.Drawing.Point(14, 291);
             this.picBoxStock.Name = "picBoxStock";
             this.picBoxStock.Size = new System.Drawing.Size(71, 70);
             this.picBoxStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +192,7 @@
             // picBoxCust
             // 
             this.picBoxCust.Image = global::SF.Properties.Resources.customerLogoPSBlue;
-            this.picBoxCust.Location = new System.Drawing.Point(16, 234);
+            this.picBoxCust.Location = new System.Drawing.Point(16, 195);
             this.picBoxCust.Name = "picBoxCust";
             this.picBoxCust.Size = new System.Drawing.Size(69, 71);
             this.picBoxCust.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +205,7 @@
             // picBoxJob
             // 
             this.picBoxJob.Image = global::SF.Properties.Resources.jobLogoPSBlue1;
-            this.picBoxJob.Location = new System.Drawing.Point(16, 128);
+            this.picBoxJob.Location = new System.Drawing.Point(16, 103);
             this.picBoxJob.Name = "picBoxJob";
             this.picBoxJob.Size = new System.Drawing.Size(69, 61);
             this.picBoxJob.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -184,16 +224,6 @@
             this.pnlLogo.Size = new System.Drawing.Size(104, 97);
             this.pnlLogo.TabIndex = 10;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(42, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +239,7 @@
             this.pnlTop.ResumeLayout(false);
             this.pnlSide.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTitle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSupplier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCust)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxJob)).EndInit();
@@ -230,5 +261,7 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlSide;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblSupplier;
+        private System.Windows.Forms.PictureBox picBoxSupplier;
     }
 }

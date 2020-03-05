@@ -118,65 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="returnBLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\returnBLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SFTitle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SFTitle1.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Jeremy_Corbyn_closeup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jeremy_Corbyn_closeup.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jobLogoPSBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jobLogoPSBlack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jobLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="jobLogoPSBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogoPSBlue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stockLogoPSBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stockLogoPSBlue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="returnBLACKANDBLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\returnBLACKANDBLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jobLogoPSa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogoPSa1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SF.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stockLogoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stockLogoBlack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jobLogoPSBlue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogoPSBlue1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SFTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SFTitle.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jobLogoPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogoPS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Jeremy_Corbyn_closeup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Jeremy_Corbyn_closeup.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jobLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jobLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jobLogoPSa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogoPSa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="niceHouseTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\niceHouseTrans.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NIGEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NIGEL.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stockLogo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stockLogo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SF Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SF Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stockLogo31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stockLogo31.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="job-search-icon-vector-21266294" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\job-search-icon-vector-21266294.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stockLogoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stockLogoBlack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="returnBLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\returnBLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SF Logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SF Logo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,19 +151,55 @@
   <data name="niceHouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\niceHouse.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="customerLogoPSBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\customerLogoPSBlue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jobLogoPSBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jobLogoPSBlue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SF Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SF Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stockLogoPSBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stockLogoPSBlue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customerLogoPSBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customerLogoPSBlack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="returnBLACKANDBLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\returnBLACKANDBLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stockLogo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stockLogo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="job-search-icon-vector-21266294" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\job-search-icon-vector-21266294.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobLogoPSBlue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogoPSBlue1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NIGEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NIGEL.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customerLogoPSBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customerLogoPSBlue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobLogoPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogoPS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SFTitle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SFTitle1.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobLogoPSa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogoPSa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SFTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SFTitle.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobLogoPSa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogoPSa1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SF.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jobLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jobLogo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="niceHouseTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\niceHouseTrans.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SupplierBLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SupplierBLUE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

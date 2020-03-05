@@ -79,8 +79,8 @@
             this.txtEditCustTown = new System.Windows.Forms.TextBox();
             this.txtEditCustStreet = new System.Windows.Forms.TextBox();
             this.txtEditCustSurname = new System.Windows.Forms.TextBox();
-            this.txtEditCustNo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtEditCustForename = new System.Windows.Forms.TextBox();
+            this.lblEditActaulCustNo = new System.Windows.Forms.Label();
             this.lblEditCustEmail = new System.Windows.Forms.Label();
             this.lblEditCustTelephoneNo = new System.Windows.Forms.Label();
             this.lblEditCustPostcode = new System.Windows.Forms.Label();
@@ -91,6 +91,8 @@
             this.lblEditCustForename = new System.Windows.Forms.Label();
             this.lblEditCustNo = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnConfirmEditCust = new System.Windows.Forms.Button();
+            this.btnCancelEditCust = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.pnlReturn.SuspendLayout();
             this.pnlAdd.SuspendLayout();
@@ -447,9 +449,9 @@
             // 
             // pnlEdit
             // 
-            this.pnlEdit.Controls.Add(this.pnlSearch);
+            this.pnlEdit.Controls.Add(this.btnCancelEditCust);
+            this.pnlEdit.Controls.Add(this.btnConfirmEditCust);
             this.pnlEdit.Controls.Add(this.label1);
-            this.pnlEdit.Controls.Add(this.pnlDelete);
             this.pnlEdit.Controls.Add(this.txtEditCustEmail);
             this.pnlEdit.Controls.Add(this.txtEditCustTelephoneNo);
             this.pnlEdit.Controls.Add(this.txtEditCustPostcode);
@@ -457,8 +459,8 @@
             this.pnlEdit.Controls.Add(this.txtEditCustTown);
             this.pnlEdit.Controls.Add(this.txtEditCustStreet);
             this.pnlEdit.Controls.Add(this.txtEditCustSurname);
-            this.pnlEdit.Controls.Add(this.txtEditCustNo);
-            this.pnlEdit.Controls.Add(this.label2);
+            this.pnlEdit.Controls.Add(this.txtEditCustForename);
+            this.pnlEdit.Controls.Add(this.lblEditActaulCustNo);
             this.pnlEdit.Controls.Add(this.lblEditCustEmail);
             this.pnlEdit.Controls.Add(this.lblEditCustTelephoneNo);
             this.pnlEdit.Controls.Add(this.lblEditCustPostcode);
@@ -468,16 +470,16 @@
             this.pnlEdit.Controls.Add(this.lblEditCustSurname);
             this.pnlEdit.Controls.Add(this.lblEditCustForename);
             this.pnlEdit.Controls.Add(this.lblEditCustNo);
-            this.pnlEdit.Location = new System.Drawing.Point(337, 71);
+            this.pnlEdit.Location = new System.Drawing.Point(337, 27);
             this.pnlEdit.Name = "pnlEdit";
-            this.pnlEdit.Size = new System.Drawing.Size(251, 301);
+            this.pnlEdit.Size = new System.Drawing.Size(277, 342);
             this.pnlEdit.TabIndex = 46;
             // 
             // pnlSearch
             // 
             this.pnlSearch.Controls.Add(this.lblSearchCustText);
             this.pnlSearch.Controls.Add(this.lblSEARCH);
-            this.pnlSearch.Location = new System.Drawing.Point(146, 85);
+            this.pnlSearch.Location = new System.Drawing.Point(657, 235);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(196, 85);
             this.pnlSearch.TabIndex = 48;
@@ -513,7 +515,7 @@
             // 
             this.pnlDelete.Controls.Add(this.label13);
             this.pnlDelete.Controls.Add(this.label12);
-            this.pnlDelete.Location = new System.Drawing.Point(125, 247);
+            this.pnlDelete.Location = new System.Drawing.Point(657, 46);
             this.pnlDelete.Name = "pnlDelete";
             this.pnlDelete.Size = new System.Drawing.Size(158, 85);
             this.pnlDelete.TabIndex = 47;
@@ -585,21 +587,21 @@
             this.txtEditCustSurname.Size = new System.Drawing.Size(100, 20);
             this.txtEditCustSurname.TabIndex = 11;
             // 
-            // txtEditCustNo
+            // txtEditCustForename
             // 
-            this.txtEditCustNo.Location = new System.Drawing.Point(142, 60);
-            this.txtEditCustNo.Name = "txtEditCustNo";
-            this.txtEditCustNo.Size = new System.Drawing.Size(100, 20);
-            this.txtEditCustNo.TabIndex = 10;
+            this.txtEditCustForename.Location = new System.Drawing.Point(142, 60);
+            this.txtEditCustForename.Name = "txtEditCustForename";
+            this.txtEditCustForename.Size = new System.Drawing.Size(100, 20);
+            this.txtEditCustForename.TabIndex = 10;
             // 
-            // label2
+            // lblEditActaulCustNo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "NUMBEr";
+            this.lblEditActaulCustNo.AutoSize = true;
+            this.lblEditActaulCustNo.Location = new System.Drawing.Point(143, 31);
+            this.lblEditActaulCustNo.Name = "lblEditActaulCustNo";
+            this.lblEditActaulCustNo.Size = new System.Drawing.Size(49, 13);
+            this.lblEditActaulCustNo.TabIndex = 9;
+            this.lblEditActaulCustNo.Text = "NUMBEr";
             // 
             // lblEditCustEmail
             // 
@@ -686,12 +688,33 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnConfirmEditCust
+            // 
+            this.btnConfirmEditCust.Location = new System.Drawing.Point(103, 305);
+            this.btnConfirmEditCust.Name = "btnConfirmEditCust";
+            this.btnConfirmEditCust.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmEditCust.TabIndex = 20;
+            this.btnConfirmEditCust.Text = "Edit";
+            this.btnConfirmEditCust.UseVisualStyleBackColor = true;
+            this.btnConfirmEditCust.Click += new System.EventHandler(this.btnConfirmEditCust_Click);
+            // 
+            // btnCancelEditCust
+            // 
+            this.btnCancelEditCust.Location = new System.Drawing.Point(184, 305);
+            this.btnCancelEditCust.Name = "btnCancelEditCust";
+            this.btnCancelEditCust.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelEditCust.TabIndex = 21;
+            this.btnCancelEditCust.Text = "Cancel";
+            this.btnCancelEditCust.UseVisualStyleBackColor = true;
+            // 
             // frmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(880, 405);
+            this.Controls.Add(this.pnlSearch);
+            this.Controls.Add(this.pnlDelete);
             this.Controls.Add(this.pnlEdit);
             this.Controls.Add(this.pnlAdd);
             this.Controls.Add(this.pnlReturn);
@@ -769,8 +792,8 @@
         private System.Windows.Forms.TextBox txtEditCustTown;
         private System.Windows.Forms.TextBox txtEditCustStreet;
         private System.Windows.Forms.TextBox txtEditCustSurname;
-        private System.Windows.Forms.TextBox txtEditCustNo;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtEditCustForename;
+        private System.Windows.Forms.Label lblEditActaulCustNo;
         private System.Windows.Forms.Label lblEditCustEmail;
         private System.Windows.Forms.Label lblEditCustTelephoneNo;
         private System.Windows.Forms.Label lblEditCustPostcode;
@@ -789,5 +812,7 @@
         private System.Windows.Forms.Button btnCancelAddCust;
         private System.Windows.Forms.Button btnConfirmAddCust;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnCancelEditCust;
+        private System.Windows.Forms.Button btnConfirmEditCust;
     }
 }

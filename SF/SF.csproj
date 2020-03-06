@@ -105,6 +105,7 @@
     <Compile Include="MyOrders.cs" />
     <Compile Include="MyProduct.cs" />
     <Compile Include="MyProductOrder.cs" />
+    <Compile Include="MySupplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCustomer.resx">

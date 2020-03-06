@@ -163,12 +163,12 @@ namespace SF
 
             try
             {
-                myCustomer.CustomerNo = lblActualCustomerNo.Text.Trim();
+                myCustomer.CustomerNo = lblAddActualCustomerNo.Text.Trim();
             }
             catch (MyException MyEx)
             {
                 ok = false;
-                errorProvider1.SetError(lblActualCustomerNo, MyEx.toString());
+                errorProvider1.SetError(lblAddActualCustomerNo, MyEx.toString());
 
             }
 
@@ -303,7 +303,7 @@ namespace SF
         private void getNumber(int noRows)
         {
             drCustomer = dsSurefill.Tables["Customer"].Rows[noRows - 1];
-            lblActualCustomerNo.Text = (int.Parse(drCustomer["CustomerNo"].ToString()) + 1).ToString();
+            lblAddActualCustomerNo.Text = (int.Parse(drCustomer["CustomerNo"].ToString()) + 1).ToString();
         }
 
         private void btnConfirmEditCust_Click(object sender, EventArgs e)
@@ -457,6 +457,43 @@ namespace SF
                     MessageBox.Show("" + ex.TargetSite + "" + ex.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void pnlDelete_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnConfirmDeleteCust_Click(object sender, EventArgs e)
+        {
+            if (dgvCustomers.SelectedRows.Count ==0)
+            {
+                MessageBox.Show("Please select a customer from the list", "Select Customer");
+            }
+            else
+            {
+                drCustomer = dsSurefill.Tables["Customer"].Rows.Find(dgvCustomers.SelectedRows[0].Cells[0].Value);
+                string tempName = drCustomer["Forename"].ToString() + "" + drCustomer["Surname"].ToString() + "\'s";
+
+                if(MessageBox.Show("Are you sure you want to delete " + tempName + "details?", "Add Customer", MessageBoxButtons.YesNo)==
+                    System.Windows.Forms.DialogResult.Yes)
+                {
+                    drCustomer.Delete();
+                    daCustomer.Update(dsSurefill, "Customer");
+                }
+            }
+        }
+
+        private void btnCancelAddCust_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the addition of Customer No: " + lblAddActualCustomerNo.Text + "?", "Add Customer", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes);
+        }
+
+        private void btnCancelEditCust_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the edit of Customer No: " + lblEditActaulCustNo.Text + "?", "Edit Customer", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes);
         }
 
         private void btnSearchCustomer_MouseLeave(object sender, EventArgs e)

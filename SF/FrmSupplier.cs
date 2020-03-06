@@ -90,7 +90,7 @@ Integrated Security = true";
             lblAddSupplier.ForeColor = Color.DimGray;
         }
 
-        private void btnEditCustomer_Click(object sender, EventArgs e)
+        private void btnEditSupplierClick(object sender, EventArgs e)
         {
             pnlEditSupplier.Visible = true;
         }
@@ -253,29 +253,29 @@ Integrated Security = true";
             {
                 if (ok)
                 {
-                    drCustomer = dsSurefill.Tables["Customer"].NewRow();
+                    drSupplier = dsSurefill.Tables["Supplier"].NewRow();
 
-                    drCustomer["CustomerNo"] = myCustomer.CustomerNo;
-                    drCustomer["Forename"] = myCustomer.Forename;
-                    drCustomer["Surname"] = myCustomer.Surname;
-                    drCustomer["Street"] = myCustomer.Street;
-                    drCustomer["Town"] = myCustomer.Town;
-                    drCustomer["County"] = myCustomer.County;
-                    drCustomer["Postcode"] = myCustomer.Postcode;
-                    drCustomer["TelephoneNo"] = myCustomer.TelephoneNo;
-                    drCustomer["Email"] = myCustomer.Email;
+                    drSupplier["SupplierNo"] = mySupplier.SupplierNo;
+                    drSupplier["Name"] = mySupplier.Name;
+                    drSupplier["Street"] = mySupplier.Street;
+                    drSupplier["Town"] = mySupplier.Town;
+                    drSupplier["County"] = mySupplier.County;
+                    drSupplier["Postcode"] = mySupplier.Postcode;
+                    drSupplier["Email"] = mySupplier.Email;
+                    drSupplier["TelephoneNo"] = mySupplier.TelephoneNo;
 
 
-                    dsSurefill.Tables["Customer"].Rows.Add(drCustomer);
-                    daCustomer.Update(dsSurefill, "Customer");
 
-                    MessageBox.Show("Customer Added");
+                    dsSurefill.Tables["Supplier"].Rows.Add(drSupplier);
+                    daSupplier.Update(dsSurefill, "Supplier");
 
-                    if (MessageBox.Show("Do you want to add another customer?", "Add Customer", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    MessageBox.Show("Supplier Added");
+
+                    if (MessageBox.Show("Do you want to add another Supplier?", "Add Supplier", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
                         clearAddForm();
 
-                        getNumber(dsSurefill.Tables["Customer"].Rows.Count);
+                        getNumber(dsSurefill.Tables["Supplier"].Rows.Count);
                     }
                     else
                     { }
@@ -289,165 +289,153 @@ Integrated Security = true";
 
         void clearAddForm()
         {
-            txtAddCustForename.Clear();
-            txtAddCustSurname.Clear();
-            txtAddCustStreet.Clear();
-            txtAddCustTown.Clear();
-            txtEditCustCounty.Clear();
-            txtAddCustPostcode.Clear();
-            txtAddCustTelephoneNo.Clear();
+            txtAddSupplierName.Clear();
+            txtAddSupplierStreet.Clear();
+            txtAddSupplierTown.Clear();
+            txtEditSupplierCounty.Clear();
+            txtAddSupplierPostcode.Clear();
+            txtAddSupplierEmail.Clear();
+            txtAddSupplierTelephoneNo.Clear();
         }
 
         private void getNumber(int noRows)
         {
-            drCustomer = dsSurefill.Tables["Customer"].Rows[noRows - 1];
-            lblActualCustomerNo.Text = (int.Parse(drCustomer["CustomerNo"].ToString()) + 1).ToString();
+            drSupplier = dsSurefill.Tables["Supplier"].Rows[noRows - 1];
+            lblAddActualSupplierNo.Text = (int.Parse(drSupplier["SupplierNo"].ToString()) + 1).ToString();
         }
 
         private void btnConfirmEditCust_Click(object sender, EventArgs e)
         {
-            if (btnConfirmEditCust.Text == "Edit")
+            if (btnConfirmEditSupplier.Text == "Edit")
             {
-                txtAddCustForename.Enabled = true;
-                txtEditCustSurname.Enabled = true;
-                txtEditCustStreet.Enabled = true;
-                txtEditCustTown.Enabled = true;
-                txtEditCustCounty.Enabled = true;
-                txtEditCustPostcode.Enabled = true;
-                txtEditCustTelephoneNo.Enabled = true;
-                txtEditCustEmail.Enabled = true;
+                txtAddSupplierName.Enabled = true;
+                txtEditSupplierStreet.Enabled = true;
+                txtEditSupplierTown.Enabled = true;
+                txtEditSupplierCounty.Enabled = true;
+                txtEditSupplierPostcode.Enabled = true;
+                txtEditSupplierEmail.Enabled = true;
+                txtEditSupplierTelephoneNo.Enabled = true;
 
-                btnConfirmEditCust.Text = "Save";
+                btnConfirmEditSupplier.Text = "Save";
 
             }
             else
             {
-                MyCustomer myCustomer = new MyCustomer();
+                MySupplier mySupplier = new MySupplier();
                 bool ok = true;
                 errorProvider1.Clear();
 
                 try
                 {
-                    myCustomer.CustomerNo = lblEditActaulCustNo.Text.Trim();
+                    mySupplier.SupplierNo = lblEditActualSupplierNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(lblEditActaulCustNo, MyEx.toString());
+                    errorProvider1.SetError(lblEditActualSupplierNo, MyEx.toString());
 
                 }
 
                 try
                 {
-                    myCustomer.Forename = txtEditCustForename.Text.Trim();
+                    mySupplier.Name = txtEditSupplierName.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(txtEditCustForename, MyEx.toString());
+                    errorProvider1.SetError(txtEditSupplierName, MyEx.toString());
                 }
 
                 try
                 {
-                    myCustomer.Surname = txtEditCustSurname.Text.Trim();
+                    mySupplier.Street = txtEditSupplierStreet.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(txtEditCustSurname, MyEx.toString());
+                    errorProvider1.SetError(txtEditSupplierStreet, MyEx.toString());
                 }
 
                 try
                 {
-                    myCustomer.Street = txtEditCustStreet.Text.Trim();
+                    mySupplier.Town = txtEditSupplierTown.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(txtEditCustStreet, MyEx.toString());
+                    errorProvider1.SetError(txtEditSupplierTown, MyEx.toString());
                 }
 
                 try
                 {
-                    myCustomer.Town = txtEditCustTown.Text.Trim();
+                    mySupplier.County = txtEditSupplierCounty.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(txtEditCustTown, MyEx.toString());
+                    errorProvider1.SetError(txtEditSupplierCounty, MyEx.toString());
                 }
 
                 try
                 {
-                    myCustomer.County = txtEditCustCounty.Text.Trim();
+                    mySupplier.Postcode = txtEditSupplierPostcode.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(txtEditCustCounty, MyEx.toString());
+                    errorProvider1.SetError(txtEditSupplierPostcode, MyEx.toString());
                 }
 
                 try
                 {
-                    myCustomer.Postcode = txtEditCustPostcode.Text.Trim();
+                    mySupplier.Email = txtEditSupplierEmail.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(txtEditCustPostcode, MyEx.toString());
+                    errorProvider1.SetError(txtEditSupplierEmail, MyEx.toString());
                 }
 
                 try
                 {
-                    myCustomer.TelephoneNo = txtEditCustTelephoneNo.Text.Trim();
+                    mySupplier.TelephoneNo = txtEditSupplierTelephoneNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
-                    errorProvider1.SetError(txtEditCustTelephoneNo, MyEx.toString());
-                }
-                try
-                {
-                    myCustomer.Email = txtEditCustEmail.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errorProvider1.SetError(txtEditCustEmail, MyEx.toString());
+                    errorProvider1.SetError(txtEditSupplierTelephoneNo, MyEx.toString());
                 }
 
                 try
                 {
                     if (ok)
                     {
-                        drCustomer.BeginEdit();
+                        drSupplier.BeginEdit();
 
 
-                        drCustomer["CustomerNo"] = myCustomer.CustomerNo;
-                        drCustomer["Forename"] = myCustomer.Forename;
-                        drCustomer["Surname"] = myCustomer.Surname;
-                        drCustomer["Street"] = myCustomer.Street;
-                        drCustomer["Town"] = myCustomer.Town;
-                        drCustomer["County"] = myCustomer.County;
-                        drCustomer["Postcode"] = myCustomer.Postcode;
-                        drCustomer["TelephoneNo"] = myCustomer.TelephoneNo;
-                        drCustomer["Email"] = myCustomer.Email;
+                        drSupplier["SupplierNo"] = mySupplier.SupplierNo;
+                        drSupplier["Name"] = mySupplier.Name;
+                        drSupplier["Street"] = mySupplier.Street;
+                        drSupplier["Town"] = mySupplier.Town;
+                        drSupplier["County"] = mySupplier.County;
+                        drSupplier["Postcode"] = mySupplier.Postcode;
+                        drSupplier["Email"] = mySupplier.Email;
+                        drSupplier["TelephoneNo"] = mySupplier.TelephoneNo;
 
-                        drCustomer.EndEdit();
-                        daCustomer.Update(dsSurefill, "Customer");
+                        drSupplier.EndEdit();
+                        daSupplier.Update(dsSurefill, "Supplier");
 
-                        MessageBox.Show("Customer details updated", "Customer");
+                        MessageBox.Show("Supplier details updated", "Supplier");
 
-                        txtAddCustForename.Enabled = false;
-                        txtEditCustSurname.Enabled = false;
-                        txtEditCustStreet.Enabled = false;
-                        txtEditCustTown.Enabled = false;
-                        txtEditCustCounty.Enabled = false;
-                        txtEditCustPostcode.Enabled = false;
-                        txtEditCustTelephoneNo.Enabled = false;
-                        txtEditCustEmail.Enabled = false;
+                        txtAddSupplierName.Enabled = false;
+                        txtEditSupplierStreet.Enabled = false;
+                        txtEditSupplierTown.Enabled = false;
+                        txtEditSupplierCounty.Enabled = false;
+                        txtEditSupplierPostcode.Enabled = false;
+                        txtEditSupplierEmail.Enabled = false;
+                        txtEditSupplierTelephoneNo.Enabled = false;
 
-                        btnConfirmEditCust.Text = "Edit";
+                        btnConfirmEditSupplier.Text = "Edit";
                     }
                 }
                 catch (Exception ex)
@@ -457,7 +445,7 @@ Integrated Security = true";
             }
         }
 
-        private void btnSearchCustomer_MouseLeave(object sender, EventArgs e)
+        private void btnSearchSupplier_MouseLeave(object sender, EventArgs e)
         {
             lblSearchSupplier.ForeColor = Color.DimGray;
         }

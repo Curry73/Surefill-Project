@@ -136,5 +136,27 @@ namespace SF
             pnlHome.Controls.Clear();
             pnlHome.BackgroundImage = Properties.Resources.niceHouse;
         }
+
+        private void picBoxSupplier_Click(object sender, EventArgs e)
+        {
+            pnlHome.Controls.Clear();
+            FrmSupplier newForm = new FrmSupplier();
+            newForm.TopLevel = false;
+            newForm.FormBorderStyle = FormBorderStyle.None;
+            pnlHome.Controls.Add(newForm);
+            pnlHome.Visible = true;
+            newForm.Show();
+        }
+
+        private void lblSupplier_Click(object sender, EventArgs e)
+        {
+            pnlHome.Controls.Clear();
+            FrmSupplier newForm = new FrmSupplier();
+            newForm.TopLevel = false;
+            newForm.FormBorderStyle = FormBorderStyle.None;
+            pnlHome.Controls.Add(newForm);
+            pnlHome.Visible = true;
+            newForm.Show();
+        }
     }
 }

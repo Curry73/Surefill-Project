@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCustomers.cs">
+    <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomers.Designer.cs">
-      <DependentUpon>frmCustomers.cs</DependentUpon>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmJobs.cs">
       <SubType>Form</SubType>
@@ -91,7 +91,14 @@
     <Compile Include="frmStock.Designer.cs">
       <DependentUpon>frmStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupplier.Designer.cs">
+      <DependentUpon>FrmSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyCustomer.cs" />
+    <Compile Include="MyException.cs" />
     <Compile Include="MyJob.cs" />
     <Compile Include="MyJobDetails.cs" />
     <Compile Include="MyJobType.cs" />
@@ -100,8 +107,8 @@
     <Compile Include="MyProductOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCustomers.resx">
-      <DependentUpon>frmCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmJobs.resx">
       <DependentUpon>frmJobs.cs</DependentUpon>
@@ -114,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStock.resx">
       <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupplier.resx">
+      <DependentUpon>FrmSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -230,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\returnBLACKANDBLUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupplierBLUE.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

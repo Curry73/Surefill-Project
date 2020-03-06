@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace SF
 {
-    public partial class frmCustomers : Form
+    public partial class frmCustomer : Form
     {
 
         SqlDataAdapter daCustomer;
@@ -23,11 +23,11 @@ namespace SF
         bool custSelected = false;
         int custNoSelected = 0;
 
-        public frmCustomers()
+        public frmCustomer()
         {
             InitializeComponent();
         }
-        private void frmCustomers_Load(object sender, EventArgs e)
+        private void frmCustomer_Load(object sender, EventArgs e)
         {
             connStr = @"Data Source = .; Initial Catalog = Surefill; Integrated Security = true";
 

@@ -1,6 +1,6 @@
 ﻿namespace SF
 {
-    partial class frmCustomers
+    partial class frmCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -757,7 +757,7 @@
             this.Name = "frmCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmCustomers";
-            this.Load += new System.EventHandler(this.frmCustomers_Load);
+            this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.pnlReturn.ResumeLayout(false);
             this.pnlReturn.PerformLayout();

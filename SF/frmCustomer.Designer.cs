@@ -90,11 +90,11 @@
             this.lblSearchCustText = new System.Windows.Forms.Label();
             this.lblSEARCH = new System.Windows.Forms.Label();
             this.pnlDelete = new System.Windows.Forms.Panel();
+            this.btnDeleteCustCancel = new System.Windows.Forms.Button();
+            this.btnConfirmDeleteCust = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnConfirmDeleteCust = new System.Windows.Forms.Button();
-            this.btnDeleteCustCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.pnlReturn.SuspendLayout();
             this.pnlAdd.SuspendLayout();
@@ -136,6 +136,7 @@
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.Size = new System.Drawing.Size(620, 380);
             this.dgvCustomers.TabIndex = 20;
+            //this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
             // 
             // lblEditCustomer
             // 
@@ -692,6 +693,25 @@
             this.pnlDelete.TabIndex = 47;
             this.pnlDelete.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDelete_Paint);
             // 
+            // btnDeleteCustCancel
+            // 
+            this.btnDeleteCustCancel.Location = new System.Drawing.Point(113, 69);
+            this.btnDeleteCustCancel.Name = "btnDeleteCustCancel";
+            this.btnDeleteCustCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteCustCancel.TabIndex = 22;
+            this.btnDeleteCustCancel.Text = "Cancel";
+            this.btnDeleteCustCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmDeleteCust
+            // 
+            this.btnConfirmDeleteCust.Location = new System.Drawing.Point(29, 69);
+            this.btnConfirmDeleteCust.Name = "btnConfirmDeleteCust";
+            this.btnConfirmDeleteCust.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmDeleteCust.TabIndex = 21;
+            this.btnConfirmDeleteCust.Text = "Delete";
+            this.btnConfirmDeleteCust.UseVisualStyleBackColor = true;
+            this.btnConfirmDeleteCust.Click += new System.EventHandler(this.btnConfirmDeleteCust_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -714,26 +734,7 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnConfirmDeleteCust
-            // 
-            this.btnConfirmDeleteCust.Location = new System.Drawing.Point(29, 69);
-            this.btnConfirmDeleteCust.Name = "btnConfirmDeleteCust";
-            this.btnConfirmDeleteCust.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmDeleteCust.TabIndex = 21;
-            this.btnConfirmDeleteCust.Text = "Delete";
-            this.btnConfirmDeleteCust.UseVisualStyleBackColor = true;
-            this.btnConfirmDeleteCust.Click += new System.EventHandler(this.btnConfirmDeleteCust_Click);
-            // 
-            // btnDeleteCustCancel
-            // 
-            this.btnDeleteCustCancel.Location = new System.Drawing.Point(113, 69);
-            this.btnDeleteCustCancel.Name = "btnDeleteCustCancel";
-            this.btnDeleteCustCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteCustCancel.TabIndex = 22;
-            this.btnDeleteCustCancel.Text = "Cancel";
-            this.btnDeleteCustCancel.UseVisualStyleBackColor = true;
-            // 
-            // frmCustomers
+            // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -754,7 +755,7 @@
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.dgvCustomers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmCustomers";
+            this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmCustomers";
             this.Load += new System.EventHandler(this.frmCustomer_Load);

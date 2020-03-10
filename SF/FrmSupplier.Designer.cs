@@ -41,6 +41,8 @@
             this.lblReturnMenu = new System.Windows.Forms.Label();
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.pnlAddSupplier = new System.Windows.Forms.Panel();
+            this.btnConfirmAddSupplier = new System.Windows.Forms.Button();
+            this.btnCancelAddSupplier = new System.Windows.Forms.Button();
             this.txtAddSupplierTelephoneNo = new System.Windows.Forms.TextBox();
             this.txtAddSupplierEmail = new System.Windows.Forms.TextBox();
             this.txtAddSupplierPostcode = new System.Windows.Forms.TextBox();
@@ -58,6 +60,8 @@
             this.lblAddSupplierName = new System.Windows.Forms.Label();
             this.lblAddSupplierNo = new System.Windows.Forms.Label();
             this.pnlEditSupplier = new System.Windows.Forms.Panel();
+            this.btnCancelEditSupplier = new System.Windows.Forms.Button();
+            this.btnConfirmEditSupplier = new System.Windows.Forms.Button();
             this.txtEditSupplierTelephoneNo = new System.Windows.Forms.TextBox();
             this.txtEditSupplierEmail = new System.Windows.Forms.TextBox();
             this.txtEditSupplierPostcode = new System.Windows.Forms.TextBox();
@@ -74,10 +78,6 @@
             this.lblEditSupplierStreet = new System.Windows.Forms.Label();
             this.lblEditSupplierName = new System.Windows.Forms.Label();
             this.lblEditSupplierNo = new System.Windows.Forms.Label();
-            this.btnConfirmEditSupplier = new System.Windows.Forms.Button();
-            this.btnCancelEditSupplier = new System.Windows.Forms.Button();
-            this.btnConfirmAddSupplier = new System.Windows.Forms.Button();
-            this.btnCancelAddSupplier = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.pnlAddSupplier.SuspendLayout();
@@ -90,7 +90,7 @@
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuppliers.Location = new System.Drawing.Point(12, 12);
             this.dgvSuppliers.Name = "dgvSuppliers";
-            this.dgvSuppliers.Size = new System.Drawing.Size(604, 426);
+            this.dgvSuppliers.Size = new System.Drawing.Size(620, 380);
             this.dgvSuppliers.TabIndex = 0;
             // 
             // btnSearchJob
@@ -216,15 +216,33 @@
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierStreet);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierName);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierNo);
-            this.pnlAddSupplier.Location = new System.Drawing.Point(29, 67);
+            this.pnlAddSupplier.Location = new System.Drawing.Point(36, 23);
             this.pnlAddSupplier.Name = "pnlAddSupplier";
             this.pnlAddSupplier.Size = new System.Drawing.Size(227, 341);
             this.pnlAddSupplier.TabIndex = 50;
             // 
+            // btnConfirmAddSupplier
+            // 
+            this.btnConfirmAddSupplier.Location = new System.Drawing.Point(69, 289);
+            this.btnConfirmAddSupplier.Name = "btnConfirmAddSupplier";
+            this.btnConfirmAddSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnConfirmAddSupplier.TabIndex = 27;
+            this.btnConfirmAddSupplier.Text = "Add";
+            this.btnConfirmAddSupplier.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelAddSupplier
+            // 
+            this.btnCancelAddSupplier.Location = new System.Drawing.Point(145, 289);
+            this.btnCancelAddSupplier.Name = "btnCancelAddSupplier";
+            this.btnCancelAddSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnCancelAddSupplier.TabIndex = 28;
+            this.btnCancelAddSupplier.Text = "Cancel";
+            this.btnCancelAddSupplier.UseVisualStyleBackColor = true;
+            // 
             // txtAddSupplierTelephoneNo
             // 
             this.txtAddSupplierTelephoneNo.Location = new System.Drawing.Point(97, 251);
-            this.txtAddSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierTelephoneNo.Name = "txtAddSupplierTelephoneNo";
             this.txtAddSupplierTelephoneNo.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierTelephoneNo.TabIndex = 25;
@@ -232,7 +250,7 @@
             // txtAddSupplierEmail
             // 
             this.txtAddSupplierEmail.Location = new System.Drawing.Point(97, 216);
-            this.txtAddSupplierEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierEmail.Name = "txtAddSupplierEmail";
             this.txtAddSupplierEmail.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierEmail.TabIndex = 26;
@@ -240,7 +258,7 @@
             // txtAddSupplierPostcode
             // 
             this.txtAddSupplierPostcode.Location = new System.Drawing.Point(97, 181);
-            this.txtAddSupplierPostcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierPostcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierPostcode.Name = "txtAddSupplierPostcode";
             this.txtAddSupplierPostcode.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierPostcode.TabIndex = 27;
@@ -248,7 +266,7 @@
             // txtAddSupplierCounty
             // 
             this.txtAddSupplierCounty.Location = new System.Drawing.Point(97, 146);
-            this.txtAddSupplierCounty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierCounty.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierCounty.Name = "txtAddSupplierCounty";
             this.txtAddSupplierCounty.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierCounty.TabIndex = 28;
@@ -256,7 +274,7 @@
             // txtAddSupplierTown
             // 
             this.txtAddSupplierTown.Location = new System.Drawing.Point(97, 111);
-            this.txtAddSupplierTown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierTown.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierTown.Name = "txtAddSupplierTown";
             this.txtAddSupplierTown.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierTown.TabIndex = 29;
@@ -264,7 +282,7 @@
             // txtAddSupplierStreet
             // 
             this.txtAddSupplierStreet.Location = new System.Drawing.Point(97, 77);
-            this.txtAddSupplierStreet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierStreet.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierStreet.Name = "txtAddSupplierStreet";
             this.txtAddSupplierStreet.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierStreet.TabIndex = 30;
@@ -272,7 +290,7 @@
             // txtAddSupplierName
             // 
             this.txtAddSupplierName.Location = new System.Drawing.Point(97, 47);
-            this.txtAddSupplierName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierName.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierName.Name = "txtAddSupplierName";
             this.txtAddSupplierName.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierName.TabIndex = 31;
@@ -378,15 +396,33 @@
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierStreet);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierName);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierNo);
-            this.pnlEditSupplier.Location = new System.Drawing.Point(326, 67);
+            this.pnlEditSupplier.Location = new System.Drawing.Point(367, 23);
             this.pnlEditSupplier.Name = "pnlEditSupplier";
             this.pnlEditSupplier.Size = new System.Drawing.Size(227, 341);
             this.pnlEditSupplier.TabIndex = 51;
             // 
+            // btnCancelEditSupplier
+            // 
+            this.btnCancelEditSupplier.Location = new System.Drawing.Point(145, 289);
+            this.btnCancelEditSupplier.Name = "btnCancelEditSupplier";
+            this.btnCancelEditSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnCancelEditSupplier.TabIndex = 26;
+            this.btnCancelEditSupplier.Text = "Cencel";
+            this.btnCancelEditSupplier.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmEditSupplier
+            // 
+            this.btnConfirmEditSupplier.Location = new System.Drawing.Point(69, 289);
+            this.btnConfirmEditSupplier.Name = "btnConfirmEditSupplier";
+            this.btnConfirmEditSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnConfirmEditSupplier.TabIndex = 25;
+            this.btnConfirmEditSupplier.Text = "Edit";
+            this.btnConfirmEditSupplier.UseVisualStyleBackColor = true;
+            // 
             // txtEditSupplierTelephoneNo
             // 
             this.txtEditSupplierTelephoneNo.Location = new System.Drawing.Point(111, 251);
-            this.txtEditSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierTelephoneNo.Name = "txtEditSupplierTelephoneNo";
             this.txtEditSupplierTelephoneNo.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierTelephoneNo.TabIndex = 24;
@@ -394,7 +430,7 @@
             // txtEditSupplierEmail
             // 
             this.txtEditSupplierEmail.Location = new System.Drawing.Point(111, 214);
-            this.txtEditSupplierEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierEmail.Name = "txtEditSupplierEmail";
             this.txtEditSupplierEmail.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierEmail.TabIndex = 23;
@@ -402,7 +438,7 @@
             // txtEditSupplierPostcode
             // 
             this.txtEditSupplierPostcode.Location = new System.Drawing.Point(111, 179);
-            this.txtEditSupplierPostcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierPostcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierPostcode.Name = "txtEditSupplierPostcode";
             this.txtEditSupplierPostcode.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierPostcode.TabIndex = 22;
@@ -410,7 +446,7 @@
             // txtEditSupplierStreet
             // 
             this.txtEditSupplierStreet.Location = new System.Drawing.Point(111, 79);
-            this.txtEditSupplierStreet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierStreet.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierStreet.Name = "txtEditSupplierStreet";
             this.txtEditSupplierStreet.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierStreet.TabIndex = 21;
@@ -418,7 +454,7 @@
             // txtEditSupplierTown
             // 
             this.txtEditSupplierTown.Location = new System.Drawing.Point(111, 111);
-            this.txtEditSupplierTown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierTown.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierTown.Name = "txtEditSupplierTown";
             this.txtEditSupplierTown.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierTown.TabIndex = 20;
@@ -426,7 +462,7 @@
             // txtEditSupplierCounty
             // 
             this.txtEditSupplierCounty.Location = new System.Drawing.Point(111, 143);
-            this.txtEditSupplierCounty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierCounty.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierCounty.Name = "txtEditSupplierCounty";
             this.txtEditSupplierCounty.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierCounty.TabIndex = 19;
@@ -434,7 +470,7 @@
             // txtEditSupplierName
             // 
             this.txtEditSupplierName.Location = new System.Drawing.Point(111, 47);
-            this.txtEditSupplierName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierName.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierName.Name = "txtEditSupplierName";
             this.txtEditSupplierName.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierName.TabIndex = 18;
@@ -520,42 +556,6 @@
             this.lblEditSupplierNo.TabIndex = 9;
             this.lblEditSupplierNo.Text = "Supplier No";
             // 
-            // btnConfirmEditSupplier
-            // 
-            this.btnConfirmEditSupplier.Location = new System.Drawing.Point(69, 289);
-            this.btnConfirmEditSupplier.Name = "btnConfirmEditSupplier";
-            this.btnConfirmEditSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnConfirmEditSupplier.TabIndex = 25;
-            this.btnConfirmEditSupplier.Text = "Edit";
-            this.btnConfirmEditSupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelEditSupplier
-            // 
-            this.btnCancelEditSupplier.Location = new System.Drawing.Point(145, 289);
-            this.btnCancelEditSupplier.Name = "btnCancelEditSupplier";
-            this.btnCancelEditSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnCancelEditSupplier.TabIndex = 26;
-            this.btnCancelEditSupplier.Text = "Cencel";
-            this.btnCancelEditSupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmAddSupplier
-            // 
-            this.btnConfirmAddSupplier.Location = new System.Drawing.Point(69, 289);
-            this.btnConfirmAddSupplier.Name = "btnConfirmAddSupplier";
-            this.btnConfirmAddSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnConfirmAddSupplier.TabIndex = 27;
-            this.btnConfirmAddSupplier.Text = "Add";
-            this.btnConfirmAddSupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelAddSupplier
-            // 
-            this.btnCancelAddSupplier.Location = new System.Drawing.Point(145, 289);
-            this.btnCancelAddSupplier.Name = "btnCancelAddSupplier";
-            this.btnCancelAddSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnCancelAddSupplier.TabIndex = 28;
-            this.btnCancelAddSupplier.Text = "Cancel";
-            this.btnCancelAddSupplier.UseVisualStyleBackColor = true;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -564,7 +564,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(880, 405);
             this.Controls.Add(this.pnlEditSupplier);
             this.Controls.Add(this.pnlAddSupplier);
             this.Controls.Add(this.btnReturnMenu);
@@ -578,6 +578,7 @@
             this.Controls.Add(this.btnEditJob);
             this.Controls.Add(this.btnAddJob);
             this.Controls.Add(this.dgvSuppliers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSupplier";
             this.Text = "FrmSupplier";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();

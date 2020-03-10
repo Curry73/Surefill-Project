@@ -30,8 +30,7 @@ namespace SF
 
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = .; Initial Catalog = Surefill;
-Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
 
             sqlSupplier = @"select * from Supplier";
             daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
@@ -43,6 +42,10 @@ Integrated Security = true";
             dgvSuppliers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             //tabCustomer.SelectedIndex = 1;
             //tabCustomer.SelectedIndex = 0;
+            pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            //pnlDelete.Visible = false;
+            //pnlSearch.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -129,8 +132,6 @@ Integrated Security = true";
         {
 
         }
-
-
 
         //private void btnDeleteCustomer_Click(object sender, EventArgs e)
         //{
@@ -239,15 +240,6 @@ Integrated Security = true";
                 ok = false;
                 errorProvider1.SetError(txtAddSupplierTelephoneNo, MyEx.toString());
             }
-            //try
-            //{
-            //    myCustomer.Email = txtAddCustEmail.Text.Trim();
-            //}
-            //catch (MyException MyEx)
-            //{
-            //    ok = false;
-            //    errorProvider1.SetError(txtAddCustEmail, MyEx.toString());
-            //}
 
             try
             {
@@ -304,7 +296,7 @@ Integrated Security = true";
             lblAddActualSupplierNo.Text = (int.Parse(drSupplier["SupplierNo"].ToString()) + 1).ToString();
         }
 
-        private void btnConfirmEditCust_Click(object sender, EventArgs e)
+        private void btnConfirmEditSupplier_Click(object sender, EventArgs e)
         {
             if (btnConfirmEditSupplier.Text == "Edit")
             {
@@ -443,6 +435,38 @@ Integrated Security = true";
                     MessageBox.Show("" + ex.TargetSite + "" + ex.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnConfirmDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            if (dgvSuppliers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a supplier from the list", "Select supplier");
+            }
+            else
+            {
+                drSupplier = dsSurefill.Tables["Supplier"].Rows.Find(dgvSuppliers.SelectedRows[0].Cells[0].Value);
+                string tempName = drSupplier["Name"].ToString() + "\'s";
+
+                if (MessageBox.Show("Are you sure you want to delete " + tempName + "details?", "Add Supplier", MessageBoxButtons.YesNo) ==
+                    System.Windows.Forms.DialogResult.Yes)
+                {
+                    drSupplier.Delete();
+                    daSupplier.Update(dsSurefill, "Supplier");
+                }
+            }
+        }
+
+        private void btnCancelAddSupplier_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the addition of supplier no: " + lblAddActualSupplierNo.Text + "?", "Add Supplier", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes) ;
+        }
+
+        private void btnCancelEditSupplier_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the edit of supplier no: " + lblEditActualSupplierNo.Text + "?", "Edit Supplier", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes) ;
         }
 
         private void btnSearchSupplier_MouseLeave(object sender, EventArgs e)

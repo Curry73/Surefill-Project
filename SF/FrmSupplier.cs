@@ -27,7 +27,6 @@ namespace SF
         {
             InitializeComponent();
         }
-
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
@@ -44,8 +43,8 @@ namespace SF
             //tabCustomer.SelectedIndex = 0;
             pnlAddSupplier.Visible = false;
             pnlEditSupplier.Visible = false;
-            //pnlDelete.Visible = false;
-            //pnlSearch.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -93,7 +92,7 @@ namespace SF
             lblAddSupplier.ForeColor = Color.DimGray;
         }
 
-        private void btnEditSupplierClick(object sender, EventArgs e)
+        private void btnEditSupplier_Click(object sender, EventArgs e)
         {
             pnlEditSupplier.Visible = true;
         }
@@ -133,28 +132,34 @@ namespace SF
 
         }
 
-        //private void btnDeleteCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlDelete.Visible = true;
-        //}
 
-        //private void lblDeleteCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlDelete.Visible = true;
-        //}
 
-        //private void btnSearchCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlSearch.Visible = true;
-        //}
+        private void btnDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            pnlDeleteSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+        }
 
-        //private void lblSearchCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlSearch.Visible = true;
+        private void lblDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            pnlDeleteSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+        }
 
-        //}
+        private void btnSearchSupplier_Click(object sender, EventArgs e)
+        {
+            pnlSearchSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+        }
 
-        private void btnConfirmAddSupp_Click(object sender, EventArgs e)
+        private void lblSearchSupplier_Click(object sender, EventArgs e)
+        {
+            pnlSearchSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+
+        }
+
+        private void btnConfirmAddSupplier_Click(object sender, EventArgs e)
         {
             MySupplier mySupplier = new MySupplier();
             bool ok = true;
@@ -223,22 +228,21 @@ namespace SF
 
             try
             {
-                mySupplier.Email = txtAddSupplierEmail.Text.Trim();
-            }
-            catch (MyException MyEx)
-            {
-                ok = false;
-                errorProvider1.SetError(txtAddSupplierEmail, MyEx.toString());
-            }
-
-            try
-            {
                 mySupplier.TelephoneNo = txtAddSupplierTelephoneNo.Text.Trim();
             }
             catch (MyException MyEx)
             {
                 ok = false;
                 errorProvider1.SetError(txtAddSupplierTelephoneNo, MyEx.toString());
+            }
+            try
+            {
+                mySupplier.Email = txtAddSupplierEmail.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errorProvider1.SetError(txtAddSupplierEmail, MyEx.toString());
             }
 
             try
@@ -255,7 +259,6 @@ namespace SF
                     drSupplier["Postcode"] = mySupplier.Postcode;
                     drSupplier["Email"] = mySupplier.Email;
                     drSupplier["TelephoneNo"] = mySupplier.TelephoneNo;
-
 
 
                     dsSurefill.Tables["Supplier"].Rows.Add(drSupplier);
@@ -284,7 +287,7 @@ namespace SF
             txtAddSupplierName.Clear();
             txtAddSupplierStreet.Clear();
             txtAddSupplierTown.Clear();
-            txtEditSupplierCounty.Clear();
+            txtAddSupplierCounty.Clear();
             txtAddSupplierPostcode.Clear();
             txtAddSupplierEmail.Clear();
             txtAddSupplierTelephoneNo.Clear();
@@ -380,22 +383,21 @@ namespace SF
 
                 try
                 {
-                    mySupplier.Email = txtEditSupplierEmail.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errorProvider1.SetError(txtEditSupplierEmail, MyEx.toString());
-                }
-
-                try
-                {
                     mySupplier.TelephoneNo = txtEditSupplierTelephoneNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
                     errorProvider1.SetError(txtEditSupplierTelephoneNo, MyEx.toString());
+                }
+                try
+                {
+                    mySupplier.Email = txtEditSupplierEmail.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errorProvider1.SetError(txtEditSupplierEmail, MyEx.toString());
                 }
 
                 try
@@ -419,7 +421,7 @@ namespace SF
 
                         MessageBox.Show("Supplier details updated", "Supplier");
 
-                        txtAddSupplierName.Enabled = false;
+                        txtEditSupplierName.Enabled = false;
                         txtEditSupplierStreet.Enabled = false;
                         txtEditSupplierTown.Enabled = false;
                         txtEditSupplierCounty.Enabled = false;
@@ -437,11 +439,16 @@ namespace SF
             }
         }
 
+        private void pnlDeleteSupp_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnConfirmDeleteSupplier_Click(object sender, EventArgs e)
         {
             if (dgvSuppliers.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a supplier from the list", "Select supplier");
+                MessageBox.Show("Please select a supplier from the list", "Select Supplier");
             }
             else
             {
@@ -457,15 +464,15 @@ namespace SF
             }
         }
 
-        private void btnCancelAddSupplier_Click(object sender, EventArgs e)
+        private void btnCancelAddCust_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the addition of supplier no: " + lblAddActualSupplierNo.Text + "?", "Add Supplier", MessageBoxButtons.YesNo) ==
+            if (MessageBox.Show("Cancel the addition of Supplier No: " + lblAddActualSupplierNo.Text + "?", "Add Supplier", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes) ;
         }
 
-        private void btnCancelEditSupplier_Click(object sender, EventArgs e)
+        private void btnCancelEditCust_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the edit of supplier no: " + lblEditActualSupplierNo.Text + "?", "Edit Supplier", MessageBoxButtons.YesNo) ==
+            if (MessageBox.Show("Cancel the edit of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Edit Supplier", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes) ;
         }
 

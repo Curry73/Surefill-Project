@@ -21,7 +21,7 @@ namespace SF
         String connStr, sqlSupplier;
         int selectedTab = 0;
         bool suppSelected = false;
-        int suppNoSelected = 0;
+        String suppNoSelected = "";
 
         public FrmSupplier()
         {
@@ -29,7 +29,7 @@ namespace SF
         }
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
+            connStr = @"Data Source = .; Initial Catalog = Surefill; Integrated Security = true";
 
             sqlSupplier = @"select * from Supplier";
             daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
@@ -70,11 +70,17 @@ namespace SF
         private void lblEditSupplier_Click(object sender, EventArgs e)
         {
             pnlEditSupplier.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void lblAddSupplier_Click(object sender, EventArgs e)
         {
             pnlAddSupplier.Visible = true;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void btnAddSupplier_MouseEnter(object sender, EventArgs e)
@@ -84,7 +90,11 @@ namespace SF
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
+            getNumber(dsSurefill.Tables["Supplier"].Rows.Count);
             pnlAddSupplier.Visible = true;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void btnAddSupplier_MouseLeave(object sender, EventArgs e)
@@ -94,7 +104,32 @@ namespace SF
 
         private void btnEditSupplier_Click(object sender, EventArgs e)
         {
+
+            suppNoSelected = (dgvSuppliers.SelectedRows[0].Cells[0].Value).ToString();
+
             pnlEditSupplier.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
+
+            if (suppNoSelected.Equals(""))
+            {
+                MessageBox.Show("ERROR");
+            }
+            else
+            {
+                lblAddActualSupplierNo.Text = suppNoSelected.ToString();
+                drSupplier = dsSurefill.Tables["Supplier"].Rows.Find(lblAddActualSupplierNo.Text);
+
+                lblEditActualSupplierNo.Text = drSupplier["SupplierNO"].ToString();
+                txtEditSupplierName.Text = drSupplier["Name"].ToString();
+                txtEditSupplierStreet.Text = drSupplier["Street"].ToString();
+                txtEditSupplierTown.Text = drSupplier["Town"].ToString();
+                txtEditSupplierCounty.Text = drSupplier["County"].ToString();
+                txtEditSupplierPostcode.Text = drSupplier["Postcode"].ToString();
+                txtEditSupplierEmail.Text = drSupplier["Email"].ToString();
+                txtEditSupplierTelephoneNo.Text = drSupplier["TelephoneNo"].ToString();
+            }
         }
 
         private void btnEditSupplier_MouseEnter(object sender, EventArgs e)
@@ -138,25 +173,36 @@ namespace SF
         {
             pnlDeleteSupp.Visible = true;
             pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlSearchSupp.Visible = false;
+        //    btnAddSupplier.Visible = false;
+        //    btnEditSupplier.Visible = false;
+        //    btnDeleteSupplier.Visible = false;
+        //    btnSearchSupplier.Visible = false;
         }
 
         private void lblDeleteSupplier_Click(object sender, EventArgs e)
         {
             pnlDeleteSupp.Visible = true;
             pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void btnSearchSupplier_Click(object sender, EventArgs e)
         {
             pnlSearchSupp.Visible = true;
             pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
         }
 
         private void lblSearchSupplier_Click(object sender, EventArgs e)
         {
             pnlSearchSupp.Visible = true;
             pnlAddSupplier.Visible = false;
-
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
         }
 
         private void btnConfirmAddSupplier_Click(object sender, EventArgs e)
@@ -296,7 +342,7 @@ namespace SF
         private void getNumber(int noRows)
         {
             drSupplier = dsSurefill.Tables["Supplier"].Rows[noRows - 1];
-            lblAddActualSupplierNo.Text = (int.Parse(drSupplier["SupplierNo"].ToString()) + 1).ToString();
+            lblAddActualSupplierNo.Text = ("S" + (int.Parse(drSupplier["SupplierNo"].ToString().Substring(1,5)) + 1).ToString());
         }
 
         private void btnConfirmEditSupplier_Click(object sender, EventArgs e)
@@ -464,16 +510,33 @@ namespace SF
             }
         }
 
-        private void btnCancelAddCust_Click(object sender, EventArgs e)
+        private void btnCancelAddSupplier_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Cancel the addition of Supplier No: " + lblAddActualSupplierNo.Text + "?", "Add Supplier", MessageBoxButtons.YesNo) ==
-            System.Windows.Forms.DialogResult.Yes) ;
+            System.Windows.Forms.DialogResult.Yes);
+            pnlAddSupplier.Visible = false;
         }
 
-        private void btnCancelEditCust_Click(object sender, EventArgs e)
+        private void btnCancelEditSupplier_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Cancel the edit of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Edit Supplier", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes);
+            pnlEditSupplier.Visible = false;
+        }
+
+        private void btnConfirmCancelSearchSupplier_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel Search?", "Search", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes) ;
+
+            pnlSearchSupp.Visible = false;
+        }
+
+        private void btnDeleteSuppCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the deletion of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Delete Supplier", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes) ;
+            pnlDeleteSupp.Visible = false;
         }
 
         private void btnSearchSupplier_MouseLeave(object sender, EventArgs e)

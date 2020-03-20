@@ -8,15 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace SF
 {
     public partial class FrmSupplier : Form
     {
-
-        SqlDataAdapter daSupplier;
+        SqlConnection con = new SqlConnection();
+        SqlDataAdapter daSupplier, daSupplierSearch;
         DataSet dsSurefill = new DataSet();
-        SqlCommandBuilder cmdBSupplier;
+        SqlCommandBuilder cmdBSupplier, cmdSupplierSearch;
         DataRow drSupplier;
         String connStr, sqlSupplier;
         int selectedTab = 0;
@@ -27,9 +28,10 @@ namespace SF
         {
             InitializeComponent();
         }
+
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = .; Initial Catalog = Surefill; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
 
             sqlSupplier = @"select * from Supplier";
             daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
@@ -39,12 +41,16 @@ namespace SF
             daSupplier.Fill(dsSurefill, "Supplier");
             dgvSuppliers.DataSource = dsSurefill.Tables["Supplier"];
             dgvSuppliers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            //tabCustomer.SelectedIndex = 1;
-            //tabCustomer.SelectedIndex = 0;
             pnlAddSupplier.Visible = false;
             pnlEditSupplier.Visible = false;
             pnlDeleteSupp.Visible = false;
             pnlSearchSupp.Visible = false;
+
+            sqlSupplier = @"SELECT * FROM Supplier WHERE SupplierNo = @SupplierNo";
+            cmdSupplierSearch = new SqlCommand(sqlSupplier, conn);
+            cmdSupplierSearch.Parameters.Add("@SupplierNo", SqlDbType.Int);
+            daSupplierSearch = new SqlDataAdapter(cmdSupplierSearch);
+            daSupplierSearch.FillSchema(dsDraw, SchemaType.Source, "Supplier");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -532,6 +538,13 @@ namespace SF
             pnlSearchSupp.Visible = false;
         }
 
+        private void txtSearchActualSupplierNo_TextChanged(object sender, EventArgs e)
+        {
+            dsDraw.Tables["Supplier"].Clear();
+            cmdSupplierSearch.Parameters["@SupplierNo"].Value = txtSearchActualSupplierNo.Text;
+            daSupplierSearch.Fill(dsDraw, "Supplier");
+        }
+
         private void btnDeleteSuppCancel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Cancel the deletion of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Delete Supplier", MessageBoxButtons.YesNo) ==
@@ -539,9 +552,23 @@ namespace SF
             pnlDeleteSupp.Visible = false;
         }
 
+        private void btnConfirmSearchSupplier_Click(object sender, EventArgs e)
+        {
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
+            con.Open();
+            SqlCommand cmdSupplier = new SqlCommand("select * from Supplier" + txtSearchActualSupplierNo.Text + "'", con);
+            SqlDataReader dr = cmdSupplier.ExecuteReader();
+            if (dr.Read())
+            {
+                txtSearchActualSupplierNo.Text = dr.GetValue(3).ToString();
+            }
+            con.Close();
+        }
+
         private void btnSearchSupplier_MouseLeave(object sender, EventArgs e)
         {
             lblSearchSupplier.ForeColor = Color.DimGray;
+
         }
     }
 }

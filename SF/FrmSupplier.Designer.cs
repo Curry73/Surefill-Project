@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
-            this.btnSearchJob = new System.Windows.Forms.Button();
-            this.btnDeleteJob = new System.Windows.Forms.Button();
-            this.btnEditJob = new System.Windows.Forms.Button();
-            this.btnAddJob = new System.Windows.Forms.Button();
+            this.btnSearchSupplier = new System.Windows.Forms.Button();
+            this.btnDeleteSupplier = new System.Windows.Forms.Button();
+            this.btnEditSupplier = new System.Windows.Forms.Button();
+            this.btnAddSupplier = new System.Windows.Forms.Button();
             this.lblSearchSupplier = new System.Windows.Forms.Label();
             this.lblDeleteSupplier = new System.Windows.Forms.Label();
             this.lblAddSupplier = new System.Windows.Forms.Label();
@@ -41,6 +44,8 @@
             this.lblReturnMenu = new System.Windows.Forms.Label();
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.pnlAddSupplier = new System.Windows.Forms.Panel();
+            this.btnConfirmAddSupplier = new System.Windows.Forms.Button();
+            this.btnCancelAddSupplier = new System.Windows.Forms.Button();
             this.txtAddSupplierTelephoneNo = new System.Windows.Forms.TextBox();
             this.txtAddSupplierEmail = new System.Windows.Forms.TextBox();
             this.txtAddSupplierPostcode = new System.Windows.Forms.TextBox();
@@ -58,6 +63,8 @@
             this.lblAddSupplierName = new System.Windows.Forms.Label();
             this.lblAddSupplierNo = new System.Windows.Forms.Label();
             this.pnlEditSupplier = new System.Windows.Forms.Panel();
+            this.btnCancelEditSupplier = new System.Windows.Forms.Button();
+            this.btnConfirmEditSupplier = new System.Windows.Forms.Button();
             this.txtEditSupplierTelephoneNo = new System.Windows.Forms.TextBox();
             this.txtEditSupplierEmail = new System.Windows.Forms.TextBox();
             this.txtEditSupplierPostcode = new System.Windows.Forms.TextBox();
@@ -74,68 +81,119 @@
             this.lblEditSupplierStreet = new System.Windows.Forms.Label();
             this.lblEditSupplierName = new System.Windows.Forms.Label();
             this.lblEditSupplierNo = new System.Windows.Forms.Label();
-            this.btnConfirmEditSupplier = new System.Windows.Forms.Button();
-            this.btnCancelEditSupplier = new System.Windows.Forms.Button();
-            this.btnConfirmAddSupplier = new System.Windows.Forms.Button();
-            this.btnCancelAddSupplier = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnDeleteSuppCancel = new System.Windows.Forms.Button();
+            this.btnConfirmDeleteSupp = new System.Windows.Forms.Button();
+            this.lblDeleteSuppQ = new System.Windows.Forms.Label();
+            this.lblDeleteSupp = new System.Windows.Forms.Label();
+            this.pnlSearchSupp = new System.Windows.Forms.Panel();
+            this.btnConfirmCancelSearchSupplier = new System.Windows.Forms.Button();
+            this.btnConfirmSearchSupplier = new System.Windows.Forms.Button();
+            this.pnlDeleteSupp = new System.Windows.Forms.Panel();
+            this.txtSearchSupplierTelephoneNo = new System.Windows.Forms.TextBox();
+            this.txtSearchSupplierEmail = new System.Windows.Forms.TextBox();
+            this.txtSearchSupplierPostcode = new System.Windows.Forms.TextBox();
+            this.txtSearchSupplierCounty = new System.Windows.Forms.TextBox();
+            this.txtSearchSupplierTown = new System.Windows.Forms.TextBox();
+            this.txtSearchSupplierStreet = new System.Windows.Forms.TextBox();
+            this.txtSearchSupplierName = new System.Windows.Forms.TextBox();
+            this.lblSearchSupplierTelephoneNo = new System.Windows.Forms.Label();
+            this.lblSearchSupplierEmail = new System.Windows.Forms.Label();
+            this.lblSearchSupplierPostcode = new System.Windows.Forms.Label();
+            this.lblSearchSupplierCounty = new System.Windows.Forms.Label();
+            this.lblSearchSupplierTown = new System.Windows.Forms.Label();
+            this.lblSearchSupplierStreet = new System.Windows.Forms.Label();
+            this.lblSearchSupplierName = new System.Windows.Forms.Label();
+            this.lblSearchSupplierNo = new System.Windows.Forms.Label();
+            this.txtSearchActualSupplierNo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.pnlAddSupplier.SuspendLayout();
             this.pnlEditSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.pnlSearchSupp.SuspendLayout();
+            this.pnlDeleteSupp.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSuppliers
             // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvSuppliers.Location = new System.Drawing.Point(12, 12);
             this.dgvSuppliers.Name = "dgvSuppliers";
-            this.dgvSuppliers.Size = new System.Drawing.Size(604, 426);
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSuppliers.Size = new System.Drawing.Size(620, 380);
             this.dgvSuppliers.TabIndex = 0;
             // 
-            // btnSearchJob
+            // btnSearchSupplier
             // 
-            this.btnSearchJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnSearchJob.Location = new System.Drawing.Point(639, 273);
-            this.btnSearchJob.Name = "btnSearchJob";
-            this.btnSearchJob.Size = new System.Drawing.Size(33, 33);
-            this.btnSearchJob.TabIndex = 43;
-            this.btnSearchJob.UseVisualStyleBackColor = false;
+            this.btnSearchSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnSearchSupplier.Location = new System.Drawing.Point(684, 270);
+            this.btnSearchSupplier.Name = "btnSearchSupplier";
+            this.btnSearchSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnSearchSupplier.TabIndex = 43;
+            this.btnSearchSupplier.UseVisualStyleBackColor = false;
+            this.btnSearchSupplier.Click += new System.EventHandler(this.btnSearchSupplier_Click);
             // 
-            // btnDeleteJob
+            // btnDeleteSupplier
             // 
-            this.btnDeleteJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnDeleteJob.Location = new System.Drawing.Point(639, 207);
-            this.btnDeleteJob.Name = "btnDeleteJob";
-            this.btnDeleteJob.Size = new System.Drawing.Size(33, 33);
-            this.btnDeleteJob.TabIndex = 42;
-            this.btnDeleteJob.UseVisualStyleBackColor = false;
+            this.btnDeleteSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(684, 204);
+            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
+            this.btnDeleteSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnDeleteSupplier.TabIndex = 42;
+            this.btnDeleteSupplier.UseVisualStyleBackColor = false;
+            this.btnDeleteSupplier.Click += new System.EventHandler(this.btnDeleteSupplier_Click);
             // 
-            // btnEditJob
+            // btnEditSupplier
             // 
-            this.btnEditJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnEditJob.Location = new System.Drawing.Point(639, 138);
-            this.btnEditJob.Name = "btnEditJob";
-            this.btnEditJob.Size = new System.Drawing.Size(33, 33);
-            this.btnEditJob.TabIndex = 41;
-            this.btnEditJob.UseVisualStyleBackColor = false;
+            this.btnEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnEditSupplier.Location = new System.Drawing.Point(684, 135);
+            this.btnEditSupplier.Name = "btnEditSupplier";
+            this.btnEditSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnEditSupplier.TabIndex = 41;
+            this.btnEditSupplier.UseVisualStyleBackColor = false;
+            this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
-            // btnAddJob
+            // btnAddSupplier
             // 
-            this.btnAddJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnAddJob.ForeColor = System.Drawing.Color.White;
-            this.btnAddJob.Location = new System.Drawing.Point(639, 67);
-            this.btnAddJob.Name = "btnAddJob";
-            this.btnAddJob.Size = new System.Drawing.Size(33, 33);
-            this.btnAddJob.TabIndex = 40;
-            this.btnAddJob.UseVisualStyleBackColor = false;
+            this.btnAddSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnAddSupplier.ForeColor = System.Drawing.Color.White;
+            this.btnAddSupplier.Location = new System.Drawing.Point(684, 64);
+            this.btnAddSupplier.Name = "btnAddSupplier";
+            this.btnAddSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnAddSupplier.TabIndex = 40;
+            this.btnAddSupplier.UseVisualStyleBackColor = false;
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // lblSearchSupplier
             // 
             this.lblSearchSupplier.AutoSize = true;
             this.lblSearchSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSearchSupplier.Location = new System.Drawing.Point(678, 276);
+            this.lblSearchSupplier.Location = new System.Drawing.Point(723, 273);
             this.lblSearchSupplier.Name = "lblSearchSupplier";
             this.lblSearchSupplier.Size = new System.Drawing.Size(62, 23);
             this.lblSearchSupplier.TabIndex = 47;
@@ -146,7 +204,7 @@
             this.lblDeleteSupplier.AutoSize = true;
             this.lblDeleteSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeleteSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDeleteSupplier.Location = new System.Drawing.Point(678, 210);
+            this.lblDeleteSupplier.Location = new System.Drawing.Point(723, 207);
             this.lblDeleteSupplier.Name = "lblDeleteSupplier";
             this.lblDeleteSupplier.Size = new System.Drawing.Size(59, 23);
             this.lblDeleteSupplier.TabIndex = 46;
@@ -157,7 +215,7 @@
             this.lblAddSupplier.AutoSize = true;
             this.lblAddSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAddSupplier.Location = new System.Drawing.Point(678, 70);
+            this.lblAddSupplier.Location = new System.Drawing.Point(723, 67);
             this.lblAddSupplier.Name = "lblAddSupplier";
             this.lblAddSupplier.Size = new System.Drawing.Size(41, 23);
             this.lblAddSupplier.TabIndex = 45;
@@ -168,7 +226,7 @@
             this.lblEditSupplier.AutoSize = true;
             this.lblEditSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEditSupplier.Location = new System.Drawing.Point(678, 141);
+            this.lblEditSupplier.Location = new System.Drawing.Point(723, 138);
             this.lblEditSupplier.Name = "lblEditSupplier";
             this.lblEditSupplier.Size = new System.Drawing.Size(39, 23);
             this.lblEditSupplier.TabIndex = 44;
@@ -179,7 +237,7 @@
             this.lblReturnMenu.AutoSize = true;
             this.lblReturnMenu.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnMenu.ForeColor = System.Drawing.Color.DimGray;
-            this.lblReturnMenu.Location = new System.Drawing.Point(675, 341);
+            this.lblReturnMenu.Location = new System.Drawing.Point(720, 338);
             this.lblReturnMenu.Name = "lblReturnMenu";
             this.lblReturnMenu.Size = new System.Drawing.Size(62, 23);
             this.lblReturnMenu.TabIndex = 48;
@@ -190,7 +248,7 @@
             this.btnReturnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.btnReturnMenu.BackgroundImage = global::SF.Properties.Resources.returnBLACKANDBLUE;
             this.btnReturnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturnMenu.Location = new System.Drawing.Point(639, 331);
+            this.btnReturnMenu.Location = new System.Drawing.Point(684, 328);
             this.btnReturnMenu.Name = "btnReturnMenu";
             this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
             this.btnReturnMenu.TabIndex = 49;
@@ -198,6 +256,7 @@
             // 
             // pnlAddSupplier
             // 
+            this.pnlAddSupplier.BackColor = System.Drawing.Color.Red;
             this.pnlAddSupplier.Controls.Add(this.btnConfirmAddSupplier);
             this.pnlAddSupplier.Controls.Add(this.btnCancelAddSupplier);
             this.pnlAddSupplier.Controls.Add(this.txtAddSupplierTelephoneNo);
@@ -216,63 +275,83 @@
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierStreet);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierName);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierNo);
-            this.pnlAddSupplier.Location = new System.Drawing.Point(29, 67);
+            this.pnlAddSupplier.Location = new System.Drawing.Point(473, 12);
             this.pnlAddSupplier.Name = "pnlAddSupplier";
-            this.pnlAddSupplier.Size = new System.Drawing.Size(227, 341);
+            this.pnlAddSupplier.Size = new System.Drawing.Size(227, 381);
             this.pnlAddSupplier.TabIndex = 50;
+            // 
+            // btnConfirmAddSupplier
+            // 
+            this.btnConfirmAddSupplier.Location = new System.Drawing.Point(78, 300);
+            this.btnConfirmAddSupplier.Name = "btnConfirmAddSupplier";
+            this.btnConfirmAddSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnConfirmAddSupplier.TabIndex = 27;
+            this.btnConfirmAddSupplier.Text = "Add";
+            this.btnConfirmAddSupplier.UseVisualStyleBackColor = true;
+            this.btnConfirmAddSupplier.Click += new System.EventHandler(this.btnConfirmAddSupplier_Click);
+            // 
+            // btnCancelAddSupplier
+            // 
+            this.btnCancelAddSupplier.Location = new System.Drawing.Point(154, 300);
+            this.btnCancelAddSupplier.Name = "btnCancelAddSupplier";
+            this.btnCancelAddSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnCancelAddSupplier.TabIndex = 28;
+            this.btnCancelAddSupplier.Text = "Cancel";
+            this.btnCancelAddSupplier.UseVisualStyleBackColor = true;
+            this.btnCancelAddSupplier.Click += new System.EventHandler(this.btnCancelAddSupplier_Click);
             // 
             // txtAddSupplierTelephoneNo
             // 
-            this.txtAddSupplierTelephoneNo.Location = new System.Drawing.Point(97, 251);
-            this.txtAddSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierTelephoneNo.Location = new System.Drawing.Point(122, 255);
+            this.txtAddSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierTelephoneNo.Name = "txtAddSupplierTelephoneNo";
-            this.txtAddSupplierTelephoneNo.Size = new System.Drawing.Size(81, 20);
+            this.txtAddSupplierTelephoneNo.Size = new System.Drawing.Size(83, 20);
             this.txtAddSupplierTelephoneNo.TabIndex = 25;
             // 
             // txtAddSupplierEmail
             // 
-            this.txtAddSupplierEmail.Location = new System.Drawing.Point(97, 216);
-            this.txtAddSupplierEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierEmail.Location = new System.Drawing.Point(122, 220);
+            this.txtAddSupplierEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierEmail.Name = "txtAddSupplierEmail";
-            this.txtAddSupplierEmail.Size = new System.Drawing.Size(81, 20);
+            this.txtAddSupplierEmail.Size = new System.Drawing.Size(83, 20);
             this.txtAddSupplierEmail.TabIndex = 26;
             // 
             // txtAddSupplierPostcode
             // 
-            this.txtAddSupplierPostcode.Location = new System.Drawing.Point(97, 181);
-            this.txtAddSupplierPostcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierPostcode.Location = new System.Drawing.Point(122, 185);
+            this.txtAddSupplierPostcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierPostcode.Name = "txtAddSupplierPostcode";
-            this.txtAddSupplierPostcode.Size = new System.Drawing.Size(81, 20);
+            this.txtAddSupplierPostcode.Size = new System.Drawing.Size(83, 20);
             this.txtAddSupplierPostcode.TabIndex = 27;
             // 
             // txtAddSupplierCounty
             // 
-            this.txtAddSupplierCounty.Location = new System.Drawing.Point(97, 146);
-            this.txtAddSupplierCounty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierCounty.Location = new System.Drawing.Point(122, 150);
+            this.txtAddSupplierCounty.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierCounty.Name = "txtAddSupplierCounty";
-            this.txtAddSupplierCounty.Size = new System.Drawing.Size(81, 20);
+            this.txtAddSupplierCounty.Size = new System.Drawing.Size(83, 20);
             this.txtAddSupplierCounty.TabIndex = 28;
             // 
             // txtAddSupplierTown
             // 
-            this.txtAddSupplierTown.Location = new System.Drawing.Point(97, 111);
-            this.txtAddSupplierTown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierTown.Location = new System.Drawing.Point(122, 115);
+            this.txtAddSupplierTown.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierTown.Name = "txtAddSupplierTown";
-            this.txtAddSupplierTown.Size = new System.Drawing.Size(81, 20);
+            this.txtAddSupplierTown.Size = new System.Drawing.Size(83, 20);
             this.txtAddSupplierTown.TabIndex = 29;
             // 
             // txtAddSupplierStreet
             // 
-            this.txtAddSupplierStreet.Location = new System.Drawing.Point(97, 77);
-            this.txtAddSupplierStreet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierStreet.Location = new System.Drawing.Point(122, 81);
+            this.txtAddSupplierStreet.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierStreet.Name = "txtAddSupplierStreet";
-            this.txtAddSupplierStreet.Size = new System.Drawing.Size(81, 20);
+            this.txtAddSupplierStreet.Size = new System.Drawing.Size(83, 20);
             this.txtAddSupplierStreet.TabIndex = 30;
             // 
             // txtAddSupplierName
             // 
-            this.txtAddSupplierName.Location = new System.Drawing.Point(97, 47);
-            this.txtAddSupplierName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddSupplierName.Location = new System.Drawing.Point(122, 48);
+            this.txtAddSupplierName.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddSupplierName.Name = "txtAddSupplierName";
             this.txtAddSupplierName.Size = new System.Drawing.Size(81, 20);
             this.txtAddSupplierName.TabIndex = 31;
@@ -280,7 +359,7 @@
             // lblAddActualSupplierNo
             // 
             this.lblAddActualSupplierNo.AutoSize = true;
-            this.lblAddActualSupplierNo.Location = new System.Drawing.Point(94, 20);
+            this.lblAddActualSupplierNo.Location = new System.Drawing.Point(117, 20);
             this.lblAddActualSupplierNo.Name = "lblAddActualSupplierNo";
             this.lblAddActualSupplierNo.Size = new System.Drawing.Size(54, 13);
             this.lblAddActualSupplierNo.TabIndex = 8;
@@ -289,7 +368,7 @@
             // lblAddSupplierTelephoneNo
             // 
             this.lblAddSupplierTelephoneNo.AutoSize = true;
-            this.lblAddSupplierTelephoneNo.Location = new System.Drawing.Point(16, 255);
+            this.lblAddSupplierTelephoneNo.Location = new System.Drawing.Point(25, 255);
             this.lblAddSupplierTelephoneNo.Name = "lblAddSupplierTelephoneNo";
             this.lblAddSupplierTelephoneNo.Size = new System.Drawing.Size(75, 13);
             this.lblAddSupplierTelephoneNo.TabIndex = 7;
@@ -298,7 +377,7 @@
             // lblAddSupplierEmail
             // 
             this.lblAddSupplierEmail.AutoSize = true;
-            this.lblAddSupplierEmail.Location = new System.Drawing.Point(16, 219);
+            this.lblAddSupplierEmail.Location = new System.Drawing.Point(25, 219);
             this.lblAddSupplierEmail.Name = "lblAddSupplierEmail";
             this.lblAddSupplierEmail.Size = new System.Drawing.Size(32, 13);
             this.lblAddSupplierEmail.TabIndex = 6;
@@ -307,7 +386,7 @@
             // lblAddSupplierPostcode
             // 
             this.lblAddSupplierPostcode.AutoSize = true;
-            this.lblAddSupplierPostcode.Location = new System.Drawing.Point(16, 185);
+            this.lblAddSupplierPostcode.Location = new System.Drawing.Point(25, 185);
             this.lblAddSupplierPostcode.Name = "lblAddSupplierPostcode";
             this.lblAddSupplierPostcode.Size = new System.Drawing.Size(52, 13);
             this.lblAddSupplierPostcode.TabIndex = 5;
@@ -316,7 +395,7 @@
             // lblAddSupplierCounty
             // 
             this.lblAddSupplierCounty.AutoSize = true;
-            this.lblAddSupplierCounty.Location = new System.Drawing.Point(16, 150);
+            this.lblAddSupplierCounty.Location = new System.Drawing.Point(25, 150);
             this.lblAddSupplierCounty.Name = "lblAddSupplierCounty";
             this.lblAddSupplierCounty.Size = new System.Drawing.Size(40, 13);
             this.lblAddSupplierCounty.TabIndex = 4;
@@ -325,7 +404,7 @@
             // lblAddSupplierTown
             // 
             this.lblAddSupplierTown.AutoSize = true;
-            this.lblAddSupplierTown.Location = new System.Drawing.Point(16, 115);
+            this.lblAddSupplierTown.Location = new System.Drawing.Point(25, 115);
             this.lblAddSupplierTown.Name = "lblAddSupplierTown";
             this.lblAddSupplierTown.Size = new System.Drawing.Size(34, 13);
             this.lblAddSupplierTown.TabIndex = 3;
@@ -334,7 +413,7 @@
             // lblAddSupplierStreet
             // 
             this.lblAddSupplierStreet.AutoSize = true;
-            this.lblAddSupplierStreet.Location = new System.Drawing.Point(16, 81);
+            this.lblAddSupplierStreet.Location = new System.Drawing.Point(25, 81);
             this.lblAddSupplierStreet.Name = "lblAddSupplierStreet";
             this.lblAddSupplierStreet.Size = new System.Drawing.Size(35, 13);
             this.lblAddSupplierStreet.TabIndex = 2;
@@ -343,7 +422,7 @@
             // lblAddSupplierName
             // 
             this.lblAddSupplierName.AutoSize = true;
-            this.lblAddSupplierName.Location = new System.Drawing.Point(16, 51);
+            this.lblAddSupplierName.Location = new System.Drawing.Point(25, 51);
             this.lblAddSupplierName.Name = "lblAddSupplierName";
             this.lblAddSupplierName.Size = new System.Drawing.Size(35, 13);
             this.lblAddSupplierName.TabIndex = 1;
@@ -352,7 +431,7 @@
             // lblAddSupplierNo
             // 
             this.lblAddSupplierNo.AutoSize = true;
-            this.lblAddSupplierNo.Location = new System.Drawing.Point(16, 20);
+            this.lblAddSupplierNo.Location = new System.Drawing.Point(25, 20);
             this.lblAddSupplierNo.Name = "lblAddSupplierNo";
             this.lblAddSupplierNo.Size = new System.Drawing.Size(62, 13);
             this.lblAddSupplierNo.TabIndex = 0;
@@ -360,6 +439,7 @@
             // 
             // pnlEditSupplier
             // 
+            this.pnlEditSupplier.BackColor = System.Drawing.Color.Fuchsia;
             this.pnlEditSupplier.Controls.Add(this.btnCancelEditSupplier);
             this.pnlEditSupplier.Controls.Add(this.btnConfirmEditSupplier);
             this.pnlEditSupplier.Controls.Add(this.txtEditSupplierTelephoneNo);
@@ -378,15 +458,35 @@
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierStreet);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierName);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierNo);
-            this.pnlEditSupplier.Location = new System.Drawing.Point(326, 67);
+            this.pnlEditSupplier.Location = new System.Drawing.Point(638, 12);
             this.pnlEditSupplier.Name = "pnlEditSupplier";
-            this.pnlEditSupplier.Size = new System.Drawing.Size(227, 341);
+            this.pnlEditSupplier.Size = new System.Drawing.Size(227, 381);
             this.pnlEditSupplier.TabIndex = 51;
+            // 
+            // btnCancelEditSupplier
+            // 
+            this.btnCancelEditSupplier.Location = new System.Drawing.Point(145, 289);
+            this.btnCancelEditSupplier.Name = "btnCancelEditSupplier";
+            this.btnCancelEditSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnCancelEditSupplier.TabIndex = 26;
+            this.btnCancelEditSupplier.Text = "Cancel";
+            this.btnCancelEditSupplier.UseVisualStyleBackColor = true;
+            this.btnCancelEditSupplier.Click += new System.EventHandler(this.btnCancelEditSupplier_Click);
+            // 
+            // btnConfirmEditSupplier
+            // 
+            this.btnConfirmEditSupplier.Location = new System.Drawing.Point(69, 289);
+            this.btnConfirmEditSupplier.Name = "btnConfirmEditSupplier";
+            this.btnConfirmEditSupplier.Size = new System.Drawing.Size(70, 29);
+            this.btnConfirmEditSupplier.TabIndex = 25;
+            this.btnConfirmEditSupplier.Text = "Edit";
+            this.btnConfirmEditSupplier.UseVisualStyleBackColor = true;
+            this.btnConfirmEditSupplier.Click += new System.EventHandler(this.btnConfirmEditSupplier_Click);
             // 
             // txtEditSupplierTelephoneNo
             // 
             this.txtEditSupplierTelephoneNo.Location = new System.Drawing.Point(111, 251);
-            this.txtEditSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierTelephoneNo.Name = "txtEditSupplierTelephoneNo";
             this.txtEditSupplierTelephoneNo.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierTelephoneNo.TabIndex = 24;
@@ -394,7 +494,7 @@
             // txtEditSupplierEmail
             // 
             this.txtEditSupplierEmail.Location = new System.Drawing.Point(111, 214);
-            this.txtEditSupplierEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierEmail.Name = "txtEditSupplierEmail";
             this.txtEditSupplierEmail.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierEmail.TabIndex = 23;
@@ -402,7 +502,7 @@
             // txtEditSupplierPostcode
             // 
             this.txtEditSupplierPostcode.Location = new System.Drawing.Point(111, 179);
-            this.txtEditSupplierPostcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierPostcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierPostcode.Name = "txtEditSupplierPostcode";
             this.txtEditSupplierPostcode.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierPostcode.TabIndex = 22;
@@ -410,7 +510,7 @@
             // txtEditSupplierStreet
             // 
             this.txtEditSupplierStreet.Location = new System.Drawing.Point(111, 79);
-            this.txtEditSupplierStreet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierStreet.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierStreet.Name = "txtEditSupplierStreet";
             this.txtEditSupplierStreet.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierStreet.TabIndex = 21;
@@ -418,7 +518,7 @@
             // txtEditSupplierTown
             // 
             this.txtEditSupplierTown.Location = new System.Drawing.Point(111, 111);
-            this.txtEditSupplierTown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierTown.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierTown.Name = "txtEditSupplierTown";
             this.txtEditSupplierTown.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierTown.TabIndex = 20;
@@ -426,15 +526,15 @@
             // txtEditSupplierCounty
             // 
             this.txtEditSupplierCounty.Location = new System.Drawing.Point(111, 143);
-            this.txtEditSupplierCounty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierCounty.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierCounty.Name = "txtEditSupplierCounty";
             this.txtEditSupplierCounty.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierCounty.TabIndex = 19;
             // 
             // txtEditSupplierName
             // 
-            this.txtEditSupplierName.Location = new System.Drawing.Point(111, 47);
-            this.txtEditSupplierName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditSupplierName.Location = new System.Drawing.Point(111, 44);
+            this.txtEditSupplierName.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditSupplierName.Name = "txtEditSupplierName";
             this.txtEditSupplierName.Size = new System.Drawing.Size(81, 20);
             this.txtEditSupplierName.TabIndex = 18;
@@ -520,72 +620,275 @@
             this.lblEditSupplierNo.TabIndex = 9;
             this.lblEditSupplierNo.Text = "Supplier No";
             // 
-            // btnConfirmEditSupplier
-            // 
-            this.btnConfirmEditSupplier.Location = new System.Drawing.Point(69, 289);
-            this.btnConfirmEditSupplier.Name = "btnConfirmEditSupplier";
-            this.btnConfirmEditSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnConfirmEditSupplier.TabIndex = 25;
-            this.btnConfirmEditSupplier.Text = "Edit";
-            this.btnConfirmEditSupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelEditSupplier
-            // 
-            this.btnCancelEditSupplier.Location = new System.Drawing.Point(145, 289);
-            this.btnCancelEditSupplier.Name = "btnCancelEditSupplier";
-            this.btnCancelEditSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnCancelEditSupplier.TabIndex = 26;
-            this.btnCancelEditSupplier.Text = "Cencel";
-            this.btnCancelEditSupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmAddSupplier
-            // 
-            this.btnConfirmAddSupplier.Location = new System.Drawing.Point(69, 289);
-            this.btnConfirmAddSupplier.Name = "btnConfirmAddSupplier";
-            this.btnConfirmAddSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnConfirmAddSupplier.TabIndex = 27;
-            this.btnConfirmAddSupplier.Text = "Add";
-            this.btnConfirmAddSupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelAddSupplier
-            // 
-            this.btnCancelAddSupplier.Location = new System.Drawing.Point(145, 289);
-            this.btnCancelAddSupplier.Name = "btnCancelAddSupplier";
-            this.btnCancelAddSupplier.Size = new System.Drawing.Size(70, 29);
-            this.btnCancelAddSupplier.TabIndex = 28;
-            this.btnCancelAddSupplier.Text = "Cancel";
-            this.btnCancelAddSupplier.UseVisualStyleBackColor = true;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btnDeleteSuppCancel
+            // 
+            this.btnDeleteSuppCancel.Location = new System.Drawing.Point(135, 189);
+            this.btnDeleteSuppCancel.Name = "btnDeleteSuppCancel";
+            this.btnDeleteSuppCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteSuppCancel.TabIndex = 22;
+            this.btnDeleteSuppCancel.Text = "Cancel";
+            this.btnDeleteSuppCancel.UseVisualStyleBackColor = true;
+            this.btnDeleteSuppCancel.Click += new System.EventHandler(this.btnDeleteSuppCancel_Click);
+            // 
+            // btnConfirmDeleteSupp
+            // 
+            this.btnConfirmDeleteSupp.Location = new System.Drawing.Point(51, 189);
+            this.btnConfirmDeleteSupp.Name = "btnConfirmDeleteSupp";
+            this.btnConfirmDeleteSupp.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmDeleteSupp.TabIndex = 21;
+            this.btnConfirmDeleteSupp.Text = "Delete";
+            this.btnConfirmDeleteSupp.UseVisualStyleBackColor = true;
+            this.btnConfirmDeleteSupp.Click += new System.EventHandler(this.btnConfirmDeleteSupplier_Click);
+            // 
+            // lblDeleteSuppQ
+            // 
+            this.lblDeleteSuppQ.AutoSize = true;
+            this.lblDeleteSuppQ.Location = new System.Drawing.Point(98, 164);
+            this.lblDeleteSuppQ.Name = "lblDeleteSuppQ";
+            this.lblDeleteSuppQ.Size = new System.Drawing.Size(49, 13);
+            this.lblDeleteSuppQ.TabIndex = 20;
+            this.lblDeleteSuppQ.Text = "DELETE";
+            // 
+            // lblDeleteSupp
+            // 
+            this.lblDeleteSupp.AutoSize = true;
+            this.lblDeleteSupp.Location = new System.Drawing.Point(104, 134);
+            this.lblDeleteSupp.Name = "lblDeleteSupp";
+            this.lblDeleteSupp.Size = new System.Drawing.Size(49, 13);
+            this.lblDeleteSupp.TabIndex = 19;
+            this.lblDeleteSupp.Text = "DELETE";
+            // 
+            // pnlSearchSupp
+            // 
+            this.pnlSearchSupp.BackColor = System.Drawing.Color.Teal;
+            this.pnlSearchSupp.Controls.Add(this.txtSearchActualSupplierNo);
+            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierTelephoneNo);
+            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierEmail);
+            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierPostcode);
+            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierCounty);
+            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierTown);
+            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierStreet);
+            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierName);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierTelephoneNo);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierEmail);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierPostcode);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierCounty);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierTown);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierStreet);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierName);
+            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierNo);
+            this.pnlSearchSupp.Controls.Add(this.btnConfirmCancelSearchSupplier);
+            this.pnlSearchSupp.Controls.Add(this.btnConfirmSearchSupplier);
+            this.pnlSearchSupp.Location = new System.Drawing.Point(12, 13);
+            this.pnlSearchSupp.Name = "pnlSearchSupp";
+            this.pnlSearchSupp.Size = new System.Drawing.Size(227, 380);
+            this.pnlSearchSupp.TabIndex = 53;
+            // 
+            // btnConfirmCancelSearchSupplier
+            // 
+            this.btnConfirmCancelSearchSupplier.Location = new System.Drawing.Point(138, 292);
+            this.btnConfirmCancelSearchSupplier.Name = "btnConfirmCancelSearchSupplier";
+            this.btnConfirmCancelSearchSupplier.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmCancelSearchSupplier.TabIndex = 24;
+            this.btnConfirmCancelSearchSupplier.Text = "Cancel";
+            this.btnConfirmCancelSearchSupplier.UseVisualStyleBackColor = true;
+            this.btnConfirmCancelSearchSupplier.Click += new System.EventHandler(this.btnConfirmCancelSearchSupplier_Click);
+            // 
+            // btnConfirmSearchSupplier
+            // 
+            this.btnConfirmSearchSupplier.Location = new System.Drawing.Point(40, 292);
+            this.btnConfirmSearchSupplier.Name = "btnConfirmSearchSupplier";
+            this.btnConfirmSearchSupplier.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmSearchSupplier.TabIndex = 23;
+            this.btnConfirmSearchSupplier.Text = "Search";
+            this.btnConfirmSearchSupplier.UseVisualStyleBackColor = true;
+            // 
+            // pnlDeleteSupp
+            // 
+            this.pnlDeleteSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlDeleteSupp.Controls.Add(this.btnDeleteSuppCancel);
+            this.pnlDeleteSupp.Controls.Add(this.btnConfirmDeleteSupp);
+            this.pnlDeleteSupp.Controls.Add(this.lblDeleteSuppQ);
+            this.pnlDeleteSupp.Controls.Add(this.lblDeleteSupp);
+            this.pnlDeleteSupp.Location = new System.Drawing.Point(245, 11);
+            this.pnlDeleteSupp.Name = "pnlDeleteSupp";
+            this.pnlDeleteSupp.Size = new System.Drawing.Size(227, 381);
+            this.pnlDeleteSupp.TabIndex = 52;
+            // 
+            // txtSearchSupplierTelephoneNo
+            // 
+            this.txtSearchSupplierTelephoneNo.Location = new System.Drawing.Point(138, 255);
+            this.txtSearchSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchSupplierTelephoneNo.Name = "txtSearchSupplierTelephoneNo";
+            this.txtSearchSupplierTelephoneNo.Size = new System.Drawing.Size(83, 20);
+            this.txtSearchSupplierTelephoneNo.TabIndex = 41;
+            // 
+            // txtSearchSupplierEmail
+            // 
+            this.txtSearchSupplierEmail.Location = new System.Drawing.Point(138, 220);
+            this.txtSearchSupplierEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchSupplierEmail.Name = "txtSearchSupplierEmail";
+            this.txtSearchSupplierEmail.Size = new System.Drawing.Size(83, 20);
+            this.txtSearchSupplierEmail.TabIndex = 42;
+            // 
+            // txtSearchSupplierPostcode
+            // 
+            this.txtSearchSupplierPostcode.Location = new System.Drawing.Point(138, 185);
+            this.txtSearchSupplierPostcode.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchSupplierPostcode.Name = "txtSearchSupplierPostcode";
+            this.txtSearchSupplierPostcode.Size = new System.Drawing.Size(83, 20);
+            this.txtSearchSupplierPostcode.TabIndex = 43;
+            // 
+            // txtSearchSupplierCounty
+            // 
+            this.txtSearchSupplierCounty.Location = new System.Drawing.Point(138, 150);
+            this.txtSearchSupplierCounty.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchSupplierCounty.Name = "txtSearchSupplierCounty";
+            this.txtSearchSupplierCounty.Size = new System.Drawing.Size(83, 20);
+            this.txtSearchSupplierCounty.TabIndex = 44;
+            // 
+            // txtSearchSupplierTown
+            // 
+            this.txtSearchSupplierTown.Location = new System.Drawing.Point(138, 115);
+            this.txtSearchSupplierTown.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchSupplierTown.Name = "txtSearchSupplierTown";
+            this.txtSearchSupplierTown.Size = new System.Drawing.Size(83, 20);
+            this.txtSearchSupplierTown.TabIndex = 45;
+            // 
+            // txtSearchSupplierStreet
+            // 
+            this.txtSearchSupplierStreet.Location = new System.Drawing.Point(138, 81);
+            this.txtSearchSupplierStreet.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchSupplierStreet.Name = "txtSearchSupplierStreet";
+            this.txtSearchSupplierStreet.Size = new System.Drawing.Size(83, 20);
+            this.txtSearchSupplierStreet.TabIndex = 46;
+            // 
+            // txtSearchSupplierName
+            // 
+            this.txtSearchSupplierName.Location = new System.Drawing.Point(138, 48);
+            this.txtSearchSupplierName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchSupplierName.Name = "txtSearchSupplierName";
+            this.txtSearchSupplierName.Size = new System.Drawing.Size(81, 20);
+            this.txtSearchSupplierName.TabIndex = 47;
+            // 
+            // lblSearchSupplierTelephoneNo
+            // 
+            this.lblSearchSupplierTelephoneNo.AutoSize = true;
+            this.lblSearchSupplierTelephoneNo.Location = new System.Drawing.Point(41, 255);
+            this.lblSearchSupplierTelephoneNo.Name = "lblSearchSupplierTelephoneNo";
+            this.lblSearchSupplierTelephoneNo.Size = new System.Drawing.Size(75, 13);
+            this.lblSearchSupplierTelephoneNo.TabIndex = 39;
+            this.lblSearchSupplierTelephoneNo.Text = "Telephone No";
+            // 
+            // lblSearchSupplierEmail
+            // 
+            this.lblSearchSupplierEmail.AutoSize = true;
+            this.lblSearchSupplierEmail.Location = new System.Drawing.Point(41, 219);
+            this.lblSearchSupplierEmail.Name = "lblSearchSupplierEmail";
+            this.lblSearchSupplierEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblSearchSupplierEmail.TabIndex = 38;
+            this.lblSearchSupplierEmail.Text = "Email";
+            // 
+            // lblSearchSupplierPostcode
+            // 
+            this.lblSearchSupplierPostcode.AutoSize = true;
+            this.lblSearchSupplierPostcode.Location = new System.Drawing.Point(41, 185);
+            this.lblSearchSupplierPostcode.Name = "lblSearchSupplierPostcode";
+            this.lblSearchSupplierPostcode.Size = new System.Drawing.Size(52, 13);
+            this.lblSearchSupplierPostcode.TabIndex = 37;
+            this.lblSearchSupplierPostcode.Text = "Postcode";
+            // 
+            // lblSearchSupplierCounty
+            // 
+            this.lblSearchSupplierCounty.AutoSize = true;
+            this.lblSearchSupplierCounty.Location = new System.Drawing.Point(41, 150);
+            this.lblSearchSupplierCounty.Name = "lblSearchSupplierCounty";
+            this.lblSearchSupplierCounty.Size = new System.Drawing.Size(40, 13);
+            this.lblSearchSupplierCounty.TabIndex = 36;
+            this.lblSearchSupplierCounty.Text = "County";
+            // 
+            // lblSearchSupplierTown
+            // 
+            this.lblSearchSupplierTown.AutoSize = true;
+            this.lblSearchSupplierTown.Location = new System.Drawing.Point(41, 115);
+            this.lblSearchSupplierTown.Name = "lblSearchSupplierTown";
+            this.lblSearchSupplierTown.Size = new System.Drawing.Size(34, 13);
+            this.lblSearchSupplierTown.TabIndex = 35;
+            this.lblSearchSupplierTown.Text = "Town";
+            // 
+            // lblSearchSupplierStreet
+            // 
+            this.lblSearchSupplierStreet.AutoSize = true;
+            this.lblSearchSupplierStreet.Location = new System.Drawing.Point(41, 81);
+            this.lblSearchSupplierStreet.Name = "lblSearchSupplierStreet";
+            this.lblSearchSupplierStreet.Size = new System.Drawing.Size(35, 13);
+            this.lblSearchSupplierStreet.TabIndex = 34;
+            this.lblSearchSupplierStreet.Text = "Street";
+            // 
+            // lblSearchSupplierName
+            // 
+            this.lblSearchSupplierName.AutoSize = true;
+            this.lblSearchSupplierName.Location = new System.Drawing.Point(41, 51);
+            this.lblSearchSupplierName.Name = "lblSearchSupplierName";
+            this.lblSearchSupplierName.Size = new System.Drawing.Size(35, 13);
+            this.lblSearchSupplierName.TabIndex = 33;
+            this.lblSearchSupplierName.Text = "Name";
+            // 
+            // lblSearchSupplierNo
+            // 
+            this.lblSearchSupplierNo.AutoSize = true;
+            this.lblSearchSupplierNo.Location = new System.Drawing.Point(41, 20);
+            this.lblSearchSupplierNo.Name = "lblSearchSupplierNo";
+            this.lblSearchSupplierNo.Size = new System.Drawing.Size(62, 13);
+            this.lblSearchSupplierNo.TabIndex = 32;
+            this.lblSearchSupplierNo.Text = "Supplier No";
+            // 
+            // txtSearchActualSupplierNo
+            // 
+            this.txtSearchActualSupplierNo.Location = new System.Drawing.Point(138, 17);
+            this.txtSearchActualSupplierNo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchActualSupplierNo.Name = "txtSearchActualSupplierNo";
+            this.txtSearchActualSupplierNo.Size = new System.Drawing.Size(81, 20);
+            this.txtSearchActualSupplierNo.TabIndex = 48;
             // 
             // FrmSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(880, 405);
             this.Controls.Add(this.pnlEditSupplier);
             this.Controls.Add(this.pnlAddSupplier);
+            this.Controls.Add(this.pnlDeleteSupp);
             this.Controls.Add(this.btnReturnMenu);
+            this.Controls.Add(this.pnlSearchSupp);
             this.Controls.Add(this.lblReturnMenu);
             this.Controls.Add(this.lblSearchSupplier);
             this.Controls.Add(this.lblDeleteSupplier);
             this.Controls.Add(this.lblAddSupplier);
             this.Controls.Add(this.lblEditSupplier);
-            this.Controls.Add(this.btnSearchJob);
-            this.Controls.Add(this.btnDeleteJob);
-            this.Controls.Add(this.btnEditJob);
-            this.Controls.Add(this.btnAddJob);
+            this.Controls.Add(this.btnSearchSupplier);
+            this.Controls.Add(this.btnDeleteSupplier);
+            this.Controls.Add(this.btnEditSupplier);
+            this.Controls.Add(this.btnAddSupplier);
             this.Controls.Add(this.dgvSuppliers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSupplier";
             this.Text = "FrmSupplier";
+            this.Load += new System.EventHandler(this.FrmSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
             this.pnlAddSupplier.ResumeLayout(false);
             this.pnlAddSupplier.PerformLayout();
             this.pnlEditSupplier.ResumeLayout(false);
             this.pnlEditSupplier.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.pnlSearchSupp.ResumeLayout(false);
+            this.pnlSearchSupp.PerformLayout();
+            this.pnlDeleteSupp.ResumeLayout(false);
+            this.pnlDeleteSupp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,10 +897,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSuppliers;
-        private System.Windows.Forms.Button btnSearchJob;
-        private System.Windows.Forms.Button btnDeleteJob;
-        private System.Windows.Forms.Button btnEditJob;
-        private System.Windows.Forms.Button btnAddJob;
+        private System.Windows.Forms.Button btnSearchSupplier;
+        private System.Windows.Forms.Button btnDeleteSupplier;
+        private System.Windows.Forms.Button btnEditSupplier;
+        private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.Label lblSearchSupplier;
         private System.Windows.Forms.Label lblDeleteSupplier;
         private System.Windows.Forms.Label lblAddSupplier;
@@ -643,5 +946,29 @@
         private System.Windows.Forms.Button btnCancelEditSupplier;
         private System.Windows.Forms.Button btnConfirmEditSupplier;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel pnlSearchSupp;
+        private System.Windows.Forms.Panel pnlDeleteSupp;
+        private System.Windows.Forms.Button btnDeleteSuppCancel;
+        private System.Windows.Forms.Button btnConfirmDeleteSupp;
+        private System.Windows.Forms.Label lblDeleteSuppQ;
+        private System.Windows.Forms.Label lblDeleteSupp;
+        private System.Windows.Forms.Button btnConfirmCancelSearchSupplier;
+        private System.Windows.Forms.Button btnConfirmSearchSupplier;
+        private System.Windows.Forms.TextBox txtSearchActualSupplierNo;
+        private System.Windows.Forms.TextBox txtSearchSupplierTelephoneNo;
+        private System.Windows.Forms.TextBox txtSearchSupplierEmail;
+        private System.Windows.Forms.TextBox txtSearchSupplierPostcode;
+        private System.Windows.Forms.TextBox txtSearchSupplierCounty;
+        private System.Windows.Forms.TextBox txtSearchSupplierTown;
+        private System.Windows.Forms.TextBox txtSearchSupplierStreet;
+        private System.Windows.Forms.TextBox txtSearchSupplierName;
+        private System.Windows.Forms.Label lblSearchSupplierTelephoneNo;
+        private System.Windows.Forms.Label lblSearchSupplierEmail;
+        private System.Windows.Forms.Label lblSearchSupplierPostcode;
+        private System.Windows.Forms.Label lblSearchSupplierCounty;
+        private System.Windows.Forms.Label lblSearchSupplierTown;
+        private System.Windows.Forms.Label lblSearchSupplierStreet;
+        private System.Windows.Forms.Label lblSearchSupplierName;
+        private System.Windows.Forms.Label lblSearchSupplierNo;
     }
 }

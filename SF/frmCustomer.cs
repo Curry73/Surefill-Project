@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace SF
 {
-    public partial class frmCustomers : Form
+    public partial class frmCustomer : Form
     {
 
         SqlDataAdapter daCustomer;
@@ -21,13 +21,13 @@ namespace SF
         String connStr, sqlCustomer;
         int selectedTab = 0;
         bool custSelected = false;
-        int custNoSelected = 0;
+        string custNoSelected = "";
 
-        public frmCustomers()
+        public frmCustomer()
         {
             InitializeComponent();
         }
-        private void frmCustomers_Load(object sender, EventArgs e)
+        private void frmCustomer_Load(object sender, EventArgs e)
         {
             connStr = @"Data Source = .; Initial Catalog = Surefill; Integrated Security = true";
 
@@ -70,11 +70,17 @@ namespace SF
         private void lblEditCustomer_Click(object sender, EventArgs e)
         {
             pnlEdit.Visible = true;
+            pnlAdd.Visible = false;
+            pnlDelete.Visible = false;
+            pnlSearch.Visible = false;
         }
 
         private void lblAddCustomer_Click(object sender, EventArgs e)
         {
             pnlAdd.Visible = true;
+            pnlSearch.Visible = false;
+            pnlEdit.Visible = false;
+            pnlDelete.Visible = false;
         }
 
         private void btnAddCustomer_MouseEnter(object sender, EventArgs e)
@@ -84,7 +90,11 @@ namespace SF
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            getNumber(dsSurefill.Tables["Customer"].Rows.Count);
             pnlAdd.Visible = true;
+            pnlSearch.Visible = false;
+            pnlEdit.Visible = false;
+            pnlDelete.Visible = false;
         }
 
         private void btnAddCustomer_MouseLeave(object sender, EventArgs e)
@@ -94,7 +104,33 @@ namespace SF
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
         {
+            custNoSelected = (dgvCustomers.SelectedRows[0].Cells[0].Value).ToString();
+
             pnlEdit.Visible = true;
+            pnlDelete.Visible = false;
+            pnlAdd.Visible = false;
+            pnlSearch.Visible = false;
+
+            if (custNoSelected.Equals(""))
+            {
+                MessageBox.Show("ERROR");
+            }
+            else
+            {
+                lblEditActaulCustNo.Text = custNoSelected.ToString();
+                drCustomer = dsSurefill.Tables["Customer"].Rows.Find(lblEditActaulCustNo.Text);
+
+                lblEditActaulCustNo.Text = drCustomer["CustomerNo"].ToString();
+                txtEditCustForename.Text = drCustomer["Forename"].ToString();
+                txtEditCustSurname.Text = drCustomer["Surname"].ToString();
+                txtEditCustStreet.Text = drCustomer["Street"].ToString();
+                txtEditCustTown.Text = drCustomer["Town"].ToString();
+                txtEditCustCounty.Text = drCustomer["County"].ToString();
+                txtEditCustPostcode.Text = drCustomer["Postcode"].ToString();
+                txtEditCustTelephoneNo.Text = drCustomer["TelephoneNo"].ToString();
+                txtEditCustEmail.Text = drCustomer["Email"].ToString();
+
+            }
         }
 
         private void btnEditCustomer_MouseEnter(object sender, EventArgs e)
@@ -137,21 +173,33 @@ namespace SF
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
             pnlDelete.Visible = true;
+            pnlAdd.Visible = false;
+            pnlEdit.Visible = false;
+            pnlSearch.Visible = false;
         }
 
         private void lblDeleteCustomer_Click(object sender, EventArgs e)
         {
             pnlDelete.Visible = true;
+            pnlAdd.Visible = false;
+            pnlEdit.Visible = false;
+            pnlSearch.Visible = false;
         }
 
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
             pnlSearch.Visible = true;
+            pnlAdd.Visible = false;
+            pnlDelete.Visible = false;
+            pnlEdit.Visible = false;
         }
 
         private void lblSearchCustomer_Click(object sender, EventArgs e)
         {
             pnlSearch.Visible = true;
+            pnlAdd.Visible = false;
+            pnlDelete.Visible = false;
+            pnlEdit.Visible = false;
 
         }
 
@@ -272,6 +320,7 @@ namespace SF
                     daCustomer.Update(dsSurefill, "Customer");
 
                     MessageBox.Show("Customer Added");
+                   
 
                     if (MessageBox.Show("Do you want to add another customer?", "Add Customer", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
@@ -303,7 +352,9 @@ namespace SF
         private void getNumber(int noRows)
         {
             drCustomer = dsSurefill.Tables["Customer"].Rows[noRows - 1];
-            lblAddActualCustomerNo.Text = (int.Parse(drCustomer["CustomerNo"].ToString()) + 1).ToString();
+
+
+            lblAddActualCustomerNo.Text = ("C" + (int.Parse(drCustomer["CustomerNo"].ToString().Substring(1,5)) + 1).ToString());
         }
 
         private void btnConfirmEditCust_Click(object sender, EventArgs e)
@@ -488,12 +539,41 @@ namespace SF
         {
             if (MessageBox.Show("Cancel the addition of Customer No: " + lblAddActualCustomerNo.Text + "?", "Add Customer", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes);
+            {
+                pnlAdd.Visible = false;
+            }
         }
 
         private void btnCancelEditCust_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Cancel the edit of Customer No: " + lblEditActaulCustNo.Text + "?", "Edit Customer", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes);
+            {
+                pnlEdit.Visible = false;
+            }
+        }
+
+        private void btnDeleteCustCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the deletion of Customer No: " + lblEditActaulCustNo.Text + "?", "Delete Customer", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes) ;
+            {
+                pnlDelete.Visible = false;
+            }
+        }
+
+        private void lblSearchCustText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelCustSearch_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel search?", "Search", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes) ;
+            {
+                pnlSearch.Visible = false;
+            }
         }
 
         private void btnSearchCustomer_MouseLeave(object sender, EventArgs e)

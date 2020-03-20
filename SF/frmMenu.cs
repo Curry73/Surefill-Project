@@ -67,7 +67,7 @@ namespace SF
         private void picBoxCust_Click(object sender, EventArgs e)
         {
             pnlHome.Controls.Clear();
-            frmCustomers newForm = new frmCustomers();
+            frmCustomer newForm = new frmCustomer();
             newForm.TopLevel = false;
             newForm.FormBorderStyle = FormBorderStyle.None;
             pnlHome.Controls.Add(newForm);
@@ -78,7 +78,7 @@ namespace SF
         private void lblCust_Click(object sender, EventArgs e)
         {
             pnlHome.Controls.Clear();
-            frmCustomers newForm = new frmCustomers();
+            frmCustomer newForm = new frmCustomer();
             newForm.TopLevel = false;
             newForm.FormBorderStyle = FormBorderStyle.None;
             pnlHome.Controls.Add(newForm);

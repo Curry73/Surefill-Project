@@ -21,17 +21,15 @@ namespace SF
         String connStr, sqlSupplier;
         int selectedTab = 0;
         bool suppSelected = false;
-        int suppNoSelected = 0;
+        String suppNoSelected = "";
 
         public FrmSupplier()
         {
             InitializeComponent();
         }
-
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = .; Initial Catalog = Surefill;
-Integrated Security = true";
+            connStr = @"Data Source = .; Initial Catalog = Surefill; Integrated Security = true";
 
             sqlSupplier = @"select * from Supplier";
             daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
@@ -43,6 +41,10 @@ Integrated Security = true";
             dgvSuppliers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             //tabCustomer.SelectedIndex = 1;
             //tabCustomer.SelectedIndex = 0;
+            pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,11 +70,17 @@ Integrated Security = true";
         private void lblEditSupplier_Click(object sender, EventArgs e)
         {
             pnlEditSupplier.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void lblAddSupplier_Click(object sender, EventArgs e)
         {
             pnlAddSupplier.Visible = true;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void btnAddSupplier_MouseEnter(object sender, EventArgs e)
@@ -82,7 +90,11 @@ Integrated Security = true";
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
+            getNumber(dsSurefill.Tables["Supplier"].Rows.Count);
             pnlAddSupplier.Visible = true;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
         }
 
         private void btnAddSupplier_MouseLeave(object sender, EventArgs e)
@@ -90,9 +102,34 @@ Integrated Security = true";
             lblAddSupplier.ForeColor = Color.DimGray;
         }
 
-        private void btnEditSupplierClick(object sender, EventArgs e)
+        private void btnEditSupplier_Click(object sender, EventArgs e)
         {
+
+            suppNoSelected = (dgvSuppliers.SelectedRows[0].Cells[0].Value).ToString();
+
             pnlEditSupplier.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+            pnlSearchSupp.Visible = false;
+
+            if (suppNoSelected.Equals(""))
+            {
+                MessageBox.Show("ERROR");
+            }
+            else
+            {
+                lblAddActualSupplierNo.Text = suppNoSelected.ToString();
+                drSupplier = dsSurefill.Tables["Supplier"].Rows.Find(lblAddActualSupplierNo.Text);
+
+                lblEditActualSupplierNo.Text = drSupplier["SupplierNO"].ToString();
+                txtEditSupplierName.Text = drSupplier["Name"].ToString();
+                txtEditSupplierStreet.Text = drSupplier["Street"].ToString();
+                txtEditSupplierTown.Text = drSupplier["Town"].ToString();
+                txtEditSupplierCounty.Text = drSupplier["County"].ToString();
+                txtEditSupplierPostcode.Text = drSupplier["Postcode"].ToString();
+                txtEditSupplierEmail.Text = drSupplier["Email"].ToString();
+                txtEditSupplierTelephoneNo.Text = drSupplier["TelephoneNo"].ToString();
+            }
         }
 
         private void btnEditSupplier_MouseEnter(object sender, EventArgs e)
@@ -132,28 +169,43 @@ Integrated Security = true";
 
 
 
-        //private void btnDeleteCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlDelete.Visible = true;
-        //}
+        private void btnDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            pnlDeleteSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlSearchSupp.Visible = false;
+        //    btnAddSupplier.Visible = false;
+        //    btnEditSupplier.Visible = false;
+        //    btnDeleteSupplier.Visible = false;
+        //    btnSearchSupplier.Visible = false;
+        }
 
-        //private void lblDeleteCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlDelete.Visible = true;
-        //}
+        private void lblDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            pnlDeleteSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlSearchSupp.Visible = false;
+        }
 
-        //private void btnSearchCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlSearch.Visible = true;
-        //}
+        private void btnSearchSupplier_Click(object sender, EventArgs e)
+        {
+            pnlSearchSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+        }
 
-        //private void lblSearchCustomer_Click(object sender, EventArgs e)
-        //{
-        //    pnlSearch.Visible = true;
+        private void lblSearchSupplier_Click(object sender, EventArgs e)
+        {
+            pnlSearchSupp.Visible = true;
+            pnlAddSupplier.Visible = false;
+            pnlEditSupplier.Visible = false;
+            pnlDeleteSupp.Visible = false;
+        }
 
-        //}
-
-        private void btnConfirmAddSupp_Click(object sender, EventArgs e)
+        private void btnConfirmAddSupplier_Click(object sender, EventArgs e)
         {
             MySupplier mySupplier = new MySupplier();
             bool ok = true;
@@ -222,16 +274,6 @@ Integrated Security = true";
 
             try
             {
-                mySupplier.Email = txtAddSupplierEmail.Text.Trim();
-            }
-            catch (MyException MyEx)
-            {
-                ok = false;
-                errorProvider1.SetError(txtAddSupplierEmail, MyEx.toString());
-            }
-
-            try
-            {
                 mySupplier.TelephoneNo = txtAddSupplierTelephoneNo.Text.Trim();
             }
             catch (MyException MyEx)
@@ -239,15 +281,15 @@ Integrated Security = true";
                 ok = false;
                 errorProvider1.SetError(txtAddSupplierTelephoneNo, MyEx.toString());
             }
-            //try
-            //{
-            //    myCustomer.Email = txtAddCustEmail.Text.Trim();
-            //}
-            //catch (MyException MyEx)
-            //{
-            //    ok = false;
-            //    errorProvider1.SetError(txtAddCustEmail, MyEx.toString());
-            //}
+            try
+            {
+                mySupplier.Email = txtAddSupplierEmail.Text.Trim();
+            }
+            catch (MyException MyEx)
+            {
+                ok = false;
+                errorProvider1.SetError(txtAddSupplierEmail, MyEx.toString());
+            }
 
             try
             {
@@ -263,7 +305,6 @@ Integrated Security = true";
                     drSupplier["Postcode"] = mySupplier.Postcode;
                     drSupplier["Email"] = mySupplier.Email;
                     drSupplier["TelephoneNo"] = mySupplier.TelephoneNo;
-
 
 
                     dsSurefill.Tables["Supplier"].Rows.Add(drSupplier);
@@ -292,7 +333,7 @@ Integrated Security = true";
             txtAddSupplierName.Clear();
             txtAddSupplierStreet.Clear();
             txtAddSupplierTown.Clear();
-            txtEditSupplierCounty.Clear();
+            txtAddSupplierCounty.Clear();
             txtAddSupplierPostcode.Clear();
             txtAddSupplierEmail.Clear();
             txtAddSupplierTelephoneNo.Clear();
@@ -301,10 +342,10 @@ Integrated Security = true";
         private void getNumber(int noRows)
         {
             drSupplier = dsSurefill.Tables["Supplier"].Rows[noRows - 1];
-            lblAddActualSupplierNo.Text = (int.Parse(drSupplier["SupplierNo"].ToString()) + 1).ToString();
+            lblAddActualSupplierNo.Text = ("S" + (int.Parse(drSupplier["SupplierNo"].ToString().Substring(1,5)) + 1).ToString());
         }
 
-        private void btnConfirmEditCust_Click(object sender, EventArgs e)
+        private void btnConfirmEditSupplier_Click(object sender, EventArgs e)
         {
             if (btnConfirmEditSupplier.Text == "Edit")
             {
@@ -388,22 +429,21 @@ Integrated Security = true";
 
                 try
                 {
-                    mySupplier.Email = txtEditSupplierEmail.Text.Trim();
-                }
-                catch (MyException MyEx)
-                {
-                    ok = false;
-                    errorProvider1.SetError(txtEditSupplierEmail, MyEx.toString());
-                }
-
-                try
-                {
                     mySupplier.TelephoneNo = txtEditSupplierTelephoneNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
                     ok = false;
                     errorProvider1.SetError(txtEditSupplierTelephoneNo, MyEx.toString());
+                }
+                try
+                {
+                    mySupplier.Email = txtEditSupplierEmail.Text.Trim();
+                }
+                catch (MyException MyEx)
+                {
+                    ok = false;
+                    errorProvider1.SetError(txtEditSupplierEmail, MyEx.toString());
                 }
 
                 try
@@ -427,7 +467,7 @@ Integrated Security = true";
 
                         MessageBox.Show("Supplier details updated", "Supplier");
 
-                        txtAddSupplierName.Enabled = false;
+                        txtEditSupplierName.Enabled = false;
                         txtEditSupplierStreet.Enabled = false;
                         txtEditSupplierTown.Enabled = false;
                         txtEditSupplierCounty.Enabled = false;
@@ -443,6 +483,60 @@ Integrated Security = true";
                     MessageBox.Show("" + ex.TargetSite + "" + ex.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void pnlDeleteSupp_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnConfirmDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            if (dgvSuppliers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a supplier from the list", "Select Supplier");
+            }
+            else
+            {
+                drSupplier = dsSurefill.Tables["Supplier"].Rows.Find(dgvSuppliers.SelectedRows[0].Cells[0].Value);
+                string tempName = drSupplier["Name"].ToString() + "\'s";
+
+                if (MessageBox.Show("Are you sure you want to delete " + tempName + "details?", "Add Supplier", MessageBoxButtons.YesNo) ==
+                    System.Windows.Forms.DialogResult.Yes)
+                {
+                    drSupplier.Delete();
+                    daSupplier.Update(dsSurefill, "Supplier");
+                }
+            }
+        }
+
+        private void btnCancelAddSupplier_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the addition of Supplier No: " + lblAddActualSupplierNo.Text + "?", "Add Supplier", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes);
+            pnlAddSupplier.Visible = false;
+        }
+
+        private void btnCancelEditSupplier_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the edit of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Edit Supplier", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes);
+            pnlEditSupplier.Visible = false;
+        }
+
+        private void btnConfirmCancelSearchSupplier_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel Search?", "Search", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes) ;
+
+            pnlSearchSupp.Visible = false;
+        }
+
+        private void btnDeleteSuppCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the deletion of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Delete Supplier", MessageBoxButtons.YesNo) ==
+            System.Windows.Forms.DialogResult.Yes) ;
+            pnlDeleteSupp.Visible = false;
         }
 
         private void btnSearchSupplier_MouseLeave(object sender, EventArgs e)

@@ -34,6 +34,7 @@ namespace SF
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
+            conn = new SqlConnection(connStr);
 
             sqlSupplier = @"select * from Supplier";
             daSupplier = new SqlDataAdapter(sqlSupplier, connStr);
@@ -549,9 +550,14 @@ namespace SF
         private void txtSearchSupplierName_TextChanged(object sender, EventArgs e)
         {
             dsSurefill.Tables["SuppDets"].Clear();
-            cmdSupplierDetails.Parameters["@Letter"].Value = txtAddSupplierName.Text;
+            cmdSupplierDetails.Parameters["@Letter"].Value = txtSearchSupplierName.Text;
             daSuppDetails.Fill(dsSurefill, "SuppDets");
             dgvSuppliers.DataSource = dsSurefill.Tables["SuppDets"];
+        }
+
+        private void pnlSearchSupp_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void btnDeleteSuppCancel_Click(object sender, EventArgs e)

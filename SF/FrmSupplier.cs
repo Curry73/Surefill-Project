@@ -15,11 +15,13 @@ namespace SF
     public partial class FrmSupplier : Form
     {
         SqlConnection con = new SqlConnection();
-        SqlDataAdapter daSupplier, daSupplierSearch;
+        SqlDataAdapter daSupplier, daSuppDetails;
         DataSet dsSurefill = new DataSet();
-        SqlCommandBuilder cmdBSupplier, cmdSupplierSearch;
+        SqlCommandBuilder cmdBSupplier;
+        SqlCommand cmdSupplierDetails;
+        SqlConnection conn;
         DataRow drSupplier;
-        String connStr, sqlSupplier;
+        String connStr, sqlSupplier, sqlSuppDetails;
         int selectedTab = 0;
         bool suppSelected = false;
         String suppNoSelected = "";
@@ -46,11 +48,12 @@ namespace SF
             pnlDeleteSupp.Visible = false;
             pnlSearchSupp.Visible = false;
 
-            sqlSupplier = @"SELECT * FROM Supplier WHERE SupplierNo = @SupplierNo";
-            cmdSupplierSearch = new SqlCommand(sqlSupplier, conn);
-            cmdSupplierSearch.Parameters.Add("@SupplierNo", SqlDbType.Int);
-            daSupplierSearch = new SqlDataAdapter(cmdSupplierSearch);
-            daSupplierSearch.FillSchema(dsDraw, SchemaType.Source, "Supplier");
+            sqlSuppDetails = @"Select * From Supplier where Name LIKE (@Letter + '%') order by SupplierNo";
+            cmdSupplierDetails = new SqlCommand(sqlSuppDetails, conn);
+            cmdSupplierDetails.Parameters.Add("@Letter", SqlDbType.VarChar);
+            daSuppDetails = new SqlDataAdapter(cmdSupplierDetails);
+            daSuppDetails.FillSchema(dsSurefill, SchemaType.Source, "SuppDets");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -540,9 +543,15 @@ namespace SF
 
         private void txtSearchActualSupplierNo_TextChanged(object sender, EventArgs e)
         {
-            dsDraw.Tables["Supplier"].Clear();
-            cmdSupplierSearch.Parameters["@SupplierNo"].Value = txtSearchActualSupplierNo.Text;
-            daSupplierSearch.Fill(dsDraw, "Supplier");
+
+        }
+
+        private void txtSearchSupplierName_TextChanged(object sender, EventArgs e)
+        {
+            dsSurefill.Tables["SuppDets"].Clear();
+            cmdSupplierDetails.Parameters["@Letter"].Value = txtAddSupplierName.Text;
+            daSuppDetails.Fill(dsSurefill, "SuppDets");
+            dgvSuppliers.DataSource = dsSurefill.Tables["SuppDets"];
         }
 
         private void btnDeleteSuppCancel_Click(object sender, EventArgs e)

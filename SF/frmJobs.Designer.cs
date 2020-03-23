@@ -63,6 +63,8 @@
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnCancelCalculate = new System.Windows.Forms.Button();
+            this.lblCustomerNo = new System.Windows.Forms.Label();
+            this.cmbAddJobCustNo = new System.Windows.Forms.ComboBox();
             this.pnlAddWall.SuspendLayout();
             this.pnlAddOpenings.SuspendLayout();
             this.pnlWallSizeList.SuspendLayout();
@@ -100,7 +102,7 @@
             this.pnlAddWall.Controls.Add(this.lblAddWall);
             this.pnlAddWall.Location = new System.Drawing.Point(6, 36);
             this.pnlAddWall.Name = "pnlAddWall";
-            this.pnlAddWall.Size = new System.Drawing.Size(205, 227);
+            this.pnlAddWall.Size = new System.Drawing.Size(205, 297);
             this.pnlAddWall.TabIndex = 2;
             // 
             // lblAddWall
@@ -272,6 +274,8 @@
             // 
             // pnlAddJob
             // 
+            this.pnlAddJob.Controls.Add(this.cmbAddJobCustNo);
+            this.pnlAddJob.Controls.Add(this.lblCustomerNo);
             this.pnlAddJob.Controls.Add(this.btnCancelCalculate);
             this.pnlAddJob.Controls.Add(this.btnCalculate);
             this.pnlAddJob.Controls.Add(this.pnlAddWall);
@@ -406,6 +410,23 @@
             this.btnCancelCalculate.Text = "Cancel";
             this.btnCancelCalculate.UseVisualStyleBackColor = true;
             // 
+            // lblCustomerNo
+            // 
+            this.lblCustomerNo.AutoSize = true;
+            this.lblCustomerNo.Location = new System.Drawing.Point(292, 11);
+            this.lblCustomerNo.Name = "lblCustomerNo";
+            this.lblCustomerNo.Size = new System.Drawing.Size(71, 13);
+            this.lblCustomerNo.TabIndex = 6;
+            this.lblCustomerNo.Text = "Customer No:";
+            // 
+            // cmbAddJobCustNo
+            // 
+            this.cmbAddJobCustNo.FormattingEnabled = true;
+            this.cmbAddJobCustNo.Location = new System.Drawing.Point(369, 8);
+            this.cmbAddJobCustNo.Name = "cmbAddJobCustNo";
+            this.cmbAddJobCustNo.Size = new System.Drawing.Size(80, 21);
+            this.cmbAddJobCustNo.TabIndex = 7;
+            // 
             // frmJobs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,5 +496,7 @@
         private System.Windows.Forms.Button btnReturnMenu;
         private System.Windows.Forms.Button btnCancelCalculate;
         private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.ComboBox cmbAddJobCustNo;
+        private System.Windows.Forms.Label lblCustomerNo;
     }
 }

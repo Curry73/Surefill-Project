@@ -554,6 +554,11 @@ namespace SF
             dgvSuppliers.DataSource = dsSurefill.Tables["SuppDets"];
         }
 
+        private void dgvSuppliers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void btnDeleteSuppCancel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Cancel the deletion of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Delete Supplier", MessageBoxButtons.YesNo) ==

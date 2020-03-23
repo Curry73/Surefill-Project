@@ -444,7 +444,7 @@
             this.pnlDeleteSupp.Controls.Add(this.btnConfirmDeleteSupp);
             this.pnlDeleteSupp.Controls.Add(this.lblDeleteSuppQ);
             this.pnlDeleteSupp.Controls.Add(this.lblDeleteSupp);
-            this.pnlDeleteSupp.Location = new System.Drawing.Point(475, 9);
+            this.pnlDeleteSupp.Location = new System.Drawing.Point(140, 3);
             this.pnlDeleteSupp.Name = "pnlDeleteSupp";
             this.pnlDeleteSupp.Size = new System.Drawing.Size(230, 380);
             this.pnlDeleteSupp.TabIndex = 52;
@@ -577,6 +577,7 @@
             this.txtSearchSupplierName.Name = "txtSearchSupplierName";
             this.txtSearchSupplierName.Size = new System.Drawing.Size(81, 20);
             this.txtSearchSupplierName.TabIndex = 47;
+            this.txtSearchSupplierName.TextChanged += new System.EventHandler(this.txtSearchSupplierName_TextChanged);
             // 
             // lblSearchSupplierTelephoneNo
             // 
@@ -675,6 +676,7 @@
             this.pnlEditSupplier.BackColor = System.Drawing.Color.Fuchsia;
             this.pnlEditSupplier.Controls.Add(this.btnCancelEditSupplier);
             this.pnlEditSupplier.Controls.Add(this.btnConfirmEditSupplier);
+            this.pnlEditSupplier.Controls.Add(this.pnlDeleteSupp);
             this.pnlEditSupplier.Controls.Add(this.txtEditSupplierTelephoneNo);
             this.pnlEditSupplier.Controls.Add(this.txtEditSupplierEmail);
             this.pnlEditSupplier.Controls.Add(this.txtEditSupplierPostcode);
@@ -691,7 +693,7 @@
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierStreet);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierName);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierNo);
-            this.pnlEditSupplier.Location = new System.Drawing.Point(402, 12);
+            this.pnlEditSupplier.Location = new System.Drawing.Point(122, 10);
             this.pnlEditSupplier.Name = "pnlEditSupplier";
             this.pnlEditSupplier.Size = new System.Drawing.Size(230, 380);
             this.pnlEditSupplier.TabIndex = 51;
@@ -864,7 +866,6 @@
             this.ClientSize = new System.Drawing.Size(880, 405);
             this.Controls.Add(this.pnlAddSupplier);
             this.Controls.Add(this.pnlEditSupplier);
-            this.Controls.Add(this.pnlDeleteSupp);
             this.Controls.Add(this.pnlSearchSupp);
             this.Controls.Add(this.btnReturnMenu);
             this.Controls.Add(this.lblReturnMenu);

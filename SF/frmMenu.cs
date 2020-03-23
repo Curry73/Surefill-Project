@@ -101,7 +101,7 @@ namespace SF
         private void picBoxStock_Click(object sender, EventArgs e)
         {
             pnlHome.Controls.Clear();
-            frmStock newForm = new frmStock();
+            frmProduct newForm = new frmProduct();
             newForm.TopLevel = false;
             newForm.FormBorderStyle = FormBorderStyle.None;
             pnlHome.Controls.Add(newForm);
@@ -112,7 +112,7 @@ namespace SF
         private void lblStock_Click(object sender, EventArgs e)
         {
             pnlHome.Controls.Clear();
-            frmStock newForm = new frmStock();
+            frmProduct newForm = new frmProduct();
             newForm.TopLevel = false;
             newForm.FormBorderStyle = FormBorderStyle.None;
             pnlHome.Controls.Add(newForm);

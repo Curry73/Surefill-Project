@@ -29,7 +29,7 @@ namespace SF
         }
         private void frmCustomer_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = .; Initial Catalog = Surefill; Integrated Security = true";
+            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
 
             sqlCustomer = @"select * from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
@@ -574,6 +574,11 @@ namespace SF
             {
                 pnlSearch.Visible = false;
             }
+        }
+
+        private void btnSearchCustSearch_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnSearchCustomer_MouseLeave(object sender, EventArgs e)

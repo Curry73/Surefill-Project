@@ -76,13 +76,10 @@
             this.lblEditCustForename = new System.Windows.Forms.Label();
             this.lblEditCustNo = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.lblSEARCH = new System.Windows.Forms.Label();
-            this.pnlDelete = new System.Windows.Forms.Panel();
-            this.btnDeleteCustCancel = new System.Windows.Forms.Button();
-            this.btnConfirmDeleteCust = new System.Windows.Forms.Button();
-            this.lblActualCustNoDelete = new System.Windows.Forms.Label();
-            this.lblDeleteTitle = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSearchCustSearch = new System.Windows.Forms.Button();
+            this.btnCancelCustSearch = new System.Windows.Forms.Button();
+            this.txtSearchCustNo = new System.Windows.Forms.TextBox();
+            this.lblSearchCustNo = new System.Windows.Forms.Label();
             this.txtSearchCustEmail = new System.Windows.Forms.TextBox();
             this.txtSearchCustTelNo = new System.Windows.Forms.TextBox();
             this.txtSearchCustPostcode = new System.Windows.Forms.TextBox();
@@ -99,10 +96,13 @@
             this.lblSearchCustStreet = new System.Windows.Forms.Label();
             this.lblSearchCustSurname = new System.Windows.Forms.Label();
             this.lblSearchCustForename = new System.Windows.Forms.Label();
-            this.lblSearchCustNo = new System.Windows.Forms.Label();
-            this.txtSearchCustNo = new System.Windows.Forms.TextBox();
-            this.btnCancelCustSearch = new System.Windows.Forms.Button();
-            this.btnSearchCustSearch = new System.Windows.Forms.Button();
+            this.lblSEARCH = new System.Windows.Forms.Label();
+            this.pnlDelete = new System.Windows.Forms.Panel();
+            this.btnDeleteCustCancel = new System.Windows.Forms.Button();
+            this.btnConfirmDeleteCust = new System.Windows.Forms.Button();
+            this.lblActualCustNoDelete = new System.Windows.Forms.Label();
+            this.lblDeleteTitle = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.lblEditCustomer = new System.Windows.Forms.Label();
@@ -112,8 +112,8 @@
             this.lblDeleteCustomer = new System.Windows.Forms.Label();
             this.lblSearchCustomer = new System.Windows.Forms.Label();
             this.pnlReturn = new System.Windows.Forms.Panel();
-            this.btnReturnMenu = new System.Windows.Forms.Button();
             this.lblReturnMenu = new System.Windows.Forms.Label();
+            this.btnReturnMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.pnlAdd.SuspendLayout();
             this.pnlEdit.SuspendLayout();
@@ -162,16 +162,16 @@
             this.pnlAdd.Controls.Add(this.lblAddCustSurname);
             this.pnlAdd.Controls.Add(this.lblAddCustForename);
             this.pnlAdd.Controls.Add(this.lblAddCustNo);
-            this.pnlAdd.Location = new System.Drawing.Point(638, 12);
+            this.pnlAdd.Location = new System.Drawing.Point(322, 21);
             this.pnlAdd.Name = "pnlAdd";
-            this.pnlAdd.Size = new System.Drawing.Size(230, 381);
+            this.pnlAdd.Size = new System.Drawing.Size(230, 380);
             this.pnlAdd.TabIndex = 45;
             // 
             // btnCancelAddCust
             // 
             this.btnCancelAddCust.Location = new System.Drawing.Point(143, 330);
             this.btnCancelAddCust.Name = "btnCancelAddCust";
-            this.btnCancelAddCust.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelAddCust.Size = new System.Drawing.Size(75, 25);
             this.btnCancelAddCust.TabIndex = 20;
             this.btnCancelAddCust.Text = "Cancel";
             this.btnCancelAddCust.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@
             // 
             this.btnConfirmAddCust.Location = new System.Drawing.Point(49, 330);
             this.btnConfirmAddCust.Name = "btnConfirmAddCust";
-            this.btnConfirmAddCust.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmAddCust.Size = new System.Drawing.Size(75, 25);
             this.btnConfirmAddCust.TabIndex = 19;
             this.btnConfirmAddCust.Text = "Add";
             this.btnConfirmAddCust.UseVisualStyleBackColor = true;
@@ -190,9 +190,10 @@
             // lblADD
             // 
             this.lblADD.AutoSize = true;
-            this.lblADD.Location = new System.Drawing.Point(143, 0);
+            this.lblADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblADD.Location = new System.Drawing.Point(103, 9);
             this.lblADD.Name = "lblADD";
-            this.lblADD.Size = new System.Drawing.Size(30, 13);
+            this.lblADD.Size = new System.Drawing.Size(33, 13);
             this.lblADD.TabIndex = 18;
             this.lblADD.Text = "ADD";
             this.lblADD.Click += new System.EventHandler(this.lblADD_Click);
@@ -368,16 +369,16 @@
             this.pnlEdit.Controls.Add(this.lblEditCustSurname);
             this.pnlEdit.Controls.Add(this.lblEditCustForename);
             this.pnlEdit.Controls.Add(this.lblEditCustNo);
-            this.pnlEdit.Location = new System.Drawing.Point(638, 12);
+            this.pnlEdit.Location = new System.Drawing.Point(73, 3);
             this.pnlEdit.Name = "pnlEdit";
-            this.pnlEdit.Size = new System.Drawing.Size(230, 381);
+            this.pnlEdit.Size = new System.Drawing.Size(230, 380);
             this.pnlEdit.TabIndex = 46;
             // 
             // btnCancelEditCust
             // 
-            this.btnCancelEditCust.Location = new System.Drawing.Point(143, 317);
+            this.btnCancelEditCust.Location = new System.Drawing.Point(136, 327);
             this.btnCancelEditCust.Name = "btnCancelEditCust";
-            this.btnCancelEditCust.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelEditCust.Size = new System.Drawing.Size(75, 25);
             this.btnCancelEditCust.TabIndex = 21;
             this.btnCancelEditCust.Text = "Cancel";
             this.btnCancelEditCust.UseVisualStyleBackColor = true;
@@ -385,9 +386,9 @@
             // 
             // btnConfirmEditCust
             // 
-            this.btnConfirmEditCust.Location = new System.Drawing.Point(49, 317);
+            this.btnConfirmEditCust.Location = new System.Drawing.Point(45, 327);
             this.btnConfirmEditCust.Name = "btnConfirmEditCust";
-            this.btnConfirmEditCust.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmEditCust.Size = new System.Drawing.Size(75, 25);
             this.btnConfirmEditCust.TabIndex = 20;
             this.btnConfirmEditCust.Text = "Edit";
             this.btnConfirmEditCust.UseVisualStyleBackColor = true;
@@ -396,9 +397,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(122, 1);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(92, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "EDIT";
             // 
@@ -552,6 +554,7 @@
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.LightSalmon;
             this.pnlSearch.Controls.Add(this.btnSearchCustSearch);
+            this.pnlSearch.Controls.Add(this.pnlDelete);
             this.pnlSearch.Controls.Add(this.btnCancelCustSearch);
             this.pnlSearch.Controls.Add(this.txtSearchCustNo);
             this.pnlSearch.Controls.Add(this.lblSearchCustNo);
@@ -572,77 +575,47 @@
             this.pnlSearch.Controls.Add(this.lblSearchCustSurname);
             this.pnlSearch.Controls.Add(this.lblSearchCustForename);
             this.pnlSearch.Controls.Add(this.lblSEARCH);
-            this.pnlSearch.Location = new System.Drawing.Point(638, 12);
+            this.pnlSearch.Location = new System.Drawing.Point(12, 12);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(230, 381);
+            this.pnlSearch.Size = new System.Drawing.Size(230, 380);
             this.pnlSearch.TabIndex = 48;
             // 
-            // lblSEARCH
+            // btnSearchCustSearch
             // 
-            this.lblSEARCH.AutoSize = true;
-            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSEARCH.Location = new System.Drawing.Point(82, 14);
-            this.lblSEARCH.Name = "lblSEARCH";
-            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
-            this.lblSEARCH.TabIndex = 19;
-            this.lblSEARCH.Text = "SEARCH";
+            this.btnSearchCustSearch.Location = new System.Drawing.Point(59, 324);
+            this.btnSearchCustSearch.Name = "btnSearchCustSearch";
+            this.btnSearchCustSearch.Size = new System.Drawing.Size(75, 25);
+            this.btnSearchCustSearch.TabIndex = 39;
+            this.btnSearchCustSearch.TabStop = false;
+            this.btnSearchCustSearch.Text = "Search";
+            this.btnSearchCustSearch.UseVisualStyleBackColor = true;
+            this.btnSearchCustSearch.Click += new System.EventHandler(this.btnSearchCustSearch_Click);
             // 
-            // pnlDelete
+            // btnCancelCustSearch
             // 
-            this.pnlDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pnlDelete.Controls.Add(this.btnDeleteCustCancel);
-            this.pnlDelete.Controls.Add(this.btnConfirmDeleteCust);
-            this.pnlDelete.Controls.Add(this.lblActualCustNoDelete);
-            this.pnlDelete.Controls.Add(this.lblDeleteTitle);
-            this.pnlDelete.Location = new System.Drawing.Point(638, 12);
-            this.pnlDelete.Name = "pnlDelete";
-            this.pnlDelete.Size = new System.Drawing.Size(230, 380);
-            this.pnlDelete.TabIndex = 47;
-            this.pnlDelete.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDelete_Paint);
+            this.btnCancelCustSearch.Location = new System.Drawing.Point(140, 324);
+            this.btnCancelCustSearch.Name = "btnCancelCustSearch";
+            this.btnCancelCustSearch.Size = new System.Drawing.Size(75, 25);
+            this.btnCancelCustSearch.TabIndex = 38;
+            this.btnCancelCustSearch.Text = "Cancel";
+            this.btnCancelCustSearch.UseVisualStyleBackColor = true;
+            this.btnCancelCustSearch.Click += new System.EventHandler(this.btnCancelCustSearch_Click);
             // 
-            // btnDeleteCustCancel
+            // txtSearchCustNo
             // 
-            this.btnDeleteCustCancel.Location = new System.Drawing.Point(110, 203);
-            this.btnDeleteCustCancel.Name = "btnDeleteCustCancel";
-            this.btnDeleteCustCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteCustCancel.TabIndex = 22;
-            this.btnDeleteCustCancel.Text = "Cancel";
-            this.btnDeleteCustCancel.UseVisualStyleBackColor = true;
-            this.btnDeleteCustCancel.Click += new System.EventHandler(this.btnDeleteCustCancel_Click);
+            this.txtSearchCustNo.Location = new System.Drawing.Point(115, 31);
+            this.txtSearchCustNo.Name = "txtSearchCustNo";
+            this.txtSearchCustNo.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchCustNo.TabIndex = 37;
             // 
-            // btnConfirmDeleteCust
+            // lblSearchCustNo
             // 
-            this.btnConfirmDeleteCust.Location = new System.Drawing.Point(29, 203);
-            this.btnConfirmDeleteCust.Name = "btnConfirmDeleteCust";
-            this.btnConfirmDeleteCust.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmDeleteCust.TabIndex = 21;
-            this.btnConfirmDeleteCust.Text = "Delete";
-            this.btnConfirmDeleteCust.UseVisualStyleBackColor = true;
-            this.btnConfirmDeleteCust.Click += new System.EventHandler(this.btnConfirmDeleteCust_Click);
-            // 
-            // lblActualCustNoDelete
-            // 
-            this.lblActualCustNoDelete.AutoSize = true;
-            this.lblActualCustNoDelete.Location = new System.Drawing.Point(3, 164);
-            this.lblActualCustNoDelete.Name = "lblActualCustNoDelete";
-            this.lblActualCustNoDelete.Size = new System.Drawing.Size(227, 13);
-            this.lblActualCustNoDelete.TabIndex = 20;
-            this.lblActualCustNoDelete.Text = "Are you sure you want to delete this customer?";
-            this.lblActualCustNoDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDeleteTitle
-            // 
-            this.lblDeleteTitle.AutoSize = true;
-            this.lblDeleteTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeleteTitle.Location = new System.Drawing.Point(82, 131);
-            this.lblDeleteTitle.Name = "lblDeleteTitle";
-            this.lblDeleteTitle.Size = new System.Drawing.Size(55, 13);
-            this.lblDeleteTitle.TabIndex = 19;
-            this.lblDeleteTitle.Text = "DELETE";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.lblSearchCustNo.AutoSize = true;
+            this.lblSearchCustNo.Location = new System.Drawing.Point(15, 34);
+            this.lblSearchCustNo.Name = "lblSearchCustNo";
+            this.lblSearchCustNo.Size = new System.Drawing.Size(68, 13);
+            this.lblSearchCustNo.TabIndex = 36;
+            this.lblSearchCustNo.Text = "Customer No";
             // 
             // txtSearchCustEmail
             // 
@@ -772,41 +745,73 @@
             this.lblSearchCustForename.TabIndex = 20;
             this.lblSearchCustForename.Text = "Forename";
             // 
-            // lblSearchCustNo
+            // lblSEARCH
             // 
-            this.lblSearchCustNo.AutoSize = true;
-            this.lblSearchCustNo.Location = new System.Drawing.Point(15, 34);
-            this.lblSearchCustNo.Name = "lblSearchCustNo";
-            this.lblSearchCustNo.Size = new System.Drawing.Size(68, 13);
-            this.lblSearchCustNo.TabIndex = 36;
-            this.lblSearchCustNo.Text = "Customer No";
+            this.lblSEARCH.AutoSize = true;
+            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEARCH.Location = new System.Drawing.Point(82, 14);
+            this.lblSEARCH.Name = "lblSEARCH";
+            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
+            this.lblSEARCH.TabIndex = 19;
+            this.lblSEARCH.Text = "SEARCH";
             // 
-            // txtSearchCustNo
+            // pnlDelete
             // 
-            this.txtSearchCustNo.Location = new System.Drawing.Point(115, 31);
-            this.txtSearchCustNo.Name = "txtSearchCustNo";
-            this.txtSearchCustNo.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchCustNo.TabIndex = 37;
+            this.pnlDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlDelete.Controls.Add(this.btnDeleteCustCancel);
+            this.pnlDelete.Controls.Add(this.pnlEdit);
+            this.pnlDelete.Controls.Add(this.btnConfirmDeleteCust);
+            this.pnlDelete.Controls.Add(this.lblActualCustNoDelete);
+            this.pnlDelete.Controls.Add(this.lblDeleteTitle);
+            this.pnlDelete.Location = new System.Drawing.Point(89, 9);
+            this.pnlDelete.Name = "pnlDelete";
+            this.pnlDelete.Size = new System.Drawing.Size(230, 380);
+            this.pnlDelete.TabIndex = 47;
+            this.pnlDelete.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDelete_Paint);
             // 
-            // btnCancelCustSearch
+            // btnDeleteCustCancel
             // 
-            this.btnCancelCustSearch.Location = new System.Drawing.Point(115, 317);
-            this.btnCancelCustSearch.Name = "btnCancelCustSearch";
-            this.btnCancelCustSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelCustSearch.TabIndex = 38;
-            this.btnCancelCustSearch.Text = "Cancel";
-            this.btnCancelCustSearch.UseVisualStyleBackColor = true;
-            this.btnCancelCustSearch.Click += new System.EventHandler(this.btnCancelCustSearch_Click);
+            this.btnDeleteCustCancel.Location = new System.Drawing.Point(110, 203);
+            this.btnDeleteCustCancel.Name = "btnDeleteCustCancel";
+            this.btnDeleteCustCancel.Size = new System.Drawing.Size(75, 25);
+            this.btnDeleteCustCancel.TabIndex = 22;
+            this.btnDeleteCustCancel.Text = "Cancel";
+            this.btnDeleteCustCancel.UseVisualStyleBackColor = true;
+            this.btnDeleteCustCancel.Click += new System.EventHandler(this.btnDeleteCustCancel_Click);
             // 
-            // btnSearchCustSearch
+            // btnConfirmDeleteCust
             // 
-            this.btnSearchCustSearch.Location = new System.Drawing.Point(29, 317);
-            this.btnSearchCustSearch.Name = "btnSearchCustSearch";
-            this.btnSearchCustSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchCustSearch.TabIndex = 39;
-            this.btnSearchCustSearch.TabStop = false;
-            this.btnSearchCustSearch.Text = "Search";
-            this.btnSearchCustSearch.UseVisualStyleBackColor = true;
+            this.btnConfirmDeleteCust.Location = new System.Drawing.Point(29, 203);
+            this.btnConfirmDeleteCust.Name = "btnConfirmDeleteCust";
+            this.btnConfirmDeleteCust.Size = new System.Drawing.Size(75, 25);
+            this.btnConfirmDeleteCust.TabIndex = 21;
+            this.btnConfirmDeleteCust.Text = "Delete";
+            this.btnConfirmDeleteCust.UseVisualStyleBackColor = true;
+            this.btnConfirmDeleteCust.Click += new System.EventHandler(this.btnConfirmDeleteCust_Click);
+            // 
+            // lblActualCustNoDelete
+            // 
+            this.lblActualCustNoDelete.AutoSize = true;
+            this.lblActualCustNoDelete.Location = new System.Drawing.Point(3, 164);
+            this.lblActualCustNoDelete.Name = "lblActualCustNoDelete";
+            this.lblActualCustNoDelete.Size = new System.Drawing.Size(227, 13);
+            this.lblActualCustNoDelete.TabIndex = 20;
+            this.lblActualCustNoDelete.Text = "Are you sure you want to delete this customer?";
+            this.lblActualCustNoDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDeleteTitle
+            // 
+            this.lblDeleteTitle.AutoSize = true;
+            this.lblDeleteTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteTitle.Location = new System.Drawing.Point(82, 131);
+            this.lblDeleteTitle.Name = "lblDeleteTitle";
+            this.lblDeleteTitle.Size = new System.Drawing.Size(55, 13);
+            this.lblDeleteTitle.TabIndex = 19;
+            this.lblDeleteTitle.Text = "DELETE";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // btnAddCustomer
             // 
@@ -914,17 +919,6 @@
             this.pnlReturn.Size = new System.Drawing.Size(134, 46);
             this.pnlReturn.TabIndex = 44;
             // 
-            // btnReturnMenu
-            // 
-            this.btnReturnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnReturnMenu.BackgroundImage = global::SF.Properties.Resources.returnBLACKANDBLUE;
-            this.btnReturnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturnMenu.Location = new System.Drawing.Point(0, 10);
-            this.btnReturnMenu.Name = "btnReturnMenu";
-            this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
-            this.btnReturnMenu.TabIndex = 43;
-            this.btnReturnMenu.UseVisualStyleBackColor = false;
-            // 
             // lblReturnMenu
             // 
             this.lblReturnMenu.AutoSize = true;
@@ -936,6 +930,17 @@
             this.lblReturnMenu.TabIndex = 44;
             this.lblReturnMenu.Text = "Return";
             // 
+            // btnReturnMenu
+            // 
+            this.btnReturnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnReturnMenu.BackgroundImage = global::SF.Properties.Resources.returnBLACKANDBLUE;
+            this.btnReturnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturnMenu.Location = new System.Drawing.Point(0, 10);
+            this.btnReturnMenu.Name = "btnReturnMenu";
+            this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
+            this.btnReturnMenu.TabIndex = 43;
+            this.btnReturnMenu.UseVisualStyleBackColor = false;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -943,8 +948,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(880, 405);
             this.Controls.Add(this.pnlSearch);
-            this.Controls.Add(this.pnlDelete);
-            this.Controls.Add(this.pnlEdit);
             this.Controls.Add(this.pnlAdd);
             this.Controls.Add(this.pnlReturn);
             this.Controls.Add(this.lblSearchCustomer);

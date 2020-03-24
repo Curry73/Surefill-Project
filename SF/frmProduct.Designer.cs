@@ -44,14 +44,9 @@
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.pnlSearchProduct = new System.Windows.Forms.Panel();
             this.txtSearchProductNo = new System.Windows.Forms.TextBox();
-            this.txtSearchProductQty = new System.Windows.Forms.TextBox();
-            this.txtSearchProductPrice = new System.Windows.Forms.TextBox();
             this.txtSearchProductDescription = new System.Windows.Forms.TextBox();
-            this.lblSearchProductQty = new System.Windows.Forms.Label();
-            this.lblSearchProductPrice = new System.Windows.Forms.Label();
             this.lblSearchProductDescription = new System.Windows.Forms.Label();
             this.lblSearchProductNo = new System.Windows.Forms.Label();
-            this.btnConfirmSearchProduct = new System.Windows.Forms.Button();
             this.btnConfirmCancelSearch = new System.Windows.Forms.Button();
             this.pnlEditProduct = new System.Windows.Forms.Panel();
             this.pnlAddJob = new System.Windows.Forms.Panel();
@@ -98,6 +93,9 @@
             this.lblDeleteProductQ = new System.Windows.Forms.Label();
             this.lblProductDelete = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblSEARCH = new System.Windows.Forms.Label();
+            this.lblEdit = new System.Windows.Forms.Label();
+            this.lblADD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.pnlReturn.SuspendLayout();
             this.pnlSearchProduct.SuspendLayout();
@@ -239,102 +237,56 @@
             // 
             // pnlSearchProduct
             // 
-            this.pnlSearchProduct.BackColor = System.Drawing.Color.Red;
+            this.pnlSearchProduct.BackColor = System.Drawing.Color.LightSalmon;
+            this.pnlSearchProduct.Controls.Add(this.lblSEARCH);
             this.pnlSearchProduct.Controls.Add(this.txtSearchProductNo);
-            this.pnlSearchProduct.Controls.Add(this.txtSearchProductQty);
-            this.pnlSearchProduct.Controls.Add(this.txtSearchProductPrice);
             this.pnlSearchProduct.Controls.Add(this.txtSearchProductDescription);
-            this.pnlSearchProduct.Controls.Add(this.lblSearchProductQty);
-            this.pnlSearchProduct.Controls.Add(this.lblSearchProductPrice);
             this.pnlSearchProduct.Controls.Add(this.lblSearchProductDescription);
             this.pnlSearchProduct.Controls.Add(this.lblSearchProductNo);
-            this.pnlSearchProduct.Controls.Add(this.btnConfirmSearchProduct);
             this.pnlSearchProduct.Controls.Add(this.btnConfirmCancelSearch);
-            this.pnlSearchProduct.Location = new System.Drawing.Point(12, 13);
+            this.pnlSearchProduct.Location = new System.Drawing.Point(638, 12);
             this.pnlSearchProduct.Name = "pnlSearchProduct";
             this.pnlSearchProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlSearchProduct.TabIndex = 54;
             // 
             // txtSearchProductNo
             // 
-            this.txtSearchProductNo.Location = new System.Drawing.Point(128, 55);
+            this.txtSearchProductNo.Location = new System.Drawing.Point(128, 108);
             this.txtSearchProductNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchProductNo.Name = "txtSearchProductNo";
             this.txtSearchProductNo.Size = new System.Drawing.Size(81, 20);
             this.txtSearchProductNo.TabIndex = 62;
             // 
-            // txtSearchProductQty
-            // 
-            this.txtSearchProductQty.Location = new System.Drawing.Point(126, 210);
-            this.txtSearchProductQty.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchProductQty.Name = "txtSearchProductQty";
-            this.txtSearchProductQty.Size = new System.Drawing.Size(83, 20);
-            this.txtSearchProductQty.TabIndex = 59;
-            // 
-            // txtSearchProductPrice
-            // 
-            this.txtSearchProductPrice.Location = new System.Drawing.Point(126, 158);
-            this.txtSearchProductPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchProductPrice.Name = "txtSearchProductPrice";
-            this.txtSearchProductPrice.Size = new System.Drawing.Size(83, 20);
-            this.txtSearchProductPrice.TabIndex = 60;
-            // 
             // txtSearchProductDescription
             // 
-            this.txtSearchProductDescription.Location = new System.Drawing.Point(126, 103);
+            this.txtSearchProductDescription.Location = new System.Drawing.Point(126, 156);
             this.txtSearchProductDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchProductDescription.Name = "txtSearchProductDescription";
             this.txtSearchProductDescription.Size = new System.Drawing.Size(81, 20);
             this.txtSearchProductDescription.TabIndex = 61;
-            // 
-            // lblSearchProductQty
-            // 
-            this.lblSearchProductQty.AutoSize = true;
-            this.lblSearchProductQty.Location = new System.Drawing.Point(29, 210);
-            this.lblSearchProductQty.Name = "lblSearchProductQty";
-            this.lblSearchProductQty.Size = new System.Drawing.Size(79, 13);
-            this.lblSearchProductQty.TabIndex = 57;
-            this.lblSearchProductQty.Text = "Job Completion";
-            // 
-            // lblSearchProductPrice
-            // 
-            this.lblSearchProductPrice.AutoSize = true;
-            this.lblSearchProductPrice.Location = new System.Drawing.Point(29, 158);
-            this.lblSearchProductPrice.Name = "lblSearchProductPrice";
-            this.lblSearchProductPrice.Size = new System.Drawing.Size(70, 13);
-            this.lblSearchProductPrice.TabIndex = 56;
-            this.lblSearchProductPrice.Text = "Date Booked";
+            this.txtSearchProductDescription.TextChanged += new System.EventHandler(this.txtSearchProductDescription_TextChanged);
             // 
             // lblSearchProductDescription
             // 
             this.lblSearchProductDescription.AutoSize = true;
-            this.lblSearchProductDescription.Location = new System.Drawing.Point(29, 106);
+            this.lblSearchProductDescription.Location = new System.Drawing.Point(29, 159);
             this.lblSearchProductDescription.Name = "lblSearchProductDescription";
-            this.lblSearchProductDescription.Size = new System.Drawing.Size(68, 13);
+            this.lblSearchProductDescription.Size = new System.Drawing.Size(100, 13);
             this.lblSearchProductDescription.TabIndex = 55;
-            this.lblSearchProductDescription.Text = "Customer No";
+            this.lblSearchProductDescription.Text = "Product Description";
             // 
             // lblSearchProductNo
             // 
             this.lblSearchProductNo.AutoSize = true;
-            this.lblSearchProductNo.Location = new System.Drawing.Point(29, 58);
+            this.lblSearchProductNo.Location = new System.Drawing.Point(29, 111);
             this.lblSearchProductNo.Name = "lblSearchProductNo";
-            this.lblSearchProductNo.Size = new System.Drawing.Size(41, 13);
+            this.lblSearchProductNo.Size = new System.Drawing.Size(61, 13);
             this.lblSearchProductNo.TabIndex = 54;
-            this.lblSearchProductNo.Text = "Job No";
-            // 
-            // btnConfirmSearchProduct
-            // 
-            this.btnConfirmSearchProduct.Location = new System.Drawing.Point(32, 281);
-            this.btnConfirmSearchProduct.Name = "btnConfirmSearchProduct";
-            this.btnConfirmSearchProduct.Size = new System.Drawing.Size(75, 25);
-            this.btnConfirmSearchProduct.TabIndex = 27;
-            this.btnConfirmSearchProduct.Text = "Search";
-            this.btnConfirmSearchProduct.UseVisualStyleBackColor = true;
+            this.lblSearchProductNo.Text = "Product No";
             // 
             // btnConfirmCancelSearch
             // 
-            this.btnConfirmCancelSearch.Location = new System.Drawing.Point(113, 281);
+            this.btnConfirmCancelSearch.Location = new System.Drawing.Point(70, 252);
             this.btnConfirmCancelSearch.Name = "btnConfirmCancelSearch";
             this.btnConfirmCancelSearch.Size = new System.Drawing.Size(75, 25);
             this.btnConfirmCancelSearch.TabIndex = 28;
@@ -343,7 +295,8 @@
             // 
             // pnlEditProduct
             // 
-            this.pnlEditProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.pnlEditProduct.BackColor = System.Drawing.Color.Maroon;
+            this.pnlEditProduct.Controls.Add(this.lblEdit);
             this.pnlEditProduct.Controls.Add(this.pnlAddJob);
             this.pnlEditProduct.Controls.Add(this.txtEditProductQty);
             this.pnlEditProduct.Controls.Add(this.txtEditProductPrice);
@@ -355,7 +308,7 @@
             this.pnlEditProduct.Controls.Add(this.lblEditProductNo);
             this.pnlEditProduct.Controls.Add(this.btnConfirmEditProduct);
             this.pnlEditProduct.Controls.Add(this.btnConfirmCancelEdit);
-            this.pnlEditProduct.Location = new System.Drawing.Point(602, 13);
+            this.pnlEditProduct.Location = new System.Drawing.Point(638, 12);
             this.pnlEditProduct.Name = "pnlEditProduct";
             this.pnlEditProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlEditProduct.TabIndex = 55;
@@ -560,36 +513,36 @@
             this.lblEditProductQty.AutoSize = true;
             this.lblEditProductQty.Location = new System.Drawing.Point(29, 210);
             this.lblEditProductQty.Name = "lblEditProductQty";
-            this.lblEditProductQty.Size = new System.Drawing.Size(79, 13);
+            this.lblEditProductQty.Size = new System.Drawing.Size(63, 13);
             this.lblEditProductQty.TabIndex = 35;
-            this.lblEditProductQty.Text = "Job Completion";
+            this.lblEditProductQty.Text = "Product Qty";
             // 
             // lblEditProductPrice
             // 
             this.lblEditProductPrice.AutoSize = true;
             this.lblEditProductPrice.Location = new System.Drawing.Point(29, 158);
             this.lblEditProductPrice.Name = "lblEditProductPrice";
-            this.lblEditProductPrice.Size = new System.Drawing.Size(70, 13);
+            this.lblEditProductPrice.Size = new System.Drawing.Size(71, 13);
             this.lblEditProductPrice.TabIndex = 34;
-            this.lblEditProductPrice.Text = "Date Booked";
+            this.lblEditProductPrice.Text = "Product Price";
             // 
             // lblEditProductDescription
             // 
             this.lblEditProductDescription.AutoSize = true;
             this.lblEditProductDescription.Location = new System.Drawing.Point(29, 106);
             this.lblEditProductDescription.Name = "lblEditProductDescription";
-            this.lblEditProductDescription.Size = new System.Drawing.Size(68, 13);
+            this.lblEditProductDescription.Size = new System.Drawing.Size(100, 13);
             this.lblEditProductDescription.TabIndex = 33;
-            this.lblEditProductDescription.Text = "Customer No";
+            this.lblEditProductDescription.Text = "Product Description";
             // 
             // lblEditProductNo
             // 
             this.lblEditProductNo.AutoSize = true;
             this.lblEditProductNo.Location = new System.Drawing.Point(29, 58);
             this.lblEditProductNo.Name = "lblEditProductNo";
-            this.lblEditProductNo.Size = new System.Drawing.Size(41, 13);
+            this.lblEditProductNo.Size = new System.Drawing.Size(61, 13);
             this.lblEditProductNo.TabIndex = 32;
-            this.lblEditProductNo.Text = "Job No";
+            this.lblEditProductNo.Text = "Product No";
             // 
             // btnConfirmEditProduct
             // 
@@ -600,6 +553,7 @@
             this.btnConfirmEditProduct.Text = "Edit";
             this.btnConfirmEditProduct.UseCompatibleTextRendering = true;
             this.btnConfirmEditProduct.UseVisualStyleBackColor = true;
+            this.btnConfirmEditProduct.Click += new System.EventHandler(this.btnConfirmEditProduct_Click);
             // 
             // btnConfirmCancelEdit
             // 
@@ -613,7 +567,8 @@
             // 
             // pnlAddProduct
             // 
-            this.pnlAddProduct.BackColor = System.Drawing.Color.Teal;
+            this.pnlAddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlAddProduct.Controls.Add(this.lblADD);
             this.pnlAddProduct.Controls.Add(this.txtAddProductQty);
             this.pnlAddProduct.Controls.Add(this.txtAddProductPrice);
             this.pnlAddProduct.Controls.Add(this.txtAddProductDescription);
@@ -624,7 +579,7 @@
             this.pnlAddProduct.Controls.Add(this.lblAddProductNo);
             this.pnlAddProduct.Controls.Add(this.btnConfirmAddProduct);
             this.pnlAddProduct.Controls.Add(this.btnConfirmCancelAdd);
-            this.pnlAddProduct.Location = new System.Drawing.Point(280, 20);
+            this.pnlAddProduct.Location = new System.Drawing.Point(638, 12);
             this.pnlAddProduct.Name = "pnlAddProduct";
             this.pnlAddProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlAddProduct.TabIndex = 56;
@@ -667,36 +622,36 @@
             this.lblAddProductQty.AutoSize = true;
             this.lblAddProductQty.Location = new System.Drawing.Point(30, 211);
             this.lblAddProductQty.Name = "lblAddProductQty";
-            this.lblAddProductQty.Size = new System.Drawing.Size(79, 13);
+            this.lblAddProductQty.Size = new System.Drawing.Size(63, 13);
             this.lblAddProductQty.TabIndex = 49;
-            this.lblAddProductQty.Text = "Job Completion";
+            this.lblAddProductQty.Text = "Product Qty";
             // 
             // lblAddProductPrice
             // 
             this.lblAddProductPrice.AutoSize = true;
             this.lblAddProductPrice.Location = new System.Drawing.Point(30, 159);
             this.lblAddProductPrice.Name = "lblAddProductPrice";
-            this.lblAddProductPrice.Size = new System.Drawing.Size(70, 13);
+            this.lblAddProductPrice.Size = new System.Drawing.Size(71, 13);
             this.lblAddProductPrice.TabIndex = 48;
-            this.lblAddProductPrice.Text = "Date Booked";
+            this.lblAddProductPrice.Text = "Product Price";
             // 
             // lblAddProductDescription
             // 
             this.lblAddProductDescription.AutoSize = true;
             this.lblAddProductDescription.Location = new System.Drawing.Point(30, 107);
             this.lblAddProductDescription.Name = "lblAddProductDescription";
-            this.lblAddProductDescription.Size = new System.Drawing.Size(68, 13);
+            this.lblAddProductDescription.Size = new System.Drawing.Size(100, 13);
             this.lblAddProductDescription.TabIndex = 47;
-            this.lblAddProductDescription.Text = "Customer No";
+            this.lblAddProductDescription.Text = "Product Description";
             // 
             // lblAddProductNo
             // 
             this.lblAddProductNo.AutoSize = true;
             this.lblAddProductNo.Location = new System.Drawing.Point(30, 59);
             this.lblAddProductNo.Name = "lblAddProductNo";
-            this.lblAddProductNo.Size = new System.Drawing.Size(41, 13);
+            this.lblAddProductNo.Size = new System.Drawing.Size(61, 13);
             this.lblAddProductNo.TabIndex = 46;
-            this.lblAddProductNo.Text = "Job No";
+            this.lblAddProductNo.Text = "Product No";
             // 
             // btnConfirmAddProduct
             // 
@@ -720,12 +675,13 @@
             // 
             // pnlDeleteProduct
             // 
-            this.pnlDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnlDeleteProduct.Controls.Add(this.btnDeleteProductCancel);
+            this.pnlDeleteProduct.Controls.Add(this.pnlAddProduct);
             this.pnlDeleteProduct.Controls.Add(this.btnConfirmDeleteProduct);
             this.pnlDeleteProduct.Controls.Add(this.lblDeleteProductQ);
             this.pnlDeleteProduct.Controls.Add(this.lblProductDelete);
-            this.pnlDeleteProduct.Location = new System.Drawing.Point(534, 12);
+            this.pnlDeleteProduct.Location = new System.Drawing.Point(638, 12);
             this.pnlDeleteProduct.Name = "pnlDeleteProduct";
             this.pnlDeleteProduct.Size = new System.Drawing.Size(230, 383);
             this.pnlDeleteProduct.TabIndex = 57;
@@ -771,13 +727,42 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblSEARCH
+            // 
+            this.lblSEARCH.AutoSize = true;
+            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEARCH.Location = new System.Drawing.Point(88, 20);
+            this.lblSEARCH.Name = "lblSEARCH";
+            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
+            this.lblSEARCH.TabIndex = 63;
+            this.lblSEARCH.Text = "SEARCH";
+            // 
+            // lblEdit
+            // 
+            this.lblEdit.AutoSize = true;
+            this.lblEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdit.Location = new System.Drawing.Point(93, 20);
+            this.lblEdit.Name = "lblEdit";
+            this.lblEdit.Size = new System.Drawing.Size(36, 13);
+            this.lblEdit.TabIndex = 52;
+            this.lblEdit.Text = "EDIT";
+            // 
+            // lblADD
+            // 
+            this.lblADD.AutoSize = true;
+            this.lblADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblADD.Location = new System.Drawing.Point(97, 13);
+            this.lblADD.Name = "lblADD";
+            this.lblADD.Size = new System.Drawing.Size(33, 13);
+            this.lblADD.TabIndex = 54;
+            this.lblADD.Text = "ADD";
+            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 405);
             this.Controls.Add(this.pnlDeleteProduct);
-            this.Controls.Add(this.pnlAddProduct);
             this.Controls.Add(this.pnlEditProduct);
             this.Controls.Add(this.pnlSearchProduct);
             this.Controls.Add(this.pnlReturn);
@@ -829,7 +814,6 @@
         private System.Windows.Forms.Label lblReturnMenu;
         private System.Windows.Forms.Button btnReturnMenu;
         private System.Windows.Forms.Panel pnlSearchProduct;
-        private System.Windows.Forms.Button btnConfirmSearchProduct;
         private System.Windows.Forms.Button btnConfirmCancelSearch;
         private System.Windows.Forms.Panel pnlEditProduct;
         private System.Windows.Forms.Panel pnlAddJob;
@@ -876,13 +860,12 @@
         private System.Windows.Forms.Label lblAddProductDescription;
         private System.Windows.Forms.Label lblAddProductNo;
         private System.Windows.Forms.TextBox txtSearchProductNo;
-        private System.Windows.Forms.TextBox txtSearchProductQty;
-        private System.Windows.Forms.TextBox txtSearchProductPrice;
         private System.Windows.Forms.TextBox txtSearchProductDescription;
-        private System.Windows.Forms.Label lblSearchProductQty;
-        private System.Windows.Forms.Label lblSearchProductPrice;
         private System.Windows.Forms.Label lblSearchProductDescription;
         private System.Windows.Forms.Label lblSearchProductNo;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblSEARCH;
+        private System.Windows.Forms.Label lblEdit;
+        private System.Windows.Forms.Label lblADD;
     }
 }

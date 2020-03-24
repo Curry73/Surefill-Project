@@ -14,11 +14,13 @@ namespace SF
     public partial class frmCustomer : Form
     {
 
-        SqlDataAdapter daCustomer;
+        SqlDataAdapter daCustomer, daCustDetails;
         DataSet dsSurefill = new DataSet();
         SqlCommandBuilder cmdBCustomer;
+        SqlCommand cmdCustomerDetails;
+        SqlConnection conn;
         DataRow drCustomer;
-        String connStr, sqlCustomer;
+        String connStr, sqlCustomer, sqlCustDetails;
         int selectedTab = 0;
         bool custSelected = false;
         string custNoSelected = "";
@@ -30,6 +32,7 @@ namespace SF
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
+            conn = new SqlConnection(connStr);
 
             sqlCustomer = @"select * from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
@@ -39,8 +42,13 @@ namespace SF
             daCustomer.Fill(dsSurefill, "Customer");
             dgvCustomers.DataSource = dsSurefill.Tables["Customer"];
             dgvCustomers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            //tabCustomer.SelectedIndex = 1;
-            //tabCustomer.SelectedIndex = 0;
+
+            sqlCustDetails = @"Select * From Customer where Forename LIKE (@Letter + '%') order by CustomerNo";
+            cmdCustomerDetails = new SqlCommand(sqlCustDetails, conn);
+            cmdCustomerDetails.Parameters.Add("@Letter", SqlDbType.VarChar);
+            daCustDetails = new SqlDataAdapter(cmdCustomerDetails);
+            daCustDetails.FillSchema(dsSurefill, SchemaType.Source, "CustDets");
+
             pnlAdd.Visible = false;
             pnlEdit.Visible = false;
             pnlDelete.Visible = false;
@@ -579,6 +587,22 @@ namespace SF
         private void btnSearchCustSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearchCustForename_TextChanged(object sender, EventArgs e)
+        {
+            dsSurefill.Tables["CustDets"].Clear();
+            cmdCustomerDetails.Parameters["@Letter"].Value = txtSearchCustForename.Text;
+            daCustDetails.Fill(dsSurefill, "CustDets");
+            dgvCustomers.DataSource = dsSurefill.Tables["CustDets"];
+        }
+
+        private void txtSearchCustCounty_TextChanged(object sender, EventArgs e)
+        {
+            dsSurefill.Tables["CustDets"].Clear();
+            cmdCustomerDetails.Parameters["@Letter"].Value = txtSearchCustCounty.Text;
+            daCustDetails.Fill(dsSurefill, "CustDets");
+            dgvCustomers.DataSource = dsSurefill.Tables["CustDets"];
         }
 
         private void btnSearchCustomer_MouseLeave(object sender, EventArgs e)

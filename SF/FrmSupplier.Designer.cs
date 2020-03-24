@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
             this.btnSearchSupplier = new System.Windows.Forms.Button();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
@@ -68,24 +68,11 @@
             this.lblDeleteSuppQ = new System.Windows.Forms.Label();
             this.lblDeleteSupp = new System.Windows.Forms.Label();
             this.pnlSearchSupp = new System.Windows.Forms.Panel();
-            this.txtSearchActualSupplierNo = new System.Windows.Forms.TextBox();
-            this.txtSearchSupplierTelephoneNo = new System.Windows.Forms.TextBox();
-            this.txtSearchSupplierEmail = new System.Windows.Forms.TextBox();
-            this.txtSearchSupplierPostcode = new System.Windows.Forms.TextBox();
             this.txtSearchSupplierCounty = new System.Windows.Forms.TextBox();
-            this.txtSearchSupplierTown = new System.Windows.Forms.TextBox();
-            this.txtSearchSupplierStreet = new System.Windows.Forms.TextBox();
             this.txtSearchSupplierName = new System.Windows.Forms.TextBox();
-            this.lblSearchSupplierTelephoneNo = new System.Windows.Forms.Label();
-            this.lblSearchSupplierEmail = new System.Windows.Forms.Label();
-            this.lblSearchSupplierPostcode = new System.Windows.Forms.Label();
             this.lblSearchSupplierCounty = new System.Windows.Forms.Label();
-            this.lblSearchSupplierTown = new System.Windows.Forms.Label();
-            this.lblSearchSupplierStreet = new System.Windows.Forms.Label();
             this.lblSearchSupplierName = new System.Windows.Forms.Label();
-            this.lblSearchSupplierNo = new System.Windows.Forms.Label();
             this.btnConfirmCancelSearchSupplier = new System.Windows.Forms.Button();
-            this.btnConfirmSearchSupplier = new System.Windows.Forms.Button();
             this.pnlEditSupplier = new System.Windows.Forms.Panel();
             this.btnCancelEditSupplier = new System.Windows.Forms.Button();
             this.btnConfirmEditSupplier = new System.Windows.Forms.Button();
@@ -106,6 +93,9 @@
             this.lblEditSupplierName = new System.Windows.Forms.Label();
             this.lblEditSupplierNo = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblSEARCH = new System.Windows.Forms.Label();
+            this.lblEdit = new System.Windows.Forms.Label();
+            this.lblADD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.pnlAddSupplier.SuspendLayout();
             this.pnlDeleteSupp.SuspendLayout();
@@ -116,37 +106,36 @@
             // 
             // dgvSuppliers
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgvSuppliers.Location = new System.Drawing.Point(12, 12);
             this.dgvSuppliers.Name = "dgvSuppliers";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSuppliers.Size = new System.Drawing.Size(620, 380);
             this.dgvSuppliers.TabIndex = 0;
-            //this.dgvSuppliers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuppliers_CellContentClick);
             // 
             // btnSearchSupplier
             // 
@@ -257,7 +246,8 @@
             // 
             // pnlAddSupplier
             // 
-            this.pnlAddSupplier.BackColor = System.Drawing.Color.Red;
+            this.pnlAddSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlAddSupplier.Controls.Add(this.lblADD);
             this.pnlAddSupplier.Controls.Add(this.btnConfirmAddSupplier);
             this.pnlAddSupplier.Controls.Add(this.btnCancelAddSupplier);
             this.pnlAddSupplier.Controls.Add(this.txtAddSupplierTelephoneNo);
@@ -276,7 +266,7 @@
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierStreet);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierName);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierNo);
-            this.pnlAddSupplier.Location = new System.Drawing.Point(12, 13);
+            this.pnlAddSupplier.Location = new System.Drawing.Point(638, 12);
             this.pnlAddSupplier.Name = "pnlAddSupplier";
             this.pnlAddSupplier.Size = new System.Drawing.Size(230, 380);
             this.pnlAddSupplier.TabIndex = 50;
@@ -440,12 +430,12 @@
             // 
             // pnlDeleteSupp
             // 
-            this.pnlDeleteSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlDeleteSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnlDeleteSupp.Controls.Add(this.btnDeleteSuppCancel);
             this.pnlDeleteSupp.Controls.Add(this.btnConfirmDeleteSupp);
             this.pnlDeleteSupp.Controls.Add(this.lblDeleteSuppQ);
             this.pnlDeleteSupp.Controls.Add(this.lblDeleteSupp);
-            this.pnlDeleteSupp.Location = new System.Drawing.Point(140, 3);
+            this.pnlDeleteSupp.Location = new System.Drawing.Point(638, 12);
             this.pnlDeleteSupp.Name = "pnlDeleteSupp";
             this.pnlDeleteSupp.Size = new System.Drawing.Size(230, 380);
             this.pnlDeleteSupp.TabIndex = 52;
@@ -490,172 +480,58 @@
             // 
             // pnlSearchSupp
             // 
-            this.pnlSearchSupp.BackColor = System.Drawing.Color.Teal;
-            this.pnlSearchSupp.Controls.Add(this.txtSearchActualSupplierNo);
-            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierTelephoneNo);
-            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierEmail);
-            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierPostcode);
+            this.pnlSearchSupp.BackColor = System.Drawing.Color.LightSalmon;
+            this.pnlSearchSupp.Controls.Add(this.lblSEARCH);
             this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierCounty);
-            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierTown);
-            this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierStreet);
             this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierName);
-            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierTelephoneNo);
-            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierEmail);
-            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierPostcode);
             this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierCounty);
-            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierTown);
-            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierStreet);
             this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierName);
-            this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierNo);
             this.pnlSearchSupp.Controls.Add(this.btnConfirmCancelSearchSupplier);
-            this.pnlSearchSupp.Controls.Add(this.btnConfirmSearchSupplier);
             this.pnlSearchSupp.Location = new System.Drawing.Point(638, 12);
             this.pnlSearchSupp.Name = "pnlSearchSupp";
             this.pnlSearchSupp.Size = new System.Drawing.Size(230, 380);
             this.pnlSearchSupp.TabIndex = 53;
             this.pnlSearchSupp.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSearchSupp_Paint);
             // 
-            // txtSearchActualSupplierNo
-            // 
-            this.txtSearchActualSupplierNo.Location = new System.Drawing.Point(124, 45);
-            this.txtSearchActualSupplierNo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchActualSupplierNo.Name = "txtSearchActualSupplierNo";
-            this.txtSearchActualSupplierNo.Size = new System.Drawing.Size(81, 20);
-            this.txtSearchActualSupplierNo.TabIndex = 48;
-            this.txtSearchActualSupplierNo.TextChanged += new System.EventHandler(this.txtSearchActualSupplierNo_TextChanged);
-            // 
-            // txtSearchSupplierTelephoneNo
-            // 
-            this.txtSearchSupplierTelephoneNo.Location = new System.Drawing.Point(124, 283);
-            this.txtSearchSupplierTelephoneNo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchSupplierTelephoneNo.Name = "txtSearchSupplierTelephoneNo";
-            this.txtSearchSupplierTelephoneNo.Size = new System.Drawing.Size(83, 20);
-            this.txtSearchSupplierTelephoneNo.TabIndex = 41;
-            // 
-            // txtSearchSupplierEmail
-            // 
-            this.txtSearchSupplierEmail.Location = new System.Drawing.Point(124, 248);
-            this.txtSearchSupplierEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchSupplierEmail.Name = "txtSearchSupplierEmail";
-            this.txtSearchSupplierEmail.Size = new System.Drawing.Size(83, 20);
-            this.txtSearchSupplierEmail.TabIndex = 42;
-            // 
-            // txtSearchSupplierPostcode
-            // 
-            this.txtSearchSupplierPostcode.Location = new System.Drawing.Point(124, 213);
-            this.txtSearchSupplierPostcode.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchSupplierPostcode.Name = "txtSearchSupplierPostcode";
-            this.txtSearchSupplierPostcode.Size = new System.Drawing.Size(83, 20);
-            this.txtSearchSupplierPostcode.TabIndex = 43;
-            // 
             // txtSearchSupplierCounty
             // 
-            this.txtSearchSupplierCounty.Location = new System.Drawing.Point(124, 178);
+            this.txtSearchSupplierCounty.Location = new System.Drawing.Point(106, 173);
             this.txtSearchSupplierCounty.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchSupplierCounty.Name = "txtSearchSupplierCounty";
             this.txtSearchSupplierCounty.Size = new System.Drawing.Size(83, 20);
             this.txtSearchSupplierCounty.TabIndex = 44;
-            // 
-            // txtSearchSupplierTown
-            // 
-            this.txtSearchSupplierTown.Location = new System.Drawing.Point(124, 143);
-            this.txtSearchSupplierTown.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchSupplierTown.Name = "txtSearchSupplierTown";
-            this.txtSearchSupplierTown.Size = new System.Drawing.Size(83, 20);
-            this.txtSearchSupplierTown.TabIndex = 45;
-            // 
-            // txtSearchSupplierStreet
-            // 
-            this.txtSearchSupplierStreet.Location = new System.Drawing.Point(124, 109);
-            this.txtSearchSupplierStreet.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchSupplierStreet.Name = "txtSearchSupplierStreet";
-            this.txtSearchSupplierStreet.Size = new System.Drawing.Size(83, 20);
-            this.txtSearchSupplierStreet.TabIndex = 46;
+            this.txtSearchSupplierCounty.TextChanged += new System.EventHandler(this.txtSearchSupplierCounty_TextChanged);
             // 
             // txtSearchSupplierName
             // 
-            this.txtSearchSupplierName.Location = new System.Drawing.Point(124, 76);
+            this.txtSearchSupplierName.Location = new System.Drawing.Point(106, 104);
             this.txtSearchSupplierName.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchSupplierName.Name = "txtSearchSupplierName";
             this.txtSearchSupplierName.Size = new System.Drawing.Size(81, 20);
             this.txtSearchSupplierName.TabIndex = 47;
             this.txtSearchSupplierName.TextChanged += new System.EventHandler(this.txtSearchSupplierName_TextChanged);
             // 
-            // lblSearchSupplierTelephoneNo
-            // 
-            this.lblSearchSupplierTelephoneNo.AutoSize = true;
-            this.lblSearchSupplierTelephoneNo.Location = new System.Drawing.Point(27, 283);
-            this.lblSearchSupplierTelephoneNo.Name = "lblSearchSupplierTelephoneNo";
-            this.lblSearchSupplierTelephoneNo.Size = new System.Drawing.Size(75, 13);
-            this.lblSearchSupplierTelephoneNo.TabIndex = 39;
-            this.lblSearchSupplierTelephoneNo.Text = "Telephone No";
-            // 
-            // lblSearchSupplierEmail
-            // 
-            this.lblSearchSupplierEmail.AutoSize = true;
-            this.lblSearchSupplierEmail.Location = new System.Drawing.Point(27, 247);
-            this.lblSearchSupplierEmail.Name = "lblSearchSupplierEmail";
-            this.lblSearchSupplierEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblSearchSupplierEmail.TabIndex = 38;
-            this.lblSearchSupplierEmail.Text = "Email";
-            // 
-            // lblSearchSupplierPostcode
-            // 
-            this.lblSearchSupplierPostcode.AutoSize = true;
-            this.lblSearchSupplierPostcode.Location = new System.Drawing.Point(27, 213);
-            this.lblSearchSupplierPostcode.Name = "lblSearchSupplierPostcode";
-            this.lblSearchSupplierPostcode.Size = new System.Drawing.Size(52, 13);
-            this.lblSearchSupplierPostcode.TabIndex = 37;
-            this.lblSearchSupplierPostcode.Text = "Postcode";
-            // 
             // lblSearchSupplierCounty
             // 
             this.lblSearchSupplierCounty.AutoSize = true;
-            this.lblSearchSupplierCounty.Location = new System.Drawing.Point(27, 178);
+            this.lblSearchSupplierCounty.Location = new System.Drawing.Point(43, 178);
             this.lblSearchSupplierCounty.Name = "lblSearchSupplierCounty";
             this.lblSearchSupplierCounty.Size = new System.Drawing.Size(40, 13);
             this.lblSearchSupplierCounty.TabIndex = 36;
             this.lblSearchSupplierCounty.Text = "County";
             // 
-            // lblSearchSupplierTown
-            // 
-            this.lblSearchSupplierTown.AutoSize = true;
-            this.lblSearchSupplierTown.Location = new System.Drawing.Point(27, 143);
-            this.lblSearchSupplierTown.Name = "lblSearchSupplierTown";
-            this.lblSearchSupplierTown.Size = new System.Drawing.Size(34, 13);
-            this.lblSearchSupplierTown.TabIndex = 35;
-            this.lblSearchSupplierTown.Text = "Town";
-            // 
-            // lblSearchSupplierStreet
-            // 
-            this.lblSearchSupplierStreet.AutoSize = true;
-            this.lblSearchSupplierStreet.Location = new System.Drawing.Point(27, 109);
-            this.lblSearchSupplierStreet.Name = "lblSearchSupplierStreet";
-            this.lblSearchSupplierStreet.Size = new System.Drawing.Size(35, 13);
-            this.lblSearchSupplierStreet.TabIndex = 34;
-            this.lblSearchSupplierStreet.Text = "Street";
-            // 
             // lblSearchSupplierName
             // 
             this.lblSearchSupplierName.AutoSize = true;
-            this.lblSearchSupplierName.Location = new System.Drawing.Point(27, 79);
+            this.lblSearchSupplierName.Location = new System.Drawing.Point(43, 111);
             this.lblSearchSupplierName.Name = "lblSearchSupplierName";
             this.lblSearchSupplierName.Size = new System.Drawing.Size(35, 13);
             this.lblSearchSupplierName.TabIndex = 33;
             this.lblSearchSupplierName.Text = "Name";
             // 
-            // lblSearchSupplierNo
-            // 
-            this.lblSearchSupplierNo.AutoSize = true;
-            this.lblSearchSupplierNo.Location = new System.Drawing.Point(27, 48);
-            this.lblSearchSupplierNo.Name = "lblSearchSupplierNo";
-            this.lblSearchSupplierNo.Size = new System.Drawing.Size(62, 13);
-            this.lblSearchSupplierNo.TabIndex = 32;
-            this.lblSearchSupplierNo.Text = "Supplier No";
-            // 
             // btnConfirmCancelSearchSupplier
             // 
-            this.btnConfirmCancelSearchSupplier.Location = new System.Drawing.Point(124, 320);
+            this.btnConfirmCancelSearchSupplier.Location = new System.Drawing.Point(93, 266);
             this.btnConfirmCancelSearchSupplier.Name = "btnConfirmCancelSearchSupplier";
             this.btnConfirmCancelSearchSupplier.Size = new System.Drawing.Size(75, 25);
             this.btnConfirmCancelSearchSupplier.TabIndex = 24;
@@ -663,22 +539,12 @@
             this.btnConfirmCancelSearchSupplier.UseVisualStyleBackColor = true;
             this.btnConfirmCancelSearchSupplier.Click += new System.EventHandler(this.btnConfirmCancelSearchSupplier_Click);
             // 
-            // btnConfirmSearchSupplier
-            // 
-            this.btnConfirmSearchSupplier.Location = new System.Drawing.Point(43, 320);
-            this.btnConfirmSearchSupplier.Name = "btnConfirmSearchSupplier";
-            this.btnConfirmSearchSupplier.Size = new System.Drawing.Size(75, 25);
-            this.btnConfirmSearchSupplier.TabIndex = 23;
-            this.btnConfirmSearchSupplier.Text = "Search";
-            this.btnConfirmSearchSupplier.UseVisualStyleBackColor = true;
-            this.btnConfirmSearchSupplier.Click += new System.EventHandler(this.btnConfirmSearchSupplier_Click);
-            // 
             // pnlEditSupplier
             // 
-            this.pnlEditSupplier.BackColor = System.Drawing.Color.Fuchsia;
+            this.pnlEditSupplier.BackColor = System.Drawing.Color.Maroon;
+            this.pnlEditSupplier.Controls.Add(this.lblEdit);
             this.pnlEditSupplier.Controls.Add(this.btnCancelEditSupplier);
             this.pnlEditSupplier.Controls.Add(this.btnConfirmEditSupplier);
-            this.pnlEditSupplier.Controls.Add(this.pnlDeleteSupp);
             this.pnlEditSupplier.Controls.Add(this.txtEditSupplierTelephoneNo);
             this.pnlEditSupplier.Controls.Add(this.txtEditSupplierEmail);
             this.pnlEditSupplier.Controls.Add(this.txtEditSupplierPostcode);
@@ -695,7 +561,7 @@
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierStreet);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierName);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierNo);
-            this.pnlEditSupplier.Location = new System.Drawing.Point(122, 10);
+            this.pnlEditSupplier.Location = new System.Drawing.Point(638, 12);
             this.pnlEditSupplier.Name = "pnlEditSupplier";
             this.pnlEditSupplier.Size = new System.Drawing.Size(230, 380);
             this.pnlEditSupplier.TabIndex = 51;
@@ -861,6 +727,36 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblSEARCH
+            // 
+            this.lblSEARCH.AutoSize = true;
+            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEARCH.Location = new System.Drawing.Point(90, 32);
+            this.lblSEARCH.Name = "lblSEARCH";
+            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
+            this.lblSEARCH.TabIndex = 48;
+            this.lblSEARCH.Text = "SEARCH";
+            // 
+            // lblEdit
+            // 
+            this.lblEdit.AutoSize = true;
+            this.lblEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdit.Location = new System.Drawing.Point(88, 17);
+            this.lblEdit.Name = "lblEdit";
+            this.lblEdit.Size = new System.Drawing.Size(36, 13);
+            this.lblEdit.TabIndex = 27;
+            this.lblEdit.Text = "EDIT";
+            // 
+            // lblADD
+            // 
+            this.lblADD.AutoSize = true;
+            this.lblADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblADD.Location = new System.Drawing.Point(97, 17);
+            this.lblADD.Name = "lblADD";
+            this.lblADD.Size = new System.Drawing.Size(33, 13);
+            this.lblADD.TabIndex = 32;
+            this.lblADD.Text = "ADD";
+            // 
             // FrmSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,6 +764,7 @@
             this.ClientSize = new System.Drawing.Size(880, 405);
             this.Controls.Add(this.pnlAddSupplier);
             this.Controls.Add(this.pnlEditSupplier);
+            this.Controls.Add(this.pnlDeleteSupp);
             this.Controls.Add(this.pnlSearchSupp);
             this.Controls.Add(this.btnReturnMenu);
             this.Controls.Add(this.lblReturnMenu);
@@ -959,22 +856,12 @@
         private System.Windows.Forms.Label lblDeleteSuppQ;
         private System.Windows.Forms.Label lblDeleteSupp;
         private System.Windows.Forms.Button btnConfirmCancelSearchSupplier;
-        private System.Windows.Forms.Button btnConfirmSearchSupplier;
-        private System.Windows.Forms.TextBox txtSearchActualSupplierNo;
-        private System.Windows.Forms.TextBox txtSearchSupplierTelephoneNo;
-        private System.Windows.Forms.TextBox txtSearchSupplierEmail;
-        private System.Windows.Forms.TextBox txtSearchSupplierPostcode;
         private System.Windows.Forms.TextBox txtSearchSupplierCounty;
-        private System.Windows.Forms.TextBox txtSearchSupplierTown;
-        private System.Windows.Forms.TextBox txtSearchSupplierStreet;
         private System.Windows.Forms.TextBox txtSearchSupplierName;
-        private System.Windows.Forms.Label lblSearchSupplierTelephoneNo;
-        private System.Windows.Forms.Label lblSearchSupplierEmail;
-        private System.Windows.Forms.Label lblSearchSupplierPostcode;
         private System.Windows.Forms.Label lblSearchSupplierCounty;
-        private System.Windows.Forms.Label lblSearchSupplierTown;
-        private System.Windows.Forms.Label lblSearchSupplierStreet;
         private System.Windows.Forms.Label lblSearchSupplierName;
-        private System.Windows.Forms.Label lblSearchSupplierNo;
+        private System.Windows.Forms.Label lblSEARCH;
+        private System.Windows.Forms.Label lblEdit;
+        private System.Windows.Forms.Label lblADD;
     }
 }

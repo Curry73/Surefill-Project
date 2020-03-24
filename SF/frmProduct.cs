@@ -15,11 +15,13 @@ namespace SF
     public partial class frmProduct : Form
     {
         SqlConnection con = new SqlConnection();
-        SqlDataAdapter daProduct;
+        SqlDataAdapter daProduct, daProdDetails;
         DataSet dsSurefill = new DataSet();
         SqlCommandBuilder cmdBProduct;
+        SqlCommand cmdProductDetails;
+        SqlConnection conn;
         DataRow drProduct;
-        String connStr, sqlProduct;
+        String connStr, sqlProduct, sqlProdDetails;
         int selectedTab = 0;
         bool prodSelected = false;
         String prodNoSelected = "";
@@ -32,6 +34,7 @@ namespace SF
         private void frmProduct_Load(object sender, EventArgs e)
         {
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
+            conn = new SqlConnection(connStr);
 
             sqlProduct = @"select * from Product";
             daProduct = new SqlDataAdapter(sqlProduct, connStr);
@@ -45,6 +48,12 @@ namespace SF
             pnlEditProduct.Visible = false;
             pnlDeleteProduct.Visible = false;
             pnlSearchProduct.Visible = false;
+
+            sqlProdDetails = @"Select * From Product where ProductDescription LIKE (@Letter + '%') order by ProductNo";
+            cmdProductDetails = new SqlCommand(sqlProdDetails, conn);
+            cmdProductDetails.Parameters.Add("@Letter", SqlDbType.VarChar);
+            daProdDetails = new SqlDataAdapter(cmdProductDetails);
+            daProdDetails.FillSchema(dsSurefill, SchemaType.Source, "ProdDets");
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -177,7 +186,7 @@ namespace SF
 
             try
             {
-                myProduct.ProductNo = Convert.ToInt32 (lblAddActualProductNo.Text.Trim());
+                myProduct.ProductNo = lblAddActualProductNo.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -280,7 +289,7 @@ namespace SF
 
                 try
                 {
-                    myProduct.ProductNo = Convert.ToInt32 (lblEditActualProductNo.Text.Trim());
+                    myProduct.ProductNo = lblEditActualProductNo.Text.Trim();
                 }
                 catch (MyException MyEx)
                 {
@@ -382,6 +391,14 @@ namespace SF
 System.Windows.Forms.DialogResult.Yes);
 
             pnlSearchProduct.Visible = false;
+        }
+
+        private void txtSearchProductDescription_TextChanged(object sender, EventArgs e)
+        {
+            dsSurefill.Tables["ProdDets"].Clear();
+            cmdProductDetails.Parameters["@Letter"].Value = txtSearchProductDescription.Text;
+            daProdDetails.Fill(dsSurefill, "ProdDets");
+            dgvProduct.DataSource = dsSurefill.Tables["ProdDets"];
         }
 
         private void btnDeleteProductCancel_Click(object sender, EventArgs e)

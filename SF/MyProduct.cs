@@ -8,19 +8,19 @@ namespace SF
 {
     class MyProduct
     {
-        private int productNo, productQty;
-        private string productDescription;
+        private int productQty;
+        private string productNo, productDescription;
         private double productPrice;
 
         public MyProduct()
         {
-            this.productNo = 0;
+            this.productNo = "";
             this.productDescription = "";
             this.productPrice = 0.0;
             this.productQty = 0;
         }
 
-        public MyProduct (int productNo, string productDescription, double productPrice, int productQty)
+        public MyProduct (String productNo, string productDescription, double productPrice, int productQty)
         {
             this.productNo = productNo;
             this.productDescription = productDescription;
@@ -28,7 +28,7 @@ namespace SF
             this.productQty = productQty;
         }
 
-        public int ProductNo
+        public string ProductNo
         { get => productNo; set => productNo = value; }
 
         public int ProductQty

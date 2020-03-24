@@ -172,11 +172,6 @@ namespace SF
 
         }
 
-        private void lblADD_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void btnDeleteSupplier_Click(object sender, EventArgs e)
@@ -555,6 +550,14 @@ namespace SF
             dgvSuppliers.DataSource = dsSurefill.Tables["SuppDets"];
         }
 
+        private void txtSearchSupplierCounty_TextChanged(object sender, EventArgs e)
+        {
+            dsSurefill.Tables["SuppDets"].Clear();
+            cmdSupplierDetails.Parameters["@Letter"].Value = txtSearchSupplierCounty.Text;
+            daSuppDetails.Fill(dsSurefill, "SuppDets");
+            dgvSuppliers.DataSource = dsSurefill.Tables["SuppDets"];
+        }
+
         private void pnlSearchSupp_Paint(object sender, PaintEventArgs e)
         {
 
@@ -567,18 +570,18 @@ namespace SF
             pnlDeleteSupp.Visible = false;
         }
 
-        private void btnConfirmSearchSupplier_Click(object sender, EventArgs e)
-        {
-            connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
-            con.Open();
-            SqlCommand cmdSupplier = new SqlCommand("select * from Supplier" + txtSearchActualSupplierNo.Text + "'", con);
-            SqlDataReader dr = cmdSupplier.ExecuteReader();
-            if (dr.Read())
-            {
-                txtSearchActualSupplierNo.Text = dr.GetValue(3).ToString();
-            }
-            con.Close();
-        }
+        //private void btnConfirmSearchSupplier_Click(object sender, EventArgs e)
+        //{
+        //    connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
+        //    con.Open();
+        //    SqlCommand cmdSupplier = new SqlCommand("select * from Supplier" + txtSearchActualSupplierNo.Text + "'", con);
+        //    SqlDataReader dr = cmdSupplier.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+        //        txtSearchActualSupplierNo.Text = dr.GetValue(3).ToString();
+        //    }
+        //    con.Close();
+        //}
 
         private void btnSearchSupplier_MouseLeave(object sender, EventArgs e)
         {

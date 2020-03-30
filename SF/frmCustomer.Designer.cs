@@ -76,17 +76,17 @@
             this.lblEditCustForename = new System.Windows.Forms.Label();
             this.lblEditCustNo = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.pnlDelete = new System.Windows.Forms.Panel();
-            this.btnDeleteCustCancel = new System.Windows.Forms.Button();
-            this.btnConfirmDeleteCust = new System.Windows.Forms.Button();
-            this.lblActualCustNoDelete = new System.Windows.Forms.Label();
-            this.lblDeleteTitle = new System.Windows.Forms.Label();
             this.btnCancelCustSearch = new System.Windows.Forms.Button();
             this.txtSearchCustCounty = new System.Windows.Forms.TextBox();
             this.txtSearchCustForename = new System.Windows.Forms.TextBox();
             this.lblSearchCustCounty = new System.Windows.Forms.Label();
             this.lblSearchCustForename = new System.Windows.Forms.Label();
             this.lblSEARCH = new System.Windows.Forms.Label();
+            this.pnlDelete = new System.Windows.Forms.Panel();
+            this.btnDeleteCustCancel = new System.Windows.Forms.Button();
+            this.btnConfirmDeleteCust = new System.Windows.Forms.Button();
+            this.lblActualCustNoDelete = new System.Windows.Forms.Label();
+            this.lblDeleteTitle = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
@@ -111,7 +111,7 @@
             // dgvCustomers
             // 
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Location = new System.Drawing.Point(12, 12);
+            this.dgvCustomers.Location = new System.Drawing.Point(1, 12);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomers.Size = new System.Drawing.Size(620, 380);
@@ -549,59 +549,6 @@
             this.pnlSearch.Size = new System.Drawing.Size(230, 380);
             this.pnlSearch.TabIndex = 48;
             // 
-            // pnlDelete
-            // 
-            this.pnlDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pnlDelete.Controls.Add(this.btnDeleteCustCancel);
-            this.pnlDelete.Controls.Add(this.btnConfirmDeleteCust);
-            this.pnlDelete.Controls.Add(this.lblActualCustNoDelete);
-            this.pnlDelete.Controls.Add(this.lblDeleteTitle);
-            this.pnlDelete.Location = new System.Drawing.Point(638, 12);
-            this.pnlDelete.Name = "pnlDelete";
-            this.pnlDelete.Size = new System.Drawing.Size(230, 380);
-            this.pnlDelete.TabIndex = 47;
-            this.pnlDelete.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDelete_Paint);
-            // 
-            // btnDeleteCustCancel
-            // 
-            this.btnDeleteCustCancel.Location = new System.Drawing.Point(110, 203);
-            this.btnDeleteCustCancel.Name = "btnDeleteCustCancel";
-            this.btnDeleteCustCancel.Size = new System.Drawing.Size(75, 25);
-            this.btnDeleteCustCancel.TabIndex = 22;
-            this.btnDeleteCustCancel.Text = "Cancel";
-            this.btnDeleteCustCancel.UseVisualStyleBackColor = true;
-            this.btnDeleteCustCancel.Click += new System.EventHandler(this.btnDeleteCustCancel_Click);
-            // 
-            // btnConfirmDeleteCust
-            // 
-            this.btnConfirmDeleteCust.Location = new System.Drawing.Point(29, 203);
-            this.btnConfirmDeleteCust.Name = "btnConfirmDeleteCust";
-            this.btnConfirmDeleteCust.Size = new System.Drawing.Size(75, 25);
-            this.btnConfirmDeleteCust.TabIndex = 21;
-            this.btnConfirmDeleteCust.Text = "Delete";
-            this.btnConfirmDeleteCust.UseVisualStyleBackColor = true;
-            this.btnConfirmDeleteCust.Click += new System.EventHandler(this.btnConfirmDeleteCust_Click);
-            // 
-            // lblActualCustNoDelete
-            // 
-            this.lblActualCustNoDelete.AutoSize = true;
-            this.lblActualCustNoDelete.Location = new System.Drawing.Point(3, 164);
-            this.lblActualCustNoDelete.Name = "lblActualCustNoDelete";
-            this.lblActualCustNoDelete.Size = new System.Drawing.Size(227, 13);
-            this.lblActualCustNoDelete.TabIndex = 20;
-            this.lblActualCustNoDelete.Text = "Are you sure you want to delete this customer?";
-            this.lblActualCustNoDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDeleteTitle
-            // 
-            this.lblDeleteTitle.AutoSize = true;
-            this.lblDeleteTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeleteTitle.Location = new System.Drawing.Point(82, 131);
-            this.lblDeleteTitle.Name = "lblDeleteTitle";
-            this.lblDeleteTitle.Size = new System.Drawing.Size(55, 13);
-            this.lblDeleteTitle.TabIndex = 19;
-            this.lblDeleteTitle.Text = "DELETE";
-            // 
             // btnCancelCustSearch
             // 
             this.btnCancelCustSearch.Location = new System.Drawing.Point(85, 225);
@@ -655,6 +602,59 @@
             this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
             this.lblSEARCH.TabIndex = 19;
             this.lblSEARCH.Text = "SEARCH";
+            // 
+            // pnlDelete
+            // 
+            this.pnlDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlDelete.Controls.Add(this.btnDeleteCustCancel);
+            this.pnlDelete.Controls.Add(this.btnConfirmDeleteCust);
+            this.pnlDelete.Controls.Add(this.lblActualCustNoDelete);
+            this.pnlDelete.Controls.Add(this.lblDeleteTitle);
+            this.pnlDelete.Location = new System.Drawing.Point(638, 12);
+            this.pnlDelete.Name = "pnlDelete";
+            this.pnlDelete.Size = new System.Drawing.Size(230, 380);
+            this.pnlDelete.TabIndex = 47;
+            this.pnlDelete.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDelete_Paint);
+            // 
+            // btnDeleteCustCancel
+            // 
+            this.btnDeleteCustCancel.Location = new System.Drawing.Point(110, 203);
+            this.btnDeleteCustCancel.Name = "btnDeleteCustCancel";
+            this.btnDeleteCustCancel.Size = new System.Drawing.Size(75, 25);
+            this.btnDeleteCustCancel.TabIndex = 22;
+            this.btnDeleteCustCancel.Text = "Cancel";
+            this.btnDeleteCustCancel.UseVisualStyleBackColor = true;
+            this.btnDeleteCustCancel.Click += new System.EventHandler(this.btnDeleteCustCancel_Click);
+            // 
+            // btnConfirmDeleteCust
+            // 
+            this.btnConfirmDeleteCust.Location = new System.Drawing.Point(29, 203);
+            this.btnConfirmDeleteCust.Name = "btnConfirmDeleteCust";
+            this.btnConfirmDeleteCust.Size = new System.Drawing.Size(75, 25);
+            this.btnConfirmDeleteCust.TabIndex = 21;
+            this.btnConfirmDeleteCust.Text = "Delete";
+            this.btnConfirmDeleteCust.UseVisualStyleBackColor = true;
+            this.btnConfirmDeleteCust.Click += new System.EventHandler(this.btnConfirmDeleteCust_Click);
+            // 
+            // lblActualCustNoDelete
+            // 
+            this.lblActualCustNoDelete.AutoSize = true;
+            this.lblActualCustNoDelete.Location = new System.Drawing.Point(3, 164);
+            this.lblActualCustNoDelete.Name = "lblActualCustNoDelete";
+            this.lblActualCustNoDelete.Size = new System.Drawing.Size(227, 13);
+            this.lblActualCustNoDelete.TabIndex = 20;
+            this.lblActualCustNoDelete.Text = "Are you sure you want to delete this customer?";
+            this.lblActualCustNoDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDeleteTitle
+            // 
+            this.lblDeleteTitle.AutoSize = true;
+            this.lblDeleteTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteTitle.Location = new System.Drawing.Point(82, 131);
+            this.lblDeleteTitle.Name = "lblDeleteTitle";
+            this.lblDeleteTitle.Size = new System.Drawing.Size(55, 13);
+            this.lblDeleteTitle.TabIndex = 19;
+            this.lblDeleteTitle.Text = "DELETE";
             // 
             // errorProvider1
             // 

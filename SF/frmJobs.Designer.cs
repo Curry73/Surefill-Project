@@ -31,24 +31,15 @@
             this.lblJobID = new System.Windows.Forms.Label();
             this.lblActualJobID = new System.Windows.Forms.Label();
             this.pnlAddWall = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbCavitySize = new System.Windows.Forms.ComboBox();
             this.lblAddCavitySize = new System.Windows.Forms.Label();
             this.txtAddWallHeight = new System.Windows.Forms.TextBox();
             this.lblAddWallHeight = new System.Windows.Forms.Label();
             this.txtAddWallLength = new System.Windows.Forms.TextBox();
             this.lblAddWallLength = new System.Windows.Forms.Label();
-            this.cmbWallNumber = new System.Windows.Forms.ComboBox();
             this.lblWallNumber = new System.Windows.Forms.Label();
             this.lblAddWall = new System.Windows.Forms.Label();
             this.pnlAddOpenings = new System.Windows.Forms.Panel();
-            this.lblActualOpening4 = new System.Windows.Forms.Label();
-            this.lblActualOpening3 = new System.Windows.Forms.Label();
-            this.lblActualOpening2 = new System.Windows.Forms.Label();
-            this.lblActualOpening1 = new System.Windows.Forms.Label();
-            this.lblOpening4 = new System.Windows.Forms.Label();
-            this.lblOpening3 = new System.Windows.Forms.Label();
-            this.lblOpening2 = new System.Windows.Forms.Label();
-            this.lblOpening1 = new System.Windows.Forms.Label();
             this.btnAddOpening = new System.Windows.Forms.Button();
             this.txtOpeningHeight = new System.Windows.Forms.TextBox();
             this.lblAddOpeningHeight = new System.Windows.Forms.Label();
@@ -74,6 +65,20 @@
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.dgvJobs = new System.Windows.Forms.DataGridView();
             this.btnAddWall = new System.Windows.Forms.Button();
+            this.LVOpenings = new System.Windows.Forms.ListView();
+            this.LengthCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HeightCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCancelOpening = new System.Windows.Forms.Button();
+            this.LVFinal = new System.Windows.Forms.ListView();
+            this.WallTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.OpenTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblWallNo = new System.Windows.Forms.Label();
+            this.colWallNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblOverallTotal = new System.Windows.Forms.Label();
+            this.txtTotalOfWall = new System.Windows.Forms.TextBox();
+            this.txtOpeningsTotal = new System.Windows.Forms.TextBox();
             this.pnlAddWall.SuspendLayout();
             this.pnlAddOpenings.SuspendLayout();
             this.pnlWallSizeList.SuspendLayout();
@@ -101,37 +106,37 @@
             // 
             // pnlAddWall
             // 
-            this.pnlAddWall.Controls.Add(this.btnAddWall);
-            this.pnlAddWall.Controls.Add(this.comboBox2);
+            this.pnlAddWall.Controls.Add(this.lblWallNo);
+            this.pnlAddWall.Controls.Add(this.txtTotalOfWall);
+            this.pnlAddWall.Controls.Add(this.cmbCavitySize);
             this.pnlAddWall.Controls.Add(this.lblAddCavitySize);
             this.pnlAddWall.Controls.Add(this.txtAddWallHeight);
             this.pnlAddWall.Controls.Add(this.lblAddWallHeight);
             this.pnlAddWall.Controls.Add(this.txtAddWallLength);
             this.pnlAddWall.Controls.Add(this.lblAddWallLength);
-            this.pnlAddWall.Controls.Add(this.cmbWallNumber);
             this.pnlAddWall.Controls.Add(this.lblWallNumber);
             this.pnlAddWall.Controls.Add(this.lblAddWall);
-            this.pnlAddWall.Location = new System.Drawing.Point(6, 36);
+            this.pnlAddWall.Location = new System.Drawing.Point(27, 33);
             this.pnlAddWall.Name = "pnlAddWall";
-            this.pnlAddWall.Size = new System.Drawing.Size(205, 341);
+            this.pnlAddWall.Size = new System.Drawing.Size(197, 341);
             this.pnlAddWall.TabIndex = 2;
             // 
-            // comboBox2
+            // cmbCavitySize
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(88, 141);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(80, 21);
-            this.comboBox2.TabIndex = 7;
+            this.cmbCavitySize.FormattingEnabled = true;
+            this.cmbCavitySize.Location = new System.Drawing.Point(88, 141);
+            this.cmbCavitySize.Name = "cmbCavitySize";
+            this.cmbCavitySize.Size = new System.Drawing.Size(80, 21);
+            this.cmbCavitySize.TabIndex = 7;
             // 
             // lblAddCavitySize
             // 
             this.lblAddCavitySize.AutoSize = true;
             this.lblAddCavitySize.Location = new System.Drawing.Point(19, 149);
             this.lblAddCavitySize.Name = "lblAddCavitySize";
-            this.lblAddCavitySize.Size = new System.Drawing.Size(71, 13);
+            this.lblAddCavitySize.Size = new System.Drawing.Size(62, 13);
             this.lblAddCavitySize.TabIndex = 6;
-            this.lblAddCavitySize.Text = "Cavity Depth:";
+            this.lblAddCavitySize.Text = "Cavity Size:";
             // 
             // txtAddWallHeight
             // 
@@ -165,14 +170,6 @@
             this.lblAddWallLength.TabIndex = 4;
             this.lblAddWallLength.Text = "Wall length:";
             // 
-            // cmbWallNumber
-            // 
-            this.cmbWallNumber.FormattingEnabled = true;
-            this.cmbWallNumber.Location = new System.Drawing.Point(88, 45);
-            this.cmbWallNumber.Name = "cmbWallNumber";
-            this.cmbWallNumber.Size = new System.Drawing.Size(80, 21);
-            this.cmbWallNumber.TabIndex = 3;
-            // 
             // lblWallNumber
             // 
             this.lblWallNumber.AutoSize = true;
@@ -193,96 +190,20 @@
             // 
             // pnlAddOpenings
             // 
-            this.pnlAddOpenings.Controls.Add(this.lblActualOpening4);
-            this.pnlAddOpenings.Controls.Add(this.lblActualOpening3);
-            this.pnlAddOpenings.Controls.Add(this.lblActualOpening2);
-            this.pnlAddOpenings.Controls.Add(this.lblActualOpening1);
-            this.pnlAddOpenings.Controls.Add(this.lblOpening4);
-            this.pnlAddOpenings.Controls.Add(this.lblOpening3);
-            this.pnlAddOpenings.Controls.Add(this.lblOpening2);
-            this.pnlAddOpenings.Controls.Add(this.lblOpening1);
+            this.pnlAddOpenings.Controls.Add(this.txtOpeningsTotal);
+            this.pnlAddOpenings.Controls.Add(this.btnAddWall);
+            this.pnlAddOpenings.Controls.Add(this.btnCancelOpening);
+            this.pnlAddOpenings.Controls.Add(this.LVOpenings);
             this.pnlAddOpenings.Controls.Add(this.btnAddOpening);
             this.pnlAddOpenings.Controls.Add(this.txtOpeningHeight);
             this.pnlAddOpenings.Controls.Add(this.lblAddOpeningHeight);
             this.pnlAddOpenings.Controls.Add(this.txtOpeningLength);
             this.pnlAddOpenings.Controls.Add(this.lblAddOpeningLength);
             this.pnlAddOpenings.Controls.Add(this.lblAddOpenings);
-            this.pnlAddOpenings.Location = new System.Drawing.Point(217, 36);
+            this.pnlAddOpenings.Location = new System.Drawing.Point(230, 36);
             this.pnlAddOpenings.Name = "pnlAddOpenings";
             this.pnlAddOpenings.Size = new System.Drawing.Size(195, 341);
             this.pnlAddOpenings.TabIndex = 3;
-            // 
-            // lblActualOpening4
-            // 
-            this.lblActualOpening4.AutoSize = true;
-            this.lblActualOpening4.Location = new System.Drawing.Point(79, 196);
-            this.lblActualOpening4.Name = "lblActualOpening4";
-            this.lblActualOpening4.Size = new System.Drawing.Size(109, 13);
-            this.lblActualOpening4.TabIndex = 18;
-            this.lblActualOpening4.Text = "SIZE OF OPENING 4";
-            // 
-            // lblActualOpening3
-            // 
-            this.lblActualOpening3.AutoSize = true;
-            this.lblActualOpening3.Location = new System.Drawing.Point(79, 174);
-            this.lblActualOpening3.Name = "lblActualOpening3";
-            this.lblActualOpening3.Size = new System.Drawing.Size(109, 13);
-            this.lblActualOpening3.TabIndex = 17;
-            this.lblActualOpening3.Text = "SIZE OF OPENING 3";
-            // 
-            // lblActualOpening2
-            // 
-            this.lblActualOpening2.AutoSize = true;
-            this.lblActualOpening2.Location = new System.Drawing.Point(79, 149);
-            this.lblActualOpening2.Name = "lblActualOpening2";
-            this.lblActualOpening2.Size = new System.Drawing.Size(109, 13);
-            this.lblActualOpening2.TabIndex = 16;
-            this.lblActualOpening2.Text = "SIZE OF OPENING 2";
-            // 
-            // lblActualOpening1
-            // 
-            this.lblActualOpening1.AutoSize = true;
-            this.lblActualOpening1.Location = new System.Drawing.Point(79, 127);
-            this.lblActualOpening1.Name = "lblActualOpening1";
-            this.lblActualOpening1.Size = new System.Drawing.Size(109, 13);
-            this.lblActualOpening1.TabIndex = 15;
-            this.lblActualOpening1.Text = "SIZE OF OPENING 1";
-            // 
-            // lblOpening4
-            // 
-            this.lblOpening4.AutoSize = true;
-            this.lblOpening4.Location = new System.Drawing.Point(23, 196);
-            this.lblOpening4.Name = "lblOpening4";
-            this.lblOpening4.Size = new System.Drawing.Size(40, 13);
-            this.lblOpening4.TabIndex = 14;
-            this.lblOpening4.Text = "Wall 4:";
-            // 
-            // lblOpening3
-            // 
-            this.lblOpening3.AutoSize = true;
-            this.lblOpening3.Location = new System.Drawing.Point(23, 174);
-            this.lblOpening3.Name = "lblOpening3";
-            this.lblOpening3.Size = new System.Drawing.Size(40, 13);
-            this.lblOpening3.TabIndex = 13;
-            this.lblOpening3.Text = "Wall 3:";
-            // 
-            // lblOpening2
-            // 
-            this.lblOpening2.AutoSize = true;
-            this.lblOpening2.Location = new System.Drawing.Point(23, 149);
-            this.lblOpening2.Name = "lblOpening2";
-            this.lblOpening2.Size = new System.Drawing.Size(40, 13);
-            this.lblOpening2.TabIndex = 12;
-            this.lblOpening2.Text = "Wall 2:";
-            // 
-            // lblOpening1
-            // 
-            this.lblOpening1.AutoSize = true;
-            this.lblOpening1.Location = new System.Drawing.Point(23, 127);
-            this.lblOpening1.Name = "lblOpening1";
-            this.lblOpening1.Size = new System.Drawing.Size(40, 13);
-            this.lblOpening1.TabIndex = 11;
-            this.lblOpening1.Text = "Wall 1:";
             // 
             // btnAddOpening
             // 
@@ -290,7 +211,7 @@
             this.btnAddOpening.Name = "btnAddOpening";
             this.btnAddOpening.Size = new System.Drawing.Size(88, 23);
             this.btnAddOpening.TabIndex = 10;
-            this.btnAddOpening.Text = "Add Opening";
+            this.btnAddOpening.Text = "Add";
             this.btnAddOpening.UseVisualStyleBackColor = true;
             this.btnAddOpening.Click += new System.EventHandler(this.btnAddOpening_Click);
             // 
@@ -337,10 +258,11 @@
             // 
             // pnlWallSizeList
             // 
+            this.pnlWallSizeList.Controls.Add(this.LVFinal);
             this.pnlWallSizeList.Controls.Add(this.lblWallList);
-            this.pnlWallSizeList.Location = new System.Drawing.Point(431, 36);
+            this.pnlWallSizeList.Location = new System.Drawing.Point(431, 50);
             this.pnlWallSizeList.Name = "pnlWallSizeList";
-            this.pnlWallSizeList.Size = new System.Drawing.Size(174, 227);
+            this.pnlWallSizeList.Size = new System.Drawing.Size(231, 264);
             this.pnlWallSizeList.TabIndex = 3;
             // 
             // lblWallList
@@ -354,6 +276,7 @@
             // 
             // pnlAddJob
             // 
+            this.pnlAddJob.Controls.Add(this.lblOverallTotal);
             this.pnlAddJob.Controls.Add(this.cmbAddJobCustNo);
             this.pnlAddJob.Controls.Add(this.lblCustomerNo);
             this.pnlAddJob.Controls.Add(this.btnCancelCalculate);
@@ -365,7 +288,7 @@
             this.pnlAddJob.Controls.Add(this.pnlAddOpenings);
             this.pnlAddJob.Location = new System.Drawing.Point(12, 13);
             this.pnlAddJob.Name = "pnlAddJob";
-            this.pnlAddJob.Size = new System.Drawing.Size(620, 380);
+            this.pnlAddJob.Size = new System.Drawing.Size(662, 380);
             this.pnlAddJob.TabIndex = 4;
             // 
             // cmbAddJobCustNo
@@ -373,7 +296,7 @@
             this.cmbAddJobCustNo.FormattingEnabled = true;
             this.cmbAddJobCustNo.Location = new System.Drawing.Point(369, 8);
             this.cmbAddJobCustNo.Name = "cmbAddJobCustNo";
-            this.cmbAddJobCustNo.Size = new System.Drawing.Size(80, 21);
+            this.cmbAddJobCustNo.Size = new System.Drawing.Size(129, 21);
             this.cmbAddJobCustNo.TabIndex = 7;
             // 
             // lblCustomerNo
@@ -511,20 +434,120 @@
             // 
             this.dgvJobs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobs.Location = new System.Drawing.Point(813, 12);
+            this.dgvJobs.Location = new System.Drawing.Point(693, 12);
             this.dgvJobs.Name = "dgvJobs";
             this.dgvJobs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvJobs.Size = new System.Drawing.Size(43, 52);
+            this.dgvJobs.Size = new System.Drawing.Size(454, 262);
             this.dgvJobs.TabIndex = 55;
             // 
             // btnAddWall
             // 
-            this.btnAddWall.Location = new System.Drawing.Point(113, 186);
+            this.btnAddWall.Location = new System.Drawing.Point(117, 315);
             this.btnAddWall.Name = "btnAddWall";
             this.btnAddWall.Size = new System.Drawing.Size(75, 23);
             this.btnAddWall.TabIndex = 19;
             this.btnAddWall.Text = "Add Wall";
             this.btnAddWall.UseVisualStyleBackColor = true;
+            this.btnAddWall.Click += new System.EventHandler(this.btnAddWall_Click);
+            // 
+            // LVOpenings
+            // 
+            this.LVOpenings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LengthCol,
+            this.HeightCol,
+            this.TotalCol});
+            this.LVOpenings.Location = new System.Drawing.Point(3, 130);
+            this.LVOpenings.Name = "LVOpenings";
+            this.LVOpenings.Size = new System.Drawing.Size(185, 179);
+            this.LVOpenings.TabIndex = 19;
+            this.LVOpenings.UseCompatibleStateImageBehavior = false;
+            this.LVOpenings.View = System.Windows.Forms.View.Details;
+            // 
+            // LengthCol
+            // 
+            this.LengthCol.Text = "Length";
+            // 
+            // HeightCol
+            // 
+            this.HeightCol.Text = "Height";
+            // 
+            // TotalCol
+            // 
+            this.TotalCol.Text = "Total";
+            // 
+            // btnCancelOpening
+            // 
+            this.btnCancelOpening.Location = new System.Drawing.Point(6, 101);
+            this.btnCancelOpening.Name = "btnCancelOpening";
+            this.btnCancelOpening.Size = new System.Drawing.Size(88, 23);
+            this.btnCancelOpening.TabIndex = 20;
+            this.btnCancelOpening.Text = "Cancel";
+            this.btnCancelOpening.UseVisualStyleBackColor = true;
+            this.btnCancelOpening.Click += new System.EventHandler(this.btnCancelOpening_Click);
+            // 
+            // LVFinal
+            // 
+            this.LVFinal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colWallNo,
+            this.WallTotal,
+            this.OpenTotal,
+            this.Total});
+            this.LVFinal.Location = new System.Drawing.Point(0, 37);
+            this.LVFinal.Name = "LVFinal";
+            this.LVFinal.Size = new System.Drawing.Size(228, 226);
+            this.LVFinal.TabIndex = 3;
+            this.LVFinal.UseCompatibleStateImageBehavior = false;
+            this.LVFinal.View = System.Windows.Forms.View.Details;
+            // 
+            // WallTotal
+            // 
+            this.WallTotal.Tag = "";
+            this.WallTotal.Text = "Wall";
+            // 
+            // OpenTotal
+            // 
+            this.OpenTotal.Text = "Openings";
+            // 
+            // Total
+            // 
+            this.Total.Text = "Total";
+            // 
+            // lblWallNo
+            // 
+            this.lblWallNo.AutoSize = true;
+            this.lblWallNo.Location = new System.Drawing.Point(95, 50);
+            this.lblWallNo.Name = "lblWallNo";
+            this.lblWallNo.Size = new System.Drawing.Size(13, 13);
+            this.lblWallNo.TabIndex = 21;
+            this.lblWallNo.Text = "1";
+            // 
+            // colWallNo
+            // 
+            this.colWallNo.Text = "WallNo";
+            // 
+            // lblOverallTotal
+            // 
+            this.lblOverallTotal.AutoSize = true;
+            this.lblOverallTotal.Location = new System.Drawing.Point(621, 356);
+            this.lblOverallTotal.Name = "lblOverallTotal";
+            this.lblOverallTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblOverallTotal.TabIndex = 8;
+            this.lblOverallTotal.Text = "0";
+            // 
+            // txtTotalOfWall
+            // 
+            this.txtTotalOfWall.Location = new System.Drawing.Point(88, 181);
+            this.txtTotalOfWall.Name = "txtTotalOfWall";
+            this.txtTotalOfWall.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalOfWall.TabIndex = 20;
+            // 
+            // txtOpeningsTotal
+            // 
+            this.txtOpeningsTotal.Location = new System.Drawing.Point(26, 6);
+            this.txtOpeningsTotal.Name = "txtOpeningsTotal";
+            this.txtOpeningsTotal.Size = new System.Drawing.Size(19, 20);
+            this.txtOpeningsTotal.TabIndex = 21;
+            this.txtOpeningsTotal.Visible = false;
             // 
             // frmJobs
             // 
@@ -571,13 +594,12 @@
         private System.Windows.Forms.Label lblAddOpenings;
         private System.Windows.Forms.Panel pnlWallSizeList;
         private System.Windows.Forms.Label lblWallList;
-        private System.Windows.Forms.ComboBox cmbWallNumber;
         private System.Windows.Forms.Label lblWallNumber;
         private System.Windows.Forms.TextBox txtAddWallHeight;
         private System.Windows.Forms.Label lblAddWallHeight;
         private System.Windows.Forms.TextBox txtAddWallLength;
         private System.Windows.Forms.Label lblAddWallLength;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbCavitySize;
         private System.Windows.Forms.Label lblAddCavitySize;
         private System.Windows.Forms.TextBox txtOpeningHeight;
         private System.Windows.Forms.Label lblAddOpeningHeight;
@@ -599,15 +621,21 @@
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.ComboBox cmbAddJobCustNo;
         private System.Windows.Forms.Label lblCustomerNo;
-        private System.Windows.Forms.Label lblActualOpening4;
-        private System.Windows.Forms.Label lblActualOpening3;
-        private System.Windows.Forms.Label lblActualOpening2;
-        private System.Windows.Forms.Label lblActualOpening1;
-        private System.Windows.Forms.Label lblOpening4;
-        private System.Windows.Forms.Label lblOpening3;
-        private System.Windows.Forms.Label lblOpening2;
-        private System.Windows.Forms.Label lblOpening1;
         private System.Windows.Forms.DataGridView dgvJobs;
         private System.Windows.Forms.Button btnAddWall;
+        private System.Windows.Forms.Button btnCancelOpening;
+        private System.Windows.Forms.ListView LVOpenings;
+        private System.Windows.Forms.ColumnHeader LengthCol;
+        private System.Windows.Forms.ColumnHeader HeightCol;
+        private System.Windows.Forms.ColumnHeader TotalCol;
+        private System.Windows.Forms.ListView LVFinal;
+        private System.Windows.Forms.ColumnHeader WallTotal;
+        private System.Windows.Forms.ColumnHeader OpenTotal;
+        private System.Windows.Forms.ColumnHeader Total;
+        private System.Windows.Forms.Label lblWallNo;
+        private System.Windows.Forms.ColumnHeader colWallNo;
+        private System.Windows.Forms.TextBox txtTotalOfWall;
+        private System.Windows.Forms.TextBox txtOpeningsTotal;
+        private System.Windows.Forms.Label lblOverallTotal;
     }
 }

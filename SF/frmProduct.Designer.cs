@@ -43,12 +43,14 @@
             this.lblReturnMenu = new System.Windows.Forms.Label();
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.pnlSearchProduct = new System.Windows.Forms.Panel();
+            this.lblSEARCH = new System.Windows.Forms.Label();
             this.txtSearchProductNo = new System.Windows.Forms.TextBox();
             this.txtSearchProductDescription = new System.Windows.Forms.TextBox();
             this.lblSearchProductDescription = new System.Windows.Forms.Label();
             this.lblSearchProductNo = new System.Windows.Forms.Label();
             this.btnConfirmCancelSearch = new System.Windows.Forms.Button();
             this.pnlEditProduct = new System.Windows.Forms.Panel();
+            this.lblEdit = new System.Windows.Forms.Label();
             this.pnlAddJob = new System.Windows.Forms.Panel();
             this.btnConfirmAddJob = new System.Windows.Forms.Button();
             this.btnCancelAddJob = new System.Windows.Forms.Button();
@@ -77,6 +79,7 @@
             this.btnConfirmEditProduct = new System.Windows.Forms.Button();
             this.btnConfirmCancelEdit = new System.Windows.Forms.Button();
             this.pnlAddProduct = new System.Windows.Forms.Panel();
+            this.lblADD = new System.Windows.Forms.Label();
             this.txtAddProductQty = new System.Windows.Forms.TextBox();
             this.txtAddProductPrice = new System.Windows.Forms.TextBox();
             this.txtAddProductDescription = new System.Windows.Forms.TextBox();
@@ -93,9 +96,6 @@
             this.lblDeleteProductQ = new System.Windows.Forms.Label();
             this.lblProductDelete = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblSEARCH = new System.Windows.Forms.Label();
-            this.lblEdit = new System.Windows.Forms.Label();
-            this.lblADD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.pnlReturn.SuspendLayout();
             this.pnlSearchProduct.SuspendLayout();
@@ -249,6 +249,16 @@
             this.pnlSearchProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlSearchProduct.TabIndex = 54;
             // 
+            // lblSEARCH
+            // 
+            this.lblSEARCH.AutoSize = true;
+            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEARCH.Location = new System.Drawing.Point(88, 20);
+            this.lblSEARCH.Name = "lblSEARCH";
+            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
+            this.lblSEARCH.TabIndex = 63;
+            this.lblSEARCH.Text = "SEARCH";
+            // 
             // txtSearchProductNo
             // 
             this.txtSearchProductNo.Location = new System.Drawing.Point(128, 108);
@@ -256,6 +266,7 @@
             this.txtSearchProductNo.Name = "txtSearchProductNo";
             this.txtSearchProductNo.Size = new System.Drawing.Size(81, 20);
             this.txtSearchProductNo.TabIndex = 62;
+            this.txtSearchProductNo.TextChanged += new System.EventHandler(this.txtSearchProductNo_TextChanged);
             // 
             // txtSearchProductDescription
             // 
@@ -312,6 +323,16 @@
             this.pnlEditProduct.Name = "pnlEditProduct";
             this.pnlEditProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlEditProduct.TabIndex = 55;
+            // 
+            // lblEdit
+            // 
+            this.lblEdit.AutoSize = true;
+            this.lblEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdit.Location = new System.Drawing.Point(93, 20);
+            this.lblEdit.Name = "lblEdit";
+            this.lblEdit.Size = new System.Drawing.Size(36, 13);
+            this.lblEdit.TabIndex = 52;
+            this.lblEdit.Text = "EDIT";
             // 
             // pnlAddJob
             // 
@@ -584,6 +605,16 @@
             this.pnlAddProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlAddProduct.TabIndex = 56;
             // 
+            // lblADD
+            // 
+            this.lblADD.AutoSize = true;
+            this.lblADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblADD.Location = new System.Drawing.Point(97, 13);
+            this.lblADD.Name = "lblADD";
+            this.lblADD.Size = new System.Drawing.Size(33, 13);
+            this.lblADD.TabIndex = 54;
+            this.lblADD.Text = "ADD";
+            // 
             // txtAddProductQty
             // 
             this.txtAddProductQty.Location = new System.Drawing.Point(127, 211);
@@ -726,36 +757,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // lblSEARCH
-            // 
-            this.lblSEARCH.AutoSize = true;
-            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSEARCH.Location = new System.Drawing.Point(88, 20);
-            this.lblSEARCH.Name = "lblSEARCH";
-            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
-            this.lblSEARCH.TabIndex = 63;
-            this.lblSEARCH.Text = "SEARCH";
-            // 
-            // lblEdit
-            // 
-            this.lblEdit.AutoSize = true;
-            this.lblEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdit.Location = new System.Drawing.Point(93, 20);
-            this.lblEdit.Name = "lblEdit";
-            this.lblEdit.Size = new System.Drawing.Size(36, 13);
-            this.lblEdit.TabIndex = 52;
-            this.lblEdit.Text = "EDIT";
-            // 
-            // lblADD
-            // 
-            this.lblADD.AutoSize = true;
-            this.lblADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblADD.Location = new System.Drawing.Point(97, 13);
-            this.lblADD.Name = "lblADD";
-            this.lblADD.Size = new System.Drawing.Size(33, 13);
-            this.lblADD.TabIndex = 54;
-            this.lblADD.Text = "ADD";
             // 
             // frmProduct
             // 

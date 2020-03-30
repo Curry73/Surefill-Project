@@ -15,13 +15,13 @@ namespace SF
     public partial class FrmSupplier : Form
     {
         SqlConnection con = new SqlConnection();
-        SqlDataAdapter daSupplier, daSuppDetails;
+        SqlDataAdapter daSupplier, daSuppDetails, daSuppDetails2;
         DataSet dsSurefill = new DataSet();
         SqlCommandBuilder cmdBSupplier;
-        SqlCommand cmdSupplierDetails;
+        SqlCommand cmdSupplierDetails, cmdSupplierDetails2;
         SqlConnection conn;
         DataRow drSupplier;
-        String connStr, sqlSupplier, sqlSuppDetails;
+        String connStr, sqlSupplier, sqlSuppDetails, sqlSuppDetails2;
         int selectedTab = 0;
         bool suppSelected = false;
         String suppNoSelected = "";
@@ -54,6 +54,12 @@ namespace SF
             cmdSupplierDetails.Parameters.Add("@Letter", SqlDbType.VarChar);
             daSuppDetails = new SqlDataAdapter(cmdSupplierDetails);
             daSuppDetails.FillSchema(dsSurefill, SchemaType.Source, "SuppDets");
+
+            sqlSuppDetails2 = @"Select * From Supplier where County LIKE (@Letter + '%') order by SupplierNo";
+            cmdSupplierDetails2 = new SqlCommand(sqlSuppDetails2, conn);
+            cmdSupplierDetails2.Parameters.Add("@Letter", SqlDbType.VarChar);
+            daSuppDetails2 = new SqlDataAdapter(cmdSupplierDetails2);
+            daSuppDetails2.FillSchema(dsSurefill, SchemaType.Source, "SuppDets");
 
         }
 
@@ -553,14 +559,9 @@ namespace SF
         private void txtSearchSupplierCounty_TextChanged(object sender, EventArgs e)
         {
             dsSurefill.Tables["SuppDets"].Clear();
-            cmdSupplierDetails.Parameters["@Letter"].Value = txtSearchSupplierCounty.Text;
-            daSuppDetails.Fill(dsSurefill, "SuppDets");
+            cmdSupplierDetails2.Parameters["@Letter"].Value = txtSearchSupplierCounty.Text;
+            daSuppDetails2.Fill(dsSurefill, "SuppDets");
             dgvSuppliers.DataSource = dsSurefill.Tables["SuppDets"];
-        }
-
-        private void pnlSearchSupp_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnDeleteSuppCancel_Click(object sender, EventArgs e)

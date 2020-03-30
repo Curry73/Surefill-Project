@@ -15,13 +15,13 @@ namespace SF
     public partial class frmProduct : Form
     {
         SqlConnection con = new SqlConnection();
-        SqlDataAdapter daProduct, daProdDetails;
+        SqlDataAdapter daProduct, daProdDetails, daProdDetails2;
         DataSet dsSurefill = new DataSet();
         SqlCommandBuilder cmdBProduct;
-        SqlCommand cmdProductDetails;
+        SqlCommand cmdProductDetails, cmdProductDetails2;
         SqlConnection conn;
         DataRow drProduct;
-        String connStr, sqlProduct, sqlProdDetails;
+        String connStr, sqlProduct, sqlProdDetails, sqlProdDetails2;
         int selectedTab = 0;
         bool prodSelected = false;
         String prodNoSelected = "";
@@ -54,6 +54,12 @@ namespace SF
             cmdProductDetails.Parameters.Add("@Letter", SqlDbType.VarChar);
             daProdDetails = new SqlDataAdapter(cmdProductDetails);
             daProdDetails.FillSchema(dsSurefill, SchemaType.Source, "ProdDets");
+
+            sqlProdDetails2 = @"Select * From Product where ProductNo LIKE (@Letter + '%') order by ProductNo";
+            cmdProductDetails2 = new SqlCommand(sqlProdDetails2, conn);
+            cmdProductDetails2.Parameters.Add("@Letter", SqlDbType.VarChar);
+            daProdDetails2 = new SqlDataAdapter(cmdProductDetails2);
+            daProdDetails2.FillSchema(dsSurefill, SchemaType.Source, "ProdDets");
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -398,6 +404,14 @@ System.Windows.Forms.DialogResult.Yes);
             dsSurefill.Tables["ProdDets"].Clear();
             cmdProductDetails.Parameters["@Letter"].Value = txtSearchProductDescription.Text;
             daProdDetails.Fill(dsSurefill, "ProdDets");
+            dgvProduct.DataSource = dsSurefill.Tables["ProdDets"];
+        }
+
+        private void txtSearchProductNo_TextChanged(object sender, EventArgs e)
+        {
+            dsSurefill.Tables["ProdDets"].Clear();
+            cmdProductDetails2.Parameters["@Letter"].Value = txtSearchProductNo.Text;
+            daProdDetails2.Fill(dsSurefill, "ProdDets");
             dgvProduct.DataSource = dsSurefill.Tables["ProdDets"];
         }
 

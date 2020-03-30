@@ -14,13 +14,13 @@ namespace SF
     public partial class frmCustomer : Form
     {
 
-        SqlDataAdapter daCustomer, daCustDetails;
+        SqlDataAdapter daCustomer, daCustDetails, daCustDetails2;
         DataSet dsSurefill = new DataSet();
         SqlCommandBuilder cmdBCustomer;
-        SqlCommand cmdCustomerDetails;
+        SqlCommand cmdCustomerDetails, cmdCustomerDetails2;
         SqlConnection conn;
         DataRow drCustomer;
-        String connStr, sqlCustomer, sqlCustDetails;
+        String connStr, sqlCustomer, sqlCustDetails, sqlCustDetails2;
         int selectedTab = 0;
         bool custSelected = false;
         string custNoSelected = "";
@@ -48,6 +48,12 @@ namespace SF
             cmdCustomerDetails.Parameters.Add("@Letter", SqlDbType.VarChar);
             daCustDetails = new SqlDataAdapter(cmdCustomerDetails);
             daCustDetails.FillSchema(dsSurefill, SchemaType.Source, "CustDets");
+
+            sqlCustDetails2 = @"Select * From Customer where County LIKE (@Letter + '%') order by CustomerNo";
+            cmdCustomerDetails2 = new SqlCommand(sqlCustDetails2, conn);
+            cmdCustomerDetails2.Parameters.Add("@Letter", SqlDbType.VarChar);
+            daCustDetails2 = new SqlDataAdapter(cmdCustomerDetails2);
+            daCustDetails2.FillSchema(dsSurefill, SchemaType.Source, "CustDets");
 
             pnlAdd.Visible = false;
             pnlEdit.Visible = false;
@@ -600,8 +606,8 @@ namespace SF
         private void txtSearchCustCounty_TextChanged(object sender, EventArgs e)
         {
             dsSurefill.Tables["CustDets"].Clear();
-            cmdCustomerDetails.Parameters["@Letter"].Value = txtSearchCustCounty.Text;
-            daCustDetails.Fill(dsSurefill, "CustDets");
+            cmdCustomerDetails2.Parameters["@Letter"].Value = txtSearchCustCounty.Text;
+            daCustDetails2.Fill(dsSurefill, "CustDets");
             dgvCustomers.DataSource = dsSurefill.Tables["CustDets"];
         }
 

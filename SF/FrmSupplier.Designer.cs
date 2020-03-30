@@ -491,7 +491,6 @@
             this.pnlSearchSupp.Name = "pnlSearchSupp";
             this.pnlSearchSupp.Size = new System.Drawing.Size(230, 380);
             this.pnlSearchSupp.TabIndex = 53;
-            this.pnlSearchSupp.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSearchSupp_Paint);
             // 
             // txtSearchSupplierCounty
             // 

@@ -113,6 +113,12 @@
     <Compile Include="MyProductOrder.cs" />
     <Compile Include="MySupplier.cs" />
     <Compile Include="MyValidation.cs" />
+    <Compile Include="frmProductOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductOrder.Designer.cs">
+      <DependentUpon>frmProductOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCustomer.resx">
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSupplier.resx">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductOrder.resx">
+      <DependentUpon>frmProductOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

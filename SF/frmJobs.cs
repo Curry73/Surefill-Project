@@ -13,11 +13,11 @@ namespace SF
 {
     public partial class frmJobs : Form
     {
-        SqlDataAdapter daJobs, daCustomer;
+        SqlDataAdapter daJobs, daCustomer, daProduct;
         DataSet dsSurefill = new DataSet();
-        SqlCommandBuilder cmdBJobs, cmdBCustomer;
-        DataRow drJobs;
-        String connStr, sqlJobs, sqlCustomer;
+        SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct;
+        DataRow drJobs, drProduct;
+        String connStr, sqlJobs, sqlCustomer, sqlProduct;
         int selectedTab = 0;
         bool jobSelected = false;
         string jobNoSelected = "";
@@ -53,6 +53,16 @@ namespace SF
             cmbAddJobCustNo.ValueMember = "CustomerNo";
             cmbAddJobCustNo.DisplayMember = "CustomerName";
 
+            sqlProduct = @"select * from Product";
+            daProduct = new SqlDataAdapter(sqlProduct, connStr);
+            cmdBProduct = new SqlCommandBuilder(daProduct);
+            daProduct.FillSchema(dsSurefill, SchemaType.Source, "Product");
+            daProduct.Fill(dsSurefill, "Product");
+
+            cmbAddJobProdName.DataSource = dsSurefill.Tables["Product"];
+            cmbAddJobProdName.ValueMember = "ProductNo";
+            cmbAddJobProdName.DisplayMember = "ProductDescription";
+
             pnlAddJob.Visible = false;
 
             cmbCavitySize.Items.Add("0.1016 - 4 inch");
@@ -87,13 +97,40 @@ namespace SF
             wallNo++;
             lblWallNo.Text = Convert.ToString(wallNo);
 
-            LVOpenings.Clear();
+            LVOpenings.Items.Clear();
+            txtAddWallHeight.Clear();
+            txtAddWallLength.Clear();
 
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
 
+            
+        }
+
+        private void btnCalculate_Click_1(object sender, EventArgs e)
+        {
+            double OverallTotal = 0;
+
+            for (int x = 0; x < LVFinal.Items.Count; x++)
+            {
+                OverallTotal += Double.Parse(LVFinal.Items[x].SubItems[3].Text);
+            }
+
+            drProduct = dsSurefill.Tables["Product"].Rows.Find(cmbAddJobProdName.SelectedValue);
+            double productMeasure = Convert.ToDouble(drProduct["ProductMeasure"]);
+            double productPrice = Convert.ToDouble(drProduct["ProductPrice"]);
+
+            double pricePerOne = productPrice / productMeasure;
+
+            double productQty = Math.Ceiling(OverallTotal % productMeasure);
+
+            double finalPrice = pricePerOne * productQty;
+
+            lblOverallTotal.Text = Convert.ToString(OverallTotal);
+
+            MessageBox.Show(""+ finalPrice);
         }
 
         private void getNumber (int noRows)
@@ -121,6 +158,18 @@ namespace SF
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            DialogResult paidResult = MessageBox.Show("Have you paid?", "Paid", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            bool paid = false;
+
+            if (paidResult == DialogResult.Yes)
+                paid = true;
+
+            drJobs = dsSurefill.Tables["Jobs"].NewRow();
+
+            drJobs["Paid"] = false;
+
+            //daJobs.Update();
+
             pnlAddJob.Visible = true;
         }
 

@@ -31,6 +31,7 @@
             this.lblJobID = new System.Windows.Forms.Label();
             this.lblActualJobID = new System.Windows.Forms.Label();
             this.pnlAddWall = new System.Windows.Forms.Panel();
+            this.lblWallNo = new System.Windows.Forms.Label();
             this.cmbCavitySize = new System.Windows.Forms.ComboBox();
             this.lblAddCavitySize = new System.Windows.Forms.Label();
             this.txtAddWallHeight = new System.Windows.Forms.TextBox();
@@ -40,6 +41,13 @@
             this.lblWallNumber = new System.Windows.Forms.Label();
             this.lblAddWall = new System.Windows.Forms.Label();
             this.pnlAddOpenings = new System.Windows.Forms.Panel();
+            this.txtOpeningsTotal = new System.Windows.Forms.TextBox();
+            this.btnAddWall = new System.Windows.Forms.Button();
+            this.btnCancelOpening = new System.Windows.Forms.Button();
+            this.LVOpenings = new System.Windows.Forms.ListView();
+            this.LengthCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HeightCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddOpening = new System.Windows.Forms.Button();
             this.txtOpeningHeight = new System.Windows.Forms.TextBox();
             this.lblAddOpeningHeight = new System.Windows.Forms.Label();
@@ -47,8 +55,14 @@
             this.lblAddOpeningLength = new System.Windows.Forms.Label();
             this.lblAddOpenings = new System.Windows.Forms.Label();
             this.pnlWallSizeList = new System.Windows.Forms.Panel();
+            this.LVFinal = new System.Windows.Forms.ListView();
+            this.colWallNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WallTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.OpenTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblWallList = new System.Windows.Forms.Label();
             this.pnlAddJob = new System.Windows.Forms.Panel();
+            this.lblOverallTotal = new System.Windows.Forms.Label();
             this.cmbAddJobCustNo = new System.Windows.Forms.ComboBox();
             this.lblCustomerNo = new System.Windows.Forms.Label();
             this.btnCancelCalculate = new System.Windows.Forms.Button();
@@ -64,21 +78,8 @@
             this.lblReturnMenu = new System.Windows.Forms.Label();
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.dgvJobs = new System.Windows.Forms.DataGridView();
-            this.btnAddWall = new System.Windows.Forms.Button();
-            this.LVOpenings = new System.Windows.Forms.ListView();
-            this.LengthCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.HeightCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TotalCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnCancelOpening = new System.Windows.Forms.Button();
-            this.LVFinal = new System.Windows.Forms.ListView();
-            this.WallTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.OpenTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblWallNo = new System.Windows.Forms.Label();
-            this.colWallNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblOverallTotal = new System.Windows.Forms.Label();
-            this.txtTotalOfWall = new System.Windows.Forms.TextBox();
-            this.txtOpeningsTotal = new System.Windows.Forms.TextBox();
+            this.lblAddJobProdName = new System.Windows.Forms.Label();
+            this.cmbAddJobProdName = new System.Windows.Forms.ComboBox();
             this.pnlAddWall.SuspendLayout();
             this.pnlAddOpenings.SuspendLayout();
             this.pnlWallSizeList.SuspendLayout();
@@ -106,8 +107,9 @@
             // 
             // pnlAddWall
             // 
+            this.pnlAddWall.Controls.Add(this.cmbAddJobProdName);
+            this.pnlAddWall.Controls.Add(this.lblAddJobProdName);
             this.pnlAddWall.Controls.Add(this.lblWallNo);
-            this.pnlAddWall.Controls.Add(this.txtTotalOfWall);
             this.pnlAddWall.Controls.Add(this.cmbCavitySize);
             this.pnlAddWall.Controls.Add(this.lblAddCavitySize);
             this.pnlAddWall.Controls.Add(this.txtAddWallHeight);
@@ -120,6 +122,15 @@
             this.pnlAddWall.Name = "pnlAddWall";
             this.pnlAddWall.Size = new System.Drawing.Size(197, 341);
             this.pnlAddWall.TabIndex = 2;
+            // 
+            // lblWallNo
+            // 
+            this.lblWallNo.AutoSize = true;
+            this.lblWallNo.Location = new System.Drawing.Point(95, 50);
+            this.lblWallNo.Name = "lblWallNo";
+            this.lblWallNo.Size = new System.Drawing.Size(13, 13);
+            this.lblWallNo.TabIndex = 21;
+            this.lblWallNo.Text = "1";
             // 
             // cmbCavitySize
             // 
@@ -205,6 +216,59 @@
             this.pnlAddOpenings.Size = new System.Drawing.Size(195, 341);
             this.pnlAddOpenings.TabIndex = 3;
             // 
+            // txtOpeningsTotal
+            // 
+            this.txtOpeningsTotal.Location = new System.Drawing.Point(26, 6);
+            this.txtOpeningsTotal.Name = "txtOpeningsTotal";
+            this.txtOpeningsTotal.Size = new System.Drawing.Size(19, 20);
+            this.txtOpeningsTotal.TabIndex = 21;
+            this.txtOpeningsTotal.Visible = false;
+            // 
+            // btnAddWall
+            // 
+            this.btnAddWall.Location = new System.Drawing.Point(117, 315);
+            this.btnAddWall.Name = "btnAddWall";
+            this.btnAddWall.Size = new System.Drawing.Size(75, 23);
+            this.btnAddWall.TabIndex = 19;
+            this.btnAddWall.Text = "Add Wall";
+            this.btnAddWall.UseVisualStyleBackColor = true;
+            this.btnAddWall.Click += new System.EventHandler(this.btnAddWall_Click);
+            // 
+            // btnCancelOpening
+            // 
+            this.btnCancelOpening.Location = new System.Drawing.Point(6, 101);
+            this.btnCancelOpening.Name = "btnCancelOpening";
+            this.btnCancelOpening.Size = new System.Drawing.Size(88, 23);
+            this.btnCancelOpening.TabIndex = 20;
+            this.btnCancelOpening.Text = "Cancel";
+            this.btnCancelOpening.UseVisualStyleBackColor = true;
+            this.btnCancelOpening.Click += new System.EventHandler(this.btnCancelOpening_Click);
+            // 
+            // LVOpenings
+            // 
+            this.LVOpenings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LengthCol,
+            this.HeightCol,
+            this.TotalCol});
+            this.LVOpenings.Location = new System.Drawing.Point(3, 130);
+            this.LVOpenings.Name = "LVOpenings";
+            this.LVOpenings.Size = new System.Drawing.Size(185, 179);
+            this.LVOpenings.TabIndex = 19;
+            this.LVOpenings.UseCompatibleStateImageBehavior = false;
+            this.LVOpenings.View = System.Windows.Forms.View.Details;
+            // 
+            // LengthCol
+            // 
+            this.LengthCol.Text = "Length";
+            // 
+            // HeightCol
+            // 
+            this.HeightCol.Text = "Height";
+            // 
+            // TotalCol
+            // 
+            this.TotalCol.Text = "Total";
+            // 
             // btnAddOpening
             // 
             this.btnAddOpening.Location = new System.Drawing.Point(100, 101);
@@ -265,6 +329,37 @@
             this.pnlWallSizeList.Size = new System.Drawing.Size(231, 264);
             this.pnlWallSizeList.TabIndex = 3;
             // 
+            // LVFinal
+            // 
+            this.LVFinal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colWallNo,
+            this.WallTotal,
+            this.OpenTotal,
+            this.Total});
+            this.LVFinal.Location = new System.Drawing.Point(0, 37);
+            this.LVFinal.Name = "LVFinal";
+            this.LVFinal.Size = new System.Drawing.Size(228, 226);
+            this.LVFinal.TabIndex = 3;
+            this.LVFinal.UseCompatibleStateImageBehavior = false;
+            this.LVFinal.View = System.Windows.Forms.View.Details;
+            // 
+            // colWallNo
+            // 
+            this.colWallNo.Text = "WallNo";
+            // 
+            // WallTotal
+            // 
+            this.WallTotal.Tag = "";
+            this.WallTotal.Text = "Wall";
+            // 
+            // OpenTotal
+            // 
+            this.OpenTotal.Text = "Openings";
+            // 
+            // Total
+            // 
+            this.Total.Text = "Total";
+            // 
             // lblWallList
             // 
             this.lblWallList.AutoSize = true;
@@ -290,6 +385,15 @@
             this.pnlAddJob.Name = "pnlAddJob";
             this.pnlAddJob.Size = new System.Drawing.Size(662, 380);
             this.pnlAddJob.TabIndex = 4;
+            // 
+            // lblOverallTotal
+            // 
+            this.lblOverallTotal.AutoSize = true;
+            this.lblOverallTotal.Location = new System.Drawing.Point(621, 356);
+            this.lblOverallTotal.Name = "lblOverallTotal";
+            this.lblOverallTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblOverallTotal.TabIndex = 8;
+            this.lblOverallTotal.Text = "0";
             // 
             // cmbAddJobCustNo
             // 
@@ -325,6 +429,7 @@
             this.btnCalculate.TabIndex = 4;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click_1);
             // 
             // lblAddCustomer
             // 
@@ -440,114 +545,22 @@
             this.dgvJobs.Size = new System.Drawing.Size(454, 262);
             this.dgvJobs.TabIndex = 55;
             // 
-            // btnAddWall
+            // lblAddJobProdName
             // 
-            this.btnAddWall.Location = new System.Drawing.Point(117, 315);
-            this.btnAddWall.Name = "btnAddWall";
-            this.btnAddWall.Size = new System.Drawing.Size(75, 23);
-            this.btnAddWall.TabIndex = 19;
-            this.btnAddWall.Text = "Add Wall";
-            this.btnAddWall.UseVisualStyleBackColor = true;
-            this.btnAddWall.Click += new System.EventHandler(this.btnAddWall_Click);
+            this.lblAddJobProdName.AutoSize = true;
+            this.lblAddJobProdName.Location = new System.Drawing.Point(21, 180);
+            this.lblAddJobProdName.Name = "lblAddJobProdName";
+            this.lblAddJobProdName.Size = new System.Drawing.Size(75, 13);
+            this.lblAddJobProdName.TabIndex = 22;
+            this.lblAddJobProdName.Text = "Product Name";
             // 
-            // LVOpenings
+            // cmbAddJobProdName
             // 
-            this.LVOpenings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.LengthCol,
-            this.HeightCol,
-            this.TotalCol});
-            this.LVOpenings.Location = new System.Drawing.Point(3, 130);
-            this.LVOpenings.Name = "LVOpenings";
-            this.LVOpenings.Size = new System.Drawing.Size(185, 179);
-            this.LVOpenings.TabIndex = 19;
-            this.LVOpenings.UseCompatibleStateImageBehavior = false;
-            this.LVOpenings.View = System.Windows.Forms.View.Details;
-            // 
-            // LengthCol
-            // 
-            this.LengthCol.Text = "Length";
-            // 
-            // HeightCol
-            // 
-            this.HeightCol.Text = "Height";
-            // 
-            // TotalCol
-            // 
-            this.TotalCol.Text = "Total";
-            // 
-            // btnCancelOpening
-            // 
-            this.btnCancelOpening.Location = new System.Drawing.Point(6, 101);
-            this.btnCancelOpening.Name = "btnCancelOpening";
-            this.btnCancelOpening.Size = new System.Drawing.Size(88, 23);
-            this.btnCancelOpening.TabIndex = 20;
-            this.btnCancelOpening.Text = "Cancel";
-            this.btnCancelOpening.UseVisualStyleBackColor = true;
-            this.btnCancelOpening.Click += new System.EventHandler(this.btnCancelOpening_Click);
-            // 
-            // LVFinal
-            // 
-            this.LVFinal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colWallNo,
-            this.WallTotal,
-            this.OpenTotal,
-            this.Total});
-            this.LVFinal.Location = new System.Drawing.Point(0, 37);
-            this.LVFinal.Name = "LVFinal";
-            this.LVFinal.Size = new System.Drawing.Size(228, 226);
-            this.LVFinal.TabIndex = 3;
-            this.LVFinal.UseCompatibleStateImageBehavior = false;
-            this.LVFinal.View = System.Windows.Forms.View.Details;
-            // 
-            // WallTotal
-            // 
-            this.WallTotal.Tag = "";
-            this.WallTotal.Text = "Wall";
-            // 
-            // OpenTotal
-            // 
-            this.OpenTotal.Text = "Openings";
-            // 
-            // Total
-            // 
-            this.Total.Text = "Total";
-            // 
-            // lblWallNo
-            // 
-            this.lblWallNo.AutoSize = true;
-            this.lblWallNo.Location = new System.Drawing.Point(95, 50);
-            this.lblWallNo.Name = "lblWallNo";
-            this.lblWallNo.Size = new System.Drawing.Size(13, 13);
-            this.lblWallNo.TabIndex = 21;
-            this.lblWallNo.Text = "1";
-            // 
-            // colWallNo
-            // 
-            this.colWallNo.Text = "WallNo";
-            // 
-            // lblOverallTotal
-            // 
-            this.lblOverallTotal.AutoSize = true;
-            this.lblOverallTotal.Location = new System.Drawing.Point(621, 356);
-            this.lblOverallTotal.Name = "lblOverallTotal";
-            this.lblOverallTotal.Size = new System.Drawing.Size(13, 13);
-            this.lblOverallTotal.TabIndex = 8;
-            this.lblOverallTotal.Text = "0";
-            // 
-            // txtTotalOfWall
-            // 
-            this.txtTotalOfWall.Location = new System.Drawing.Point(88, 181);
-            this.txtTotalOfWall.Name = "txtTotalOfWall";
-            this.txtTotalOfWall.Size = new System.Drawing.Size(100, 20);
-            this.txtTotalOfWall.TabIndex = 20;
-            // 
-            // txtOpeningsTotal
-            // 
-            this.txtOpeningsTotal.Location = new System.Drawing.Point(26, 6);
-            this.txtOpeningsTotal.Name = "txtOpeningsTotal";
-            this.txtOpeningsTotal.Size = new System.Drawing.Size(19, 20);
-            this.txtOpeningsTotal.TabIndex = 21;
-            this.txtOpeningsTotal.Visible = false;
+            this.cmbAddJobProdName.FormattingEnabled = true;
+            this.cmbAddJobProdName.Location = new System.Drawing.Point(98, 177);
+            this.cmbAddJobProdName.Name = "cmbAddJobProdName";
+            this.cmbAddJobProdName.Size = new System.Drawing.Size(80, 21);
+            this.cmbAddJobProdName.TabIndex = 23;
             // 
             // frmJobs
             // 
@@ -634,8 +647,9 @@
         private System.Windows.Forms.ColumnHeader Total;
         private System.Windows.Forms.Label lblWallNo;
         private System.Windows.Forms.ColumnHeader colWallNo;
-        private System.Windows.Forms.TextBox txtTotalOfWall;
-        private System.Windows.Forms.TextBox txtOpeningsTotal;
         private System.Windows.Forms.Label lblOverallTotal;
+        private System.Windows.Forms.TextBox txtOpeningsTotal;
+        private System.Windows.Forms.ComboBox cmbAddJobProdName;
+        private System.Windows.Forms.Label lblAddJobProdName;
     }
 }

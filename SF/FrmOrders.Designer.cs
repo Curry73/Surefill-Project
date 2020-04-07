@@ -40,20 +40,18 @@
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lvwOrderDetails = new System.Windows.Forms.ListView();
+            this.coOrderQty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.coProductNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.coProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlPayment = new System.Windows.Forms.Panel();
             this.pnlSupplier = new System.Windows.Forms.Panel();
             this.pnlOrder = new System.Windows.Forms.Panel();
             this.lblActualOrderSupplierNo = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblOrderSupplierNo = new System.Windows.Forms.Label();
             this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
             this.lblOrderDate = new System.Windows.Forms.Label();
             this.lblOrderNo = new System.Windows.Forms.Label();
             this.cmbOrderNo = new System.Windows.Forms.ComboBox();
-            this.coOrderQty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.coProductNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.coProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.pnlOrder.SuspendLayout();
             this.SuspendLayout();
@@ -186,6 +184,18 @@
             this.lvwOrderDetails.UseCompatibleStateImageBehavior = false;
             this.lvwOrderDetails.View = System.Windows.Forms.View.Details;
             // 
+            // coOrderQty
+            // 
+            this.coOrderQty.Text = "Order Qty";
+            // 
+            // coProductNo
+            // 
+            this.coProductNo.Text = "Product No";
+            // 
+            // coProductPrice
+            // 
+            this.coProductPrice.Text = "Product Price";
+            // 
             // pnlPayment
             // 
             this.pnlPayment.Location = new System.Drawing.Point(419, 241);
@@ -203,8 +213,6 @@
             // pnlOrder
             // 
             this.pnlOrder.Controls.Add(this.lblActualOrderSupplierNo);
-            this.pnlOrder.Controls.Add(this.comboBox1);
-            this.pnlOrder.Controls.Add(this.label1);
             this.pnlOrder.Controls.Add(this.lblOrderSupplierNo);
             this.pnlOrder.Controls.Add(this.dtpOrderDate);
             this.pnlOrder.Controls.Add(this.lblOrderDate);
@@ -220,37 +228,18 @@
             this.lblActualOrderSupplierNo.AutoSize = true;
             this.lblActualOrderSupplierNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActualOrderSupplierNo.ForeColor = System.Drawing.Color.Black;
-            this.lblActualOrderSupplierNo.Location = new System.Drawing.Point(125, 93);
+            this.lblActualOrderSupplierNo.Location = new System.Drawing.Point(157, 128);
             this.lblActualOrderSupplierNo.Name = "lblActualOrderSupplierNo";
             this.lblActualOrderSupplierNo.Size = new System.Drawing.Size(90, 16);
             this.lblActualOrderSupplierNo.TabIndex = 119;
             this.lblActualOrderSupplierNo.Text = "Supplier No";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(128, 138);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 21);
-            this.comboBox1.TabIndex = 118;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
-            this.label1.TabIndex = 117;
-            this.label1.Text = "Dog Name";
             // 
             // lblOrderSupplierNo
             // 
             this.lblOrderSupplierNo.AutoSize = true;
             this.lblOrderSupplierNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderSupplierNo.ForeColor = System.Drawing.Color.Black;
-            this.lblOrderSupplierNo.Location = new System.Drawing.Point(3, 93);
+            this.lblOrderSupplierNo.Location = new System.Drawing.Point(35, 128);
             this.lblOrderSupplierNo.Name = "lblOrderSupplierNo";
             this.lblOrderSupplierNo.Size = new System.Drawing.Size(90, 16);
             this.lblOrderSupplierNo.TabIndex = 115;
@@ -259,7 +248,7 @@
             // dtpOrderDate
             // 
             this.dtpOrderDate.Enabled = false;
-            this.dtpOrderDate.Location = new System.Drawing.Point(128, 49);
+            this.dtpOrderDate.Location = new System.Drawing.Point(160, 84);
             this.dtpOrderDate.Name = "dtpOrderDate";
             this.dtpOrderDate.Size = new System.Drawing.Size(195, 20);
             this.dtpOrderDate.TabIndex = 114;
@@ -269,7 +258,7 @@
             this.lblOrderDate.AutoSize = true;
             this.lblOrderDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderDate.ForeColor = System.Drawing.Color.Black;
-            this.lblOrderDate.Location = new System.Drawing.Point(3, 49);
+            this.lblOrderDate.Location = new System.Drawing.Point(35, 84);
             this.lblOrderDate.Name = "lblOrderDate";
             this.lblOrderDate.Size = new System.Drawing.Size(84, 16);
             this.lblOrderDate.TabIndex = 113;
@@ -278,7 +267,7 @@
             // lblOrderNo
             // 
             this.lblOrderNo.AutoSize = true;
-            this.lblOrderNo.Location = new System.Drawing.Point(3, 17);
+            this.lblOrderNo.Location = new System.Drawing.Point(35, 52);
             this.lblOrderNo.Name = "lblOrderNo";
             this.lblOrderNo.Size = new System.Drawing.Size(50, 13);
             this.lblOrderNo.TabIndex = 1;
@@ -287,23 +276,11 @@
             // cmbOrderNo
             // 
             this.cmbOrderNo.FormattingEnabled = true;
-            this.cmbOrderNo.Location = new System.Drawing.Point(128, 17);
+            this.cmbOrderNo.Location = new System.Drawing.Point(160, 52);
             this.cmbOrderNo.Name = "cmbOrderNo";
             this.cmbOrderNo.Size = new System.Drawing.Size(189, 21);
             this.cmbOrderNo.TabIndex = 0;
             this.cmbOrderNo.SelectedIndexChanged += new System.EventHandler(this.cmbOrderNo_SelectedIndexChanged);
-            // 
-            // coOrderQty
-            // 
-            this.coOrderQty.Text = "Order Qty";
-            // 
-            // coProductNo
-            // 
-            this.coProductNo.Text = "Product No";
-            // 
-            // coProductPrice
-            // 
-            this.coProductPrice.Text = "Product Price";
             // 
             // FrmOrders
             // 
@@ -351,8 +328,6 @@
         private System.Windows.Forms.Panel pnlSupplier;
         private System.Windows.Forms.Panel pnlOrder;
         private System.Windows.Forms.Label lblActualOrderSupplierNo;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblOrderSupplierNo;
         private System.Windows.Forms.DateTimePicker dtpOrderDate;
         private System.Windows.Forms.Label lblOrderDate;

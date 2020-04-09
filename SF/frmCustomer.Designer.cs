@@ -544,7 +544,7 @@
             this.pnlSearch.Controls.Add(this.lblSearchCustCounty);
             this.pnlSearch.Controls.Add(this.lblSearchCustForename);
             this.pnlSearch.Controls.Add(this.lblSEARCH);
-            this.pnlSearch.Location = new System.Drawing.Point(638, 12);
+            this.pnlSearch.Location = new System.Drawing.Point(51, 12);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(230, 380);
             this.pnlSearch.TabIndex = 48;

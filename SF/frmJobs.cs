@@ -13,23 +13,24 @@ namespace SF
 {
     public partial class frmJobs : Form
     {
-        SqlDataAdapter daJobs, daCustomer, daProduct;
+        SqlDataAdapter daJobs, daCustomer, daProduct, daJobType, daPaymentType, daJobDetails, daCavityType, daWallDetails, daOpeningDetails;
         DataSet dsSurefill = new DataSet();
-        SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct;
-        DataRow drJobs, drProduct;
-        String connStr, sqlJobs, sqlCustomer, sqlProduct;
+        SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails, cmdBOpeningDetails;
+        DataRow drJobs, drProduct, drJobType, drPaymentType, drJobDetails, drCavityType, drWallDetails, drOpeningDetails;
+        String connStr, sqlJobs, sqlCustomer, sqlProduct, sqlJobType, sqlPaymentType, sqlJobDetails, sqlCavityType, sqlWallDetails, sqlOpeningDetails;
+
+        Dictionary<int, List<WallOpening>> openingMap = new System.Collections.Generic.Dictionary<int, List<WallOpening>>();
+
         int selectedTab = 0;
         bool jobSelected = false;
         string jobNoSelected = "";
-
+        int jobNo = 0;
         int wallNo = 1;
-
 
         public frmJobs()
         {
             InitializeComponent();
         }
-
         private void frmJobs_Load(object sender, EventArgs e)
         {
             connStr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Surefill; Integrated Security = true";
@@ -37,10 +38,10 @@ namespace SF
             sqlJobs = @"select * from Jobs";
             daJobs = new SqlDataAdapter(sqlJobs, connStr);
             cmdBJobs = new SqlCommandBuilder(daJobs);
-            daJobs.FillSchema(dsSurefill, SchemaType.Source,"Jobs");
+            daJobs.FillSchema(dsSurefill, SchemaType.Source, "Jobs");
             daJobs.Fill(dsSurefill, "Jobs");
             dgvJobs.DataSource = dsSurefill.Tables["Jobs"];
-            
+
             sqlCustomer = @"select * from Customer";
             daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
             cmdBCustomer = new SqlCommandBuilder(daCustomer);
@@ -63,34 +64,165 @@ namespace SF
             cmbAddJobProdName.ValueMember = "ProductNo";
             cmbAddJobProdName.DisplayMember = "ProductDescription";
 
+            sqlJobType = @"select * from JobType";
+            daJobType = new SqlDataAdapter(sqlJobType, connStr);
+            cmdBJobType = new SqlCommandBuilder(daJobType);
+            daJobType.FillSchema(dsSurefill, SchemaType.Source, "JobType");
+            daJobType.Fill(dsSurefill, "JobType");
+
+            cmbJobType.DataSource = dsSurefill.Tables["JobType"];
+            cmbJobType.ValueMember = "JobTypeID";
+            cmbJobType.DisplayMember = "JobTypeDescription";
+
+            sqlPaymentType = @"select * from PaymentType";
+            daPaymentType = new SqlDataAdapter(sqlPaymentType, connStr);
+            cmdBPaymentType = new SqlCommandBuilder(daPaymentType);
+            daPaymentType.FillSchema(dsSurefill, SchemaType.Source, "PaymentType");
+            daPaymentType.Fill(dsSurefill, "PaymentType");
+
+            cmbPaymentType.DataSource = dsSurefill.Tables["PaymentType"];
+            cmbPaymentType.ValueMember = "PaymentTypeID";
+            cmbPaymentType.DisplayMember = "PaymentTypeDesc";
+
             pnlAddJob.Visible = false;
 
-            cmbCavitySize.Items.Add("0.1016 - 4 inch");
-            cmbCavitySize.Items.Add("0.1524 - 6 inch");
-            cmbCavitySize.Items.Add("0.2032 - 8 inch");
+            int noRows = dsSurefill.Tables["Jobs"].Rows.Count;
+            drJobs = dsSurefill.Tables["Jobs"].Rows[noRows - 1];
+            lblActualJobID.Text = (int.Parse(drJobs["JobNo"].ToString()) + 1).ToString();
 
+            //sqlJobDetails = @"select * from JobDetails";
+            //daJobDetails = new SqlDataAdapter(sqlJobDetails, connStr);
+            //cmdBJobDetails = new SqlCommandBuilder(daJobDetails);
+            //daJobDetails.FillSchema(dsSurefill, SchemaType.Source, "JobDetails");
+            //daJobDetails.Fill(dsSurefill, "JobDetails");
+
+            sqlCavityType = @"select * from CavityType";
+            daCavityType = new SqlDataAdapter(sqlCavityType, connStr);
+            cmdBCavityType = new SqlCommandBuilder(daCavityType);
+            daCavityType.FillSchema(dsSurefill, SchemaType.Source, "CavityType");
+            daCavityType.Fill(dsSurefill, "CavityType");
+
+            cmbCavitySize.DataSource = dsSurefill.Tables["CavityType"];
+            cmbCavitySize.ValueMember = "CavityNo";
+            cmbCavitySize.DisplayMember = "CavityName";
+
+            sqlOpeningDetails = @"select * from OpeningDetails";
+            daOpeningDetails = new SqlDataAdapter(sqlOpeningDetails, connStr);
+            cmdBOpeningDetails = new SqlCommandBuilder(daOpeningDetails);
+            daOpeningDetails.FillSchema(dsSurefill, SchemaType.Source, "OpeningDetails");
+            daOpeningDetails.Fill(dsSurefill, "OpeningDetails");
+
+            sqlWallDetails = @"select * from WallDetails";
+            daWallDetails = new SqlDataAdapter(sqlWallDetails, connStr);
+            cmdBWallDetails = new SqlCommandBuilder(daWallDetails);
+            daWallDetails.FillSchema(dsSurefill, SchemaType.Source, "WallDetails");
+            daWallDetails.Fill(dsSurefill, "WallDetails");
+
+            jobNo = (int.Parse(drJobs["JobNo"].ToString()) + 1);
+            lblActualJobID.Text = Convert.ToString(jobNo);
         }
+
+        private void btnAddFinalJob_Click(object sender, EventArgs e)
+        {
+            DateTime dateBooked = DateTime.Now;
+            
+            DialogResult paidResult = MessageBox.Show("Have you paid?", "Paid", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            bool paid = false;
+
+            if (paidResult == DialogResult.Yes)
+                paid = true;
+
+            
+            drJobs = dsSurefill.Tables["Jobs"].NewRow();
+
+            drJobs["JobNo"] = jobNo;
+            drJobs["CustomerNo"] = cmbAddJobCustNo.SelectedValue;
+            drJobs["DateBooked"] = DateTime.Now;
+            drJobs["JobCompletion"] = dtpAddJob.Value;
+            drJobs["JobTypeID"] = cmbJobType.SelectedValue;
+            drJobs["Paid"] = paid;
+            drJobs["PaymentTypeID"] = cmbPaymentType.SelectedValue;
+            drJobs["ProductNo"] = cmbAddJobProdName.SelectedValue;
+
+            dsSurefill.Tables["Jobs"].Rows.Add(drJobs);
+            daJobs.Update(dsSurefill, "Jobs");
+
+        
+
+            int wallNo = 1;
+            foreach (ListViewItem item in LVFinal.Items)
+            {
+                List<WallOpening> lstWallOpenings = openingMap[Convert.ToInt32(item.SubItems[0].Text)];
+                drWallDetails = dsSurefill.Tables["WallDetails"].NewRow();
+
+                drWallDetails["JobNo"] = drJobs["JobNo"];
+                drWallDetails["WallNo"] = wallNo;
+                drWallDetails["WallHeight"] = Convert.ToDouble(item.SubItems[4].Text);
+                drWallDetails["WallLength"] = Convert.ToDouble(item.SubItems[5].Text);
+                drWallDetails["CavityType"] = cmbCavitySize.SelectedValue;
+
+                dsSurefill.Tables["WallDetails"].Rows.Add(drWallDetails);
+                daWallDetails.Update(dsSurefill, "WallDetails");
+
+                int openingNo = 1;
+
+                foreach(WallOpening wallOpening in lstWallOpenings)
+                {
+                    drOpeningDetails = dsSurefill.Tables["OpeningDetails"].NewRow();
+
+                    drOpeningDetails["OpeningNo"] = openingNo;
+                    drOpeningDetails["WallNo"] = wallNo;
+                    drOpeningDetails["JobNo"] = jobNo;
+                    drOpeningDetails["OpeningHeight"] = wallOpening.OpeningHeight;
+                    drOpeningDetails["OpeningLength"] = wallOpening.OpeningLength;
+
+                    dsSurefill.Tables["OpeningDetails"].Rows.Add(drOpeningDetails);
+                    daOpeningDetails.Update(dsSurefill, "OpeningDetails");
+
+                    openingNo++;
+                }
+                wallNo++;
+            }
+            //daJobs.Update();
+
+            pnlAddJob.Visible = true;
+
+            jobNo = (int.Parse(drJobs["JobNo"].ToString()) + 1);
+            lblActualJobID.Text = Convert.ToString(jobNo);
+        }
+
+
 
         private void btnAddWall_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(cmbCavitySize.Text.ToString());
             ListViewItem item = new ListViewItem(Convert.ToString(wallNo));
             double wallSize = Double.Parse(txtAddWallHeight.Text) * Double.Parse(txtAddWallLength.Text);
-            Double wallCavitySize = Double.Parse(cmbCavitySize.SelectedItem.ToString().Substring(0,6));
+            Double wallCavitySize = Double.Parse(cmbCavitySize.Text.ToString().Substring(0,6));
             double wallSizeTotal = wallSize * wallCavitySize;
             item.SubItems.Add(Convert.ToString(wallSizeTotal));
             double openingTotal = 0;
 
+            List<WallOpening> lstWallOpening = new List<WallOpening>();
+
             for (int x = 0; x < LVOpenings.Items.Count; x++)
             {
+                WallOpening wallOpening = new WallOpening();
+                wallOpening.OpeningHeight = Convert.ToDouble(LVOpenings.Items[x].SubItems[1].Text);
+                wallOpening.OpeningLength = Convert.ToDouble(LVOpenings.Items[x].SubItems[0].Text);
+                lstWallOpening.Add(wallOpening);
                 openingTotal += Double.Parse(LVOpenings.Items[x].SubItems[2].Text);
 
             }
+            openingMap.Add(wallNo, lstWallOpening);
             Double openingActualTotal = openingTotal * wallCavitySize;
             item.SubItems.Add(Convert.ToString(openingActualTotal));
 
             double total = wallSizeTotal - openingActualTotal;
 
             item.SubItems.Add(Convert.ToString(total));
+            item.SubItems.Add(txtAddWallHeight.Text);
+            item.SubItems.Add(txtAddWallLength.Text);
 
             LVFinal.Items.Add(item);
 
@@ -100,6 +232,11 @@ namespace SF
             LVOpenings.Items.Clear();
             txtAddWallHeight.Clear();
             txtAddWallLength.Clear();
+
+        }
+
+        private void btnEditJob_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -158,19 +295,16 @@ namespace SF
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            DialogResult paidResult = MessageBox.Show("Have you paid?", "Paid", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            bool paid = false;
-
-            if (paidResult == DialogResult.Yes)
-                paid = true;
-
-            drJobs = dsSurefill.Tables["Jobs"].NewRow();
-
-            drJobs["Paid"] = false;
-
-            //daJobs.Update();
-
             pnlAddJob.Visible = true;
+        }
+        private void btnDeleteJob_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPaymentType_Click(object sender, EventArgs e)
+        {
+
         }
 
 

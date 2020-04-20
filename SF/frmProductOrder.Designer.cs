@@ -160,6 +160,7 @@
             this.btnRemoveItem.TabIndex = 109;
             this.btnRemoveItem.Text = "Remove Item";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btAddItem
             // 
@@ -236,7 +237,7 @@
             this.lblOrderQty.AutoSize = true;
             this.lblOrderQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderQty.ForeColor = System.Drawing.Color.Black;
-            this.lblOrderQty.Location = new System.Drawing.Point(0, 48);
+            this.lblOrderQty.Location = new System.Drawing.Point(6, 48);
             this.lblOrderQty.Name = "lblOrderQty";
             this.lblOrderQty.Size = new System.Drawing.Size(31, 16);
             this.lblOrderQty.TabIndex = 95;
@@ -247,7 +248,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(2, 5);
+            this.label4.Location = new System.Drawing.Point(6, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 94;
@@ -665,7 +666,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProductOrder";
-            this.Text = "ProductOrder";
+            this.Text = "sn";
             this.Load += new System.EventHandler(this.FrmProductOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

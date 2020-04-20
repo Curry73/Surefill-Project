@@ -256,5 +256,14 @@ namespace SF
 
             MessageBox.Show("Order No: " + drOrder["OrderNo"].ToString() + " added to system");
         }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            if (lvwBooking.SelectedItems.Count != 0)
+            {
+                var item = lvwBooking.SelectedItems[0];
+                lvwBooking.Items.Remove(item);
+            }
+        }
     }
     }

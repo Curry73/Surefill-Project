@@ -17,6 +17,9 @@ namespace SF
         DataSet dsSurefill = new DataSet();
         SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails, cmdBOpeningDetails;
         DataRow drJobs, drProduct, drJobType, drPaymentType, drJobDetails, drCavityType, drWallDetails, drOpeningDetails;
+
+
+
         String connStr, sqlJobs, sqlCustomer, sqlProduct, sqlJobType, sqlPaymentType, sqlJobDetails, sqlCavityType, sqlWallDetails, sqlOpeningDetails;
 
         Dictionary<int, List<WallOpening>> openingMap = new System.Collections.Generic.Dictionary<int, List<WallOpening>>();
@@ -84,7 +87,7 @@ namespace SF
             cmbPaymentType.ValueMember = "PaymentTypeID";
             cmbPaymentType.DisplayMember = "PaymentTypeDesc";
 
-            pnlAddJob.Visible = false;
+            
 
             int noRows = dsSurefill.Tables["Jobs"].Rows.Count;
             drJobs = dsSurefill.Tables["Jobs"].Rows[noRows - 1];
@@ -120,6 +123,11 @@ namespace SF
 
             jobNo = (int.Parse(drJobs["JobNo"].ToString()) + 1);
             lblActualJobID.Text = Convert.ToString(jobNo);
+
+            pnlDGVJobs.Visible = true;
+            pnlAddJob.Visible = false;
+            pnlEditJob.Visible = false;
+            pnlDeleteJob.Visible = false;
         }
 
         private void btnAddFinalJob_Click(object sender, EventArgs e)
@@ -195,7 +203,7 @@ namespace SF
 
         private void btnAddWall_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cmbCavitySize.Text.ToString());
+            MessageBox.Show("Wall has been added to your list", "Wall Added");
             ListViewItem item = new ListViewItem(Convert.ToString(wallNo));
             double wallSize = Double.Parse(txtAddWallHeight.Text) * Double.Parse(txtAddWallLength.Text);
             Double wallCavitySize = Double.Parse(cmbCavitySize.Text.ToString().Substring(0,6));
@@ -237,7 +245,8 @@ namespace SF
 
         private void btnEditJob_Click(object sender, EventArgs e)
         {
-
+            EditJob frmEditJob = new EditJob();
+            frmEditJob.Show();
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -255,6 +264,7 @@ namespace SF
                 OverallTotal += Double.Parse(LVFinal.Items[x].SubItems[3].Text);
             }
 
+           
             drProduct = dsSurefill.Tables["Product"].Rows.Find(cmbAddJobProdName.SelectedValue);
             double productMeasure = Convert.ToDouble(drProduct["ProductMeasure"]);
             double productPrice = Convert.ToDouble(drProduct["ProductPrice"]);
@@ -267,7 +277,7 @@ namespace SF
 
             lblOverallTotal.Text = Convert.ToString(OverallTotal);
 
-            MessageBox.Show(""+ finalPrice);
+            MessageBox.Show("This amount of coverage using "+ cmbAddJobProdName.SelectedValue.ToString() + " will cost £"+finalPrice.ToString(), "Price");
         }
 
         private void getNumber (int noRows)
@@ -293,20 +303,50 @@ namespace SF
             txtOpeningHeight.Clear();
         }
 
-        private void btnAddCustomer_Click(object sender, EventArgs e)
+        private void btnAddJob_Click(object sender, EventArgs e)
         {
             pnlAddJob.Visible = true;
+            dgvJobs.Visible = false;
+            pnlDeleteJob.Visible = false;
+            pnlEditJob.Visible = false;
         }
         private void btnDeleteJob_Click(object sender, EventArgs e)
         {
-
+            dgvJobs.Visible = true;
+            pnlDeleteJob.Visible = true;
+            pnlAddJob.Visible = false;
+            pnlEditJob.Visible = false;
         }
 
         private void lblPaymentType_Click(object sender, EventArgs e)
         {
 
         }
+        private void btnConfirmDeleteJob_Click(object sender, EventArgs e)
+        {
+            if (dgvJobs.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a Job from the list", "Select Job");
+            }
+            else
+            {
+                drJobs = dsSurefill.Tables["Jobs"].Rows.Find(dgvJobs.SelectedRows[0].Cells[0].Value);
+                //string tempName = drJobs["Forename"].ToString() + "" + drCustomer["Surname"].ToString() + "\'s";
 
+                if (MessageBox.Show("Are you sure you want to delete job number: " + dgvJobs.SelectedRows[0].Cells[0].Value + "?", "Delete Job", MessageBoxButtons.YesNo) ==
+                    System.Windows.Forms.DialogResult.Yes)
+                {
+                    drJobs.Delete();
+                    daWallDetails.Update(dsSurefill, "WallDetails");                  
+                    daCustomer.Update(dsSurefill, "Customer");
+                    daJobType.Update(dsSurefill, "JobType");
+                    daPaymentType.Update(dsSurefill, "PaymentType");
+                    daProduct.Update(dsSurefill, "Product");
+                    daJobs.Update(dsSurefill, "Jobs");
+
+                }
+            }
+        }
 
 
     }

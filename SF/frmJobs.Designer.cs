@@ -60,6 +60,8 @@
             this.WallTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.OpenTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WallHeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WallLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblWallList = new System.Windows.Forms.Label();
             this.lblOverallTotal = new System.Windows.Forms.Label();
             this.btnCancelCalculate = new System.Windows.Forms.Button();
@@ -89,65 +91,72 @@
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.dgvJobs = new System.Windows.Forms.DataGridView();
             this.pnlEditJob = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.cmbEditJobNo = new System.Windows.Forms.ComboBox();
+            this.btnEditFinalJob = new System.Windows.Forms.Button();
+            this.cmbEditPayment = new System.Windows.Forms.ComboBox();
+            this.lblEditPayment = new System.Windows.Forms.Label();
+            this.lblEditPaid = new System.Windows.Forms.Label();
+            this.rbEditPaidNo = new System.Windows.Forms.RadioButton();
+            this.rbEditPaidYes = new System.Windows.Forms.RadioButton();
+            this.cmbEditJobType = new System.Windows.Forms.ComboBox();
+            this.pnlEditWall = new System.Windows.Forms.Panel();
+            this.cmbEditProductNo = new System.Windows.Forms.ComboBox();
+            this.lblEditProductName = new System.Windows.Forms.Label();
+            this.lblEditActualWallNo = new System.Windows.Forms.Label();
+            this.cmbEditCavitySize = new System.Windows.Forms.ComboBox();
+            this.lblEditCavitySize = new System.Windows.Forms.Label();
+            this.txtEditWallHeight = new System.Windows.Forms.TextBox();
+            this.lblEditWallHeight = new System.Windows.Forms.Label();
+            this.txtEditWallLength = new System.Windows.Forms.TextBox();
+            this.LblEditWallLength = new System.Windows.Forms.Label();
+            this.lblEditWallNo = new System.Windows.Forms.Label();
+            this.lblEditJobType = new System.Windows.Forms.Label();
+            this.lblEditJobDate = new System.Windows.Forms.Label();
+            this.dtpEditJobDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbEditCustNo = new System.Windows.Forms.ComboBox();
+            this.lblEditCustNo = new System.Windows.Forms.Label();
+            this.lblEditJobNo = new System.Windows.Forms.Label();
+            this.pnlEditWallList = new System.Windows.Forms.Panel();
+            this.btnDeleteWall = new System.Windows.Forms.Button();
+            this.LVEditWallList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEditCancelCalc = new System.Windows.Forms.Button();
+            this.btnEditCalculate = new System.Windows.Forms.Button();
+            this.pnlEditOpening = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.btnEditAddWall = new System.Windows.Forms.Button();
+            this.btnEditCancelOpening = new System.Windows.Forms.Button();
+            this.LVEditOpenings = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.WallHeight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.WallLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnEditAddOpening = new System.Windows.Forms.Button();
+            this.txtEditOpeningHeight = new System.Windows.Forms.TextBox();
+            this.lblEditOpeningHeight = new System.Windows.Forms.Label();
+            this.txtEditOpeningLength = new System.Windows.Forms.TextBox();
+            this.lblEditOpeningLength = new System.Windows.Forms.Label();
+            this.pnlDGVJobs = new System.Windows.Forms.Panel();
+            this.pnlDeleteJob = new System.Windows.Forms.Panel();
+            this.btnDeleteJobCancel = new System.Windows.Forms.Button();
+            this.btnConfirmDeleteJob = new System.Windows.Forms.Button();
+            this.lblDeleteJobQuestion = new System.Windows.Forms.Label();
+            this.lblDeleteJobTitle = new System.Windows.Forms.Label();
             this.pnlAddWall.SuspendLayout();
             this.pnlAddOpenings.SuspendLayout();
             this.pnlWallSizeList.SuspendLayout();
             this.pnlAddJob.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobs)).BeginInit();
             this.pnlEditJob.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlEditWall.SuspendLayout();
+            this.pnlEditWallList.SuspendLayout();
+            this.pnlEditOpening.SuspendLayout();
+            this.pnlDGVJobs.SuspendLayout();
+            this.pnlDeleteJob.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblJobID
@@ -180,9 +189,9 @@
             this.pnlAddWall.Controls.Add(this.txtAddWallLength);
             this.pnlAddWall.Controls.Add(this.lblAddWallLength);
             this.pnlAddWall.Controls.Add(this.lblWallNumber);
-            this.pnlAddWall.Location = new System.Drawing.Point(3, 5);
+            this.pnlAddWall.Location = new System.Drawing.Point(9, 4);
             this.pnlAddWall.Name = "pnlAddWall";
-            this.pnlAddWall.Size = new System.Drawing.Size(214, 168);
+            this.pnlAddWall.Size = new System.Drawing.Size(185, 165);
             this.pnlAddWall.TabIndex = 2;
             // 
             // cmbAddJobProdName
@@ -280,9 +289,9 @@
             this.pnlAddOpenings.Controls.Add(this.lblAddOpeningHeight);
             this.pnlAddOpenings.Controls.Add(this.txtOpeningLength);
             this.pnlAddOpenings.Controls.Add(this.lblAddOpeningLength);
-            this.pnlAddOpenings.Location = new System.Drawing.Point(0, 169);
+            this.pnlAddOpenings.Location = new System.Drawing.Point(9, 169);
             this.pnlAddOpenings.Name = "pnlAddOpenings";
-            this.pnlAddOpenings.Size = new System.Drawing.Size(214, 208);
+            this.pnlAddOpenings.Size = new System.Drawing.Size(205, 208);
             this.pnlAddOpenings.TabIndex = 3;
             // 
             // txtOpeningsTotal
@@ -295,7 +304,7 @@
             // 
             // btnAddWall
             // 
-            this.btnAddWall.Location = new System.Drawing.Point(122, 182);
+            this.btnAddWall.Location = new System.Drawing.Point(107, 182);
             this.btnAddWall.Name = "btnAddWall";
             this.btnAddWall.Size = new System.Drawing.Size(88, 23);
             this.btnAddWall.TabIndex = 19;
@@ -305,7 +314,7 @@
             // 
             // btnCancelOpening
             // 
-            this.btnCancelOpening.Location = new System.Drawing.Point(28, 55);
+            this.btnCancelOpening.Location = new System.Drawing.Point(13, 56);
             this.btnCancelOpening.Name = "btnCancelOpening";
             this.btnCancelOpening.Size = new System.Drawing.Size(88, 23);
             this.btnCancelOpening.TabIndex = 20;
@@ -340,7 +349,7 @@
             // 
             // btnAddOpening
             // 
-            this.btnAddOpening.Location = new System.Drawing.Point(122, 55);
+            this.btnAddOpening.Location = new System.Drawing.Point(107, 55);
             this.btnAddOpening.Name = "btnAddOpening";
             this.btnAddOpening.Size = new System.Drawing.Size(88, 23);
             this.btnAddOpening.TabIndex = 10;
@@ -350,7 +359,7 @@
             // 
             // txtOpeningHeight
             // 
-            this.txtOpeningHeight.Location = new System.Drawing.Point(110, 30);
+            this.txtOpeningHeight.Location = new System.Drawing.Point(98, 30);
             this.txtOpeningHeight.Name = "txtOpeningHeight";
             this.txtOpeningHeight.Size = new System.Drawing.Size(100, 20);
             this.txtOpeningHeight.TabIndex = 7;
@@ -366,7 +375,7 @@
             // 
             // txtOpeningLength
             // 
-            this.txtOpeningLength.Location = new System.Drawing.Point(110, 6);
+            this.txtOpeningLength.Location = new System.Drawing.Point(98, 6);
             this.txtOpeningLength.Name = "txtOpeningLength";
             this.txtOpeningLength.Size = new System.Drawing.Size(100, 20);
             this.txtOpeningLength.TabIndex = 6;
@@ -415,7 +424,7 @@
             // WallTotal
             // 
             this.WallTotal.Tag = "";
-            this.WallTotal.Text = "Wall";
+            this.WallTotal.Text = "Wall Total";
             // 
             // OpenTotal
             // 
@@ -425,10 +434,18 @@
             // 
             this.Total.Text = "Total";
             // 
+            // WallHeight
+            // 
+            this.WallHeight.Text = "WallHeight";
+            // 
+            // WallLength
+            // 
+            this.WallLength.Text = "WallLength";
+            // 
             // lblWallList
             // 
             this.lblWallList.AutoSize = true;
-            this.lblWallList.Location = new System.Drawing.Point(71, 13);
+            this.lblWallList.Location = new System.Drawing.Point(95, 13);
             this.lblWallList.Name = "lblWallList";
             this.lblWallList.Size = new System.Drawing.Size(47, 13);
             this.lblWallList.TabIndex = 2;
@@ -437,7 +454,7 @@
             // lblOverallTotal
             // 
             this.lblOverallTotal.AutoSize = true;
-            this.lblOverallTotal.Location = new System.Drawing.Point(201, 295);
+            this.lblOverallTotal.Location = new System.Drawing.Point(182, 295);
             this.lblOverallTotal.Name = "lblOverallTotal";
             this.lblOverallTotal.Size = new System.Drawing.Size(13, 13);
             this.lblOverallTotal.TabIndex = 8;
@@ -481,7 +498,7 @@
             this.pnlAddJob.Controls.Add(this.lblJobID);
             this.pnlAddJob.Controls.Add(this.pnlWallSizeList);
             this.pnlAddJob.Controls.Add(this.pnlAddOpenings);
-            this.pnlAddJob.Location = new System.Drawing.Point(3, 2);
+            this.pnlAddJob.Location = new System.Drawing.Point(8, 12);
             this.pnlAddJob.Name = "pnlAddJob";
             this.pnlAddJob.Size = new System.Drawing.Size(662, 380);
             this.pnlAddJob.TabIndex = 4;
@@ -615,7 +632,7 @@
             this.btnAddJob.Size = new System.Drawing.Size(33, 33);
             this.btnAddJob.TabIndex = 45;
             this.btnAddJob.UseVisualStyleBackColor = false;
-            this.btnAddJob.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            this.btnAddJob.Click += new System.EventHandler(this.btnAddJob_Click);
             // 
             // lblEditJob
             // 
@@ -705,287 +722,297 @@
             // 
             this.dgvJobs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobs.Location = new System.Drawing.Point(798, 22);
+            this.dgvJobs.Location = new System.Drawing.Point(16, 16);
             this.dgvJobs.Name = "dgvJobs";
             this.dgvJobs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvJobs.Size = new System.Drawing.Size(337, 194);
+            this.dgvJobs.Size = new System.Drawing.Size(540, 284);
             this.dgvJobs.TabIndex = 55;
             // 
             // pnlEditJob
             // 
-            this.pnlEditJob.Controls.Add(this.button1);
-            this.pnlEditJob.Controls.Add(this.comboBox1);
-            this.pnlEditJob.Controls.Add(this.label1);
-            this.pnlEditJob.Controls.Add(this.label2);
-            this.pnlEditJob.Controls.Add(this.radioButton1);
-            this.pnlEditJob.Controls.Add(this.radioButton2);
-            this.pnlEditJob.Controls.Add(this.comboBox2);
-            this.pnlEditJob.Controls.Add(this.panel2);
-            this.pnlEditJob.Controls.Add(this.label9);
-            this.pnlEditJob.Controls.Add(this.label10);
-            this.pnlEditJob.Controls.Add(this.dateTimePicker1);
-            this.pnlEditJob.Controls.Add(this.comboBox5);
-            this.pnlEditJob.Controls.Add(this.label11);
-            this.pnlEditJob.Controls.Add(this.label12);
-            this.pnlEditJob.Controls.Add(this.label13);
-            this.pnlEditJob.Controls.Add(this.panel3);
-            this.pnlEditJob.Controls.Add(this.panel4);
-            this.pnlEditJob.Location = new System.Drawing.Point(775, 266);
+            this.pnlEditJob.Controls.Add(this.cmbEditJobNo);
+            this.pnlEditJob.Controls.Add(this.btnEditFinalJob);
+            this.pnlEditJob.Controls.Add(this.cmbEditPayment);
+            this.pnlEditJob.Controls.Add(this.lblEditPayment);
+            this.pnlEditJob.Controls.Add(this.lblEditPaid);
+            this.pnlEditJob.Controls.Add(this.rbEditPaidNo);
+            this.pnlEditJob.Controls.Add(this.rbEditPaidYes);
+            this.pnlEditJob.Controls.Add(this.cmbEditJobType);
+            this.pnlEditJob.Controls.Add(this.pnlEditWall);
+            this.pnlEditJob.Controls.Add(this.lblEditJobType);
+            this.pnlEditJob.Controls.Add(this.lblEditJobDate);
+            this.pnlEditJob.Controls.Add(this.dtpEditJobDate);
+            this.pnlEditJob.Controls.Add(this.cmbEditCustNo);
+            this.pnlEditJob.Controls.Add(this.lblEditCustNo);
+            this.pnlEditJob.Controls.Add(this.lblEditJobNo);
+            this.pnlEditJob.Controls.Add(this.pnlEditWallList);
+            this.pnlEditJob.Controls.Add(this.pnlEditOpening);
+            this.pnlEditJob.Location = new System.Drawing.Point(723, 363);
             this.pnlEditJob.Name = "pnlEditJob";
             this.pnlEditJob.Size = new System.Drawing.Size(662, 380);
             this.pnlEditJob.TabIndex = 56;
             // 
-            // button1
+            // cmbEditJobNo
             // 
-            this.button1.Location = new System.Drawing.Point(564, 297);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Add Job";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmbEditJobNo.FormattingEnabled = true;
+            this.cmbEditJobNo.Location = new System.Drawing.Point(540, 25);
+            this.cmbEditJobNo.Name = "cmbEditJobNo";
+            this.cmbEditJobNo.Size = new System.Drawing.Size(70, 21);
+            this.cmbEditJobNo.TabIndex = 19;
             // 
-            // comboBox1
+            // btnEditFinalJob
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(540, 245);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(115, 21);
-            this.comboBox1.TabIndex = 17;
+            this.btnEditFinalJob.Location = new System.Drawing.Point(564, 297);
+            this.btnEditFinalJob.Name = "btnEditFinalJob";
+            this.btnEditFinalJob.Size = new System.Drawing.Size(75, 23);
+            this.btnEditFinalJob.TabIndex = 18;
+            this.btnEditFinalJob.Text = "Edit Job";
+            this.btnEditFinalJob.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // cmbEditPayment
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(460, 248);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Payment Type:";
+            this.cmbEditPayment.FormattingEnabled = true;
+            this.cmbEditPayment.Location = new System.Drawing.Point(540, 245);
+            this.cmbEditPayment.Name = "cmbEditPayment";
+            this.cmbEditPayment.Size = new System.Drawing.Size(115, 21);
+            this.cmbEditPayment.TabIndex = 17;
             // 
-            // label2
+            // lblEditPayment
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(503, 206);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Paid:";
+            this.lblEditPayment.AutoSize = true;
+            this.lblEditPayment.Location = new System.Drawing.Point(460, 248);
+            this.lblEditPayment.Name = "lblEditPayment";
+            this.lblEditPayment.Size = new System.Drawing.Size(78, 13);
+            this.lblEditPayment.TabIndex = 16;
+            this.lblEditPayment.Text = "Payment Type:";
             // 
-            // radioButton1
+            // lblEditPaid
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(600, 205);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "No";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.lblEditPaid.AutoSize = true;
+            this.lblEditPaid.Location = new System.Drawing.Point(503, 206);
+            this.lblEditPaid.Name = "lblEditPaid";
+            this.lblEditPaid.Size = new System.Drawing.Size(31, 13);
+            this.lblEditPaid.TabIndex = 15;
+            this.lblEditPaid.Text = "Paid:";
             // 
-            // radioButton2
+            // rbEditPaidNo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(540, 205);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Yes";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbEditPaidNo.AutoSize = true;
+            this.rbEditPaidNo.Location = new System.Drawing.Point(600, 205);
+            this.rbEditPaidNo.Name = "rbEditPaidNo";
+            this.rbEditPaidNo.Size = new System.Drawing.Size(39, 17);
+            this.rbEditPaidNo.TabIndex = 14;
+            this.rbEditPaidNo.TabStop = true;
+            this.rbEditPaidNo.Text = "No";
+            this.rbEditPaidNo.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // rbEditPaidYes
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(540, 152);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(116, 21);
-            this.comboBox2.TabIndex = 12;
+            this.rbEditPaidYes.AutoSize = true;
+            this.rbEditPaidYes.Location = new System.Drawing.Point(540, 205);
+            this.rbEditPaidYes.Name = "rbEditPaidYes";
+            this.rbEditPaidYes.Size = new System.Drawing.Size(43, 17);
+            this.rbEditPaidYes.TabIndex = 13;
+            this.rbEditPaidYes.TabStop = true;
+            this.rbEditPaidYes.Text = "Yes";
+            this.rbEditPaidYes.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // cmbEditJobType
             // 
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(3, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(214, 168);
-            this.panel2.TabIndex = 2;
+            this.cmbEditJobType.FormattingEnabled = true;
+            this.cmbEditJobType.Location = new System.Drawing.Point(540, 152);
+            this.cmbEditJobType.Name = "cmbEditJobType";
+            this.cmbEditJobType.Size = new System.Drawing.Size(116, 21);
+            this.cmbEditJobType.TabIndex = 12;
             // 
-            // comboBox3
+            // pnlEditWall
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(82, 138);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(80, 21);
-            this.comboBox3.TabIndex = 23;
+            this.pnlEditWall.Controls.Add(this.cmbEditProductNo);
+            this.pnlEditWall.Controls.Add(this.lblEditProductName);
+            this.pnlEditWall.Controls.Add(this.pnlDGVJobs);
+            this.pnlEditWall.Controls.Add(this.lblEditActualWallNo);
+            this.pnlEditWall.Controls.Add(this.cmbEditCavitySize);
+            this.pnlEditWall.Controls.Add(this.lblEditCavitySize);
+            this.pnlEditWall.Controls.Add(this.txtEditWallHeight);
+            this.pnlEditWall.Controls.Add(this.lblEditWallHeight);
+            this.pnlEditWall.Controls.Add(this.txtEditWallLength);
+            this.pnlEditWall.Controls.Add(this.LblEditWallLength);
+            this.pnlEditWall.Controls.Add(this.lblEditWallNo);
+            this.pnlEditWall.Location = new System.Drawing.Point(3, 5);
+            this.pnlEditWall.Name = "pnlEditWall";
+            this.pnlEditWall.Size = new System.Drawing.Size(214, 168);
+            this.pnlEditWall.TabIndex = 2;
             // 
-            // label3
+            // cmbEditProductNo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Product Name";
+            this.cmbEditProductNo.FormattingEnabled = true;
+            this.cmbEditProductNo.Location = new System.Drawing.Point(82, 138);
+            this.cmbEditProductNo.Name = "cmbEditProductNo";
+            this.cmbEditProductNo.Size = new System.Drawing.Size(80, 21);
+            this.cmbEditProductNo.TabIndex = 23;
             // 
-            // label4
+            // lblEditProductName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "1";
+            this.lblEditProductName.AutoSize = true;
+            this.lblEditProductName.Location = new System.Drawing.Point(5, 141);
+            this.lblEditProductName.Name = "lblEditProductName";
+            this.lblEditProductName.Size = new System.Drawing.Size(75, 13);
+            this.lblEditProductName.TabIndex = 22;
+            this.lblEditProductName.Text = "Product Name";
             // 
-            // comboBox4
+            // lblEditActualWallNo
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(72, 102);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(80, 21);
-            this.comboBox4.TabIndex = 7;
+            this.lblEditActualWallNo.AutoSize = true;
+            this.lblEditActualWallNo.Location = new System.Drawing.Point(79, 11);
+            this.lblEditActualWallNo.Name = "lblEditActualWallNo";
+            this.lblEditActualWallNo.Size = new System.Drawing.Size(13, 13);
+            this.lblEditActualWallNo.TabIndex = 21;
+            this.lblEditActualWallNo.Text = "1";
             // 
-            // label5
+            // cmbEditCavitySize
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 110);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Cavity Size:";
+            this.cmbEditCavitySize.FormattingEnabled = true;
+            this.cmbEditCavitySize.Location = new System.Drawing.Point(72, 102);
+            this.cmbEditCavitySize.Name = "cmbEditCavitySize";
+            this.cmbEditCavitySize.Size = new System.Drawing.Size(80, 21);
+            this.cmbEditCavitySize.TabIndex = 7;
             // 
-            // textBox1
+            // lblEditCavitySize
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.lblEditCavitySize.AutoSize = true;
+            this.lblEditCavitySize.Location = new System.Drawing.Point(3, 110);
+            this.lblEditCavitySize.Name = "lblEditCavitySize";
+            this.lblEditCavitySize.Size = new System.Drawing.Size(62, 13);
+            this.lblEditCavitySize.TabIndex = 6;
+            this.lblEditCavitySize.Text = "Cavity Size:";
             // 
-            // label6
+            // txtEditWallHeight
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Wall height:";
+            this.txtEditWallHeight.Location = new System.Drawing.Point(72, 72);
+            this.txtEditWallHeight.Name = "txtEditWallHeight";
+            this.txtEditWallHeight.Size = new System.Drawing.Size(100, 20);
+            this.txtEditWallHeight.TabIndex = 4;
             // 
-            // textBox2
+            // lblEditWallHeight
             // 
-            this.textBox2.Location = new System.Drawing.Point(72, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.lblEditWallHeight.AutoSize = true;
+            this.lblEditWallHeight.Location = new System.Drawing.Point(3, 75);
+            this.lblEditWallHeight.Name = "lblEditWallHeight";
+            this.lblEditWallHeight.Size = new System.Drawing.Size(63, 13);
+            this.lblEditWallHeight.TabIndex = 5;
+            this.lblEditWallHeight.Text = "Wall height:";
             // 
-            // label7
+            // txtEditWallLength
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 39);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Wall length:";
+            this.txtEditWallLength.Location = new System.Drawing.Point(72, 36);
+            this.txtEditWallLength.Name = "txtEditWallLength";
+            this.txtEditWallLength.Size = new System.Drawing.Size(100, 20);
+            this.txtEditWallLength.TabIndex = 3;
             // 
-            // label8
+            // LblEditWallLength
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Wall number:";
+            this.LblEditWallLength.AutoSize = true;
+            this.LblEditWallLength.Location = new System.Drawing.Point(3, 39);
+            this.LblEditWallLength.Name = "LblEditWallLength";
+            this.LblEditWallLength.Size = new System.Drawing.Size(63, 13);
+            this.LblEditWallLength.TabIndex = 4;
+            this.LblEditWallLength.Text = "Wall length:";
             // 
-            // label9
+            // lblEditWallNo
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(480, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Job Type:";
+            this.lblEditWallNo.AutoSize = true;
+            this.lblEditWallNo.Location = new System.Drawing.Point(3, 9);
+            this.lblEditWallNo.Name = "lblEditWallNo";
+            this.lblEditWallNo.Size = new System.Drawing.Size(69, 13);
+            this.lblEditWallNo.TabIndex = 3;
+            this.lblEditWallNo.Text = "Wall number:";
             // 
-            // label10
+            // lblEditJobType
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(469, 110);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Date of Job:";
+            this.lblEditJobType.AutoSize = true;
+            this.lblEditJobType.Location = new System.Drawing.Point(480, 155);
+            this.lblEditJobType.Name = "lblEditJobType";
+            this.lblEditJobType.Size = new System.Drawing.Size(54, 13);
+            this.lblEditJobType.TabIndex = 11;
+            this.lblEditJobType.Text = "Job Type:";
             // 
-            // dateTimePicker1
+            // lblEditJobDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(540, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(119, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.lblEditJobDate.AutoSize = true;
+            this.lblEditJobDate.Location = new System.Drawing.Point(469, 110);
+            this.lblEditJobDate.Name = "lblEditJobDate";
+            this.lblEditJobDate.Size = new System.Drawing.Size(65, 13);
+            this.lblEditJobDate.TabIndex = 10;
+            this.lblEditJobDate.Text = "Date of Job:";
             // 
-            // comboBox5
+            // dtpEditJobDate
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(540, 68);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(70, 21);
-            this.comboBox5.TabIndex = 7;
+            this.dtpEditJobDate.Location = new System.Drawing.Point(540, 104);
+            this.dtpEditJobDate.Name = "dtpEditJobDate";
+            this.dtpEditJobDate.Size = new System.Drawing.Size(119, 20);
+            this.dtpEditJobDate.TabIndex = 9;
             // 
-            // label11
+            // cmbEditCustNo
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(466, 71);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Customer No:";
+            this.cmbEditCustNo.FormattingEnabled = true;
+            this.cmbEditCustNo.Location = new System.Drawing.Point(540, 68);
+            this.cmbEditCustNo.Name = "cmbEditCustNo";
+            this.cmbEditCustNo.Size = new System.Drawing.Size(70, 21);
+            this.cmbEditCustNo.TabIndex = 7;
             // 
-            // label12
+            // lblEditCustNo
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(540, 33);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "AUTO JOB ID";
+            this.lblEditCustNo.AutoSize = true;
+            this.lblEditCustNo.Location = new System.Drawing.Point(466, 71);
+            this.lblEditCustNo.Name = "lblEditCustNo";
+            this.lblEditCustNo.Size = new System.Drawing.Size(71, 13);
+            this.lblEditCustNo.TabIndex = 6;
+            this.lblEditCustNo.Text = "Customer No:";
             // 
-            // label13
+            // lblEditJobNo
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(493, 33);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Job ID:";
+            this.lblEditJobNo.AutoSize = true;
+            this.lblEditJobNo.Location = new System.Drawing.Point(493, 33);
+            this.lblEditJobNo.Name = "lblEditJobNo";
+            this.lblEditJobNo.Size = new System.Drawing.Size(41, 13);
+            this.lblEditJobNo.TabIndex = 0;
+            this.lblEditJobNo.Text = "Job ID:";
             // 
-            // panel3
+            // pnlEditWallList
             // 
-            this.panel3.Controls.Add(this.listView1);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Location = new System.Drawing.Point(220, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(240, 317);
-            this.panel3.TabIndex = 3;
+            this.pnlEditWallList.Controls.Add(this.btnDeleteWall);
+            this.pnlEditWallList.Controls.Add(this.LVEditWallList);
+            this.pnlEditWallList.Controls.Add(this.label14);
+            this.pnlEditWallList.Controls.Add(this.label15);
+            this.pnlEditWallList.Controls.Add(this.btnEditCancelCalc);
+            this.pnlEditWallList.Controls.Add(this.btnEditCalculate);
+            this.pnlEditWallList.Location = new System.Drawing.Point(220, 3);
+            this.pnlEditWallList.Name = "pnlEditWallList";
+            this.pnlEditWallList.Size = new System.Drawing.Size(240, 317);
+            this.pnlEditWallList.TabIndex = 3;
             // 
-            // listView1
+            // btnDeleteWall
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.btnDeleteWall.Location = new System.Drawing.Point(43, 291);
+            this.btnDeleteWall.Name = "btnDeleteWall";
+            this.btnDeleteWall.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteWall.TabIndex = 9;
+            this.btnDeleteWall.Text = "Delete";
+            this.btnDeleteWall.UseVisualStyleBackColor = true;
+            // 
+            // LVEditWallList
+            // 
+            this.LVEditWallList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listView1.Location = new System.Drawing.Point(9, 36);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(225, 226);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.LVEditWallList.Location = new System.Drawing.Point(9, 36);
+            this.LVEditWallList.Name = "LVEditWallList";
+            this.LVEditWallList.Size = new System.Drawing.Size(225, 226);
+            this.LVEditWallList.TabIndex = 3;
+            this.LVEditWallList.UseCompatibleStateImageBehavior = false;
+            this.LVEditWallList.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -1022,39 +1049,39 @@
             this.label15.TabIndex = 8;
             this.label15.Text = "0";
             // 
-            // button2
+            // btnEditCancelCalc
             // 
-            this.button2.Location = new System.Drawing.Point(43, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditCancelCalc.Location = new System.Drawing.Point(43, 269);
+            this.btnEditCancelCalc.Name = "btnEditCancelCalc";
+            this.btnEditCancelCalc.Size = new System.Drawing.Size(75, 23);
+            this.btnEditCancelCalc.TabIndex = 5;
+            this.btnEditCancelCalc.Text = "Cancel";
+            this.btnEditCancelCalc.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnEditCalculate
             // 
-            this.button3.Location = new System.Drawing.Point(153, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Calculate";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEditCalculate.Location = new System.Drawing.Point(153, 269);
+            this.btnEditCalculate.Name = "btnEditCalculate";
+            this.btnEditCalculate.Size = new System.Drawing.Size(75, 23);
+            this.btnEditCalculate.TabIndex = 4;
+            this.btnEditCalculate.Text = "Calculate";
+            this.btnEditCalculate.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // pnlEditOpening
             // 
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.listView2);
-            this.panel4.Controls.Add(this.button6);
-            this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.textBox5);
-            this.panel4.Controls.Add(this.label17);
-            this.panel4.Location = new System.Drawing.Point(0, 169);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(214, 208);
-            this.panel4.TabIndex = 3;
+            this.pnlEditOpening.Controls.Add(this.textBox3);
+            this.pnlEditOpening.Controls.Add(this.btnEditAddWall);
+            this.pnlEditOpening.Controls.Add(this.btnEditCancelOpening);
+            this.pnlEditOpening.Controls.Add(this.LVEditOpenings);
+            this.pnlEditOpening.Controls.Add(this.btnEditAddOpening);
+            this.pnlEditOpening.Controls.Add(this.txtEditOpeningHeight);
+            this.pnlEditOpening.Controls.Add(this.lblEditOpeningHeight);
+            this.pnlEditOpening.Controls.Add(this.txtEditOpeningLength);
+            this.pnlEditOpening.Controls.Add(this.lblEditOpeningLength);
+            this.pnlEditOpening.Location = new System.Drawing.Point(0, 169);
+            this.pnlEditOpening.Name = "pnlEditOpening";
+            this.pnlEditOpening.Size = new System.Drawing.Size(214, 208);
+            this.pnlEditOpening.TabIndex = 3;
             // 
             // textBox3
             // 
@@ -1064,36 +1091,36 @@
             this.textBox3.TabIndex = 21;
             this.textBox3.Visible = false;
             // 
-            // button4
+            // btnEditAddWall
             // 
-            this.button4.Location = new System.Drawing.Point(122, 182);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 23);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Add Wall";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEditAddWall.Location = new System.Drawing.Point(122, 182);
+            this.btnEditAddWall.Name = "btnEditAddWall";
+            this.btnEditAddWall.Size = new System.Drawing.Size(88, 23);
+            this.btnEditAddWall.TabIndex = 19;
+            this.btnEditAddWall.Text = "Add Wall";
+            this.btnEditAddWall.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnEditCancelOpening
             // 
-            this.button5.Location = new System.Drawing.Point(28, 55);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(88, 23);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnEditCancelOpening.Location = new System.Drawing.Point(28, 55);
+            this.btnEditCancelOpening.Name = "btnEditCancelOpening";
+            this.btnEditCancelOpening.Size = new System.Drawing.Size(88, 23);
+            this.btnEditCancelOpening.TabIndex = 20;
+            this.btnEditCancelOpening.Text = "Cancel";
+            this.btnEditCancelOpening.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // LVEditOpenings
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LVEditOpenings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
-            this.listView2.Location = new System.Drawing.Point(13, 84);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(185, 96);
-            this.listView2.TabIndex = 19;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.LVEditOpenings.Location = new System.Drawing.Point(13, 84);
+            this.LVEditOpenings.Name = "LVEditOpenings";
+            this.LVEditOpenings.Size = new System.Drawing.Size(185, 96);
+            this.LVEditOpenings.TabIndex = 19;
+            this.LVEditOpenings.UseCompatibleStateImageBehavior = false;
+            this.LVEditOpenings.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader5
             // 
@@ -1107,54 +1134,105 @@
             // 
             this.columnHeader7.Text = "Total";
             // 
-            // button6
+            // btnEditAddOpening
             // 
-            this.button6.Location = new System.Drawing.Point(122, 55);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(88, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Add";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnEditAddOpening.Location = new System.Drawing.Point(122, 55);
+            this.btnEditAddOpening.Name = "btnEditAddOpening";
+            this.btnEditAddOpening.Size = new System.Drawing.Size(88, 23);
+            this.btnEditAddOpening.TabIndex = 10;
+            this.btnEditAddOpening.Text = "Add";
+            this.btnEditAddOpening.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtEditOpeningHeight
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 30);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtEditOpeningHeight.Location = new System.Drawing.Point(110, 30);
+            this.txtEditOpeningHeight.Name = "txtEditOpeningHeight";
+            this.txtEditOpeningHeight.Size = new System.Drawing.Size(100, 20);
+            this.txtEditOpeningHeight.TabIndex = 7;
             // 
-            // label16
+            // lblEditOpeningHeight
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 33);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 13);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "Opening height:";
+            this.lblEditOpeningHeight.AutoSize = true;
+            this.lblEditOpeningHeight.Location = new System.Drawing.Point(10, 33);
+            this.lblEditOpeningHeight.Name = "lblEditOpeningHeight";
+            this.lblEditOpeningHeight.Size = new System.Drawing.Size(82, 13);
+            this.lblEditOpeningHeight.TabIndex = 9;
+            this.lblEditOpeningHeight.Text = "Opening height:";
             // 
-            // textBox5
+            // txtEditOpeningLength
             // 
-            this.textBox5.Location = new System.Drawing.Point(110, 6);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.txtEditOpeningLength.Location = new System.Drawing.Point(110, 6);
+            this.txtEditOpeningLength.Name = "txtEditOpeningLength";
+            this.txtEditOpeningLength.Size = new System.Drawing.Size(100, 20);
+            this.txtEditOpeningLength.TabIndex = 6;
             // 
-            // label17
+            // lblEditOpeningLength
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(10, 6);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(82, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Opening length:";
+            this.lblEditOpeningLength.AutoSize = true;
+            this.lblEditOpeningLength.Location = new System.Drawing.Point(10, 6);
+            this.lblEditOpeningLength.Name = "lblEditOpeningLength";
+            this.lblEditOpeningLength.Size = new System.Drawing.Size(82, 13);
+            this.lblEditOpeningLength.TabIndex = 8;
+            this.lblEditOpeningLength.Text = "Opening length:";
             // 
-            // WallHeight
+            // pnlDGVJobs
             // 
-            this.WallHeight.Text = "WallHeight";
+            this.pnlDGVJobs.Controls.Add(this.dgvJobs);
+            this.pnlDGVJobs.Location = new System.Drawing.Point(34, 27);
+            this.pnlDGVJobs.Name = "pnlDGVJobs";
+            this.pnlDGVJobs.Size = new System.Drawing.Size(577, 324);
+            this.pnlDGVJobs.TabIndex = 57;
             // 
-            // WallLength
+            // pnlDeleteJob
             // 
-            this.WallLength.Text = "WallLength";
+            this.pnlDeleteJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlDeleteJob.Controls.Add(this.btnDeleteJobCancel);
+            this.pnlDeleteJob.Controls.Add(this.btnConfirmDeleteJob);
+            this.pnlDeleteJob.Controls.Add(this.lblDeleteJobQuestion);
+            this.pnlDeleteJob.Controls.Add(this.lblDeleteJobTitle);
+            this.pnlDeleteJob.Location = new System.Drawing.Point(864, 42);
+            this.pnlDeleteJob.Name = "pnlDeleteJob";
+            this.pnlDeleteJob.Size = new System.Drawing.Size(201, 347);
+            this.pnlDeleteJob.TabIndex = 48;
+            // 
+            // btnDeleteJobCancel
+            // 
+            this.btnDeleteJobCancel.Location = new System.Drawing.Point(110, 203);
+            this.btnDeleteJobCancel.Name = "btnDeleteJobCancel";
+            this.btnDeleteJobCancel.Size = new System.Drawing.Size(75, 25);
+            this.btnDeleteJobCancel.TabIndex = 22;
+            this.btnDeleteJobCancel.Text = "Cancel";
+            this.btnDeleteJobCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmDeleteJob
+            // 
+            this.btnConfirmDeleteJob.Location = new System.Drawing.Point(29, 203);
+            this.btnConfirmDeleteJob.Name = "btnConfirmDeleteJob";
+            this.btnConfirmDeleteJob.Size = new System.Drawing.Size(75, 25);
+            this.btnConfirmDeleteJob.TabIndex = 21;
+            this.btnConfirmDeleteJob.Text = "Delete";
+            this.btnConfirmDeleteJob.UseVisualStyleBackColor = true;
+            this.btnConfirmDeleteJob.Click += new System.EventHandler(this.btnConfirmDeleteJob_Click);
+            // 
+            // lblDeleteJobQuestion
+            // 
+            this.lblDeleteJobQuestion.AutoSize = true;
+            this.lblDeleteJobQuestion.Location = new System.Drawing.Point(3, 164);
+            this.lblDeleteJobQuestion.Name = "lblDeleteJobQuestion";
+            this.lblDeleteJobQuestion.Size = new System.Drawing.Size(227, 13);
+            this.lblDeleteJobQuestion.TabIndex = 20;
+            this.lblDeleteJobQuestion.Text = "Are you sure you want to delete this customer?";
+            this.lblDeleteJobQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDeleteJobTitle
+            // 
+            this.lblDeleteJobTitle.AutoSize = true;
+            this.lblDeleteJobTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteJobTitle.Location = new System.Drawing.Point(82, 131);
+            this.lblDeleteJobTitle.Name = "lblDeleteJobTitle";
+            this.lblDeleteJobTitle.Size = new System.Drawing.Size(55, 13);
+            this.lblDeleteJobTitle.TabIndex = 19;
+            this.lblDeleteJobTitle.Text = "DELETE";
             // 
             // frmJobs
             // 
@@ -1162,7 +1240,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 405);
             this.Controls.Add(this.pnlEditJob);
-            this.Controls.Add(this.dgvJobs);
+            this.Controls.Add(this.pnlDeleteJob);
             this.Controls.Add(this.lblSearchJob);
             this.Controls.Add(this.lblDeleteJob);
             this.Controls.Add(this.lblAddJob);
@@ -1189,12 +1267,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobs)).EndInit();
             this.pnlEditJob.ResumeLayout(false);
             this.pnlEditJob.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlEditWall.ResumeLayout(false);
+            this.pnlEditWall.PerformLayout();
+            this.pnlEditWallList.ResumeLayout(false);
+            this.pnlEditWallList.PerformLayout();
+            this.pnlEditOpening.ResumeLayout(false);
+            this.pnlEditOpening.PerformLayout();
+            this.pnlDGVJobs.ResumeLayout(false);
+            this.pnlDeleteJob.ResumeLayout(false);
+            this.pnlDeleteJob.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1263,55 +1344,62 @@
         private System.Windows.Forms.DateTimePicker dtpAddJob;
         private System.Windows.Forms.Button btnAddFinalJob;
         private System.Windows.Forms.Panel pnlEditJob;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnEditFinalJob;
+        private System.Windows.Forms.ComboBox cmbEditPayment;
+        private System.Windows.Forms.Label lblEditPayment;
+        private System.Windows.Forms.Label lblEditPaid;
+        private System.Windows.Forms.RadioButton rbEditPaidNo;
+        private System.Windows.Forms.RadioButton rbEditPaidYes;
+        private System.Windows.Forms.ComboBox cmbEditJobType;
+        private System.Windows.Forms.Panel pnlEditWall;
+        private System.Windows.Forms.ComboBox cmbEditProductNo;
+        private System.Windows.Forms.Label lblEditProductName;
+        private System.Windows.Forms.Label lblEditActualWallNo;
+        private System.Windows.Forms.ComboBox cmbEditCavitySize;
+        private System.Windows.Forms.Label lblEditCavitySize;
+        private System.Windows.Forms.TextBox txtEditWallHeight;
+        private System.Windows.Forms.Label lblEditWallHeight;
+        private System.Windows.Forms.TextBox txtEditWallLength;
+        private System.Windows.Forms.Label LblEditWallLength;
+        private System.Windows.Forms.Label lblEditWallNo;
+        private System.Windows.Forms.Label lblEditJobType;
+        private System.Windows.Forms.Label lblEditJobDate;
+        private System.Windows.Forms.DateTimePicker dtpEditJobDate;
+        private System.Windows.Forms.ComboBox cmbEditCustNo;
+        private System.Windows.Forms.Label lblEditCustNo;
+        private System.Windows.Forms.Label lblEditJobNo;
+        private System.Windows.Forms.Panel pnlEditWallList;
+        private System.Windows.Forms.ListView LVEditWallList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnEditCancelCalc;
+        private System.Windows.Forms.Button btnEditCalculate;
+        private System.Windows.Forms.Panel pnlEditOpening;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Button btnEditAddWall;
+        private System.Windows.Forms.Button btnEditCancelOpening;
+        private System.Windows.Forms.ListView LVEditOpenings;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnEditAddOpening;
+        private System.Windows.Forms.TextBox txtEditOpeningHeight;
+        private System.Windows.Forms.Label lblEditOpeningHeight;
+        private System.Windows.Forms.TextBox txtEditOpeningLength;
+        private System.Windows.Forms.Label lblEditOpeningLength;
         private System.Windows.Forms.ColumnHeader WallHeight;
         private System.Windows.Forms.ColumnHeader WallLength;
+        private System.Windows.Forms.Panel pnlDGVJobs;
+        private System.Windows.Forms.Panel pnlDeleteJob;
+        private System.Windows.Forms.Button btnDeleteJobCancel;
+        private System.Windows.Forms.Button btnConfirmDeleteJob;
+        private System.Windows.Forms.Label lblDeleteJobQuestion;
+        private System.Windows.Forms.Label lblDeleteJobTitle;
+        private System.Windows.Forms.Button btnDeleteWall;
+        private System.Windows.Forms.ComboBox cmbEditJobNo;
     }
 }

@@ -102,6 +102,7 @@
             this.pnlEditWall = new System.Windows.Forms.Panel();
             this.cmbEditProductNo = new System.Windows.Forms.ComboBox();
             this.lblEditProductName = new System.Windows.Forms.Label();
+            this.pnlDGVJobs = new System.Windows.Forms.Panel();
             this.lblEditActualWallNo = new System.Windows.Forms.Label();
             this.cmbEditCavitySize = new System.Windows.Forms.ComboBox();
             this.lblEditCavitySize = new System.Windows.Forms.Label();
@@ -140,7 +141,6 @@
             this.lblEditOpeningHeight = new System.Windows.Forms.Label();
             this.txtEditOpeningLength = new System.Windows.Forms.TextBox();
             this.lblEditOpeningLength = new System.Windows.Forms.Label();
-            this.pnlDGVJobs = new System.Windows.Forms.Panel();
             this.pnlDeleteJob = new System.Windows.Forms.Panel();
             this.btnDeleteJobCancel = new System.Windows.Forms.Button();
             this.btnConfirmDeleteJob = new System.Windows.Forms.Button();
@@ -155,7 +155,6 @@
             this.pnlEditWall.SuspendLayout();
             this.pnlEditWallList.SuspendLayout();
             this.pnlEditOpening.SuspendLayout();
-            this.pnlDGVJobs.SuspendLayout();
             this.pnlDeleteJob.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -498,7 +497,7 @@
             this.pnlAddJob.Controls.Add(this.lblJobID);
             this.pnlAddJob.Controls.Add(this.pnlWallSizeList);
             this.pnlAddJob.Controls.Add(this.pnlAddOpenings);
-            this.pnlAddJob.Location = new System.Drawing.Point(8, 12);
+            this.pnlAddJob.Location = new System.Drawing.Point(5, 10);
             this.pnlAddJob.Name = "pnlAddJob";
             this.pnlAddJob.Size = new System.Drawing.Size(662, 380);
             this.pnlAddJob.TabIndex = 4;
@@ -722,10 +721,10 @@
             // 
             this.dgvJobs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobs.Location = new System.Drawing.Point(16, 16);
+            this.dgvJobs.Location = new System.Drawing.Point(12, 10);
             this.dgvJobs.Name = "dgvJobs";
             this.dgvJobs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvJobs.Size = new System.Drawing.Size(540, 284);
+            this.dgvJobs.Size = new System.Drawing.Size(652, 307);
             this.dgvJobs.TabIndex = 55;
             // 
             // pnlEditJob
@@ -859,6 +858,13 @@
             this.lblEditProductName.Size = new System.Drawing.Size(75, 13);
             this.lblEditProductName.TabIndex = 22;
             this.lblEditProductName.Text = "Product Name";
+            // 
+            // pnlDGVJobs
+            // 
+            this.pnlDGVJobs.Location = new System.Drawing.Point(34, 27);
+            this.pnlDGVJobs.Name = "pnlDGVJobs";
+            this.pnlDGVJobs.Size = new System.Drawing.Size(577, 324);
+            this.pnlDGVJobs.TabIndex = 57;
             // 
             // lblEditActualWallNo
             // 
@@ -1175,14 +1181,6 @@
             this.lblEditOpeningLength.TabIndex = 8;
             this.lblEditOpeningLength.Text = "Opening length:";
             // 
-            // pnlDGVJobs
-            // 
-            this.pnlDGVJobs.Controls.Add(this.dgvJobs);
-            this.pnlDGVJobs.Location = new System.Drawing.Point(34, 27);
-            this.pnlDGVJobs.Name = "pnlDGVJobs";
-            this.pnlDGVJobs.Size = new System.Drawing.Size(577, 324);
-            this.pnlDGVJobs.TabIndex = 57;
-            // 
             // pnlDeleteJob
             // 
             this.pnlDeleteJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1190,7 +1188,7 @@
             this.pnlDeleteJob.Controls.Add(this.btnConfirmDeleteJob);
             this.pnlDeleteJob.Controls.Add(this.lblDeleteJobQuestion);
             this.pnlDeleteJob.Controls.Add(this.lblDeleteJobTitle);
-            this.pnlDeleteJob.Location = new System.Drawing.Point(864, 42);
+            this.pnlDeleteJob.Location = new System.Drawing.Point(670, 15);
             this.pnlDeleteJob.Name = "pnlDeleteJob";
             this.pnlDeleteJob.Size = new System.Drawing.Size(201, 347);
             this.pnlDeleteJob.TabIndex = 48;
@@ -1219,9 +1217,9 @@
             this.lblDeleteJobQuestion.AutoSize = true;
             this.lblDeleteJobQuestion.Location = new System.Drawing.Point(3, 164);
             this.lblDeleteJobQuestion.Name = "lblDeleteJobQuestion";
-            this.lblDeleteJobQuestion.Size = new System.Drawing.Size(227, 13);
+            this.lblDeleteJobQuestion.Size = new System.Drawing.Size(198, 13);
             this.lblDeleteJobQuestion.TabIndex = 20;
-            this.lblDeleteJobQuestion.Text = "Are you sure you want to delete this customer?";
+            this.lblDeleteJobQuestion.Text = "Are you sure you want to delete this job?";
             this.lblDeleteJobQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDeleteJobTitle
@@ -1239,6 +1237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 405);
+            this.Controls.Add(this.dgvJobs);
             this.Controls.Add(this.pnlEditJob);
             this.Controls.Add(this.pnlDeleteJob);
             this.Controls.Add(this.lblSearchJob);
@@ -1273,7 +1272,6 @@
             this.pnlEditWallList.PerformLayout();
             this.pnlEditOpening.ResumeLayout(false);
             this.pnlEditOpening.PerformLayout();
-            this.pnlDGVJobs.ResumeLayout(false);
             this.pnlDeleteJob.ResumeLayout(false);
             this.pnlDeleteJob.PerformLayout();
             this.ResumeLayout(false);

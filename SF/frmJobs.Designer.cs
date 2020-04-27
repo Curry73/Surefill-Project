@@ -497,7 +497,7 @@
             this.pnlAddJob.Controls.Add(this.lblJobID);
             this.pnlAddJob.Controls.Add(this.pnlWallSizeList);
             this.pnlAddJob.Controls.Add(this.pnlAddOpenings);
-            this.pnlAddJob.Location = new System.Drawing.Point(12, 323);
+            this.pnlAddJob.Location = new System.Drawing.Point(5, 10);
             this.pnlAddJob.Name = "pnlAddJob";
             this.pnlAddJob.Size = new System.Drawing.Size(662, 380);
             this.pnlAddJob.TabIndex = 4;

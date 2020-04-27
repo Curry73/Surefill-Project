@@ -21,6 +21,9 @@ namespace SF
 
 
         SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails2, cmdBOpeningDetails;
+
+
+
         DataRow drJobs, drProduct, drJobType, drPaymentType, drJobDetails, drCavityType, drWallDetails, drOpeningDetails;
         SqlCommand cmdWallDetails;
         SqlConnection conn;
@@ -99,8 +102,9 @@ namespace SF
 
  
             LVEditWallList.Items.Clear();
+            dsSurefill.Tables["WallDetails"].Clear();
 
-               
+
 
 
             if (int.TryParse(cmbEditJobNo.SelectedValue.ToString(), out number))
@@ -114,19 +118,37 @@ namespace SF
 
                 foreach (DataRow dr in dsSurefill.Tables["WallDetails"].Rows)
                 {
-                    String wallNo = dr["WallNo"].ToString();
+                    String wallNoStr = dr["WallNo"].ToString();
 
-                    ListViewItem lvi = new ListViewItem(wallNo);
-                    lvi.SubItems.Add(dr["CavityType"].ToString());
-                    lvi.SubItems.Add(dr["WallHeight"].ToString()+"x"+ dr["WallLength"].ToString());
+                    ListViewItem lvi = new ListViewItem(wallNoStr);
+                    lvi.SubItems.Add(dr["WallHeight"].ToString());
+                    lvi.SubItems.Add(dr["WallLength"].ToString());
+                    double totalArea = Double.Parse(dr["WallLength"].ToString()) * Double.Parse(dr["WallHeight"].ToString());
+                    lvi.SubItems.Add(Convert.ToString(totalArea));
+                   // lvi.SubItems.Add(dr["WallHeight"].ToString()+"x"+ dr["WallLength"].ToString());
 
-                    LVEditWallList.Items.Add(lvi);
+                   LVEditWallList.Items.Add(lvi);
+
+                    
+
+                    wallNo = Int32.Parse(wallNoStr);
                 }
+                wallNo++;
+                lblEditActualWallNo.Text = Convert.ToString(wallNo);
+
+                DataRow jobRow = dsSurefill.Tables["Jobs"].Rows.Find(cmbEditJobNo.SelectedValue);
+                cmbEditProductNo.SelectedValue = jobRow["ProductNo"];
+                if (Convert.ToBoolean(jobRow["Paid"]) == true)
+                    rbEditPaidYes.Checked = true;
+                else
+                    rbEditPaidNo.Checked = true;
+                lblActualCustNo.Text = jobRow["CustomerNo"].ToString();
+                dtpEditJobDate.Value = DateTime.Parse(jobRow["DateBooked"].ToString());;
             }
         }
         private void btnEditNewWall_Click(object sender, EventArgs e)
         {
-            ListViewItem item = new ListViewItem("NEW WALL");
+            ListViewItem item = new ListViewItem(Convert.ToString(wallNo));
             double wallSize = Double.Parse(txtEditWallHeight.Text) * Double.Parse(txtEditWallLength.Text);
             Double wallCavitySize = Double.Parse(cmbEditCavitySize.Text.ToString().Substring(0, 6));
             double wallSizeTotal = wallSize * wallCavitySize;
@@ -145,6 +167,7 @@ namespace SF
 
             wallNo++;
             lblEditActualWallNo.Text = Convert.ToString(wallNo);
+
         }
 
         private void btnDeleteWall_Click(object sender, EventArgs e)
@@ -164,6 +187,66 @@ namespace SF
 
             LVEditWallList.Items.Remove(LVEditWallList.SelectedItems[0]);
 
+        }
+
+        private void btnEditCalculate_Click(object sender, EventArgs e)
+        {
+            {
+                double OverallTotal = 0;
+
+                for (int x = 0; x < LVEditWallList.Items.Count; x++)
+                {
+                    OverallTotal += Double.Parse(LVEditWallList.Items[x].SubItems[3].Text);
+                }
+
+
+                drProduct = dsSurefill.Tables["Product"].Rows.Find(cmbEditProductNo.SelectedValue);
+                double productMeasure = Convert.ToDouble(drProduct["ProductMeasure"]);
+                double productPrice = Convert.ToDouble(drProduct["ProductPrice"]);
+
+                double pricePerOne = productPrice / productMeasure;
+
+                double productQty = Math.Ceiling(OverallTotal % productMeasure);
+
+                double finalPrice = pricePerOne * productQty;
+
+                lblOverallTotal.Text = Convert.ToString(OverallTotal);
+
+                MessageBox.Show("Final Price £" + finalPrice);
+
+               // MessageBox.Show("This amount of coverage using " + cmbAddJobProdName.SelectedValue.ToString() + " will cost £" + finalPrice.ToString(), "Price");
+            }
+        }
+
+        private void btnEditFinalJob_Click(object sender, EventArgs e)
+        {
+
+
+
+            //dsSurefill.Tables["Jobs"].Clear();
+            //daWallDetails.Fill(dsSurefill, "Jobs");
+
+            foreach (ListViewItem item in LVEditWallList.Items)
+            {
+                object[] keys = { cmbEditJobNo.SelectedValue, Convert.ToInt32(item.SubItems[0].Text) };
+                if (dsSurefill.Tables["WallDetails"].Rows.Find(keys) != null)
+                    continue;
+                drWallDetails = dsSurefill.Tables["WallDetails"].NewRow();
+
+                drWallDetails["JobNo"] = cmbEditJobNo.SelectedValue;
+                drWallDetails["WallNo"] = Convert.ToInt32(item.SubItems[0].Text);
+                drWallDetails["WallHeight"] = Convert.ToDouble(item.SubItems[1].Text);
+                drWallDetails["WallLength"] = Convert.ToDouble(item.SubItems[2].Text);
+                drWallDetails["CavityType"] = cmbEditCavitySize.SelectedValue;
+
+                dsSurefill.Tables["WallDetails"].Rows.Add(drWallDetails);
+                daWallDetails2.Update(dsSurefill, "WallDetails");
+            }
+
+            drJobs = dsSurefill.Tables["Jobs"].Rows.Find(cmbEditJobNo.SelectedValue);
+
+            drJobs["Paid"] = rbEditPaidYes.Checked;
+            daJobs.Update(dsSurefill, "Jobs");
         }
     }
 }

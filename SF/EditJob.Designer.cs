@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlEditJob = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cmbEditJobNo = new System.Windows.Forms.ComboBox();
             this.btnEditFinalJob = new System.Windows.Forms.Button();
             this.cmbEditPayment = new System.Windows.Forms.ComboBox();
@@ -38,6 +39,7 @@
             this.rbEditPaidYes = new System.Windows.Forms.RadioButton();
             this.cmbEditJobType = new System.Windows.Forms.ComboBox();
             this.pnlEditWall = new System.Windows.Forms.Panel();
+            this.btnEditNewWall = new System.Windows.Forms.Button();
             this.cmbEditProductNo = new System.Windows.Forms.ComboBox();
             this.lblEditProductName = new System.Windows.Forms.Label();
             this.lblEditActualWallNo = new System.Windows.Forms.Label();
@@ -51,22 +53,20 @@
             this.lblEditJobType = new System.Windows.Forms.Label();
             this.lblEditJobDate = new System.Windows.Forms.Label();
             this.dtpEditJobDate = new System.Windows.Forms.DateTimePicker();
-            this.cmbEditCustNo = new System.Windows.Forms.ComboBox();
             this.lblEditCustNo = new System.Windows.Forms.Label();
             this.lblEditJobNo = new System.Windows.Forms.Label();
             this.pnlEditWallList = new System.Windows.Forms.Panel();
             this.btnDeleteWall = new System.Windows.Forms.Button();
             this.LVEditWallList = new System.Windows.Forms.ListView();
             this.WallNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnEditCancelCalc = new System.Windows.Forms.Button();
-            this.btnEditCalculate = new System.Windows.Forms.Button();
-            this.btnEditNewWall = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Height = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EditTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblOverallTotal = new System.Windows.Forms.Label();
+            this.btnEditCancelCalc = new System.Windows.Forms.Button();
+            this.btnEditCalculate = new System.Windows.Forms.Button();
+            this.lblActualCustNo = new System.Windows.Forms.Label();
             this.pnlEditJob.SuspendLayout();
             this.pnlEditWall.SuspendLayout();
             this.pnlEditWallList.SuspendLayout();
@@ -74,6 +74,7 @@
             // 
             // pnlEditJob
             // 
+            this.pnlEditJob.Controls.Add(this.lblActualCustNo);
             this.pnlEditJob.Controls.Add(this.textBox1);
             this.pnlEditJob.Controls.Add(this.cmbEditJobNo);
             this.pnlEditJob.Controls.Add(this.btnEditFinalJob);
@@ -87,7 +88,6 @@
             this.pnlEditJob.Controls.Add(this.lblEditJobType);
             this.pnlEditJob.Controls.Add(this.lblEditJobDate);
             this.pnlEditJob.Controls.Add(this.dtpEditJobDate);
-            this.pnlEditJob.Controls.Add(this.cmbEditCustNo);
             this.pnlEditJob.Controls.Add(this.lblEditCustNo);
             this.pnlEditJob.Controls.Add(this.lblEditJobNo);
             this.pnlEditJob.Controls.Add(this.pnlEditWallList);
@@ -95,6 +95,13 @@
             this.pnlEditJob.Name = "pnlEditJob";
             this.pnlEditJob.Size = new System.Drawing.Size(662, 380);
             this.pnlEditJob.TabIndex = 57;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(-27, -18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 20;
             // 
             // cmbEditJobNo
             // 
@@ -113,6 +120,7 @@
             this.btnEditFinalJob.TabIndex = 18;
             this.btnEditFinalJob.Text = "Edit Job";
             this.btnEditFinalJob.UseVisualStyleBackColor = true;
+            this.btnEditFinalJob.Click += new System.EventHandler(this.btnEditFinalJob_Click);
             // 
             // cmbEditPayment
             // 
@@ -187,6 +195,16 @@
             this.pnlEditWall.Name = "pnlEditWall";
             this.pnlEditWall.Size = new System.Drawing.Size(214, 372);
             this.pnlEditWall.TabIndex = 2;
+            // 
+            // btnEditNewWall
+            // 
+            this.btnEditNewWall.Location = new System.Drawing.Point(82, 191);
+            this.btnEditNewWall.Name = "btnEditNewWall";
+            this.btnEditNewWall.Size = new System.Drawing.Size(90, 23);
+            this.btnEditNewWall.TabIndex = 24;
+            this.btnEditNewWall.Text = "Edit";
+            this.btnEditNewWall.UseVisualStyleBackColor = true;
+            this.btnEditNewWall.Click += new System.EventHandler(this.btnEditNewWall_Click);
             // 
             // cmbEditProductNo
             // 
@@ -297,14 +315,6 @@
             this.dtpEditJobDate.Size = new System.Drawing.Size(119, 20);
             this.dtpEditJobDate.TabIndex = 9;
             // 
-            // cmbEditCustNo
-            // 
-            this.cmbEditCustNo.FormattingEnabled = true;
-            this.cmbEditCustNo.Location = new System.Drawing.Point(540, 68);
-            this.cmbEditCustNo.Name = "cmbEditCustNo";
-            this.cmbEditCustNo.Size = new System.Drawing.Size(70, 21);
-            this.cmbEditCustNo.TabIndex = 7;
-            // 
             // lblEditCustNo
             // 
             this.lblEditCustNo.AutoSize = true;
@@ -328,7 +338,7 @@
             this.pnlEditWallList.Controls.Add(this.btnDeleteWall);
             this.pnlEditWallList.Controls.Add(this.LVEditWallList);
             this.pnlEditWallList.Controls.Add(this.label14);
-            this.pnlEditWallList.Controls.Add(this.label15);
+            this.pnlEditWallList.Controls.Add(this.lblOverallTotal);
             this.pnlEditWallList.Controls.Add(this.btnEditCancelCalc);
             this.pnlEditWallList.Controls.Add(this.btnEditCalculate);
             this.pnlEditWallList.Location = new System.Drawing.Point(220, 3);
@@ -366,6 +376,18 @@
             // 
             this.WallNo.Text = "WallNo";
             // 
+            // Height
+            // 
+            this.Height.Text = "WallHeight";
+            // 
+            // Length
+            // 
+            this.Length.Text = "WallLength";
+            // 
+            // EditTotal
+            // 
+            this.EditTotal.Text = "Total";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -375,14 +397,14 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Wall List";
             // 
-            // label15
+            // lblOverallTotal
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(201, 295);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(13, 13);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "0";
+            this.lblOverallTotal.AutoSize = true;
+            this.lblOverallTotal.Location = new System.Drawing.Point(201, 295);
+            this.lblOverallTotal.Name = "lblOverallTotal";
+            this.lblOverallTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblOverallTotal.TabIndex = 8;
+            this.lblOverallTotal.Text = "0";
             // 
             // btnEditCancelCalc
             // 
@@ -401,35 +423,15 @@
             this.btnEditCalculate.TabIndex = 4;
             this.btnEditCalculate.Text = "Calculate";
             this.btnEditCalculate.UseVisualStyleBackColor = true;
+            this.btnEditCalculate.Click += new System.EventHandler(this.btnEditCalculate_Click);
             // 
-            // btnEditNewWall
+            // lblActualCustNo
             // 
-            this.btnEditNewWall.Location = new System.Drawing.Point(82, 191);
-            this.btnEditNewWall.Name = "btnEditNewWall";
-            this.btnEditNewWall.Size = new System.Drawing.Size(90, 23);
-            this.btnEditNewWall.TabIndex = 24;
-            this.btnEditNewWall.Text = "Edit";
-            this.btnEditNewWall.UseVisualStyleBackColor = true;
-            this.btnEditNewWall.Click += new System.EventHandler(this.btnEditNewWall_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(-27, -18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
-            // 
-            // Height
-            // 
-            this.Height.Text = "WallHeight";
-            // 
-            // Length
-            // 
-            this.Length.Text = "WallLength";
-            // 
-            // EditTotal
-            // 
-            this.EditTotal.Text = "Total";
+            this.lblActualCustNo.AutoSize = true;
+            this.lblActualCustNo.Location = new System.Drawing.Point(537, 71);
+            this.lblActualCustNo.Name = "lblActualCustNo";
+            this.lblActualCustNo.Size = new System.Drawing.Size(0, 13);
+            this.lblActualCustNo.TabIndex = 21;
             // 
             // EditJob
             // 
@@ -476,7 +478,6 @@
         private System.Windows.Forms.Label lblEditJobType;
         private System.Windows.Forms.Label lblEditJobDate;
         private System.Windows.Forms.DateTimePicker dtpEditJobDate;
-        private System.Windows.Forms.ComboBox cmbEditCustNo;
         private System.Windows.Forms.Label lblEditCustNo;
         private System.Windows.Forms.Label lblEditJobNo;
         private System.Windows.Forms.Panel pnlEditWallList;
@@ -484,7 +485,7 @@
         private System.Windows.Forms.ListView LVEditWallList;
         private System.Windows.Forms.ColumnHeader WallNo;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblOverallTotal;
         private System.Windows.Forms.Button btnEditCancelCalc;
         private System.Windows.Forms.Button btnEditCalculate;
         private System.Windows.Forms.TextBox textBox1;
@@ -492,5 +493,6 @@
         private System.Windows.Forms.ColumnHeader Height;
         private System.Windows.Forms.ColumnHeader Length;
         private System.Windows.Forms.ColumnHeader EditTotal;
+        private System.Windows.Forms.Label lblActualCustNo;
     }
 }

@@ -16,7 +16,7 @@ namespace SF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEditDeleteProductOrder());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -78,9 +78,9 @@
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.btnCancelCustSearch = new System.Windows.Forms.Button();
             this.txtSearchCustCounty = new System.Windows.Forms.TextBox();
-            this.txtSearchCustForename = new System.Windows.Forms.TextBox();
+            this.txtSearchCustSurname = new System.Windows.Forms.TextBox();
             this.lblSearchCustCounty = new System.Windows.Forms.Label();
-            this.lblSearchCustForename = new System.Windows.Forms.Label();
+            this.lblSearchCustSurname = new System.Windows.Forms.Label();
             this.lblSEARCH = new System.Windows.Forms.Label();
             this.pnlDelete = new System.Windows.Forms.Panel();
             this.btnDeleteCustCancel = new System.Windows.Forms.Button();
@@ -540,11 +540,11 @@
             this.pnlSearch.BackColor = System.Drawing.Color.LightSalmon;
             this.pnlSearch.Controls.Add(this.btnCancelCustSearch);
             this.pnlSearch.Controls.Add(this.txtSearchCustCounty);
-            this.pnlSearch.Controls.Add(this.txtSearchCustForename);
+            this.pnlSearch.Controls.Add(this.txtSearchCustSurname);
             this.pnlSearch.Controls.Add(this.lblSearchCustCounty);
-            this.pnlSearch.Controls.Add(this.lblSearchCustForename);
+            this.pnlSearch.Controls.Add(this.lblSearchCustSurname);
             this.pnlSearch.Controls.Add(this.lblSEARCH);
-            this.pnlSearch.Location = new System.Drawing.Point(51, 12);
+            this.pnlSearch.Location = new System.Drawing.Point(638, 12);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(230, 380);
             this.pnlSearch.TabIndex = 48;
@@ -567,13 +567,13 @@
             this.txtSearchCustCounty.TabIndex = 32;
             this.txtSearchCustCounty.TextChanged += new System.EventHandler(this.txtSearchCustCounty_TextChanged);
             // 
-            // txtSearchCustForename
+            // txtSearchCustSurname
             // 
-            this.txtSearchCustForename.Location = new System.Drawing.Point(106, 115);
-            this.txtSearchCustForename.Name = "txtSearchCustForename";
-            this.txtSearchCustForename.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchCustForename.TabIndex = 28;
-            this.txtSearchCustForename.TextChanged += new System.EventHandler(this.txtSearchCustForename_TextChanged);
+            this.txtSearchCustSurname.Location = new System.Drawing.Point(106, 115);
+            this.txtSearchCustSurname.Name = "txtSearchCustSurname";
+            this.txtSearchCustSurname.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchCustSurname.TabIndex = 28;
+            this.txtSearchCustSurname.TextChanged += new System.EventHandler(this.txtSearchCustSurname_TextChanged);
             // 
             // lblSearchCustCounty
             // 
@@ -584,14 +584,14 @@
             this.lblSearchCustCounty.TabIndex = 24;
             this.lblSearchCustCounty.Text = "County";
             // 
-            // lblSearchCustForename
+            // lblSearchCustSurname
             // 
-            this.lblSearchCustForename.AutoSize = true;
-            this.lblSearchCustForename.Location = new System.Drawing.Point(29, 122);
-            this.lblSearchCustForename.Name = "lblSearchCustForename";
-            this.lblSearchCustForename.Size = new System.Drawing.Size(54, 13);
-            this.lblSearchCustForename.TabIndex = 20;
-            this.lblSearchCustForename.Text = "Forename";
+            this.lblSearchCustSurname.AutoSize = true;
+            this.lblSearchCustSurname.Location = new System.Drawing.Point(29, 122);
+            this.lblSearchCustSurname.Name = "lblSearchCustSurname";
+            this.lblSearchCustSurname.Size = new System.Drawing.Size(49, 13);
+            this.lblSearchCustSurname.TabIndex = 20;
+            this.lblSearchCustSurname.Text = "Surname";
             // 
             // lblSEARCH
             // 
@@ -886,9 +886,9 @@
         private System.Windows.Forms.Button btnConfirmDeleteCust;
         private System.Windows.Forms.Button btnDeleteCustCancel;
         private System.Windows.Forms.TextBox txtSearchCustCounty;
-        private System.Windows.Forms.TextBox txtSearchCustForename;
+        private System.Windows.Forms.TextBox txtSearchCustSurname;
         private System.Windows.Forms.Label lblSearchCustCounty;
-        private System.Windows.Forms.Label lblSearchCustForename;
+        private System.Windows.Forms.Label lblSearchCustSurname;
         private System.Windows.Forms.Button btnCancelCustSearch;
         private System.Windows.Forms.Panel pnlReturn;
         private System.Windows.Forms.Label lblReturnMenu;

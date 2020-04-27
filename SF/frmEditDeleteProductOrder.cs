@@ -27,6 +27,7 @@ namespace SF
 
         String sqlNames, sqlSupplierDetails, sqlOrder, sqlOrders2, sqlProductOrderDet, sqlProductOrderDet2;
 
+
         private void btnEditOrder_Click(object sender, EventArgs e)
         {
             if (btnEditOrder.Text == "Edit Order")

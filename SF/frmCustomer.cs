@@ -43,7 +43,7 @@ namespace SF
             dgvCustomers.DataSource = dsSurefill.Tables["Customer"];
             dgvCustomers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-            sqlCustDetails = @"Select * From Customer where Forename LIKE (@Letter + '%') order by CustomerNo";
+            sqlCustDetails = @"Select * From Customer where Surname LIKE (@Letter + '%') order by CustomerNo";
             cmdCustomerDetails = new SqlCommand(sqlCustDetails, conn);
             cmdCustomerDetails.Parameters.Add("@Letter", SqlDbType.VarChar);
             daCustDetails = new SqlDataAdapter(cmdCustomerDetails);
@@ -595,10 +595,10 @@ namespace SF
 
         }
 
-        private void txtSearchCustForename_TextChanged(object sender, EventArgs e)
+        private void txtSearchCustSurname_TextChanged(object sender, EventArgs e)
         {
             dsSurefill.Tables["CustDets"].Clear();
-            cmdCustomerDetails.Parameters["@Letter"].Value = txtSearchCustForename.Text;
+            cmdCustomerDetails.Parameters["@Letter"].Value = txtSearchCustSurname.Text;
             daCustDetails.Fill(dsSurefill, "CustDets");
             dgvCustomers.DataSource = dsSurefill.Tables["CustDets"];
         }

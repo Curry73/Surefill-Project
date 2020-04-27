@@ -56,12 +56,16 @@
             this.b25 = new System.Windows.Forms.Button();
             this.b26 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEditOrder = new System.Windows.Forms.Button();
             this.pnlAddEdit = new System.Windows.Forms.Panel();
             this.lstProduct = new System.Windows.Forms.ListBox();
             this.lblProductNo = new System.Windows.Forms.Label();
             this.btnEditItem = new System.Windows.Forms.Button();
             this.btnDeleteBooking = new System.Windows.Forms.Button();
             this.btnDeleteItem = new System.Windows.Forms.Button();
+            this.lvwOrder = new System.Windows.Forms.ListView();
+            this.colOrderNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colProductNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddItem = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,10 +86,6 @@
             this.lblCust0 = new System.Windows.Forms.Label();
             this.lstOrder = new System.Windows.Forms.ListBox();
             this.lstSupplier = new System.Windows.Forms.ListBox();
-            this.colOrderNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colProductNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvwOrder = new System.Windows.Forms.ListView();
-            this.btnEditOrder = new System.Windows.Forms.Button();
             this.pnlButtons.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlAddEdit.SuspendLayout();
@@ -409,6 +409,17 @@
             this.panel1.Size = new System.Drawing.Size(528, 353);
             this.panel1.TabIndex = 113;
             // 
+            // btnEditOrder
+            // 
+            this.btnEditOrder.BackColor = System.Drawing.Color.White;
+            this.btnEditOrder.Location = new System.Drawing.Point(429, 295);
+            this.btnEditOrder.Name = "btnEditOrder";
+            this.btnEditOrder.Size = new System.Drawing.Size(94, 23);
+            this.btnEditOrder.TabIndex = 110;
+            this.btnEditOrder.Text = "Edit Order";
+            this.btnEditOrder.UseVisualStyleBackColor = false;
+            this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
+            // 
             // pnlAddEdit
             // 
             this.pnlAddEdit.BackColor = System.Drawing.Color.White;
@@ -474,6 +485,29 @@
             this.btnDeleteItem.Text = "Delete Item";
             this.btnDeleteItem.UseVisualStyleBackColor = false;
             this.btnDeleteItem.Click += new System.EventHandler(this.btnDeleteItem_Click);
+            // 
+            // lvwOrder
+            // 
+            this.lvwOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colOrderNo,
+            this.colProductNo});
+            this.lvwOrder.FullRowSelect = true;
+            this.lvwOrder.Location = new System.Drawing.Point(5, 273);
+            this.lvwOrder.Name = "lvwOrder";
+            this.lvwOrder.Size = new System.Drawing.Size(218, 71);
+            this.lvwOrder.TabIndex = 106;
+            this.lvwOrder.UseCompatibleStateImageBehavior = false;
+            this.lvwOrder.View = System.Windows.Forms.View.Details;
+            // 
+            // colOrderNo
+            // 
+            this.colOrderNo.Text = "Order No";
+            this.colOrderNo.Width = 112;
+            // 
+            // colProductNo
+            // 
+            this.colProductNo.Text = "Product No";
+            this.colProductNo.Width = 111;
             // 
             // btnAddItem
             // 
@@ -688,40 +722,6 @@
             this.lstSupplier.Size = new System.Drawing.Size(153, 132);
             this.lstSupplier.TabIndex = 83;
             this.lstSupplier.Click += new System.EventHandler(this.lstSupplier_Click);
-            // 
-            // colOrderNo
-            // 
-            this.colOrderNo.Text = "Order No";
-            this.colOrderNo.Width = 112;
-            // 
-            // colProductNo
-            // 
-            this.colProductNo.Text = "Product No";
-            this.colProductNo.Width = 111;
-            // 
-            // lvwOrder
-            // 
-            this.lvwOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colOrderNo,
-            this.colProductNo});
-            this.lvwOrder.FullRowSelect = true;
-            this.lvwOrder.Location = new System.Drawing.Point(5, 273);
-            this.lvwOrder.Name = "lvwOrder";
-            this.lvwOrder.Size = new System.Drawing.Size(218, 71);
-            this.lvwOrder.TabIndex = 106;
-            this.lvwOrder.UseCompatibleStateImageBehavior = false;
-            this.lvwOrder.View = System.Windows.Forms.View.Details;
-            // 
-            // btnEditOrder
-            // 
-            this.btnEditOrder.BackColor = System.Drawing.Color.White;
-            this.btnEditOrder.Location = new System.Drawing.Point(429, 295);
-            this.btnEditOrder.Name = "btnEditOrder";
-            this.btnEditOrder.Size = new System.Drawing.Size(94, 23);
-            this.btnEditOrder.TabIndex = 110;
-            this.btnEditOrder.Text = "Edit Order";
-            this.btnEditOrder.UseVisualStyleBackColor = false;
-            this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
             // 
             // frmEditDeleteProductOrder
             // 

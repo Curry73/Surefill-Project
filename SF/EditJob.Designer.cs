@@ -57,35 +57,24 @@
             this.pnlEditWallList = new System.Windows.Forms.Panel();
             this.btnDeleteWall = new System.Windows.Forms.Button();
             this.LVEditWallList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WallNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btnEditCancelCalc = new System.Windows.Forms.Button();
             this.btnEditCalculate = new System.Windows.Forms.Button();
-            this.pnlEditOpening = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.btnEditAddWall = new System.Windows.Forms.Button();
-            this.btnEditCancelOpening = new System.Windows.Forms.Button();
-            this.LVEditOpenings = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnEditAddOpening = new System.Windows.Forms.Button();
-            this.txtEditOpeningHeight = new System.Windows.Forms.TextBox();
-            this.lblEditOpeningHeight = new System.Windows.Forms.Label();
-            this.txtEditOpeningLength = new System.Windows.Forms.TextBox();
-            this.lblEditOpeningLength = new System.Windows.Forms.Label();
+            this.btnEditNewWall = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Height = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EditTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlEditJob.SuspendLayout();
             this.pnlEditWall.SuspendLayout();
             this.pnlEditWallList.SuspendLayout();
-            this.pnlEditOpening.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEditJob
             // 
+            this.pnlEditJob.Controls.Add(this.textBox1);
             this.pnlEditJob.Controls.Add(this.cmbEditJobNo);
             this.pnlEditJob.Controls.Add(this.btnEditFinalJob);
             this.pnlEditJob.Controls.Add(this.cmbEditPayment);
@@ -102,7 +91,6 @@
             this.pnlEditJob.Controls.Add(this.lblEditCustNo);
             this.pnlEditJob.Controls.Add(this.lblEditJobNo);
             this.pnlEditJob.Controls.Add(this.pnlEditWallList);
-            this.pnlEditJob.Controls.Add(this.pnlEditOpening);
             this.pnlEditJob.Location = new System.Drawing.Point(12, 3);
             this.pnlEditJob.Name = "pnlEditJob";
             this.pnlEditJob.Size = new System.Drawing.Size(662, 380);
@@ -115,7 +103,7 @@
             this.cmbEditJobNo.Name = "cmbEditJobNo";
             this.cmbEditJobNo.Size = new System.Drawing.Size(70, 21);
             this.cmbEditJobNo.TabIndex = 19;
-            this.cmbEditJobNo.Click += new System.EventHandler(this.cmbEditJobNoSelectedItems);
+            this.cmbEditJobNo.SelectedIndexChanged += new System.EventHandler(this.cmbEditJobNoSelectedItems);
             // 
             // btnEditFinalJob
             // 
@@ -184,6 +172,7 @@
             // 
             // pnlEditWall
             // 
+            this.pnlEditWall.Controls.Add(this.btnEditNewWall);
             this.pnlEditWall.Controls.Add(this.cmbEditProductNo);
             this.pnlEditWall.Controls.Add(this.lblEditProductName);
             this.pnlEditWall.Controls.Add(this.lblEditActualWallNo);
@@ -196,7 +185,7 @@
             this.pnlEditWall.Controls.Add(this.lblEditWallNo);
             this.pnlEditWall.Location = new System.Drawing.Point(3, 5);
             this.pnlEditWall.Name = "pnlEditWall";
-            this.pnlEditWall.Size = new System.Drawing.Size(214, 168);
+            this.pnlEditWall.Size = new System.Drawing.Size(214, 372);
             this.pnlEditWall.TabIndex = 2;
             // 
             // cmbEditProductNo
@@ -355,14 +344,15 @@
             this.btnDeleteWall.TabIndex = 9;
             this.btnDeleteWall.Text = "Delete";
             this.btnDeleteWall.UseVisualStyleBackColor = true;
+            this.btnDeleteWall.Click += new System.EventHandler(this.btnDeleteWall_Click);
             // 
             // LVEditWallList
             // 
             this.LVEditWallList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.WallNo,
+            this.Height,
+            this.Length,
+            this.EditTotal});
             this.LVEditWallList.FullRowSelect = true;
             this.LVEditWallList.Location = new System.Drawing.Point(9, 36);
             this.LVEditWallList.MultiSelect = false;
@@ -372,22 +362,9 @@
             this.LVEditWallList.UseCompatibleStateImageBehavior = false;
             this.LVEditWallList.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // WallNo
             // 
-            this.columnHeader1.Text = "WallNo";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Tag = "";
-            this.columnHeader2.Text = "Wall";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Openings";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Total";
+            this.WallNo.Text = "WallNo";
             // 
             // label14
             // 
@@ -425,113 +402,34 @@
             this.btnEditCalculate.Text = "Calculate";
             this.btnEditCalculate.UseVisualStyleBackColor = true;
             // 
-            // pnlEditOpening
+            // btnEditNewWall
             // 
-            this.pnlEditOpening.Controls.Add(this.textBox3);
-            this.pnlEditOpening.Controls.Add(this.btnEditAddWall);
-            this.pnlEditOpening.Controls.Add(this.btnEditCancelOpening);
-            this.pnlEditOpening.Controls.Add(this.LVEditOpenings);
-            this.pnlEditOpening.Controls.Add(this.btnEditAddOpening);
-            this.pnlEditOpening.Controls.Add(this.txtEditOpeningHeight);
-            this.pnlEditOpening.Controls.Add(this.lblEditOpeningHeight);
-            this.pnlEditOpening.Controls.Add(this.txtEditOpeningLength);
-            this.pnlEditOpening.Controls.Add(this.lblEditOpeningLength);
-            this.pnlEditOpening.Location = new System.Drawing.Point(0, 169);
-            this.pnlEditOpening.Name = "pnlEditOpening";
-            this.pnlEditOpening.Size = new System.Drawing.Size(214, 208);
-            this.pnlEditOpening.TabIndex = 3;
+            this.btnEditNewWall.Location = new System.Drawing.Point(82, 191);
+            this.btnEditNewWall.Name = "btnEditNewWall";
+            this.btnEditNewWall.Size = new System.Drawing.Size(90, 23);
+            this.btnEditNewWall.TabIndex = 24;
+            this.btnEditNewWall.Text = "Edit";
+            this.btnEditNewWall.UseVisualStyleBackColor = true;
+            this.btnEditNewWall.Click += new System.EventHandler(this.btnEditNewWall_Click);
             // 
-            // textBox3
+            // textBox1
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 187);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(19, 20);
-            this.textBox3.TabIndex = 21;
-            this.textBox3.Visible = false;
+            this.textBox1.Location = new System.Drawing.Point(-27, -18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 20;
             // 
-            // btnEditAddWall
+            // Height
             // 
-            this.btnEditAddWall.Location = new System.Drawing.Point(122, 182);
-            this.btnEditAddWall.Name = "btnEditAddWall";
-            this.btnEditAddWall.Size = new System.Drawing.Size(88, 23);
-            this.btnEditAddWall.TabIndex = 19;
-            this.btnEditAddWall.Text = "Add Wall";
-            this.btnEditAddWall.UseVisualStyleBackColor = true;
+            this.Height.Text = "WallHeight";
             // 
-            // btnEditCancelOpening
+            // Length
             // 
-            this.btnEditCancelOpening.Location = new System.Drawing.Point(28, 55);
-            this.btnEditCancelOpening.Name = "btnEditCancelOpening";
-            this.btnEditCancelOpening.Size = new System.Drawing.Size(88, 23);
-            this.btnEditCancelOpening.TabIndex = 20;
-            this.btnEditCancelOpening.Text = "Cancel";
-            this.btnEditCancelOpening.UseVisualStyleBackColor = true;
+            this.Length.Text = "WallLength";
             // 
-            // LVEditOpenings
+            // EditTotal
             // 
-            this.LVEditOpenings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.LVEditOpenings.Location = new System.Drawing.Point(13, 84);
-            this.LVEditOpenings.Name = "LVEditOpenings";
-            this.LVEditOpenings.Size = new System.Drawing.Size(185, 96);
-            this.LVEditOpenings.TabIndex = 19;
-            this.LVEditOpenings.UseCompatibleStateImageBehavior = false;
-            this.LVEditOpenings.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Length";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Height";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Total";
-            // 
-            // btnEditAddOpening
-            // 
-            this.btnEditAddOpening.Location = new System.Drawing.Point(122, 55);
-            this.btnEditAddOpening.Name = "btnEditAddOpening";
-            this.btnEditAddOpening.Size = new System.Drawing.Size(88, 23);
-            this.btnEditAddOpening.TabIndex = 10;
-            this.btnEditAddOpening.Text = "Add";
-            this.btnEditAddOpening.UseVisualStyleBackColor = true;
-            // 
-            // txtEditOpeningHeight
-            // 
-            this.txtEditOpeningHeight.Location = new System.Drawing.Point(110, 30);
-            this.txtEditOpeningHeight.Name = "txtEditOpeningHeight";
-            this.txtEditOpeningHeight.Size = new System.Drawing.Size(100, 20);
-            this.txtEditOpeningHeight.TabIndex = 7;
-            // 
-            // lblEditOpeningHeight
-            // 
-            this.lblEditOpeningHeight.AutoSize = true;
-            this.lblEditOpeningHeight.Location = new System.Drawing.Point(10, 33);
-            this.lblEditOpeningHeight.Name = "lblEditOpeningHeight";
-            this.lblEditOpeningHeight.Size = new System.Drawing.Size(82, 13);
-            this.lblEditOpeningHeight.TabIndex = 9;
-            this.lblEditOpeningHeight.Text = "Opening height:";
-            // 
-            // txtEditOpeningLength
-            // 
-            this.txtEditOpeningLength.Location = new System.Drawing.Point(110, 6);
-            this.txtEditOpeningLength.Name = "txtEditOpeningLength";
-            this.txtEditOpeningLength.Size = new System.Drawing.Size(100, 20);
-            this.txtEditOpeningLength.TabIndex = 6;
-            // 
-            // lblEditOpeningLength
-            // 
-            this.lblEditOpeningLength.AutoSize = true;
-            this.lblEditOpeningLength.Location = new System.Drawing.Point(10, 6);
-            this.lblEditOpeningLength.Name = "lblEditOpeningLength";
-            this.lblEditOpeningLength.Size = new System.Drawing.Size(82, 13);
-            this.lblEditOpeningLength.TabIndex = 8;
-            this.lblEditOpeningLength.Text = "Opening length:";
+            this.EditTotal.Text = "Total";
             // 
             // EditJob
             // 
@@ -549,8 +447,6 @@
             this.pnlEditWall.PerformLayout();
             this.pnlEditWallList.ResumeLayout(false);
             this.pnlEditWallList.PerformLayout();
-            this.pnlEditOpening.ResumeLayout(false);
-            this.pnlEditOpening.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -586,26 +482,15 @@
         private System.Windows.Forms.Panel pnlEditWallList;
         private System.Windows.Forms.Button btnDeleteWall;
         private System.Windows.Forms.ListView LVEditWallList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader WallNo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnEditCancelCalc;
         private System.Windows.Forms.Button btnEditCalculate;
-        private System.Windows.Forms.Panel pnlEditOpening;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button btnEditAddWall;
-        private System.Windows.Forms.Button btnEditCancelOpening;
-        private System.Windows.Forms.ListView LVEditOpenings;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.Button btnEditAddOpening;
-        private System.Windows.Forms.TextBox txtEditOpeningHeight;
-        private System.Windows.Forms.Label lblEditOpeningHeight;
-        private System.Windows.Forms.TextBox txtEditOpeningLength;
-        private System.Windows.Forms.Label lblEditOpeningLength;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnEditNewWall;
+        private System.Windows.Forms.ColumnHeader Height;
+        private System.Windows.Forms.ColumnHeader Length;
+        private System.Windows.Forms.ColumnHeader EditTotal;
     }
 }

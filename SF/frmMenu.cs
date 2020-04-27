@@ -38,6 +38,7 @@ namespace SF
             pnlHome.Controls.Add(newForm);
             pnlHome.Visible = true;
             newForm.Show();
+
         }
 
         private void lblJobs_Click(object sender, EventArgs e)
@@ -137,7 +138,7 @@ namespace SF
             pnlHome.BackgroundImage = Properties.Resources.niceHouse;
         }
 
-        private void picBoxSupplier_Click(object sender, EventArgs e)
+        private void picBoxSupp_Click(object sender, EventArgs e)
         {
             pnlHome.Controls.Clear();
             FrmSupplier newForm = new FrmSupplier();
@@ -148,7 +149,7 @@ namespace SF
             newForm.Show();
         }
 
-        private void lblSupplier_Click(object sender, EventArgs e)
+        private void lblSupp_Click(object sender, EventArgs e)
         {
             pnlHome.Controls.Clear();
             FrmSupplier newForm = new FrmSupplier();

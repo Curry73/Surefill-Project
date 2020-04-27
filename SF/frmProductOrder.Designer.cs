@@ -82,6 +82,14 @@
             this.b26 = new System.Windows.Forms.Button();
             this.lblAddProduct = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnReturnMenu = new System.Windows.Forms.Button();
+            this.lblReturnMenu = new System.Windows.Forms.Label();
+            this.lblSearchSupplier = new System.Windows.Forms.Label();
+            this.lblDeleteSupplier = new System.Windows.Forms.Label();
+            this.lblEditSupplier = new System.Windows.Forms.Label();
+            this.btnSearchSupplier = new System.Windows.Forms.Button();
+            this.btnDeleteSupplier = new System.Windows.Forms.Button();
+            this.btnEditSupplier = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -646,7 +654,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Black;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.btnAdd.Location = new System.Drawing.Point(611, 104);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(25, 25);
@@ -654,11 +662,101 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnReturnMenu
+            // 
+            this.btnReturnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnReturnMenu.BackgroundImage = global::SF.Properties.Resources.returnBLACKANDBLUE;
+            this.btnReturnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturnMenu.Location = new System.Drawing.Point(611, 347);
+            this.btnReturnMenu.Name = "btnReturnMenu";
+            this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
+            this.btnReturnMenu.TabIndex = 121;
+            this.btnReturnMenu.UseVisualStyleBackColor = false;
+            // 
+            // lblReturnMenu
+            // 
+            this.lblReturnMenu.AutoSize = true;
+            this.lblReturnMenu.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReturnMenu.ForeColor = System.Drawing.Color.DimGray;
+            this.lblReturnMenu.Location = new System.Drawing.Point(647, 357);
+            this.lblReturnMenu.Name = "lblReturnMenu";
+            this.lblReturnMenu.Size = new System.Drawing.Size(62, 23);
+            this.lblReturnMenu.TabIndex = 120;
+            this.lblReturnMenu.Text = "Return";
+            // 
+            // lblSearchSupplier
+            // 
+            this.lblSearchSupplier.AutoSize = true;
+            this.lblSearchSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchSupplier.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSearchSupplier.Location = new System.Drawing.Point(650, 292);
+            this.lblSearchSupplier.Name = "lblSearchSupplier";
+            this.lblSearchSupplier.Size = new System.Drawing.Size(62, 23);
+            this.lblSearchSupplier.TabIndex = 119;
+            this.lblSearchSupplier.Text = "Search";
+            // 
+            // lblDeleteSupplier
+            // 
+            this.lblDeleteSupplier.AutoSize = true;
+            this.lblDeleteSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteSupplier.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDeleteSupplier.Location = new System.Drawing.Point(650, 226);
+            this.lblDeleteSupplier.Name = "lblDeleteSupplier";
+            this.lblDeleteSupplier.Size = new System.Drawing.Size(59, 23);
+            this.lblDeleteSupplier.TabIndex = 118;
+            this.lblDeleteSupplier.Text = "Delete";
+            // 
+            // lblEditSupplier
+            // 
+            this.lblEditSupplier.AutoSize = true;
+            this.lblEditSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditSupplier.ForeColor = System.Drawing.Color.DimGray;
+            this.lblEditSupplier.Location = new System.Drawing.Point(650, 157);
+            this.lblEditSupplier.Name = "lblEditSupplier";
+            this.lblEditSupplier.Size = new System.Drawing.Size(39, 23);
+            this.lblEditSupplier.TabIndex = 116;
+            this.lblEditSupplier.Text = "Edit";
+            // 
+            // btnSearchSupplier
+            // 
+            this.btnSearchSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnSearchSupplier.Location = new System.Drawing.Point(611, 289);
+            this.btnSearchSupplier.Name = "btnSearchSupplier";
+            this.btnSearchSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnSearchSupplier.TabIndex = 115;
+            this.btnSearchSupplier.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteSupplier
+            // 
+            this.btnDeleteSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(611, 223);
+            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
+            this.btnDeleteSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnDeleteSupplier.TabIndex = 114;
+            this.btnDeleteSupplier.UseVisualStyleBackColor = false;
+            // 
+            // btnEditSupplier
+            // 
+            this.btnEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnEditSupplier.Location = new System.Drawing.Point(611, 154);
+            this.btnEditSupplier.Name = "btnEditSupplier";
+            this.btnEditSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnEditSupplier.TabIndex = 113;
+            this.btnEditSupplier.UseVisualStyleBackColor = false;
+            // 
             // frmProductOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReturnMenu);
+            this.Controls.Add(this.lblReturnMenu);
+            this.Controls.Add(this.lblSearchSupplier);
+            this.Controls.Add(this.lblDeleteSupplier);
+            this.Controls.Add(this.lblEditSupplier);
+            this.Controls.Add(this.btnSearchSupplier);
+            this.Controls.Add(this.btnDeleteSupplier);
+            this.Controls.Add(this.btnEditSupplier);
             this.Controls.Add(this.lblAddProduct);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnlButtons);
@@ -737,5 +835,13 @@
         private System.Windows.Forms.TextBox txtOrderQty;
         private System.Windows.Forms.Label lblAddProduct;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnReturnMenu;
+        private System.Windows.Forms.Label lblReturnMenu;
+        private System.Windows.Forms.Label lblSearchSupplier;
+        private System.Windows.Forms.Label lblDeleteSupplier;
+        private System.Windows.Forms.Label lblEditSupplier;
+        private System.Windows.Forms.Button btnSearchSupplier;
+        private System.Windows.Forms.Button btnDeleteSupplier;
+        private System.Windows.Forms.Button btnEditSupplier;
     }
 }

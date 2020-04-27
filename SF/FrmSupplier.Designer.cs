@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
             this.btnSearchSupplier = new System.Windows.Forms.Button();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
@@ -44,6 +44,7 @@
             this.lblReturnMenu = new System.Windows.Forms.Label();
             this.btnReturnMenu = new System.Windows.Forms.Button();
             this.pnlAddSupplier = new System.Windows.Forms.Panel();
+            this.lblADD = new System.Windows.Forms.Label();
             this.btnConfirmAddSupplier = new System.Windows.Forms.Button();
             this.btnCancelAddSupplier = new System.Windows.Forms.Button();
             this.txtAddSupplierTelephoneNo = new System.Windows.Forms.TextBox();
@@ -68,12 +69,14 @@
             this.lblDeleteSuppQ = new System.Windows.Forms.Label();
             this.lblDeleteSupp = new System.Windows.Forms.Label();
             this.pnlSearchSupp = new System.Windows.Forms.Panel();
+            this.lblSEARCH = new System.Windows.Forms.Label();
             this.txtSearchSupplierCounty = new System.Windows.Forms.TextBox();
             this.txtSearchSupplierName = new System.Windows.Forms.TextBox();
             this.lblSearchSupplierCounty = new System.Windows.Forms.Label();
             this.lblSearchSupplierName = new System.Windows.Forms.Label();
             this.btnConfirmCancelSearchSupplier = new System.Windows.Forms.Button();
             this.pnlEditSupplier = new System.Windows.Forms.Panel();
+            this.lblEdit = new System.Windows.Forms.Label();
             this.btnCancelEditSupplier = new System.Windows.Forms.Button();
             this.btnConfirmEditSupplier = new System.Windows.Forms.Button();
             this.txtEditSupplierTelephoneNo = new System.Windows.Forms.TextBox();
@@ -93,9 +96,6 @@
             this.lblEditSupplierName = new System.Windows.Forms.Label();
             this.lblEditSupplierNo = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblSEARCH = new System.Windows.Forms.Label();
-            this.lblEdit = new System.Windows.Forms.Label();
-            this.lblADD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.pnlAddSupplier.SuspendLayout();
             this.pnlDeleteSupp.SuspendLayout();
@@ -106,33 +106,33 @@
             // 
             // dgvSuppliers
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSuppliers.Location = new System.Drawing.Point(12, 12);
             this.dgvSuppliers.Name = "dgvSuppliers";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSuppliers.Size = new System.Drawing.Size(620, 380);
             this.dgvSuppliers.TabIndex = 0;
@@ -246,7 +246,7 @@
             // 
             // pnlAddSupplier
             // 
-            this.pnlAddSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlAddSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlAddSupplier.Controls.Add(this.lblADD);
             this.pnlAddSupplier.Controls.Add(this.btnConfirmAddSupplier);
             this.pnlAddSupplier.Controls.Add(this.btnCancelAddSupplier);
@@ -266,10 +266,20 @@
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierStreet);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierName);
             this.pnlAddSupplier.Controls.Add(this.lblAddSupplierNo);
-            this.pnlAddSupplier.Location = new System.Drawing.Point(638, 12);
+            this.pnlAddSupplier.Location = new System.Drawing.Point(638, 13);
             this.pnlAddSupplier.Name = "pnlAddSupplier";
             this.pnlAddSupplier.Size = new System.Drawing.Size(230, 380);
             this.pnlAddSupplier.TabIndex = 50;
+            // 
+            // lblADD
+            // 
+            this.lblADD.AutoSize = true;
+            this.lblADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblADD.Location = new System.Drawing.Point(97, 17);
+            this.lblADD.Name = "lblADD";
+            this.lblADD.Size = new System.Drawing.Size(33, 13);
+            this.lblADD.TabIndex = 32;
+            this.lblADD.Text = "ADD";
             // 
             // btnConfirmAddSupplier
             // 
@@ -430,12 +440,12 @@
             // 
             // pnlDeleteSupp
             // 
-            this.pnlDeleteSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlDeleteSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlDeleteSupp.Controls.Add(this.btnDeleteSuppCancel);
             this.pnlDeleteSupp.Controls.Add(this.btnConfirmDeleteSupp);
             this.pnlDeleteSupp.Controls.Add(this.lblDeleteSuppQ);
             this.pnlDeleteSupp.Controls.Add(this.lblDeleteSupp);
-            this.pnlDeleteSupp.Location = new System.Drawing.Point(638, 12);
+            this.pnlDeleteSupp.Location = new System.Drawing.Point(638, 13);
             this.pnlDeleteSupp.Name = "pnlDeleteSupp";
             this.pnlDeleteSupp.Size = new System.Drawing.Size(230, 380);
             this.pnlDeleteSupp.TabIndex = 52;
@@ -480,17 +490,27 @@
             // 
             // pnlSearchSupp
             // 
-            this.pnlSearchSupp.BackColor = System.Drawing.Color.LightSalmon;
+            this.pnlSearchSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlSearchSupp.Controls.Add(this.lblSEARCH);
             this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierCounty);
             this.pnlSearchSupp.Controls.Add(this.txtSearchSupplierName);
             this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierCounty);
             this.pnlSearchSupp.Controls.Add(this.lblSearchSupplierName);
             this.pnlSearchSupp.Controls.Add(this.btnConfirmCancelSearchSupplier);
-            this.pnlSearchSupp.Location = new System.Drawing.Point(638, 12);
+            this.pnlSearchSupp.Location = new System.Drawing.Point(638, 13);
             this.pnlSearchSupp.Name = "pnlSearchSupp";
             this.pnlSearchSupp.Size = new System.Drawing.Size(230, 380);
             this.pnlSearchSupp.TabIndex = 53;
+            // 
+            // lblSEARCH
+            // 
+            this.lblSEARCH.AutoSize = true;
+            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEARCH.Location = new System.Drawing.Point(90, 32);
+            this.lblSEARCH.Name = "lblSEARCH";
+            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
+            this.lblSEARCH.TabIndex = 48;
+            this.lblSEARCH.Text = "SEARCH";
             // 
             // txtSearchSupplierCounty
             // 
@@ -540,7 +560,7 @@
             // 
             // pnlEditSupplier
             // 
-            this.pnlEditSupplier.BackColor = System.Drawing.Color.Maroon;
+            this.pnlEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlEditSupplier.Controls.Add(this.lblEdit);
             this.pnlEditSupplier.Controls.Add(this.btnCancelEditSupplier);
             this.pnlEditSupplier.Controls.Add(this.btnConfirmEditSupplier);
@@ -560,10 +580,20 @@
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierStreet);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierName);
             this.pnlEditSupplier.Controls.Add(this.lblEditSupplierNo);
-            this.pnlEditSupplier.Location = new System.Drawing.Point(638, 12);
+            this.pnlEditSupplier.Location = new System.Drawing.Point(638, 13);
             this.pnlEditSupplier.Name = "pnlEditSupplier";
             this.pnlEditSupplier.Size = new System.Drawing.Size(230, 380);
             this.pnlEditSupplier.TabIndex = 51;
+            // 
+            // lblEdit
+            // 
+            this.lblEdit.AutoSize = true;
+            this.lblEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdit.Location = new System.Drawing.Point(88, 17);
+            this.lblEdit.Name = "lblEdit";
+            this.lblEdit.Size = new System.Drawing.Size(36, 13);
+            this.lblEdit.TabIndex = 27;
+            this.lblEdit.Text = "EDIT";
             // 
             // btnCancelEditSupplier
             // 
@@ -726,36 +756,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // lblSEARCH
-            // 
-            this.lblSEARCH.AutoSize = true;
-            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSEARCH.Location = new System.Drawing.Point(90, 32);
-            this.lblSEARCH.Name = "lblSEARCH";
-            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
-            this.lblSEARCH.TabIndex = 48;
-            this.lblSEARCH.Text = "SEARCH";
-            // 
-            // lblEdit
-            // 
-            this.lblEdit.AutoSize = true;
-            this.lblEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdit.Location = new System.Drawing.Point(88, 17);
-            this.lblEdit.Name = "lblEdit";
-            this.lblEdit.Size = new System.Drawing.Size(36, 13);
-            this.lblEdit.TabIndex = 27;
-            this.lblEdit.Text = "EDIT";
-            // 
-            // lblADD
-            // 
-            this.lblADD.AutoSize = true;
-            this.lblADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblADD.Location = new System.Drawing.Point(97, 17);
-            this.lblADD.Name = "lblADD";
-            this.lblADD.Size = new System.Drawing.Size(33, 13);
-            this.lblADD.TabIndex = 32;
-            this.lblADD.Text = "ADD";
-            // 
             // FrmSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,8 +777,8 @@
             this.Controls.Add(this.btnAddSupplier);
             this.Controls.Add(this.dgvSuppliers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(638, 13);
             this.Name = "FrmSupplier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmSupplier";
             this.Load += new System.EventHandler(this.FrmSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();

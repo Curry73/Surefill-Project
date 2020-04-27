@@ -154,7 +154,7 @@
             this.lblSupplier.TabIndex = 18;
             this.lblSupplier.Text = "Supplier";
             this.lblSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSupplier.Click += new System.EventHandler(this.lblSupplier_Click);
+            this.lblSupplier.Click += new System.EventHandler(this.lblSupp_Click);
             // 
             // picBoxTitle
             // 
@@ -174,7 +174,7 @@
             this.picBoxSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxSupplier.TabIndex = 17;
             this.picBoxSupplier.TabStop = false;
-            this.picBoxSupplier.Click += new System.EventHandler(this.picBoxSupplier_Click);
+            this.picBoxSupplier.Click += new System.EventHandler(this.picBoxSupp_Click);
             // 
             // picBoxStock
             // 

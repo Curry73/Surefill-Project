@@ -59,7 +59,7 @@ namespace SF
             {
                 no = (int)dr["Name"].ToString()[0] - 65;
                 btns[no].Enabled = true;
-                btns[no].BackColor = Color.Black;
+                btns[no].BackColor = Color.FromArgb(15, 117, 189);
                 btns[no].ForeColor = Color.White;
             }
 

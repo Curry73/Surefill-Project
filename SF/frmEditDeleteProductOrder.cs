@@ -27,6 +27,16 @@ namespace SF
 
         String sqlNames, sqlSupplierDetails, sqlOrder, sqlOrders2, sqlProductOrderDet, sqlProductOrderDet2;
 
+        private void btnReturnMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            panel1.ForeColor = Color.FromArgb(15, 117, 189);
+        }
+
         private void btnEditOrder_Click(object sender, EventArgs e)
         {
             if (btnEditOrder.Text == "Edit Order")
@@ -34,7 +44,7 @@ namespace SF
                 pnlEditBooking.Enabled = true;
                 btnEditOrder.Text = "Save";
 
-                btnAddItem.Enabled = false;
+                //btnAddItem.Enabled = false;
                 // btnEditItem.Enabled = false;
                 btnDeleteItem.Enabled = false;
                 btnDeleteBooking.Enabled = false;
@@ -54,6 +64,9 @@ namespace SF
 
         private void btnDeleteBooking_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show(this, "Are you sure you want to delete the order?", "Delete Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
+                return;
             DataRow drOrder = dsSurefill.Tables["Orders"].Rows.Find(lstOrder.SelectedValue);
 
             drOrder.Delete();
@@ -62,6 +75,9 @@ namespace SF
 
         private void btnDeleteItem_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show(this, "Are you sure you want to delete the product?", "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
+                return;
             //cmdProductOrderDet2.Parameters["@OrderNo"].Value = lstOrder.SelectedValue;
             //cmdProductOrderDet2.Parameters["@ProductNo"].Value = lstProduct.SelectedValue;
             //daProductOrderDet2.Fill(dsSurefill, "ProductDet2");
@@ -105,7 +121,7 @@ namespace SF
             {
                 no = (int)dr["Name"].ToString()[0] - 65;
                 btns[no].Enabled = true;
-                btns[no].BackColor = Color.Black;
+                btns[no].BackColor = Color.FromArgb(15, 117, 189);
                 btns[no].ForeColor = Color.White;
             }
 
@@ -137,8 +153,6 @@ namespace SF
             daProductOrderDet = new SqlDataAdapter(sqlProductOrderDet, conn);
             cmdProductDetails = new SqlCommand(sqlProductOrderDet, conn);
             cmdProductDetails.Parameters.Add("@OrderNo", SqlDbType.Int);
-            
-
             daProductOrderDet = new SqlDataAdapter(cmdProductDetails);
             daProductOrderDet.FillSchema(dsSurefill, SchemaType.Source, "ProductDet");
             //daProductOrderDet.Fill(dsSurefill, "ProductDet");
@@ -147,7 +161,6 @@ namespace SF
             sqlProductOrderDet2 = @"select * from ProductOrder";
             daProductOrderDet2 = new SqlDataAdapter(sqlProductOrderDet2, connStr);
             cmdBProductOrderDet2 = new SqlCommandBuilder(daProductOrderDet2);
-            //daProductOrderDet2 = new SqlDataAdapter(sqlProductOrderDet2, conn);
             cmdProductOrderDet2 = new SqlCommand(sqlProductOrderDet2, conn);
             cmdProductOrderDet2.Parameters.Add("@OrderNo", SqlDbType.Int);
             cmdProductOrderDet2.Parameters.Add("@ProductNo", SqlDbType.VarChar);
@@ -311,10 +324,13 @@ namespace SF
             pnlEditBooking.Enabled = true;
             if (btnEditItem.Text == "Edit Item")
             {
+                DialogResult dr = MessageBox.Show(this, "Are you sure you want to edit the item?", "Edit Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.No)
+                    return;
                 pnlEditBooking.Enabled = true;
                 btnEditItem.Text = "Save";
 
-                btnAddItem.Enabled = false;
+                //btnAddItem.Enabled = false;
                // btnEditItem.Enabled = false;
                 btnDeleteItem.Enabled = false;
                 btnDeleteBooking.Enabled = false;
@@ -326,6 +342,9 @@ namespace SF
                 drProductOrder["OrderQty"] = Convert.ToInt32(txtQTY.Text);
                 drProductOrder.EndEdit();
                 daProductOrderDet2.Update(dsSurefill, "ProductDet2");
+
+                btnDeleteItem.Enabled = true;
+                btnDeleteBooking.Enabled = true;
 
                 btnEditItem.Text = "Edit Item";
             }

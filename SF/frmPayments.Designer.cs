@@ -58,16 +58,13 @@
             this.b25 = new System.Windows.Forms.Button();
             this.b26 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnRemoveItem = new System.Windows.Forms.Button();
-            this.btAddItem = new System.Windows.Forms.Button();
-            this.lvwBooking = new System.Windows.Forms.ListView();
-            this.colSupplierNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPaymentNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colOrderNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstPayment = new System.Windows.Forms.ListBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtOrderQty = new System.Windows.Forms.TextBox();
+            this.chkPaid = new System.Windows.Forms.CheckBox();
             this.lblBookingDate = new System.Windows.Forms.Label();
-            this.lblOrderQty = new System.Windows.Forms.Label();
+            this.lblPaid = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblCust5 = new System.Windows.Forms.Label();
@@ -78,10 +75,18 @@
             this.lblCust1 = new System.Windows.Forms.Label();
             this.lblCust0 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lstPayment = new System.Windows.Forms.ListBox();
+            this.lstOrders = new System.Windows.Forms.ListBox();
             this.lstSupplier = new System.Windows.Forms.ListBox();
-            this.lblProducts = new System.Windows.Forms.Label();
+            this.lblOrders = new System.Windows.Forms.Label();
             this.lblSupplierNo = new System.Windows.Forms.Label();
+            this.btnReturnMenu = new System.Windows.Forms.Button();
+            this.lblReturnMenu = new System.Windows.Forms.Label();
+            this.lblSearchSupplier = new System.Windows.Forms.Label();
+            this.lblDeleteSupplier = new System.Windows.Forms.Label();
+            this.lblEditSupplier = new System.Windows.Forms.Label();
+            this.btnSearchSupplier = new System.Windows.Forms.Button();
+            this.btnDeleteSupplier = new System.Windows.Forms.Button();
+            this.btnEditSupplier = new System.Windows.Forms.Button();
             this.pnlButtons.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -102,7 +107,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Black;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.btnAdd.Location = new System.Drawing.Point(611, 101);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(25, 25);
@@ -405,9 +410,9 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnRemoveItem);
-            this.panel2.Controls.Add(this.btAddItem);
-            this.panel2.Controls.Add(this.lvwBooking);
+            this.panel2.Controls.Add(this.lstPayment);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnAddItem);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(18, 259);
@@ -415,95 +420,81 @@
             this.panel2.Size = new System.Drawing.Size(522, 184);
             this.panel2.TabIndex = 113;
             // 
-            // btnRemoveItem
+            // lstPayment
             // 
-            this.btnRemoveItem.BackColor = System.Drawing.Color.White;
-            this.btnRemoveItem.Location = new System.Drawing.Point(435, 140);
-            this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(82, 23);
-            this.btnRemoveItem.TabIndex = 109;
-            this.btnRemoveItem.Text = "Remove Item";
-            this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.lstPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstPayment.FormattingEnabled = true;
+            this.lstPayment.ItemHeight = 16;
+            this.lstPayment.Location = new System.Drawing.Point(209, 84);
+            this.lstPayment.Name = "lstPayment";
+            this.lstPayment.Size = new System.Drawing.Size(223, 100);
+            this.lstPayment.TabIndex = 110;
+            this.lstPayment.Click += new System.EventHandler(this.lstProduct_Click);
             // 
-            // btAddItem
+            // btnDelete
             // 
-            this.btAddItem.BackColor = System.Drawing.Color.White;
-            this.btAddItem.Location = new System.Drawing.Point(435, 108);
-            this.btAddItem.Name = "btAddItem";
-            this.btAddItem.Size = new System.Drawing.Size(82, 23);
-            this.btAddItem.TabIndex = 108;
-            this.btAddItem.Text = "Add Item";
-            this.btAddItem.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(438, 40);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(82, 23);
+            this.btnDelete.TabIndex = 109;
+            this.btnDelete.Text = "Delete Item";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // lvwBooking
+            // btnAddItem
             // 
-            this.lvwBooking.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colSupplierNo,
-            this.colPaymentNo,
-            this.colOrderNo});
-            this.lvwBooking.FullRowSelect = true;
-            this.lvwBooking.Location = new System.Drawing.Point(209, 99);
-            this.lvwBooking.Name = "lvwBooking";
-            this.lvwBooking.Size = new System.Drawing.Size(220, 81);
-            this.lvwBooking.TabIndex = 107;
-            this.lvwBooking.UseCompatibleStateImageBehavior = false;
-            this.lvwBooking.View = System.Windows.Forms.View.Details;
-            // 
-            // colSupplierNo
-            // 
-            this.colSupplierNo.Text = "Supplier No";
-            this.colSupplierNo.Width = 68;
-            // 
-            // colPaymentNo
-            // 
-            this.colPaymentNo.Text = "Payment No";
-            this.colPaymentNo.Width = 80;
-            // 
-            // colOrderNo
-            // 
-            this.colOrderNo.Text = "Order No";
-            this.colOrderNo.Width = 63;
+            this.btnAddItem.BackColor = System.Drawing.Color.White;
+            this.btnAddItem.Location = new System.Drawing.Point(437, 10);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(82, 23);
+            this.btnAddItem.TabIndex = 108;
+            this.btnAddItem.Text = "Edit Item";
+            this.btnAddItem.UseVisualStyleBackColor = false;
+            this.btnAddItem.Click += new System.EventHandler(this.btAddItem_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.txtOrderQty);
+            this.panel5.Controls.Add(this.chkPaid);
             this.panel5.Controls.Add(this.lblBookingDate);
-            this.panel5.Controls.Add(this.lblOrderQty);
+            this.panel5.Controls.Add(this.lblPaid);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Location = new System.Drawing.Point(209, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(308, 88);
+            this.panel5.Size = new System.Drawing.Size(223, 76);
             this.panel5.TabIndex = 106;
             // 
-            // txtOrderQty
+            // chkPaid
             // 
-            this.txtOrderQty.Location = new System.Drawing.Point(128, 44);
-            this.txtOrderQty.Name = "txtOrderQty";
-            this.txtOrderQty.Size = new System.Drawing.Size(99, 20);
-            this.txtOrderQty.TabIndex = 100;
+            this.chkPaid.AutoSize = true;
+            this.chkPaid.Location = new System.Drawing.Point(110, 37);
+            this.chkPaid.Name = "chkPaid";
+            this.chkPaid.Size = new System.Drawing.Size(15, 14);
+            this.chkPaid.TabIndex = 100;
+            this.chkPaid.UseVisualStyleBackColor = true;
             // 
             // lblBookingDate
             // 
             this.lblBookingDate.AutoSize = true;
             this.lblBookingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookingDate.ForeColor = System.Drawing.Color.Black;
-            this.lblBookingDate.Location = new System.Drawing.Point(125, 5);
+            this.lblBookingDate.Location = new System.Drawing.Point(107, 5);
             this.lblBookingDate.Name = "lblBookingDate";
             this.lblBookingDate.Size = new System.Drawing.Size(102, 16);
             this.lblBookingDate.TabIndex = 99;
             this.lblBookingDate.Text = "Booking Date";
             // 
-            // lblOrderQty
+            // lblPaid
             // 
-            this.lblOrderQty.AutoSize = true;
-            this.lblOrderQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderQty.ForeColor = System.Drawing.Color.Black;
-            this.lblOrderQty.Location = new System.Drawing.Point(6, 48);
-            this.lblOrderQty.Name = "lblOrderQty";
-            this.lblOrderQty.Size = new System.Drawing.Size(31, 16);
-            this.lblOrderQty.TabIndex = 95;
-            this.lblOrderQty.Text = "Qty";
+            this.lblPaid.AutoSize = true;
+            this.lblPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaid.ForeColor = System.Drawing.Color.Black;
+            this.lblPaid.Location = new System.Drawing.Point(6, 35);
+            this.lblPaid.Name = "lblPaid";
+            this.lblPaid.Size = new System.Drawing.Size(40, 16);
+            this.lblPaid.TabIndex = 95;
+            this.lblPaid.Text = "Paid";
             // 
             // label4
             // 
@@ -603,24 +594,25 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lstPayment);
+            this.panel1.Controls.Add(this.lstOrders);
             this.panel1.Controls.Add(this.lstSupplier);
-            this.panel1.Controls.Add(this.lblProducts);
+            this.panel1.Controls.Add(this.lblOrders);
             this.panel1.Controls.Add(this.lblSupplierNo);
             this.panel1.Location = new System.Drawing.Point(12, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(528, 196);
             this.panel1.TabIndex = 112;
             // 
-            // lstPayment
+            // lstOrders
             // 
-            this.lstPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstPayment.FormattingEnabled = true;
-            this.lstPayment.ItemHeight = 16;
-            this.lstPayment.Location = new System.Drawing.Point(268, 29);
-            this.lstPayment.Name = "lstPayment";
-            this.lstPayment.Size = new System.Drawing.Size(255, 164);
-            this.lstPayment.TabIndex = 85;
+            this.lstOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstOrders.FormattingEnabled = true;
+            this.lstOrders.ItemHeight = 16;
+            this.lstOrders.Location = new System.Drawing.Point(268, 29);
+            this.lstOrders.Name = "lstOrders";
+            this.lstOrders.Size = new System.Drawing.Size(255, 164);
+            this.lstOrders.TabIndex = 85;
+            this.lstOrders.Click += new System.EventHandler(this.lstOrder_Click);
             // 
             // lstSupplier
             // 
@@ -631,15 +623,16 @@
             this.lstSupplier.Name = "lstSupplier";
             this.lstSupplier.Size = new System.Drawing.Size(246, 164);
             this.lstSupplier.TabIndex = 84;
+            this.lstSupplier.Click += new System.EventHandler(this.lstSupplier_Click);
             // 
-            // lblProducts
+            // lblOrders
             // 
-            this.lblProducts.AutoSize = true;
-            this.lblProducts.Location = new System.Drawing.Point(265, 13);
-            this.lblProducts.Name = "lblProducts";
-            this.lblProducts.Size = new System.Drawing.Size(49, 13);
-            this.lblProducts.TabIndex = 1;
-            this.lblProducts.Text = "Products";
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.Location = new System.Drawing.Point(265, 13);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(38, 13);
+            this.lblOrders.TabIndex = 1;
+            this.lblOrders.Text = "Orders";
             // 
             // lblSupplierNo
             // 
@@ -650,11 +643,101 @@
             this.lblSupplierNo.TabIndex = 0;
             this.lblSupplierNo.Text = "Supplier No";
             // 
+            // btnReturnMenu
+            // 
+            this.btnReturnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnReturnMenu.BackgroundImage = global::SF.Properties.Resources.returnBLACKANDBLUE;
+            this.btnReturnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturnMenu.Location = new System.Drawing.Point(611, 340);
+            this.btnReturnMenu.Name = "btnReturnMenu";
+            this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
+            this.btnReturnMenu.TabIndex = 129;
+            this.btnReturnMenu.UseVisualStyleBackColor = false;
+            // 
+            // lblReturnMenu
+            // 
+            this.lblReturnMenu.AutoSize = true;
+            this.lblReturnMenu.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReturnMenu.ForeColor = System.Drawing.Color.DimGray;
+            this.lblReturnMenu.Location = new System.Drawing.Point(647, 350);
+            this.lblReturnMenu.Name = "lblReturnMenu";
+            this.lblReturnMenu.Size = new System.Drawing.Size(62, 23);
+            this.lblReturnMenu.TabIndex = 128;
+            this.lblReturnMenu.Text = "Return";
+            // 
+            // lblSearchSupplier
+            // 
+            this.lblSearchSupplier.AutoSize = true;
+            this.lblSearchSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchSupplier.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSearchSupplier.Location = new System.Drawing.Point(650, 285);
+            this.lblSearchSupplier.Name = "lblSearchSupplier";
+            this.lblSearchSupplier.Size = new System.Drawing.Size(62, 23);
+            this.lblSearchSupplier.TabIndex = 127;
+            this.lblSearchSupplier.Text = "Search";
+            // 
+            // lblDeleteSupplier
+            // 
+            this.lblDeleteSupplier.AutoSize = true;
+            this.lblDeleteSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteSupplier.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDeleteSupplier.Location = new System.Drawing.Point(650, 219);
+            this.lblDeleteSupplier.Name = "lblDeleteSupplier";
+            this.lblDeleteSupplier.Size = new System.Drawing.Size(59, 23);
+            this.lblDeleteSupplier.TabIndex = 126;
+            this.lblDeleteSupplier.Text = "Delete";
+            // 
+            // lblEditSupplier
+            // 
+            this.lblEditSupplier.AutoSize = true;
+            this.lblEditSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditSupplier.ForeColor = System.Drawing.Color.DimGray;
+            this.lblEditSupplier.Location = new System.Drawing.Point(650, 150);
+            this.lblEditSupplier.Name = "lblEditSupplier";
+            this.lblEditSupplier.Size = new System.Drawing.Size(39, 23);
+            this.lblEditSupplier.TabIndex = 125;
+            this.lblEditSupplier.Text = "Edit";
+            // 
+            // btnSearchSupplier
+            // 
+            this.btnSearchSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnSearchSupplier.Location = new System.Drawing.Point(611, 282);
+            this.btnSearchSupplier.Name = "btnSearchSupplier";
+            this.btnSearchSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnSearchSupplier.TabIndex = 124;
+            this.btnSearchSupplier.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteSupplier
+            // 
+            this.btnDeleteSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(611, 216);
+            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
+            this.btnDeleteSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnDeleteSupplier.TabIndex = 123;
+            this.btnDeleteSupplier.UseVisualStyleBackColor = false;
+            // 
+            // btnEditSupplier
+            // 
+            this.btnEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnEditSupplier.Location = new System.Drawing.Point(611, 147);
+            this.btnEditSupplier.Name = "btnEditSupplier";
+            this.btnEditSupplier.Size = new System.Drawing.Size(33, 33);
+            this.btnEditSupplier.TabIndex = 122;
+            this.btnEditSupplier.UseVisualStyleBackColor = false;
+            // 
             // frmPayments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReturnMenu);
+            this.Controls.Add(this.lblReturnMenu);
+            this.Controls.Add(this.lblSearchSupplier);
+            this.Controls.Add(this.lblDeleteSupplier);
+            this.Controls.Add(this.lblEditSupplier);
+            this.Controls.Add(this.btnSearchSupplier);
+            this.Controls.Add(this.btnDeleteSupplier);
+            this.Controls.Add(this.btnEditSupplier);
             this.Controls.Add(this.lblAddProduct);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnlButtons);
@@ -663,6 +746,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPayments";
             this.Text = "frmPayments";
+            this.Load += new System.EventHandler(this.frmPayments_Load);
             this.pnlButtons.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -708,16 +792,10 @@
         private System.Windows.Forms.Button b25;
         private System.Windows.Forms.Button b26;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnRemoveItem;
-        private System.Windows.Forms.Button btAddItem;
-        private System.Windows.Forms.ListView lvwBooking;
-        private System.Windows.Forms.ColumnHeader colSupplierNo;
-        private System.Windows.Forms.ColumnHeader colPaymentNo;
-        private System.Windows.Forms.ColumnHeader colOrderNo;
+        private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txtOrderQty;
         private System.Windows.Forms.Label lblBookingDate;
-        private System.Windows.Forms.Label lblOrderQty;
+        private System.Windows.Forms.Label lblPaid;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblCust5;
@@ -728,9 +806,20 @@
         private System.Windows.Forms.Label lblCust1;
         private System.Windows.Forms.Label lblCust0;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox lstPayment;
+        private System.Windows.Forms.ListBox lstOrders;
         private System.Windows.Forms.ListBox lstSupplier;
-        private System.Windows.Forms.Label lblProducts;
+        private System.Windows.Forms.Label lblOrders;
         private System.Windows.Forms.Label lblSupplierNo;
+        private System.Windows.Forms.CheckBox chkPaid;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ListBox lstPayment;
+        private System.Windows.Forms.Button btnReturnMenu;
+        private System.Windows.Forms.Label lblReturnMenu;
+        private System.Windows.Forms.Label lblSearchSupplier;
+        private System.Windows.Forms.Label lblDeleteSupplier;
+        private System.Windows.Forms.Label lblEditSupplier;
+        private System.Windows.Forms.Button btnSearchSupplier;
+        private System.Windows.Forms.Button btnDeleteSupplier;
+        private System.Windows.Forms.Button btnEditSupplier;
     }
 }

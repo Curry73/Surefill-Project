@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InTheDogHouse
+namespace SF
 {
     class MyValidation
     {
@@ -49,6 +49,11 @@ namespace InTheDogHouse
                 }
             }
             return ok;
+        }
+
+        internal static bool validLength(int value, int v1, int v2)
+        {
+            throw new NotImplementedException();
         }
 
         public static bool validLetterWhitespace(string txt)

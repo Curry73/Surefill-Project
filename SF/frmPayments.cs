@@ -21,10 +21,6 @@ namespace SF
         SqlCommand cmdSupplierDetails, cmdPaymentDetails, cmdPaymentType, cmdOrders, cmdPaymentDet2;
         SqlCommandBuilder cmdBSupplier, cmdBOrders, cmdBPayment, cmdBPaymentDetails, cmdBPaymentDet2;
 
-        private void lblOrders_Click(object sender, EventArgs e)
-        {
-
-        }
 
         DataRow drSupplier;
 
@@ -83,11 +79,16 @@ namespace SF
             daPayments.FillSchema(dsSurefill, SchemaType.Source, "Payments");
 
             sqlPaymentDet2 = @"select * from PaymentDetails";
+
             daPaymentDet2 = new SqlDataAdapter(sqlPaymentDet2, connStr);
             cmdBPaymentDet2 = new SqlCommandBuilder(daPaymentDet2);
             cmdPaymentDet2 = new SqlCommand(sqlPaymentDet2, conn);
             cmdPaymentDet2.Parameters.Add("@OrderNo", SqlDbType.Int);
             cmdPaymentDet2.Parameters.Add("@PaymentNo", SqlDbType.VarChar);
+            // daPaymentDet2 = new SqlDataAdapter(cmdPaymentDet2);
+            daPaymentDet2.FillSchema(dsSurefill, SchemaType.Source, "PaymentDetails");
+            
+
 
             //sqlOrders = @"Select * from Orders";
             //daOrders = new SqlDataAdapter(sqlOrders, conn);
@@ -265,6 +266,7 @@ namespace SF
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             DialogResult dr = MessageBox.Show(this, "Are you sure you want to delete the payment?", "Delete Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.No)
                 return;
@@ -273,7 +275,8 @@ namespace SF
             cmdPaymentDet2.Parameters["@OrderNo"].Value = lstOrders.SelectedValue;
 
             daPaymentDet2.Fill(dsSurefill, "PaymentDetails");
-            DataRow drPayments = dsSurefill.Tables["PaymentDetails"].Rows[0];
+            object[] keys = { lstPayment.SelectedValue, lstOrders.SelectedValue };
+            DataRow drPayments = dsSurefill.Tables["PaymentDetails"].Rows.Find(keys);
             drPayments.Delete();
             daPaymentDet2.Update(dsSurefill, "PaymentDetails");
             dsSurefill.Tables["Payments"].Clear();

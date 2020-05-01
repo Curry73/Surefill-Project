@@ -41,25 +41,104 @@ namespace SF
         { get => supplierNo; set => supplierNo = value; }
 
         public string Name
-        { get => name; set => name = value; }
+        {
+            get { return name; }
+            set
+            {
+                if (MyValidation.validLength(value, 2, 15) && MyValidation.validSurname(value))
+                {
+                    name = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                    throw new MyException("Name must be 2-15 letters");
+            }
+        }
 
         public string Street
-        { get => street; set => street = value; }
+        {
+            get { return street; }
+            set
+            {
+                if (MyValidation.validLength(value, 5, 40) && MyValidation.validLetterNumberWhitespace(value))
+                {
+                    street = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                    throw new MyException("Street must be 5-40 letters");
+            }
+        }
 
         public string Town
-        { get => town; set => town = value; }
+        {
+            get { return town; }
+            set
+            {
+                if (MyValidation.validLength(value, 2, 20) && MyValidation.validLetterWhitespace(value))
+                {
+                    town = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                    throw new MyException("Town must be 2-20 letters");
+            }
+        }
 
         public string County
-        { get => county; set => county = value; }
+        {
+            get { return county; }
+            set
+            {
+                if (MyValidation.validLength(value, 1, 20) && MyValidation.validLetterWhitespace(value))
+                {
+                    county = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                    throw new MyException("County must be 2-20 letters");
+            }
+        }
 
         public string Postcode
-        { get => postcode; set => postcode = value; }
+        {
+            get { return postcode; }
+            set
+            {
+                if (MyValidation.validLength(value, 7, 8) && MyValidation.validLetterNumberWhitespace(value))
+                {
+                    postcode = MyValidation.EachLetterToUpper(value);
+                }
+                else
+                    throw new MyException("Postcode must be 7-8 letters and alphanumeric only");
+            }
+        }
 
         public string Email
-        { get => email; set => email = value; }
+        {
+            get { return email; }
+            set
+            {
+                if (MyValidation.validLength(value, 2, 20) && MyValidation.validEmail(value))
+                {
+                    email = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                    throw new MyException("Email must be 2-30 letters");
+            }
+        }
 
         public string TelephoneNo
-        { get => telephoneNo; set => telephoneNo = value; }
+        {
+            get { return telephoneNo; }
+            set
+            {
+                if (MyValidation.validLength(value, 11, 15) && MyValidation.validNumber(value))
+                {
+                    telephoneNo = value;
+                }
+                else
+                    throw new MyException("Telephone number must be 11-15 digits");
+            }
+        }
+    }
+
 
     }
-}
+

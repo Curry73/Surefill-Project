@@ -39,6 +39,9 @@ namespace SF
 
         private void btnEditOrder_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show(this, "Are you sure you want to edit the order?", "Edit Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
+                return;
             if (btnEditOrder.Text == "Edit Order")
             {
                 pnlEditBooking.Enabled = true;
@@ -48,6 +51,7 @@ namespace SF
                 // btnEditItem.Enabled = false;
                 btnDeleteItem.Enabled = false;
                 btnDeleteBooking.Enabled = false;
+                btnEditItem.Enabled = false;
             }
             else
             {
@@ -58,7 +62,11 @@ namespace SF
                 drOrder.EndEdit();
                 daOrder2.Update(dsSurefill, "Order2");
 
-                btnEditItem.Text = "Edit Order";
+                btnDeleteItem.Enabled = true;
+                btnDeleteBooking.Enabled = true;
+                btnEditItem.Enabled = true;
+
+                btnEditOrder.Text = "Edit Order";
             }
         }
 
@@ -71,6 +79,8 @@ namespace SF
 
             drOrder.Delete();
             daOrder2.Update(dsSurefill, "Orders");
+            if (dsSurefill.Tables["ProductOrder"] != null)
+                dsSurefill.Tables["ProductOrder"].Clear();
         }
 
         private void btnDeleteItem_Click(object sender, EventArgs e)
@@ -82,9 +92,14 @@ namespace SF
             //cmdProductOrderDet2.Parameters["@ProductNo"].Value = lstProduct.SelectedValue;
             //daProductOrderDet2.Fill(dsSurefill, "ProductDet2");
             object[] keys = { lstOrder.SelectedValue, lstProduct.SelectedValue };
-            DataRow drProduct = dsSurefill.Tables["Orders"].Rows.Find(keys);
-            
-            daProductOrderDet2.Update(dsSurefill, "Orders");
+            DataRow drProduct = dsSurefill.Tables["ProductDet2"].Rows.Find(keys);
+
+            drProduct.Delete();
+            daProductOrderDet2.Update(dsSurefill, "ProductDet2");
+
+            if (dsSurefill.Tables["ProductOrder"] != null)
+                dsSurefill.Tables["ProductOrder"].Clear();
+            daProductOrderDet.Fill(dsSurefill, "ProductOrder");
         }
 
         String sqlProductDetails, connStr;
@@ -227,6 +242,9 @@ namespace SF
 
             drSupplier = dsSurefill.Tables["Supplier"].Rows.Find(lstSupplier.SelectedValue);
 
+            if (drSupplier == null)
+                return;
+
             lblCust0.Text = drSupplier["SupplierNo"].ToString();
             lblCust1.Text = drSupplier["Name"].ToString();
             lblCust2.Text = drSupplier["Street"].ToString();
@@ -246,11 +264,16 @@ namespace SF
 
             if (lstOrder.Items.Count != 0)
             {
+
                 DataRow drOrder = dsSurefill.Tables["Orders"].Rows.Find(lstOrder.SelectedValue);
- 
+
+                if (drOrder == null)
+                    return;
+
 
                 lblBookingDate.Text = (Convert.ToDateTime(drOrder["OrderDate"].ToString())).ToShortDateString();
                 chkPaid.Checked = Convert.ToBoolean(drOrder["Paid"]);
+
 
 
                 //if (Convert.ToDateTime(lblBookingDate.Text).Date == DateTime.Now.Date)
@@ -306,6 +329,10 @@ namespace SF
 
         private void PopulateOrderListbox()
         {
+            if (lstSupplier.SelectedValue == null)
+            {
+                return;
+            }
             dsSurefill.Tables["Orders"].Clear();
 
             // get all dog details for listbox

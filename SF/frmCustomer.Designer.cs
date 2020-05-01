@@ -77,16 +77,16 @@
             this.lblEditCustNo = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.btnCancelCustSearch = new System.Windows.Forms.Button();
-            this.txtSearchCustCounty = new System.Windows.Forms.TextBox();
-            this.txtSearchCustSurname = new System.Windows.Forms.TextBox();
-            this.lblSearchCustCounty = new System.Windows.Forms.Label();
-            this.lblSearchCustSurname = new System.Windows.Forms.Label();
-            this.lblSEARCH = new System.Windows.Forms.Label();
             this.pnlDelete = new System.Windows.Forms.Panel();
             this.btnDeleteCustCancel = new System.Windows.Forms.Button();
             this.btnConfirmDeleteCust = new System.Windows.Forms.Button();
             this.lblActualCustNoDelete = new System.Windows.Forms.Label();
             this.lblDeleteTitle = new System.Windows.Forms.Label();
+            this.txtSearchCustCounty = new System.Windows.Forms.TextBox();
+            this.txtSearchCustSurname = new System.Windows.Forms.TextBox();
+            this.lblSearchCustCounty = new System.Windows.Forms.Label();
+            this.lblSearchCustSurname = new System.Windows.Forms.Label();
+            this.lblSEARCH = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
@@ -125,7 +125,7 @@
             // 
             // pnlAdd
             // 
-            this.pnlAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pnlAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlAdd.Controls.Add(this.btnCancelAddCust);
             this.pnlAdd.Controls.Add(this.btnConfirmAddCust);
             this.pnlAdd.Controls.Add(this.lblADD);
@@ -332,7 +332,7 @@
             // 
             // pnlEdit
             // 
-            this.pnlEdit.BackColor = System.Drawing.Color.Maroon;
+            this.pnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlEdit.Controls.Add(this.btnCancelEditCust);
             this.pnlEdit.Controls.Add(this.btnConfirmEditCust);
             this.pnlEdit.Controls.Add(this.label1);
@@ -537,14 +537,14 @@
             // 
             // pnlSearch
             // 
-            this.pnlSearch.BackColor = System.Drawing.Color.LightSalmon;
+            this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlSearch.Controls.Add(this.btnCancelCustSearch);
             this.pnlSearch.Controls.Add(this.txtSearchCustCounty);
             this.pnlSearch.Controls.Add(this.txtSearchCustSurname);
             this.pnlSearch.Controls.Add(this.lblSearchCustCounty);
             this.pnlSearch.Controls.Add(this.lblSearchCustSurname);
             this.pnlSearch.Controls.Add(this.lblSEARCH);
-            this.pnlSearch.Location = new System.Drawing.Point(638, 12);
+            this.pnlSearch.Location = new System.Drawing.Point(635, 12);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(230, 380);
             this.pnlSearch.TabIndex = 48;
@@ -559,53 +559,9 @@
             this.btnCancelCustSearch.UseVisualStyleBackColor = true;
             this.btnCancelCustSearch.Click += new System.EventHandler(this.btnCancelCustSearch_Click);
             // 
-            // txtSearchCustCounty
-            // 
-            this.txtSearchCustCounty.Location = new System.Drawing.Point(106, 162);
-            this.txtSearchCustCounty.Name = "txtSearchCustCounty";
-            this.txtSearchCustCounty.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchCustCounty.TabIndex = 32;
-            this.txtSearchCustCounty.TextChanged += new System.EventHandler(this.txtSearchCustCounty_TextChanged);
-            // 
-            // txtSearchCustSurname
-            // 
-            this.txtSearchCustSurname.Location = new System.Drawing.Point(106, 115);
-            this.txtSearchCustSurname.Name = "txtSearchCustSurname";
-            this.txtSearchCustSurname.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchCustSurname.TabIndex = 28;
-            this.txtSearchCustSurname.TextChanged += new System.EventHandler(this.txtSearchCustSurname_TextChanged);
-            // 
-            // lblSearchCustCounty
-            // 
-            this.lblSearchCustCounty.AutoSize = true;
-            this.lblSearchCustCounty.Location = new System.Drawing.Point(29, 169);
-            this.lblSearchCustCounty.Name = "lblSearchCustCounty";
-            this.lblSearchCustCounty.Size = new System.Drawing.Size(40, 13);
-            this.lblSearchCustCounty.TabIndex = 24;
-            this.lblSearchCustCounty.Text = "County";
-            // 
-            // lblSearchCustSurname
-            // 
-            this.lblSearchCustSurname.AutoSize = true;
-            this.lblSearchCustSurname.Location = new System.Drawing.Point(29, 122);
-            this.lblSearchCustSurname.Name = "lblSearchCustSurname";
-            this.lblSearchCustSurname.Size = new System.Drawing.Size(49, 13);
-            this.lblSearchCustSurname.TabIndex = 20;
-            this.lblSearchCustSurname.Text = "Surname";
-            // 
-            // lblSEARCH
-            // 
-            this.lblSEARCH.AutoSize = true;
-            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSEARCH.Location = new System.Drawing.Point(82, 40);
-            this.lblSEARCH.Name = "lblSEARCH";
-            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
-            this.lblSEARCH.TabIndex = 19;
-            this.lblSEARCH.Text = "SEARCH";
-            // 
             // pnlDelete
             // 
-            this.pnlDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlDelete.Controls.Add(this.btnDeleteCustCancel);
             this.pnlDelete.Controls.Add(this.btnConfirmDeleteCust);
             this.pnlDelete.Controls.Add(this.lblActualCustNoDelete);
@@ -655,6 +611,50 @@
             this.lblDeleteTitle.Size = new System.Drawing.Size(55, 13);
             this.lblDeleteTitle.TabIndex = 19;
             this.lblDeleteTitle.Text = "DELETE";
+            // 
+            // txtSearchCustCounty
+            // 
+            this.txtSearchCustCounty.Location = new System.Drawing.Point(106, 162);
+            this.txtSearchCustCounty.Name = "txtSearchCustCounty";
+            this.txtSearchCustCounty.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchCustCounty.TabIndex = 32;
+            this.txtSearchCustCounty.TextChanged += new System.EventHandler(this.txtSearchCustCounty_TextChanged);
+            // 
+            // txtSearchCustSurname
+            // 
+            this.txtSearchCustSurname.Location = new System.Drawing.Point(106, 115);
+            this.txtSearchCustSurname.Name = "txtSearchCustSurname";
+            this.txtSearchCustSurname.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchCustSurname.TabIndex = 28;
+            this.txtSearchCustSurname.TextChanged += new System.EventHandler(this.txtSearchCustSurname_TextChanged);
+            // 
+            // lblSearchCustCounty
+            // 
+            this.lblSearchCustCounty.AutoSize = true;
+            this.lblSearchCustCounty.Location = new System.Drawing.Point(29, 169);
+            this.lblSearchCustCounty.Name = "lblSearchCustCounty";
+            this.lblSearchCustCounty.Size = new System.Drawing.Size(40, 13);
+            this.lblSearchCustCounty.TabIndex = 24;
+            this.lblSearchCustCounty.Text = "County";
+            // 
+            // lblSearchCustSurname
+            // 
+            this.lblSearchCustSurname.AutoSize = true;
+            this.lblSearchCustSurname.Location = new System.Drawing.Point(29, 122);
+            this.lblSearchCustSurname.Name = "lblSearchCustSurname";
+            this.lblSearchCustSurname.Size = new System.Drawing.Size(49, 13);
+            this.lblSearchCustSurname.TabIndex = 20;
+            this.lblSearchCustSurname.Text = "Surname";
+            // 
+            // lblSEARCH
+            // 
+            this.lblSEARCH.AutoSize = true;
+            this.lblSEARCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSEARCH.Location = new System.Drawing.Point(82, 40);
+            this.lblSEARCH.Name = "lblSEARCH";
+            this.lblSEARCH.Size = new System.Drawing.Size(57, 13);
+            this.lblSEARCH.TabIndex = 19;
+            this.lblSEARCH.Text = "SEARCH";
             // 
             // errorProvider1
             // 
@@ -810,7 +810,7 @@
             this.Controls.Add(this.dgvCustomers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCustomer";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomers";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();

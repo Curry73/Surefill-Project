@@ -51,23 +51,6 @@
             this.btnConfirmCancelSearch = new System.Windows.Forms.Button();
             this.pnlEditProduct = new System.Windows.Forms.Panel();
             this.lblEdit = new System.Windows.Forms.Label();
-            this.pnlAddJob = new System.Windows.Forms.Panel();
-            this.btnConfirmAddJob = new System.Windows.Forms.Button();
-            this.btnCancelAddJob = new System.Windows.Forms.Button();
-            this.txtAddJobPaymentType = new System.Windows.Forms.TextBox();
-            this.txtAddJobPaid = new System.Windows.Forms.TextBox();
-            this.txtAddJobTypeID = new System.Windows.Forms.TextBox();
-            this.txtAddJobCompletion = new System.Windows.Forms.TextBox();
-            this.txtAddJobDateBooked = new System.Windows.Forms.TextBox();
-            this.txtAddJobCustomerNo = new System.Windows.Forms.TextBox();
-            this.lblAddActualJobNo = new System.Windows.Forms.Label();
-            this.lblAddJobPaymentType = new System.Windows.Forms.Label();
-            this.lblAddJobPaid = new System.Windows.Forms.Label();
-            this.lblAddJobTypeID = new System.Windows.Forms.Label();
-            this.lblAddJobCompletion = new System.Windows.Forms.Label();
-            this.lblAddJobDateBooked = new System.Windows.Forms.Label();
-            this.lblAddJobCustomerNo = new System.Windows.Forms.Label();
-            this.lblAddJobNo = new System.Windows.Forms.Label();
             this.txtEditProductQty = new System.Windows.Forms.TextBox();
             this.txtEditProductPrice = new System.Windows.Forms.TextBox();
             this.txtEditProductDescription = new System.Windows.Forms.TextBox();
@@ -78,6 +61,19 @@
             this.lblEditProductNo = new System.Windows.Forms.Label();
             this.btnConfirmEditProduct = new System.Windows.Forms.Button();
             this.btnConfirmCancelEdit = new System.Windows.Forms.Button();
+            this.pnlAddProducts = new System.Windows.Forms.Panel();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.lblSupplierNo = new System.Windows.Forms.Label();
+            this.txtAddProductQty1 = new System.Windows.Forms.TextBox();
+            this.txtAddProductPrice1 = new System.Windows.Forms.TextBox();
+            this.txtAddProductDescription1 = new System.Windows.Forms.TextBox();
+            this.lblAddActualProductNo1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnConfirmAddProduct1 = new System.Windows.Forms.Button();
+            this.btnCancelAddProduct = new System.Windows.Forms.Button();
             this.pnlAddProduct = new System.Windows.Forms.Panel();
             this.lblADD = new System.Windows.Forms.Label();
             this.txtAddProductQty = new System.Windows.Forms.TextBox();
@@ -100,7 +96,7 @@
             this.pnlReturn.SuspendLayout();
             this.pnlSearchProduct.SuspendLayout();
             this.pnlEditProduct.SuspendLayout();
-            this.pnlAddJob.SuspendLayout();
+            this.pnlAddProducts.SuspendLayout();
             this.pnlAddProduct.SuspendLayout();
             this.pnlDeleteProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -194,7 +190,7 @@
             this.btnAddProduct.Size = new System.Drawing.Size(33, 33);
             this.btnAddProduct.TabIndex = 35;
             this.btnAddProduct.UseVisualStyleBackColor = false;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            this.btnAddProduct.Click += new System.EventHandler(this.lblAddProduct_Click);
             // 
             // dgvProduct
             // 
@@ -203,6 +199,7 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(620, 380);
             this.dgvProduct.TabIndex = 34;
+            this.dgvProduct.Click += new System.EventHandler(this.dgvProduct_Click);
             // 
             // pnlReturn
             // 
@@ -237,14 +234,14 @@
             // 
             // pnlSearchProduct
             // 
-            this.pnlSearchProduct.BackColor = System.Drawing.Color.LightSalmon;
+            this.pnlSearchProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlSearchProduct.Controls.Add(this.lblSEARCH);
             this.pnlSearchProduct.Controls.Add(this.txtSearchProductNo);
             this.pnlSearchProduct.Controls.Add(this.txtSearchProductDescription);
             this.pnlSearchProduct.Controls.Add(this.lblSearchProductDescription);
             this.pnlSearchProduct.Controls.Add(this.lblSearchProductNo);
             this.pnlSearchProduct.Controls.Add(this.btnConfirmCancelSearch);
-            this.pnlSearchProduct.Location = new System.Drawing.Point(638, 12);
+            this.pnlSearchProduct.Location = new System.Drawing.Point(638, 13);
             this.pnlSearchProduct.Name = "pnlSearchProduct";
             this.pnlSearchProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlSearchProduct.TabIndex = 54;
@@ -301,14 +298,14 @@
             this.btnConfirmCancelSearch.Name = "btnConfirmCancelSearch";
             this.btnConfirmCancelSearch.Size = new System.Drawing.Size(75, 25);
             this.btnConfirmCancelSearch.TabIndex = 28;
-            this.btnConfirmCancelSearch.Text = "Cancel";
+            this.btnConfirmCancelSearch.Text = "Exit";
             this.btnConfirmCancelSearch.UseVisualStyleBackColor = true;
+            this.btnConfirmCancelSearch.Click += new System.EventHandler(this.btnConfirmCancelSearch_Click);
             // 
             // pnlEditProduct
             // 
-            this.pnlEditProduct.BackColor = System.Drawing.Color.Maroon;
+            this.pnlEditProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlEditProduct.Controls.Add(this.lblEdit);
-            this.pnlEditProduct.Controls.Add(this.pnlAddJob);
             this.pnlEditProduct.Controls.Add(this.txtEditProductQty);
             this.pnlEditProduct.Controls.Add(this.txtEditProductPrice);
             this.pnlEditProduct.Controls.Add(this.txtEditProductDescription);
@@ -319,7 +316,7 @@
             this.pnlEditProduct.Controls.Add(this.lblEditProductNo);
             this.pnlEditProduct.Controls.Add(this.btnConfirmEditProduct);
             this.pnlEditProduct.Controls.Add(this.btnConfirmCancelEdit);
-            this.pnlEditProduct.Location = new System.Drawing.Point(638, 12);
+            this.pnlEditProduct.Location = new System.Drawing.Point(638, 15);
             this.pnlEditProduct.Name = "pnlEditProduct";
             this.pnlEditProduct.Size = new System.Drawing.Size(230, 380);
             this.pnlEditProduct.TabIndex = 55;
@@ -333,168 +330,6 @@
             this.lblEdit.Size = new System.Drawing.Size(36, 13);
             this.lblEdit.TabIndex = 52;
             this.lblEdit.Text = "EDIT";
-            // 
-            // pnlAddJob
-            // 
-            this.pnlAddJob.BackColor = System.Drawing.Color.Teal;
-            this.pnlAddJob.Controls.Add(this.btnConfirmAddJob);
-            this.pnlAddJob.Controls.Add(this.btnCancelAddJob);
-            this.pnlAddJob.Controls.Add(this.txtAddJobPaymentType);
-            this.pnlAddJob.Controls.Add(this.txtAddJobPaid);
-            this.pnlAddJob.Controls.Add(this.txtAddJobTypeID);
-            this.pnlAddJob.Controls.Add(this.txtAddJobCompletion);
-            this.pnlAddJob.Controls.Add(this.txtAddJobDateBooked);
-            this.pnlAddJob.Controls.Add(this.txtAddJobCustomerNo);
-            this.pnlAddJob.Controls.Add(this.lblAddActualJobNo);
-            this.pnlAddJob.Controls.Add(this.lblAddJobPaymentType);
-            this.pnlAddJob.Controls.Add(this.lblAddJobPaid);
-            this.pnlAddJob.Controls.Add(this.lblAddJobTypeID);
-            this.pnlAddJob.Controls.Add(this.lblAddJobCompletion);
-            this.pnlAddJob.Controls.Add(this.lblAddJobDateBooked);
-            this.pnlAddJob.Controls.Add(this.lblAddJobCustomerNo);
-            this.pnlAddJob.Controls.Add(this.lblAddJobNo);
-            this.pnlAddJob.Location = new System.Drawing.Point(231, 8);
-            this.pnlAddJob.Name = "pnlAddJob";
-            this.pnlAddJob.Size = new System.Drawing.Size(230, 380);
-            this.pnlAddJob.TabIndex = 51;
-            // 
-            // btnConfirmAddJob
-            // 
-            this.btnConfirmAddJob.Location = new System.Drawing.Point(33, 281);
-            this.btnConfirmAddJob.Name = "btnConfirmAddJob";
-            this.btnConfirmAddJob.Size = new System.Drawing.Size(75, 25);
-            this.btnConfirmAddJob.TabIndex = 27;
-            this.btnConfirmAddJob.Text = "Add";
-            this.btnConfirmAddJob.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelAddJob
-            // 
-            this.btnCancelAddJob.Location = new System.Drawing.Point(114, 281);
-            this.btnCancelAddJob.Name = "btnCancelAddJob";
-            this.btnCancelAddJob.Size = new System.Drawing.Size(75, 25);
-            this.btnCancelAddJob.TabIndex = 28;
-            this.btnCancelAddJob.Text = "Cancel";
-            this.btnCancelAddJob.UseVisualStyleBackColor = true;
-            // 
-            // txtAddJobPaymentType
-            // 
-            this.txtAddJobPaymentType.Location = new System.Drawing.Point(127, 246);
-            this.txtAddJobPaymentType.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddJobPaymentType.Name = "txtAddJobPaymentType";
-            this.txtAddJobPaymentType.Size = new System.Drawing.Size(83, 20);
-            this.txtAddJobPaymentType.TabIndex = 26;
-            // 
-            // txtAddJobPaid
-            // 
-            this.txtAddJobPaid.Location = new System.Drawing.Point(127, 211);
-            this.txtAddJobPaid.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddJobPaid.Name = "txtAddJobPaid";
-            this.txtAddJobPaid.Size = new System.Drawing.Size(83, 20);
-            this.txtAddJobPaid.TabIndex = 27;
-            // 
-            // txtAddJobTypeID
-            // 
-            this.txtAddJobTypeID.Location = new System.Drawing.Point(127, 176);
-            this.txtAddJobTypeID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddJobTypeID.Name = "txtAddJobTypeID";
-            this.txtAddJobTypeID.Size = new System.Drawing.Size(83, 20);
-            this.txtAddJobTypeID.TabIndex = 28;
-            // 
-            // txtAddJobCompletion
-            // 
-            this.txtAddJobCompletion.Location = new System.Drawing.Point(127, 141);
-            this.txtAddJobCompletion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddJobCompletion.Name = "txtAddJobCompletion";
-            this.txtAddJobCompletion.Size = new System.Drawing.Size(83, 20);
-            this.txtAddJobCompletion.TabIndex = 29;
-            // 
-            // txtAddJobDateBooked
-            // 
-            this.txtAddJobDateBooked.Location = new System.Drawing.Point(127, 107);
-            this.txtAddJobDateBooked.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddJobDateBooked.Name = "txtAddJobDateBooked";
-            this.txtAddJobDateBooked.Size = new System.Drawing.Size(83, 20);
-            this.txtAddJobDateBooked.TabIndex = 30;
-            // 
-            // txtAddJobCustomerNo
-            // 
-            this.txtAddJobCustomerNo.Location = new System.Drawing.Point(127, 74);
-            this.txtAddJobCustomerNo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddJobCustomerNo.Name = "txtAddJobCustomerNo";
-            this.txtAddJobCustomerNo.Size = new System.Drawing.Size(81, 20);
-            this.txtAddJobCustomerNo.TabIndex = 31;
-            // 
-            // lblAddActualJobNo
-            // 
-            this.lblAddActualJobNo.AutoSize = true;
-            this.lblAddActualJobNo.Location = new System.Drawing.Point(122, 46);
-            this.lblAddActualJobNo.Name = "lblAddActualJobNo";
-            this.lblAddActualJobNo.Size = new System.Drawing.Size(54, 13);
-            this.lblAddActualJobNo.TabIndex = 8;
-            this.lblAddActualJobNo.Text = "NUMBER";
-            // 
-            // lblAddJobPaymentType
-            // 
-            this.lblAddJobPaymentType.AutoSize = true;
-            this.lblAddJobPaymentType.Location = new System.Drawing.Point(30, 245);
-            this.lblAddJobPaymentType.Name = "lblAddJobPaymentType";
-            this.lblAddJobPaymentType.Size = new System.Drawing.Size(75, 13);
-            this.lblAddJobPaymentType.TabIndex = 6;
-            this.lblAddJobPaymentType.Text = "Payment Type";
-            // 
-            // lblAddJobPaid
-            // 
-            this.lblAddJobPaid.AutoSize = true;
-            this.lblAddJobPaid.Location = new System.Drawing.Point(30, 211);
-            this.lblAddJobPaid.Name = "lblAddJobPaid";
-            this.lblAddJobPaid.Size = new System.Drawing.Size(28, 13);
-            this.lblAddJobPaid.TabIndex = 5;
-            this.lblAddJobPaid.Text = "Paid";
-            // 
-            // lblAddJobTypeID
-            // 
-            this.lblAddJobTypeID.AutoSize = true;
-            this.lblAddJobTypeID.Location = new System.Drawing.Point(30, 176);
-            this.lblAddJobTypeID.Name = "lblAddJobTypeID";
-            this.lblAddJobTypeID.Size = new System.Drawing.Size(65, 13);
-            this.lblAddJobTypeID.TabIndex = 4;
-            this.lblAddJobTypeID.Text = "Job Type ID";
-            // 
-            // lblAddJobCompletion
-            // 
-            this.lblAddJobCompletion.AutoSize = true;
-            this.lblAddJobCompletion.Location = new System.Drawing.Point(30, 141);
-            this.lblAddJobCompletion.Name = "lblAddJobCompletion";
-            this.lblAddJobCompletion.Size = new System.Drawing.Size(79, 13);
-            this.lblAddJobCompletion.TabIndex = 3;
-            this.lblAddJobCompletion.Text = "Job Completion";
-            // 
-            // lblAddJobDateBooked
-            // 
-            this.lblAddJobDateBooked.AutoSize = true;
-            this.lblAddJobDateBooked.Location = new System.Drawing.Point(30, 107);
-            this.lblAddJobDateBooked.Name = "lblAddJobDateBooked";
-            this.lblAddJobDateBooked.Size = new System.Drawing.Size(70, 13);
-            this.lblAddJobDateBooked.TabIndex = 2;
-            this.lblAddJobDateBooked.Text = "Date Booked";
-            // 
-            // lblAddJobCustomerNo
-            // 
-            this.lblAddJobCustomerNo.AutoSize = true;
-            this.lblAddJobCustomerNo.Location = new System.Drawing.Point(30, 77);
-            this.lblAddJobCustomerNo.Name = "lblAddJobCustomerNo";
-            this.lblAddJobCustomerNo.Size = new System.Drawing.Size(68, 13);
-            this.lblAddJobCustomerNo.TabIndex = 1;
-            this.lblAddJobCustomerNo.Text = "Customer No";
-            // 
-            // lblAddJobNo
-            // 
-            this.lblAddJobNo.AutoSize = true;
-            this.lblAddJobNo.Location = new System.Drawing.Point(30, 46);
-            this.lblAddJobNo.Name = "lblAddJobNo";
-            this.lblAddJobNo.Size = new System.Drawing.Size(41, 13);
-            this.lblAddJobNo.TabIndex = 0;
-            this.lblAddJobNo.Text = "Job No";
             // 
             // txtEditProductQty
             // 
@@ -582,9 +417,135 @@
             this.btnConfirmCancelEdit.Name = "btnConfirmCancelEdit";
             this.btnConfirmCancelEdit.Size = new System.Drawing.Size(75, 25);
             this.btnConfirmCancelEdit.TabIndex = 28;
-            this.btnConfirmCancelEdit.Text = "Cancel";
+            this.btnConfirmCancelEdit.Text = "Exit";
             this.btnConfirmCancelEdit.UseVisualStyleBackColor = true;
             this.btnConfirmCancelEdit.Click += new System.EventHandler(this.btnConfirmCancelEdit_Click);
+            // 
+            // pnlAddProducts
+            // 
+            this.pnlAddProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.pnlAddProducts.Controls.Add(this.cmbSupplier);
+            this.pnlAddProducts.Controls.Add(this.lblSupplierNo);
+            this.pnlAddProducts.Controls.Add(this.txtAddProductQty1);
+            this.pnlAddProducts.Controls.Add(this.txtAddProductPrice1);
+            this.pnlAddProducts.Controls.Add(this.txtAddProductDescription1);
+            this.pnlAddProducts.Controls.Add(this.lblAddActualProductNo1);
+            this.pnlAddProducts.Controls.Add(this.label2);
+            this.pnlAddProducts.Controls.Add(this.label3);
+            this.pnlAddProducts.Controls.Add(this.label4);
+            this.pnlAddProducts.Controls.Add(this.label5);
+            this.pnlAddProducts.Controls.Add(this.btnConfirmAddProduct1);
+            this.pnlAddProducts.Controls.Add(this.btnCancelAddProduct);
+            this.pnlAddProducts.Location = new System.Drawing.Point(638, 13);
+            this.pnlAddProducts.Name = "pnlAddProducts";
+            this.pnlAddProducts.Size = new System.Drawing.Size(230, 380);
+            this.pnlAddProducts.TabIndex = 51;
+            // 
+            // cmbSupplier
+            // 
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.Location = new System.Drawing.Point(127, 247);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(83, 21);
+            this.cmbSupplier.TabIndex = 55;
+            // 
+            // lblSupplierNo
+            // 
+            this.lblSupplierNo.AutoSize = true;
+            this.lblSupplierNo.Location = new System.Drawing.Point(30, 250);
+            this.lblSupplierNo.Name = "lblSupplierNo";
+            this.lblSupplierNo.Size = new System.Drawing.Size(62, 13);
+            this.lblSupplierNo.TabIndex = 54;
+            this.lblSupplierNo.Text = "Supplier No";
+            // 
+            // txtAddProductQty1
+            // 
+            this.txtAddProductQty1.Location = new System.Drawing.Point(127, 211);
+            this.txtAddProductQty1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddProductQty1.Name = "txtAddProductQty1";
+            this.txtAddProductQty1.Size = new System.Drawing.Size(83, 20);
+            this.txtAddProductQty1.TabIndex = 51;
+            // 
+            // txtAddProductPrice1
+            // 
+            this.txtAddProductPrice1.Location = new System.Drawing.Point(127, 159);
+            this.txtAddProductPrice1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddProductPrice1.Name = "txtAddProductPrice1";
+            this.txtAddProductPrice1.Size = new System.Drawing.Size(83, 20);
+            this.txtAddProductPrice1.TabIndex = 52;
+            // 
+            // txtAddProductDescription1
+            // 
+            this.txtAddProductDescription1.Location = new System.Drawing.Point(127, 104);
+            this.txtAddProductDescription1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddProductDescription1.Name = "txtAddProductDescription1";
+            this.txtAddProductDescription1.Size = new System.Drawing.Size(81, 20);
+            this.txtAddProductDescription1.TabIndex = 53;
+            // 
+            // lblAddActualProductNo1
+            // 
+            this.lblAddActualProductNo1.AutoSize = true;
+            this.lblAddActualProductNo1.Location = new System.Drawing.Point(122, 59);
+            this.lblAddActualProductNo1.Name = "lblAddActualProductNo1";
+            this.lblAddActualProductNo1.Size = new System.Drawing.Size(54, 13);
+            this.lblAddActualProductNo1.TabIndex = 50;
+            this.lblAddActualProductNo1.Text = "NUMBER";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 211);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Product Qty";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Product Price";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Product Description";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Product No";
+            // 
+            // btnConfirmAddProduct1
+            // 
+            this.btnConfirmAddProduct1.Location = new System.Drawing.Point(33, 281);
+            this.btnConfirmAddProduct1.Name = "btnConfirmAddProduct1";
+            this.btnConfirmAddProduct1.Size = new System.Drawing.Size(75, 25);
+            this.btnConfirmAddProduct1.TabIndex = 27;
+            this.btnConfirmAddProduct1.Text = "Add";
+            this.btnConfirmAddProduct1.UseVisualStyleBackColor = true;
+            this.btnConfirmAddProduct1.Click += new System.EventHandler(this.btnConfirmAddProduct_Click);
+            // 
+            // btnCancelAddProduct
+            // 
+            this.btnCancelAddProduct.Location = new System.Drawing.Point(114, 281);
+            this.btnCancelAddProduct.Name = "btnCancelAddProduct";
+            this.btnCancelAddProduct.Size = new System.Drawing.Size(75, 25);
+            this.btnCancelAddProduct.TabIndex = 28;
+            this.btnCancelAddProduct.Text = "Exit";
+            this.btnCancelAddProduct.UseVisualStyleBackColor = true;
+            this.btnCancelAddProduct.Click += new System.EventHandler(this.btnCancelAddProduct_Click);
             // 
             // pnlAddProduct
             // 
@@ -706,13 +667,13 @@
             // 
             // pnlDeleteProduct
             // 
-            this.pnlDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlDeleteProduct.Controls.Add(this.btnDeleteProductCancel);
             this.pnlDeleteProduct.Controls.Add(this.pnlAddProduct);
             this.pnlDeleteProduct.Controls.Add(this.btnConfirmDeleteProduct);
             this.pnlDeleteProduct.Controls.Add(this.lblDeleteProductQ);
             this.pnlDeleteProduct.Controls.Add(this.lblProductDelete);
-            this.pnlDeleteProduct.Location = new System.Drawing.Point(638, 12);
+            this.pnlDeleteProduct.Location = new System.Drawing.Point(638, 14);
             this.pnlDeleteProduct.Name = "pnlDeleteProduct";
             this.pnlDeleteProduct.Size = new System.Drawing.Size(230, 383);
             this.pnlDeleteProduct.TabIndex = 57;
@@ -723,7 +684,7 @@
             this.btnDeleteProductCancel.Name = "btnDeleteProductCancel";
             this.btnDeleteProductCancel.Size = new System.Drawing.Size(75, 25);
             this.btnDeleteProductCancel.TabIndex = 22;
-            this.btnDeleteProductCancel.Text = "Cancel";
+            this.btnDeleteProductCancel.Text = "Exit";
             this.btnDeleteProductCancel.UseVisualStyleBackColor = true;
             this.btnDeleteProductCancel.Click += new System.EventHandler(this.btnDeleteProductCancel_Click);
             // 
@@ -735,6 +696,7 @@
             this.btnConfirmDeleteProduct.TabIndex = 21;
             this.btnConfirmDeleteProduct.Text = "Delete";
             this.btnConfirmDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnConfirmDeleteProduct.Click += new System.EventHandler(this.btnConfirmDeleteProduct_Click_1);
             // 
             // lblDeleteProductQ
             // 
@@ -763,6 +725,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 405);
+            this.Controls.Add(this.pnlAddProducts);
             this.Controls.Add(this.pnlDeleteProduct);
             this.Controls.Add(this.pnlEditProduct);
             this.Controls.Add(this.pnlSearchProduct);
@@ -788,8 +751,8 @@
             this.pnlSearchProduct.PerformLayout();
             this.pnlEditProduct.ResumeLayout(false);
             this.pnlEditProduct.PerformLayout();
-            this.pnlAddJob.ResumeLayout(false);
-            this.pnlAddJob.PerformLayout();
+            this.pnlAddProducts.ResumeLayout(false);
+            this.pnlAddProducts.PerformLayout();
             this.pnlAddProduct.ResumeLayout(false);
             this.pnlAddProduct.PerformLayout();
             this.pnlDeleteProduct.ResumeLayout(false);
@@ -817,23 +780,9 @@
         private System.Windows.Forms.Panel pnlSearchProduct;
         private System.Windows.Forms.Button btnConfirmCancelSearch;
         private System.Windows.Forms.Panel pnlEditProduct;
-        private System.Windows.Forms.Panel pnlAddJob;
-        private System.Windows.Forms.Button btnConfirmAddJob;
-        private System.Windows.Forms.Button btnCancelAddJob;
-        private System.Windows.Forms.TextBox txtAddJobPaymentType;
-        private System.Windows.Forms.TextBox txtAddJobPaid;
-        private System.Windows.Forms.TextBox txtAddJobTypeID;
-        private System.Windows.Forms.TextBox txtAddJobCompletion;
-        private System.Windows.Forms.TextBox txtAddJobDateBooked;
-        private System.Windows.Forms.TextBox txtAddJobCustomerNo;
-        private System.Windows.Forms.Label lblAddActualJobNo;
-        private System.Windows.Forms.Label lblAddJobPaymentType;
-        private System.Windows.Forms.Label lblAddJobPaid;
-        private System.Windows.Forms.Label lblAddJobTypeID;
-        private System.Windows.Forms.Label lblAddJobCompletion;
-        private System.Windows.Forms.Label lblAddJobDateBooked;
-        private System.Windows.Forms.Label lblAddJobCustomerNo;
-        private System.Windows.Forms.Label lblAddJobNo;
+        private System.Windows.Forms.Panel pnlAddProducts;
+        private System.Windows.Forms.Button btnConfirmAddProduct1;
+        private System.Windows.Forms.Button btnCancelAddProduct;
         private System.Windows.Forms.TextBox txtEditProductQty;
         private System.Windows.Forms.TextBox txtEditProductPrice;
         private System.Windows.Forms.TextBox txtEditProductDescription;
@@ -868,5 +817,15 @@
         private System.Windows.Forms.Label lblSEARCH;
         private System.Windows.Forms.Label lblEdit;
         private System.Windows.Forms.Label lblADD;
+        private System.Windows.Forms.TextBox txtAddProductQty1;
+        private System.Windows.Forms.TextBox txtAddProductPrice1;
+        private System.Windows.Forms.TextBox txtAddProductDescription1;
+        private System.Windows.Forms.Label lblAddActualProductNo1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbSupplier;
+        private System.Windows.Forms.Label lblSupplierNo;
     }
 }

@@ -15,19 +15,17 @@ namespace SF
     {
 
         SqlDataAdapter daJobs, daCustomer, daProduct, daJobType, daPaymentType, daJobDetails, daCavityType, daWallDetails, daWallDetails2, daOpeningDetails;
-
         DataSet dsSurefill = new DataSet();
-
-
-
         SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails2, cmdBOpeningDetails;
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
 
         DataRow drJobs, drProduct, drJobType, drPaymentType, drJobDetails, drCavityType, drWallDetails, drOpeningDetails;
         SqlCommand cmdWallDetails;
         SqlConnection conn;
-
         String connStr, sqlJobs, sqlCustomer, sqlProduct, sqlJobType, sqlPaymentType, sqlJobDetails, sqlCavityType, sqlWallDetails, sqlWallDetails2, sqlOpeningDetails;
 
 
@@ -208,7 +206,7 @@ namespace SF
 
                 double productQty = Math.Ceiling(OverallTotal % productMeasure);
 
-                double finalPrice = pricePerOne * productQty;
+                double finalPrice = pricePerOne * productQty / 10;
 
                 lblOverallTotal.Text = Convert.ToString(OverallTotal);
 
@@ -247,6 +245,12 @@ namespace SF
 
             drJobs["Paid"] = rbEditPaidYes.Checked;
             daJobs.Update(dsSurefill, "Jobs");
+
+            MessageBox.Show("Job has been edited", "Job Edited");
+            pnlEditJob.Visible = false;
+          
         }
+        
+
     }
 }

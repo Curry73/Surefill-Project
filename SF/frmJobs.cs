@@ -134,7 +134,7 @@ namespace SF
         {
             DateTime dateBooked = DateTime.Now;
             
-            DialogResult paidResult = MessageBox.Show("Have you paid?", "Paid", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult paidResult = MessageBox.Show("Has the customer paid?", "Paid", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             bool paid = false;
 
             if (paidResult == DialogResult.Yes)
@@ -154,6 +154,8 @@ namespace SF
 
             dsSurefill.Tables["Jobs"].Rows.Add(drJobs);
             daJobs.Update(dsSurefill, "Jobs");
+            
+
 
         
 
@@ -197,6 +199,10 @@ namespace SF
 
             jobNo = (int.Parse(drJobs["JobNo"].ToString()) + 1);
             lblActualJobID.Text = Convert.ToString(jobNo);
+
+            MessageBox.Show("Job has been added", "Job Added");
+            pnlAddJob.Visible = false;
+            dgvJobs.Visible = true;
         }
 
 
@@ -346,6 +352,7 @@ namespace SF
 
                 }
             }
+            pnlDeleteJob.Visible = false;
         }
 
 

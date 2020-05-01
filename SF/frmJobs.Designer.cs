@@ -323,6 +323,7 @@
             // 
             // LVOpenings
             // 
+            this.LVOpenings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.LVOpenings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.LengthCol,
             this.HeightCol,
@@ -402,6 +403,7 @@
             // 
             // LVFinal
             // 
+            this.LVFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.LVFinal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colWallNo,
             this.WallTotal,
@@ -409,9 +411,9 @@
             this.Total,
             this.WallHeight,
             this.WallLength});
-            this.LVFinal.Location = new System.Drawing.Point(9, 36);
+            this.LVFinal.Location = new System.Drawing.Point(0, 32);
             this.LVFinal.Name = "LVFinal";
-            this.LVFinal.Size = new System.Drawing.Size(225, 226);
+            this.LVFinal.Size = new System.Drawing.Size(234, 226);
             this.LVFinal.TabIndex = 3;
             this.LVFinal.UseCompatibleStateImageBehavior = false;
             this.LVFinal.View = System.Windows.Forms.View.Details;
@@ -497,7 +499,7 @@
             this.pnlAddJob.Controls.Add(this.lblJobID);
             this.pnlAddJob.Controls.Add(this.pnlWallSizeList);
             this.pnlAddJob.Controls.Add(this.pnlAddOpenings);
-            this.pnlAddJob.Location = new System.Drawing.Point(5, 10);
+            this.pnlAddJob.Location = new System.Drawing.Point(2, 29);
             this.pnlAddJob.Name = "pnlAddJob";
             this.pnlAddJob.Size = new System.Drawing.Size(662, 380);
             this.pnlAddJob.TabIndex = 4;
@@ -721,7 +723,7 @@
             // 
             this.dgvJobs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobs.Location = new System.Drawing.Point(12, 10);
+            this.dgvJobs.Location = new System.Drawing.Point(12, 15);
             this.dgvJobs.Name = "dgvJobs";
             this.dgvJobs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvJobs.Size = new System.Drawing.Size(652, 307);
@@ -1183,7 +1185,7 @@
             // 
             // pnlDeleteJob
             // 
-            this.pnlDeleteJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlDeleteJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.pnlDeleteJob.Controls.Add(this.btnDeleteJobCancel);
             this.pnlDeleteJob.Controls.Add(this.btnConfirmDeleteJob);
             this.pnlDeleteJob.Controls.Add(this.lblDeleteJobQuestion);
@@ -1253,6 +1255,7 @@
             this.Controls.Add(this.pnlAddJob);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmJobs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmJobs";
             this.Load += new System.EventHandler(this.frmJobs_Load);
             this.pnlAddWall.ResumeLayout(false);

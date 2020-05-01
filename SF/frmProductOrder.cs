@@ -25,6 +25,19 @@ namespace SF
         DataRow drSupplier;
 
         String sqlNames, sqlSupplierDetails, sqlProduct, sqlProductDetails, sqlOrders, sqlProductOrder;
+
+        private void btnDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            frmEditDeleteProductOrder frmEditDeleteProductOrder = new frmEditDeleteProductOrder();
+            frmEditDeleteProductOrder.Show();
+        }
+
+        private void btnEditSupplier_Click(object sender, EventArgs e)
+        {
+            frmEditDeleteProductOrder frmEditDeleteProductOrder = new frmEditDeleteProductOrder();
+            frmEditDeleteProductOrder.Show();
+        }
+
         String connStr;
 
         public frmProductOrder()

@@ -21,6 +21,10 @@ namespace SF
         SqlCommand cmdSupplierDetails, cmdPaymentDetails, cmdPaymentType, cmdOrders, cmdPaymentDet2;
         SqlCommandBuilder cmdBSupplier, cmdBOrders, cmdBPayment, cmdBPaymentDetails, cmdBPaymentDet2;
 
+        private void lblOrders_Click(object sender, EventArgs e)
+        {
+
+        }
 
         DataRow drSupplier;
 
@@ -261,6 +265,9 @@ namespace SF
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show(this, "Are you sure you want to delete the payment?", "Delete Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
+                return;
             //DataRow drPayments = dsSurefill.Tables["PaymentDetails"].Rows.Find(lstPayment.SelectedValue);
             cmdPaymentDet2.Parameters["@PaymentNo"].Value = lstPayment.SelectedValue;
             cmdPaymentDet2.Parameters["@OrderNo"].Value = lstOrders.SelectedValue;

@@ -845,8 +845,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlButtons);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(455, 364);
             this.Name = "frmEditDeleteProductOrder";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmEditDeleteProductOrder";
             this.Load += new System.EventHandler(this.frmEditDeleteProductOrder_Load);
             this.pnlButtons.ResumeLayout(false);

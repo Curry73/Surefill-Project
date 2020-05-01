@@ -35,9 +35,14 @@ namespace SF
 
             if(LoginDT.Rows.Count ==1)
             {
+
                 frmMenu frmMenu = new frmMenu();
                 this.Hide();
                 frmMenu.Show();
+
+                //panel1.Visible = false;
+                //btnCancel.Visible = false;
+                //btnLogin.Visible = false;
             }
             else
             {

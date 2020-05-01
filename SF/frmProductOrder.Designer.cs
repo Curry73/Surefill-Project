@@ -103,9 +103,9 @@
             this.panel1.Controls.Add(this.lstSupplier);
             this.panel1.Controls.Add(this.lblProducts);
             this.panel1.Controls.Add(this.lblSupplierNo);
-            this.panel1.Location = new System.Drawing.Point(12, 60);
+            this.panel1.Location = new System.Drawing.Point(12, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 196);
+            this.panel1.Size = new System.Drawing.Size(596, 196);
             this.panel1.TabIndex = 0;
             // 
             // lstProduct
@@ -113,9 +113,9 @@
             this.lstProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstProduct.FormattingEnabled = true;
             this.lstProduct.ItemHeight = 16;
-            this.lstProduct.Location = new System.Drawing.Point(268, 29);
+            this.lstProduct.Location = new System.Drawing.Point(288, 29);
             this.lstProduct.Name = "lstProduct";
-            this.lstProduct.Size = new System.Drawing.Size(255, 164);
+            this.lstProduct.Size = new System.Drawing.Size(305, 164);
             this.lstProduct.TabIndex = 85;
             // 
             // lstSupplier
@@ -125,14 +125,14 @@
             this.lstSupplier.ItemHeight = 16;
             this.lstSupplier.Location = new System.Drawing.Point(6, 29);
             this.lstSupplier.Name = "lstSupplier";
-            this.lstSupplier.Size = new System.Drawing.Size(246, 164);
+            this.lstSupplier.Size = new System.Drawing.Size(276, 164);
             this.lstSupplier.TabIndex = 84;
             this.lstSupplier.Click += new System.EventHandler(this.lstSupplier_Click);
             // 
             // lblProducts
             // 
             this.lblProducts.AutoSize = true;
-            this.lblProducts.Location = new System.Drawing.Point(265, 13);
+            this.lblProducts.Location = new System.Drawing.Point(285, 13);
             this.lblProducts.Name = "lblProducts";
             this.lblProducts.Size = new System.Drawing.Size(49, 13);
             this.lblProducts.TabIndex = 1;
@@ -154,15 +154,15 @@
             this.panel2.Controls.Add(this.lvwBooking);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(18, 262);
+            this.panel2.Location = new System.Drawing.Point(13, 236);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(522, 184);
+            this.panel2.Size = new System.Drawing.Size(598, 168);
             this.panel2.TabIndex = 1;
             // 
             // btnRemoveItem
             // 
             this.btnRemoveItem.BackColor = System.Drawing.Color.White;
-            this.btnRemoveItem.Location = new System.Drawing.Point(435, 140);
+            this.btnRemoveItem.Location = new System.Drawing.Point(513, 140);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(82, 23);
             this.btnRemoveItem.TabIndex = 109;
@@ -173,7 +173,7 @@
             // btAddItem
             // 
             this.btAddItem.BackColor = System.Drawing.Color.White;
-            this.btAddItem.Location = new System.Drawing.Point(435, 108);
+            this.btAddItem.Location = new System.Drawing.Point(513, 108);
             this.btAddItem.Name = "btAddItem";
             this.btAddItem.Size = new System.Drawing.Size(82, 23);
             this.btAddItem.TabIndex = 108;
@@ -188,9 +188,9 @@
             this.colProductNo,
             this.colQty});
             this.lvwBooking.FullRowSelect = true;
-            this.lvwBooking.Location = new System.Drawing.Point(209, 99);
+            this.lvwBooking.Location = new System.Drawing.Point(287, 99);
             this.lvwBooking.Name = "lvwBooking";
-            this.lvwBooking.Size = new System.Drawing.Size(220, 81);
+            this.lvwBooking.Size = new System.Drawing.Size(220, 64);
             this.lvwBooking.TabIndex = 107;
             this.lvwBooking.UseCompatibleStateImageBehavior = false;
             this.lvwBooking.View = System.Windows.Forms.View.Details;
@@ -217,7 +217,7 @@
             this.panel5.Controls.Add(this.lblBookingDate);
             this.panel5.Controls.Add(this.lblOrderQty);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(209, 5);
+            this.panel5.Location = new System.Drawing.Point(287, 5);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(308, 88);
             this.panel5.TabIndex = 106;
@@ -274,7 +274,7 @@
             this.panel3.Controls.Add(this.lblCust0);
             this.panel3.Location = new System.Drawing.Point(3, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 176);
+            this.panel3.Size = new System.Drawing.Size(278, 158);
             this.panel3.TabIndex = 103;
             // 
             // lblCust5
@@ -376,15 +376,15 @@
             this.pnlButtons.Controls.Add(this.b24);
             this.pnlButtons.Controls.Add(this.b25);
             this.pnlButtons.Controls.Add(this.b26);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 26);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 3);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(528, 28);
+            this.pnlButtons.Size = new System.Drawing.Size(596, 28);
             this.pnlButtons.TabIndex = 109;
             // 
             // b1
             // 
             this.b1.BackColor = System.Drawing.Color.White;
-            this.b1.Location = new System.Drawing.Point(3, 3);
+            this.b1.Location = new System.Drawing.Point(34, 3);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(20, 20);
             this.b1.TabIndex = 105;
@@ -394,7 +394,7 @@
             // b2
             // 
             this.b2.BackColor = System.Drawing.Color.White;
-            this.b2.Location = new System.Drawing.Point(23, 3);
+            this.b2.Location = new System.Drawing.Point(54, 3);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(20, 20);
             this.b2.TabIndex = 104;
@@ -404,7 +404,7 @@
             // b3
             // 
             this.b3.BackColor = System.Drawing.Color.White;
-            this.b3.Location = new System.Drawing.Point(43, 3);
+            this.b3.Location = new System.Drawing.Point(74, 3);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(20, 20);
             this.b3.TabIndex = 103;
@@ -414,7 +414,7 @@
             // b4
             // 
             this.b4.BackColor = System.Drawing.Color.White;
-            this.b4.Location = new System.Drawing.Point(63, 3);
+            this.b4.Location = new System.Drawing.Point(94, 3);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(20, 20);
             this.b4.TabIndex = 102;
@@ -424,7 +424,7 @@
             // b5
             // 
             this.b5.BackColor = System.Drawing.Color.White;
-            this.b5.Location = new System.Drawing.Point(83, 3);
+            this.b5.Location = new System.Drawing.Point(114, 3);
             this.b5.Name = "b5";
             this.b5.Size = new System.Drawing.Size(20, 20);
             this.b5.TabIndex = 101;
@@ -434,7 +434,7 @@
             // b6
             // 
             this.b6.BackColor = System.Drawing.Color.White;
-            this.b6.Location = new System.Drawing.Point(103, 3);
+            this.b6.Location = new System.Drawing.Point(134, 3);
             this.b6.Name = "b6";
             this.b6.Size = new System.Drawing.Size(20, 20);
             this.b6.TabIndex = 100;
@@ -444,7 +444,7 @@
             // b7
             // 
             this.b7.BackColor = System.Drawing.Color.White;
-            this.b7.Location = new System.Drawing.Point(123, 3);
+            this.b7.Location = new System.Drawing.Point(154, 3);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(20, 20);
             this.b7.TabIndex = 99;
@@ -454,7 +454,7 @@
             // b8
             // 
             this.b8.BackColor = System.Drawing.Color.White;
-            this.b8.Location = new System.Drawing.Point(143, 3);
+            this.b8.Location = new System.Drawing.Point(174, 3);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(20, 20);
             this.b8.TabIndex = 98;
@@ -464,7 +464,7 @@
             // b9
             // 
             this.b9.BackColor = System.Drawing.Color.White;
-            this.b9.Location = new System.Drawing.Point(163, 3);
+            this.b9.Location = new System.Drawing.Point(194, 3);
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(20, 20);
             this.b9.TabIndex = 97;
@@ -474,7 +474,7 @@
             // b10
             // 
             this.b10.BackColor = System.Drawing.Color.White;
-            this.b10.Location = new System.Drawing.Point(183, 3);
+            this.b10.Location = new System.Drawing.Point(214, 3);
             this.b10.Name = "b10";
             this.b10.Size = new System.Drawing.Size(20, 20);
             this.b10.TabIndex = 96;
@@ -484,7 +484,7 @@
             // b11
             // 
             this.b11.BackColor = System.Drawing.Color.White;
-            this.b11.Location = new System.Drawing.Point(203, 3);
+            this.b11.Location = new System.Drawing.Point(234, 3);
             this.b11.Name = "b11";
             this.b11.Size = new System.Drawing.Size(20, 20);
             this.b11.TabIndex = 95;
@@ -494,7 +494,7 @@
             // b12
             // 
             this.b12.BackColor = System.Drawing.Color.White;
-            this.b12.Location = new System.Drawing.Point(223, 3);
+            this.b12.Location = new System.Drawing.Point(254, 3);
             this.b12.Name = "b12";
             this.b12.Size = new System.Drawing.Size(20, 20);
             this.b12.TabIndex = 94;
@@ -504,7 +504,7 @@
             // b13
             // 
             this.b13.BackColor = System.Drawing.Color.White;
-            this.b13.Location = new System.Drawing.Point(243, 3);
+            this.b13.Location = new System.Drawing.Point(274, 3);
             this.b13.Name = "b13";
             this.b13.Size = new System.Drawing.Size(20, 20);
             this.b13.TabIndex = 93;
@@ -514,7 +514,7 @@
             // b14
             // 
             this.b14.BackColor = System.Drawing.Color.White;
-            this.b14.Location = new System.Drawing.Point(263, 3);
+            this.b14.Location = new System.Drawing.Point(294, 3);
             this.b14.Name = "b14";
             this.b14.Size = new System.Drawing.Size(20, 20);
             this.b14.TabIndex = 92;
@@ -524,7 +524,7 @@
             // b115
             // 
             this.b115.BackColor = System.Drawing.Color.White;
-            this.b115.Location = new System.Drawing.Point(283, 3);
+            this.b115.Location = new System.Drawing.Point(314, 3);
             this.b115.Name = "b115";
             this.b115.Size = new System.Drawing.Size(20, 20);
             this.b115.TabIndex = 91;
@@ -534,7 +534,7 @@
             // b16
             // 
             this.b16.BackColor = System.Drawing.Color.White;
-            this.b16.Location = new System.Drawing.Point(303, 3);
+            this.b16.Location = new System.Drawing.Point(334, 3);
             this.b16.Name = "b16";
             this.b16.Size = new System.Drawing.Size(20, 20);
             this.b16.TabIndex = 90;
@@ -544,7 +544,7 @@
             // b17
             // 
             this.b17.BackColor = System.Drawing.Color.White;
-            this.b17.Location = new System.Drawing.Point(323, 3);
+            this.b17.Location = new System.Drawing.Point(354, 3);
             this.b17.Name = "b17";
             this.b17.Size = new System.Drawing.Size(20, 20);
             this.b17.TabIndex = 89;
@@ -554,7 +554,7 @@
             // b18
             // 
             this.b18.BackColor = System.Drawing.Color.White;
-            this.b18.Location = new System.Drawing.Point(343, 3);
+            this.b18.Location = new System.Drawing.Point(374, 3);
             this.b18.Name = "b18";
             this.b18.Size = new System.Drawing.Size(20, 20);
             this.b18.TabIndex = 88;
@@ -564,7 +564,7 @@
             // b19
             // 
             this.b19.BackColor = System.Drawing.Color.White;
-            this.b19.Location = new System.Drawing.Point(363, 3);
+            this.b19.Location = new System.Drawing.Point(394, 3);
             this.b19.Name = "b19";
             this.b19.Size = new System.Drawing.Size(20, 20);
             this.b19.TabIndex = 87;
@@ -574,7 +574,7 @@
             // b20
             // 
             this.b20.BackColor = System.Drawing.Color.White;
-            this.b20.Location = new System.Drawing.Point(383, 3);
+            this.b20.Location = new System.Drawing.Point(414, 3);
             this.b20.Name = "b20";
             this.b20.Size = new System.Drawing.Size(20, 20);
             this.b20.TabIndex = 86;
@@ -584,7 +584,7 @@
             // b21
             // 
             this.b21.BackColor = System.Drawing.Color.White;
-            this.b21.Location = new System.Drawing.Point(403, 3);
+            this.b21.Location = new System.Drawing.Point(434, 3);
             this.b21.Name = "b21";
             this.b21.Size = new System.Drawing.Size(20, 20);
             this.b21.TabIndex = 85;
@@ -594,7 +594,7 @@
             // b22
             // 
             this.b22.BackColor = System.Drawing.Color.White;
-            this.b22.Location = new System.Drawing.Point(423, 3);
+            this.b22.Location = new System.Drawing.Point(454, 3);
             this.b22.Name = "b22";
             this.b22.Size = new System.Drawing.Size(20, 20);
             this.b22.TabIndex = 84;
@@ -604,7 +604,7 @@
             // b23
             // 
             this.b23.BackColor = System.Drawing.Color.White;
-            this.b23.Location = new System.Drawing.Point(443, 3);
+            this.b23.Location = new System.Drawing.Point(474, 3);
             this.b23.Name = "b23";
             this.b23.Size = new System.Drawing.Size(20, 20);
             this.b23.TabIndex = 83;
@@ -614,7 +614,7 @@
             // b24
             // 
             this.b24.BackColor = System.Drawing.Color.White;
-            this.b24.Location = new System.Drawing.Point(463, 3);
+            this.b24.Location = new System.Drawing.Point(494, 3);
             this.b24.Name = "b24";
             this.b24.Size = new System.Drawing.Size(20, 20);
             this.b24.TabIndex = 82;
@@ -624,7 +624,7 @@
             // b25
             // 
             this.b25.BackColor = System.Drawing.Color.White;
-            this.b25.Location = new System.Drawing.Point(483, 3);
+            this.b25.Location = new System.Drawing.Point(514, 3);
             this.b25.Name = "b25";
             this.b25.Size = new System.Drawing.Size(20, 20);
             this.b25.TabIndex = 81;
@@ -634,7 +634,7 @@
             // b26
             // 
             this.b26.BackColor = System.Drawing.Color.White;
-            this.b26.Location = new System.Drawing.Point(503, 3);
+            this.b26.Location = new System.Drawing.Point(534, 3);
             this.b26.Name = "b26";
             this.b26.Size = new System.Drawing.Size(20, 20);
             this.b26.TabIndex = 80;
@@ -646,7 +646,7 @@
             this.lblAddProduct.AutoSize = true;
             this.lblAddProduct.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddProduct.ForeColor = System.Drawing.Color.Gray;
-            this.lblAddProduct.Location = new System.Drawing.Point(642, 103);
+            this.lblAddProduct.Location = new System.Drawing.Point(714, 69);
             this.lblAddProduct.Name = "lblAddProduct";
             this.lblAddProduct.Size = new System.Drawing.Size(42, 23);
             this.lblAddProduct.TabIndex = 111;
@@ -655,7 +655,7 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnAdd.Location = new System.Drawing.Point(611, 104);
+            this.btnAdd.Location = new System.Drawing.Point(683, 70);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(25, 25);
             this.btnAdd.TabIndex = 110;
@@ -667,7 +667,7 @@
             this.btnReturnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.btnReturnMenu.BackgroundImage = global::SF.Properties.Resources.returnBLACKANDBLUE;
             this.btnReturnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturnMenu.Location = new System.Drawing.Point(611, 347);
+            this.btnReturnMenu.Location = new System.Drawing.Point(683, 313);
             this.btnReturnMenu.Name = "btnReturnMenu";
             this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
             this.btnReturnMenu.TabIndex = 121;
@@ -678,7 +678,7 @@
             this.lblReturnMenu.AutoSize = true;
             this.lblReturnMenu.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnMenu.ForeColor = System.Drawing.Color.DimGray;
-            this.lblReturnMenu.Location = new System.Drawing.Point(647, 357);
+            this.lblReturnMenu.Location = new System.Drawing.Point(719, 323);
             this.lblReturnMenu.Name = "lblReturnMenu";
             this.lblReturnMenu.Size = new System.Drawing.Size(62, 23);
             this.lblReturnMenu.TabIndex = 120;
@@ -689,7 +689,7 @@
             this.lblSearchSupplier.AutoSize = true;
             this.lblSearchSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSearchSupplier.Location = new System.Drawing.Point(650, 292);
+            this.lblSearchSupplier.Location = new System.Drawing.Point(722, 258);
             this.lblSearchSupplier.Name = "lblSearchSupplier";
             this.lblSearchSupplier.Size = new System.Drawing.Size(62, 23);
             this.lblSearchSupplier.TabIndex = 119;
@@ -700,7 +700,7 @@
             this.lblDeleteSupplier.AutoSize = true;
             this.lblDeleteSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeleteSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDeleteSupplier.Location = new System.Drawing.Point(650, 226);
+            this.lblDeleteSupplier.Location = new System.Drawing.Point(722, 192);
             this.lblDeleteSupplier.Name = "lblDeleteSupplier";
             this.lblDeleteSupplier.Size = new System.Drawing.Size(59, 23);
             this.lblDeleteSupplier.TabIndex = 118;
@@ -711,7 +711,7 @@
             this.lblEditSupplier.AutoSize = true;
             this.lblEditSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEditSupplier.Location = new System.Drawing.Point(650, 157);
+            this.lblEditSupplier.Location = new System.Drawing.Point(722, 123);
             this.lblEditSupplier.Name = "lblEditSupplier";
             this.lblEditSupplier.Size = new System.Drawing.Size(39, 23);
             this.lblEditSupplier.TabIndex = 116;
@@ -720,7 +720,7 @@
             // btnSearchSupplier
             // 
             this.btnSearchSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnSearchSupplier.Location = new System.Drawing.Point(611, 289);
+            this.btnSearchSupplier.Location = new System.Drawing.Point(683, 255);
             this.btnSearchSupplier.Name = "btnSearchSupplier";
             this.btnSearchSupplier.Size = new System.Drawing.Size(33, 33);
             this.btnSearchSupplier.TabIndex = 115;
@@ -729,26 +729,28 @@
             // btnDeleteSupplier
             // 
             this.btnDeleteSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(611, 223);
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(683, 189);
             this.btnDeleteSupplier.Name = "btnDeleteSupplier";
             this.btnDeleteSupplier.Size = new System.Drawing.Size(33, 33);
             this.btnDeleteSupplier.TabIndex = 114;
             this.btnDeleteSupplier.UseVisualStyleBackColor = false;
+            this.btnDeleteSupplier.Click += new System.EventHandler(this.btnDeleteSupplier_Click);
             // 
             // btnEditSupplier
             // 
             this.btnEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnEditSupplier.Location = new System.Drawing.Point(611, 154);
+            this.btnEditSupplier.Location = new System.Drawing.Point(683, 120);
             this.btnEditSupplier.Name = "btnEditSupplier";
             this.btnEditSupplier.Size = new System.Drawing.Size(33, 33);
             this.btnEditSupplier.TabIndex = 113;
             this.btnEditSupplier.UseVisualStyleBackColor = false;
+            this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
             // frmProductOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(865, 402);
             this.Controls.Add(this.btnReturnMenu);
             this.Controls.Add(this.lblReturnMenu);
             this.Controls.Add(this.lblSearchSupplier);
@@ -763,7 +765,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(455, 364);
             this.Name = "frmProductOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "sn";
             this.Load += new System.EventHandler(this.FrmProductOrder_Load);
             this.panel1.ResumeLayout(false);

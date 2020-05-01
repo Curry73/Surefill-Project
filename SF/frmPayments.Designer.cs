@@ -99,7 +99,7 @@
             this.lblAddProduct.AutoSize = true;
             this.lblAddProduct.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddProduct.ForeColor = System.Drawing.Color.Gray;
-            this.lblAddProduct.Location = new System.Drawing.Point(642, 100);
+            this.lblAddProduct.Location = new System.Drawing.Point(716, 70);
             this.lblAddProduct.Name = "lblAddProduct";
             this.lblAddProduct.Size = new System.Drawing.Size(42, 23);
             this.lblAddProduct.TabIndex = 116;
@@ -108,9 +108,9 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnAdd.Location = new System.Drawing.Point(611, 101);
+            this.btnAdd.Location = new System.Drawing.Point(677, 71);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(25, 25);
+            this.btnAdd.Size = new System.Drawing.Size(22, 22);
             this.btnAdd.TabIndex = 115;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
@@ -143,9 +143,9 @@
             this.pnlButtons.Controls.Add(this.b24);
             this.pnlButtons.Controls.Add(this.b25);
             this.pnlButtons.Controls.Add(this.b26);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 23);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 2);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(528, 28);
+            this.pnlButtons.Size = new System.Drawing.Size(630, 28);
             this.pnlButtons.TabIndex = 114;
             // 
             // b1
@@ -415,9 +415,9 @@
             this.panel2.Controls.Add(this.btnAddItem);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(18, 259);
+            this.panel2.Location = new System.Drawing.Point(18, 238);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(522, 184);
+            this.panel2.Size = new System.Drawing.Size(624, 160);
             this.panel2.TabIndex = 113;
             // 
             // lstPayment
@@ -425,16 +425,16 @@
             this.lstPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPayment.FormattingEnabled = true;
             this.lstPayment.ItemHeight = 16;
-            this.lstPayment.Location = new System.Drawing.Point(209, 84);
+            this.lstPayment.Location = new System.Drawing.Point(311, 84);
             this.lstPayment.Name = "lstPayment";
-            this.lstPayment.Size = new System.Drawing.Size(223, 100);
+            this.lstPayment.Size = new System.Drawing.Size(223, 68);
             this.lstPayment.TabIndex = 110;
             this.lstPayment.Click += new System.EventHandler(this.lstProduct_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(438, 40);
+            this.btnDelete.Location = new System.Drawing.Point(540, 40);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 23);
             this.btnDelete.TabIndex = 109;
@@ -445,7 +445,7 @@
             // btnAddItem
             // 
             this.btnAddItem.BackColor = System.Drawing.Color.White;
-            this.btnAddItem.Location = new System.Drawing.Point(437, 10);
+            this.btnAddItem.Location = new System.Drawing.Point(539, 10);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(82, 23);
             this.btnAddItem.TabIndex = 108;
@@ -460,7 +460,7 @@
             this.panel5.Controls.Add(this.lblBookingDate);
             this.panel5.Controls.Add(this.lblPaid);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(209, 5);
+            this.panel5.Location = new System.Drawing.Point(311, 5);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(223, 76);
             this.panel5.TabIndex = 106;
@@ -519,7 +519,7 @@
             this.panel3.Controls.Add(this.lblCust0);
             this.panel3.Location = new System.Drawing.Point(3, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 176);
+            this.panel3.Size = new System.Drawing.Size(302, 147);
             this.panel3.TabIndex = 103;
             // 
             // lblCust5
@@ -598,9 +598,9 @@
             this.panel1.Controls.Add(this.lstSupplier);
             this.panel1.Controls.Add(this.lblOrders);
             this.panel1.Controls.Add(this.lblSupplierNo);
-            this.panel1.Location = new System.Drawing.Point(12, 57);
+            this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 196);
+            this.panel1.Size = new System.Drawing.Size(630, 196);
             this.panel1.TabIndex = 112;
             // 
             // lstOrders
@@ -608,9 +608,9 @@
             this.lstOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstOrders.FormattingEnabled = true;
             this.lstOrders.ItemHeight = 16;
-            this.lstOrders.Location = new System.Drawing.Point(268, 29);
+            this.lstOrders.Location = new System.Drawing.Point(317, 29);
             this.lstOrders.Name = "lstOrders";
-            this.lstOrders.Size = new System.Drawing.Size(255, 164);
+            this.lstOrders.Size = new System.Drawing.Size(310, 164);
             this.lstOrders.TabIndex = 85;
             this.lstOrders.Click += new System.EventHandler(this.lstOrder_Click);
             // 
@@ -621,18 +621,19 @@
             this.lstSupplier.ItemHeight = 16;
             this.lstSupplier.Location = new System.Drawing.Point(6, 29);
             this.lstSupplier.Name = "lstSupplier";
-            this.lstSupplier.Size = new System.Drawing.Size(246, 164);
+            this.lstSupplier.Size = new System.Drawing.Size(305, 164);
             this.lstSupplier.TabIndex = 84;
             this.lstSupplier.Click += new System.EventHandler(this.lstSupplier_Click);
             // 
             // lblOrders
             // 
             this.lblOrders.AutoSize = true;
-            this.lblOrders.Location = new System.Drawing.Point(265, 13);
+            this.lblOrders.Location = new System.Drawing.Point(369, 13);
             this.lblOrders.Name = "lblOrders";
             this.lblOrders.Size = new System.Drawing.Size(38, 13);
             this.lblOrders.TabIndex = 1;
             this.lblOrders.Text = "Orders";
+            this.lblOrders.Click += new System.EventHandler(this.lblOrders_Click);
             // 
             // lblSupplierNo
             // 
@@ -648,7 +649,7 @@
             this.btnReturnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.btnReturnMenu.BackgroundImage = global::SF.Properties.Resources.returnBLACKANDBLUE;
             this.btnReturnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturnMenu.Location = new System.Drawing.Point(611, 340);
+            this.btnReturnMenu.Location = new System.Drawing.Point(677, 310);
             this.btnReturnMenu.Name = "btnReturnMenu";
             this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
             this.btnReturnMenu.TabIndex = 129;
@@ -659,7 +660,7 @@
             this.lblReturnMenu.AutoSize = true;
             this.lblReturnMenu.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturnMenu.ForeColor = System.Drawing.Color.DimGray;
-            this.lblReturnMenu.Location = new System.Drawing.Point(647, 350);
+            this.lblReturnMenu.Location = new System.Drawing.Point(713, 320);
             this.lblReturnMenu.Name = "lblReturnMenu";
             this.lblReturnMenu.Size = new System.Drawing.Size(62, 23);
             this.lblReturnMenu.TabIndex = 128;
@@ -670,7 +671,7 @@
             this.lblSearchSupplier.AutoSize = true;
             this.lblSearchSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSearchSupplier.Location = new System.Drawing.Point(650, 285);
+            this.lblSearchSupplier.Location = new System.Drawing.Point(716, 255);
             this.lblSearchSupplier.Name = "lblSearchSupplier";
             this.lblSearchSupplier.Size = new System.Drawing.Size(62, 23);
             this.lblSearchSupplier.TabIndex = 127;
@@ -681,7 +682,7 @@
             this.lblDeleteSupplier.AutoSize = true;
             this.lblDeleteSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeleteSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDeleteSupplier.Location = new System.Drawing.Point(650, 219);
+            this.lblDeleteSupplier.Location = new System.Drawing.Point(716, 189);
             this.lblDeleteSupplier.Name = "lblDeleteSupplier";
             this.lblDeleteSupplier.Size = new System.Drawing.Size(59, 23);
             this.lblDeleteSupplier.TabIndex = 126;
@@ -692,7 +693,7 @@
             this.lblEditSupplier.AutoSize = true;
             this.lblEditSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEditSupplier.Location = new System.Drawing.Point(650, 150);
+            this.lblEditSupplier.Location = new System.Drawing.Point(716, 120);
             this.lblEditSupplier.Name = "lblEditSupplier";
             this.lblEditSupplier.Size = new System.Drawing.Size(39, 23);
             this.lblEditSupplier.TabIndex = 125;
@@ -701,7 +702,7 @@
             // btnSearchSupplier
             // 
             this.btnSearchSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnSearchSupplier.Location = new System.Drawing.Point(611, 282);
+            this.btnSearchSupplier.Location = new System.Drawing.Point(677, 252);
             this.btnSearchSupplier.Name = "btnSearchSupplier";
             this.btnSearchSupplier.Size = new System.Drawing.Size(33, 33);
             this.btnSearchSupplier.TabIndex = 124;
@@ -710,7 +711,7 @@
             // btnDeleteSupplier
             // 
             this.btnDeleteSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(611, 216);
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(677, 186);
             this.btnDeleteSupplier.Name = "btnDeleteSupplier";
             this.btnDeleteSupplier.Size = new System.Drawing.Size(33, 33);
             this.btnDeleteSupplier.TabIndex = 123;
@@ -719,7 +720,7 @@
             // btnEditSupplier
             // 
             this.btnEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnEditSupplier.Location = new System.Drawing.Point(611, 147);
+            this.btnEditSupplier.Location = new System.Drawing.Point(677, 117);
             this.btnEditSupplier.Name = "btnEditSupplier";
             this.btnEditSupplier.Size = new System.Drawing.Size(33, 33);
             this.btnEditSupplier.TabIndex = 122;
@@ -729,7 +730,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(865, 402);
             this.Controls.Add(this.btnReturnMenu);
             this.Controls.Add(this.lblReturnMenu);
             this.Controls.Add(this.lblSearchSupplier);
@@ -744,7 +745,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(455, 364);
             this.Name = "frmPayments";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmPayments";
             this.Load += new System.EventHandler(this.frmPayments_Load);
             this.pnlButtons.ResumeLayout(false);

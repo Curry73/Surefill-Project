@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlEditJob = new System.Windows.Forms.Panel();
+            this.lblActualCustNo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cmbEditJobNo = new System.Windows.Forms.ComboBox();
             this.btnEditFinalJob = new System.Windows.Forms.Button();
@@ -66,7 +67,16 @@
             this.lblOverallTotal = new System.Windows.Forms.Label();
             this.btnEditCancelCalc = new System.Windows.Forms.Button();
             this.btnEditCalculate = new System.Windows.Forms.Button();
-            this.lblActualCustNo = new System.Windows.Forms.Label();
+            this.LVEditOpenings = new System.Windows.Forms.ListView();
+            this.LengthCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HeightCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnEditOpening = new System.Windows.Forms.Button();
+            this.lblEditOpeningHeight = new System.Windows.Forms.Label();
+            this.lnlEditOpeningLength = new System.Windows.Forms.Label();
+            this.txtEditOpeningLength = new System.Windows.Forms.TextBox();
+            this.txtEditOpeningHeight = new System.Windows.Forms.TextBox();
+            this.btnCancelEditOpening = new System.Windows.Forms.Button();
             this.pnlEditJob.SuspendLayout();
             this.pnlEditWall.SuspendLayout();
             this.pnlEditWallList.SuspendLayout();
@@ -91,10 +101,18 @@
             this.pnlEditJob.Controls.Add(this.lblEditCustNo);
             this.pnlEditJob.Controls.Add(this.lblEditJobNo);
             this.pnlEditJob.Controls.Add(this.pnlEditWallList);
-            this.pnlEditJob.Location = new System.Drawing.Point(12, 3);
+            this.pnlEditJob.Location = new System.Drawing.Point(1, 2);
             this.pnlEditJob.Name = "pnlEditJob";
-            this.pnlEditJob.Size = new System.Drawing.Size(662, 380);
+            this.pnlEditJob.Size = new System.Drawing.Size(662, 385);
             this.pnlEditJob.TabIndex = 57;
+            // 
+            // lblActualCustNo
+            // 
+            this.lblActualCustNo.AutoSize = true;
+            this.lblActualCustNo.Location = new System.Drawing.Point(537, 71);
+            this.lblActualCustNo.Name = "lblActualCustNo";
+            this.lblActualCustNo.Size = new System.Drawing.Size(0, 13);
+            this.lblActualCustNo.TabIndex = 21;
             // 
             // textBox1
             // 
@@ -180,6 +198,13 @@
             // 
             // pnlEditWall
             // 
+            this.pnlEditWall.Controls.Add(this.btnCancelEditOpening);
+            this.pnlEditWall.Controls.Add(this.txtEditOpeningHeight);
+            this.pnlEditWall.Controls.Add(this.txtEditOpeningLength);
+            this.pnlEditWall.Controls.Add(this.lnlEditOpeningLength);
+            this.pnlEditWall.Controls.Add(this.lblEditOpeningHeight);
+            this.pnlEditWall.Controls.Add(this.btnEditOpening);
+            this.pnlEditWall.Controls.Add(this.LVEditOpenings);
             this.pnlEditWall.Controls.Add(this.btnEditNewWall);
             this.pnlEditWall.Controls.Add(this.cmbEditProductNo);
             this.pnlEditWall.Controls.Add(this.lblEditProductName);
@@ -198,7 +223,7 @@
             // 
             // btnEditNewWall
             // 
-            this.btnEditNewWall.Location = new System.Drawing.Point(82, 191);
+            this.btnEditNewWall.Location = new System.Drawing.Point(108, 165);
             this.btnEditNewWall.Name = "btnEditNewWall";
             this.btnEditNewWall.Size = new System.Drawing.Size(90, 23);
             this.btnEditNewWall.TabIndex = 24;
@@ -425,22 +450,93 @@
             this.btnEditCalculate.UseVisualStyleBackColor = true;
             this.btnEditCalculate.Click += new System.EventHandler(this.btnEditCalculate_Click);
             // 
-            // lblActualCustNo
+            // LVEditOpenings
             // 
-            this.lblActualCustNo.AutoSize = true;
-            this.lblActualCustNo.Location = new System.Drawing.Point(537, 71);
-            this.lblActualCustNo.Name = "lblActualCustNo";
-            this.lblActualCustNo.Size = new System.Drawing.Size(0, 13);
-            this.lblActualCustNo.TabIndex = 21;
+            this.LVEditOpenings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.LVEditOpenings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LengthCol,
+            this.HeightCol,
+            this.TotalCol});
+            this.LVEditOpenings.Location = new System.Drawing.Point(6, 194);
+            this.LVEditOpenings.Name = "LVEditOpenings";
+            this.LVEditOpenings.Size = new System.Drawing.Size(185, 96);
+            this.LVEditOpenings.TabIndex = 25;
+            this.LVEditOpenings.UseCompatibleStateImageBehavior = false;
+            this.LVEditOpenings.View = System.Windows.Forms.View.Details;
+            // 
+            // LengthCol
+            // 
+            this.LengthCol.Text = "Length";
+            // 
+            // HeightCol
+            // 
+            this.HeightCol.Text = "Height";
+            // 
+            // TotalCol
+            // 
+            this.TotalCol.Text = "Total";
+            // 
+            // btnEditOpening
+            // 
+            this.btnEditOpening.Location = new System.Drawing.Point(40, 347);
+            this.btnEditOpening.Name = "btnEditOpening";
+            this.btnEditOpening.Size = new System.Drawing.Size(96, 23);
+            this.btnEditOpening.TabIndex = 26;
+            this.btnEditOpening.Text = "Edit Opening";
+            this.btnEditOpening.UseVisualStyleBackColor = true;
+            // 
+            // lblEditOpeningHeight
+            // 
+            this.lblEditOpeningHeight.AutoSize = true;
+            this.lblEditOpeningHeight.Location = new System.Drawing.Point(6, 324);
+            this.lblEditOpeningHeight.Name = "lblEditOpeningHeight";
+            this.lblEditOpeningHeight.Size = new System.Drawing.Size(66, 13);
+            this.lblEditOpeningHeight.TabIndex = 22;
+            this.lblEditOpeningHeight.Text = "New Height:";
+            // 
+            // lnlEditOpeningLength
+            // 
+            this.lnlEditOpeningLength.AutoSize = true;
+            this.lnlEditOpeningLength.Location = new System.Drawing.Point(5, 297);
+            this.lnlEditOpeningLength.Name = "lnlEditOpeningLength";
+            this.lnlEditOpeningLength.Size = new System.Drawing.Size(68, 13);
+            this.lnlEditOpeningLength.TabIndex = 27;
+            this.lnlEditOpeningLength.Text = "New Length:";
+            this.lnlEditOpeningLength.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtEditOpeningLength
+            // 
+            this.txtEditOpeningLength.Location = new System.Drawing.Point(78, 292);
+            this.txtEditOpeningLength.Name = "txtEditOpeningLength";
+            this.txtEditOpeningLength.Size = new System.Drawing.Size(100, 20);
+            this.txtEditOpeningLength.TabIndex = 28;
+            // 
+            // txtEditOpeningHeight
+            // 
+            this.txtEditOpeningHeight.Location = new System.Drawing.Point(78, 321);
+            this.txtEditOpeningHeight.Name = "txtEditOpeningHeight";
+            this.txtEditOpeningHeight.Size = new System.Drawing.Size(100, 20);
+            this.txtEditOpeningHeight.TabIndex = 29;
+            // 
+            // btnCancelEditOpening
+            // 
+            this.btnCancelEditOpening.Location = new System.Drawing.Point(136, 347);
+            this.btnCancelEditOpening.Name = "btnCancelEditOpening";
+            this.btnCancelEditOpening.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelEditOpening.TabIndex = 30;
+            this.btnCancelEditOpening.Text = "Cancel";
+            this.btnCancelEditOpening.UseVisualStyleBackColor = true;
             // 
             // EditJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 405);
+            this.ClientSize = new System.Drawing.Size(662, 380);
             this.Controls.Add(this.pnlEditJob);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(462, 368);
             this.Name = "EditJob";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "EditJob";
             this.Load += new System.EventHandler(this.EditJob_Load);
             this.pnlEditJob.ResumeLayout(false);
@@ -494,5 +590,15 @@
         private System.Windows.Forms.ColumnHeader Length;
         private System.Windows.Forms.ColumnHeader EditTotal;
         private System.Windows.Forms.Label lblActualCustNo;
+        private System.Windows.Forms.ListView LVEditOpenings;
+        private System.Windows.Forms.ColumnHeader LengthCol;
+        private System.Windows.Forms.ColumnHeader HeightCol;
+        private System.Windows.Forms.ColumnHeader TotalCol;
+        private System.Windows.Forms.Label lnlEditOpeningLength;
+        private System.Windows.Forms.Label lblEditOpeningHeight;
+        private System.Windows.Forms.Button btnEditOpening;
+        private System.Windows.Forms.Button btnCancelEditOpening;
+        private System.Windows.Forms.TextBox txtEditOpeningHeight;
+        private System.Windows.Forms.TextBox txtEditOpeningLength;
     }
 }

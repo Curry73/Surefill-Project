@@ -18,8 +18,6 @@ namespace SF
         SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails, cmdBOpeningDetails;
         DataRow drJobs, drProduct, drJobType, drPaymentType, drJobDetails, drCavityType, drWallDetails, drOpeningDetails;
 
-
-
         String connStr, sqlJobs, sqlCustomer, sqlProduct, sqlJobType, sqlPaymentType, sqlJobDetails, sqlCavityType, sqlWallDetails, sqlOpeningDetails;
 
         Dictionary<int, List<WallOpening>> openingMap = new System.Collections.Generic.Dictionary<int, List<WallOpening>>();
@@ -281,9 +279,9 @@ namespace SF
 
             double finalPrice = pricePerOne * productQty;
 
-            lblOverallTotal.Text = Convert.ToString(OverallTotal);
+            lblOverallTotal.Text = Convert.ToString(OverallTotal); 
 
-            MessageBox.Show("This amount of coverage using "+ cmbAddJobProdName.SelectedValue.ToString() + " will cost £"+finalPrice.ToString(), "Price");
+            MessageBox.Show("This amount of coverage using "+ cmbAddJobProdName.SelectedValue.ToString() + " will cost £"+ Math.Round(finalPrice, 2), "Price");
         }
 
         private void getNumber (int noRows)

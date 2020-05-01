@@ -633,7 +633,7 @@
             this.lblOrders.Size = new System.Drawing.Size(38, 13);
             this.lblOrders.TabIndex = 1;
             this.lblOrders.Text = "Orders";
-            this.lblOrders.Click += new System.EventHandler(this.lblOrders_Click);
+            //this.lblOrders.Click += new System.EventHandler(this.lblOrders_Click);
             // 
             // lblSupplierNo
             // 

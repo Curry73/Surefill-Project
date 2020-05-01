@@ -14,9 +14,11 @@ namespace SF
     public partial class EditJob : Form
     {
 
-        SqlDataAdapter daJobs, daCustomer, daProduct, daJobType, daPaymentType, daJobDetails, daCavityType, daWallDetails, daWallDetails2, daOpeningDetails;
+        SqlDataAdapter daJobs, daCustomer, daProduct, daJobType, daPaymentType, daJobDetails, daCavityType, daWallDetails, daWallDetails2, daOpeningDetails, daOpeningDetails2;
         DataSet dsSurefill = new DataSet();
-        SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails2, cmdBOpeningDetails;
+        SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails2, cmdBOpeningDetails2;
+
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -24,9 +26,9 @@ namespace SF
         }
 
         DataRow drJobs, drProduct, drJobType, drPaymentType, drJobDetails, drCavityType, drWallDetails, drOpeningDetails;
-        SqlCommand cmdWallDetails;
+        SqlCommand cmdWallDetails, cmdOpeningDetails;
         SqlConnection conn;
-        String connStr, sqlJobs, sqlCustomer, sqlProduct, sqlJobType, sqlPaymentType, sqlJobDetails, sqlCavityType, sqlWallDetails, sqlWallDetails2, sqlOpeningDetails;
+        String connStr, sqlJobs, sqlCustomer, sqlProduct, sqlJobType, sqlPaymentType, sqlJobDetails, sqlCavityType, sqlWallDetails, sqlWallDetails2, sqlOpeningDetails, sqlOpeningDetails2;
 
 
         int wallNo =1;
@@ -58,13 +60,24 @@ namespace SF
             daWallDetails.FillSchema(dsSurefill, SchemaType.Source, "WallDetails");
             //daWallDetails.Fill(dsSurefill, "WallDetails");
 
+            sqlOpeningDetails = @"select * from OpeningDetails where JobNo = @JobNo AND WallNo = @WallNo";
+
+            cmdOpeningDetails = new SqlCommand(sqlOpeningDetails, conn);
+            cmdOpeningDetails.Parameters.Add("@JobNo", SqlDbType.Int);
+            cmdOpeningDetails.Parameters.Add("@WallNo", SqlDbType.Int);
+            daOpeningDetails = new SqlDataAdapter(cmdOpeningDetails);
+            daOpeningDetails.FillSchema(dsSurefill, SchemaType.Source, "OpeningDetails");
+
 
             sqlWallDetails2 = @"select * from WallDetails";
             daWallDetails2 = new SqlDataAdapter(sqlWallDetails2, conn);
-            cmdBWallDetails2 = new SqlCommandBuilder(daWallDetails2);
-            
-
+            cmdBWallDetails2 = new SqlCommandBuilder(daWallDetails2);          
             daWallDetails2.FillSchema(dsSurefill, SchemaType.Source, "WallDetails");
+
+            sqlOpeningDetails2 = @"select * from OpeningDetails";
+            daOpeningDetails2 = new SqlDataAdapter(sqlOpeningDetails2, conn);
+            cmdBOpeningDetails2 = new SqlCommandBuilder(daOpeningDetails2);
+            daOpeningDetails2.FillSchema(dsSurefill, SchemaType.Source, "OpeningDetails");
 
             cmbEditJobNo.DataSource = dsSurefill.Tables["Jobs"];
 
@@ -144,6 +157,36 @@ namespace SF
                 dtpEditJobDate.Value = DateTime.Parse(jobRow["DateBooked"].ToString());;
             }
         }
+
+
+        private void LVEditWallList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmdOpeningDetails.Parameters["@JobNo"].Value = cmbEditJobNo.SelectedValue;
+            cmdOpeningDetails.Parameters["@WallNo"].Value = Int32.Parse(LVEditWallList.SelectedItems[0].SubItems[0].Text);
+            daOpeningDetails.Fill(dsSurefill, "OpeningDetails");
+
+            foreach (DataRow dr in dsSurefill.Tables["OpeningDetails"].Rows)
+            {
+                String openingNoStr = dr["OpeningNo"].ToString();
+
+                ListViewItem lvi = new ListViewItem(openingNoStr);
+                lvi.SubItems.Add(dr["OpeningHeight"].ToString());
+                lvi.SubItems.Add(dr["OpeningLength"].ToString());
+                double totalArea = Double.Parse(dr["OpeningHeight"].ToString()) * Double.Parse(dr["OpeningLength"].ToString());
+                lvi.SubItems.Add(Convert.ToString(totalArea));
+                LVEditOpenings.Items.Add(lvi);
+            }
+        }
+
+        private void LVEditOpenings_Click(object sender, EventArgs e)
+        {
+            object[] keys = { Int32.Parse(LVEditOpenings.SelectedItems[0].SubItems[0].Text), Int32.Parse(LVEditWallList.SelectedItems[0].SubItems[0].Text), cmbEditJobNo.SelectedValue };
+            drOpeningDetails = dsSurefill.Tables["OpeningDetails"].Rows.Find(keys);
+
+            txtEditOpeningLength.Text = drOpeningDetails["OpeningLength"].ToString();
+            txtEditOpeningHeight.Text = drOpeningDetails["OpeningHeight"].ToString();
+
+        }
         private void btnEditNewWall_Click(object sender, EventArgs e)
         {
             ListViewItem item = new ListViewItem(Convert.ToString(wallNo));
@@ -206,7 +249,7 @@ namespace SF
 
                 double productQty = Math.Ceiling(OverallTotal % productMeasure);
 
-                double finalPrice = pricePerOne * productQty / 10;
+                double finalPrice = pricePerOne * productQty ; 
 
                 lblOverallTotal.Text = Convert.ToString(OverallTotal);
 
@@ -250,7 +293,21 @@ namespace SF
             pnlEditJob.Visible = false;
           
         }
-        
+        private void btnEditOpening_Click(object sender, EventArgs e)
+        {
+            drOpeningDetails["OpeningLength"] = txtEditOpeningLength.Text;
+            drOpeningDetails["OpeningHeight"] = txtEditOpeningHeight.Text;
+
+            daOpeningDetails2.Update(dsSurefill, "OpeningDetails");
+
+            LVEditOpenings.SelectedItems[0].SubItems[1].Text = txtEditOpeningLength.Text;
+            LVEditOpenings.SelectedItems[0].SubItems[2].Text = txtEditOpeningHeight.Text;
+            LVEditOpenings.SelectedItems[0].SubItems[3].Text = Convert.ToString(Double.Parse(txtEditOpeningLength.Text.ToString()) * Double.Parse(txtEditOpeningHeight.Text.ToString()));
+
+            MessageBox.Show("Opening Updated");
+        }
 
     }
+
+   
 }

@@ -9,7 +9,7 @@ namespace SF
     class MyProduct
     {
         private int productQty;
-        private string productNo, productDescription;
+        private string productNo, productDescription, supplierNo;
         private double productPrice;
 
         public MyProduct()
@@ -18,14 +18,16 @@ namespace SF
             this.productDescription = "";
             this.productPrice = 0.0;
             this.productQty = 0;
+            this.supplierNo = "";
         }
 
-        public MyProduct (String productNo, string productDescription, double productPrice, int productQty)
+        public MyProduct (String productNo, string productDescription, string supplierNo, double productPrice, int productQty)
         {
             this.productNo = productNo;
             this.productDescription = productDescription;
             this.productPrice = productPrice;
             this.productQty = productQty;
+            this.supplierNo = supplierNo;
         }
 
         public string ProductNo
@@ -35,9 +37,23 @@ namespace SF
         { get => productQty; set => productQty = value; }
 
         public string ProductDescription
-        { get => productDescription; set => productDescription = value; }
+        {
+            get { return productDescription; }
+            set
+            {
+                if (MyValidation.validLength(value, 1, 20) && MyValidation.validLetterWhitespace(value))
+                {
+                    productDescription = MyValidation.firstLetterEachWordToUpper(value);
+                }
+                else
+                    throw new MyException("County must be 2-20 letters");
+            }
+        }
 
         public double ProductPrice
         { get => productPrice; set => productPrice = value; }
+
+        public string SupplierNo
+        { get => supplierNo; set => supplierNo = value; }
     }
 }

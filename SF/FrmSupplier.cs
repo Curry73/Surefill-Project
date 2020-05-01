@@ -523,14 +523,14 @@ namespace SF
 
         private void btnCancelAddSupplier_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the addition of Supplier No: " + lblAddActualSupplierNo.Text + "?", "Add Supplier", MessageBoxButtons.YesNo) ==
+            if (MessageBox.Show("Are you sure you want to exit?", "Add Supplier", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes) ;
             pnlAddSupplier.Visible = false;
         }
 
         private void btnCancelEditSupplier_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the edit of Supplier No: " + lblEditActualSupplierNo.Text + "?", "Edit Supplier", MessageBoxButtons.YesNo) ==
+            if (MessageBox.Show("Are you sure you want to exit?", "Edit Supplier", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes) ;
             pnlEditSupplier.Visible = false;
         }

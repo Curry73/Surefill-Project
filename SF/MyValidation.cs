@@ -116,6 +116,7 @@ namespace SF
             return ok;
         }
 
+
         public static bool validSurname(string txt)
         {
             bool ok = true;

@@ -460,11 +460,13 @@
             // 
             // txtAddProductQty1
             // 
-            this.txtAddProductQty1.Location = new System.Drawing.Point(127, 211);
+            this.txtAddProductQty1.Location = new System.Drawing.Point(126, 202);
             this.txtAddProductQty1.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddProductQty1.Name = "txtAddProductQty1";
             this.txtAddProductQty1.Size = new System.Drawing.Size(83, 20);
             this.txtAddProductQty1.TabIndex = 51;
+            this.txtAddProductQty1.TextChanged += new System.EventHandler(this.txtAddProductQty1_TextChanged);
+            this.txtAddProductQty1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddProductQty1_KeyPress);
             // 
             // txtAddProductPrice1
             // 
@@ -473,6 +475,7 @@
             this.txtAddProductPrice1.Name = "txtAddProductPrice1";
             this.txtAddProductPrice1.Size = new System.Drawing.Size(83, 20);
             this.txtAddProductPrice1.TabIndex = 52;
+            this.txtAddProductPrice1.TextChanged += new System.EventHandler(this.txtAddProductPrice1_TextChanged);
             // 
             // txtAddProductDescription1
             // 
@@ -494,7 +497,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 211);
+            this.label2.Location = new System.Drawing.Point(29, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 49;

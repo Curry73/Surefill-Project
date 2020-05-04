@@ -45,7 +45,7 @@ namespace SF
             get { return name; }
             set
             {
-                if (MyValidation.validLength(value, 2, 15) && MyValidation.validSurname(value))
+                if (MyValidation.validLength(value, 2, 15) && MyValidation.validName(value))
                 {
                     name = MyValidation.firstLetterEachWordToUpper(value);
                 }
@@ -87,7 +87,7 @@ namespace SF
             get { return county; }
             set
             {
-                if (MyValidation.validLength(value, 1, 20) && MyValidation.validLetterWhitespace(value))
+                if (MyValidation.validLength(value, 2, 20) && MyValidation.validLetterWhitespace(value))
                 {
                     county = MyValidation.firstLetterEachWordToUpper(value);
                 }

@@ -15,6 +15,9 @@ namespace SF
             if (string.IsNullOrEmpty(txt))
                 ok = false;
 
+            else if (txt.Length < min || txt.Length > max)
+                ok = false;
+
             return ok;
         }
 
@@ -112,6 +115,7 @@ namespace SF
             }
             return ok;
         }
+
 
         public static bool validSurname(string txt)
         {

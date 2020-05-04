@@ -36,6 +36,21 @@ namespace SF
         public int ProductQty
         { get => productQty; set => productQty = value; }
 
+        //public int ProductQty
+        //{
+        //    get { return productQty; }
+        //    set
+        //    {
+        //        if (MyValidation.validNumber(value) && MyValidation.validLetterWhitespace(value))
+        //        {
+        //            productQty = MyValidation.firstLetterEachWordToUpper(value);
+        //        }
+        //        else
+        //            throw new MyException("County must be 2-20 letters");
+        //    }
+        //}
+
+
         public string ProductDescription
         {
             get { return productDescription; }

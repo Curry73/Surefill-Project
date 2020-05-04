@@ -212,6 +212,7 @@ namespace SF
             bool ok = true;
             errorProvider1.Clear();
 
+
             try
             {
                 myProduct.ProductNo = lblAddActualProductNo1.Text.Trim();
@@ -233,6 +234,7 @@ namespace SF
                 errorProvider1.SetError(txtAddProductDescription1, MyEx.toString());
             }
 
+            
             try
             {
                 myProduct.ProductPrice = Convert.ToDouble(txtAddProductPrice1.Text.Trim());
@@ -245,7 +247,8 @@ namespace SF
 
             try
             {
-                myProduct.ProductQty = Convert.ToInt32(txtAddProductQty1.Text.Trim());
+                    myProduct.ProductQty = Convert.ToInt32(txtAddProductQty1.Text.Trim());
+
             }
             catch (MyException MyEx)
             {
@@ -262,6 +265,8 @@ namespace SF
                 ok = false;
                 errorProvider1.SetError(cmbSupplier, MyEx.toString());
             }
+
+            
 
             try
             {
@@ -420,6 +425,26 @@ namespace SF
             if (MessageBox.Show("Cancel the addition of product: " + lblAddActualProductNo1.Text + "?", "Add Product", MessageBoxButtons.YesNo) ==
 System.Windows.Forms.DialogResult.Yes) ;
             pnlAddProducts.Visible = false;
+        }
+
+        private void txtAddProductPrice1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddProductQty1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddProductQty1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter a valid number");
+            }
         }
 
         private void btnConfirmDeleteProduct_Click(object sender, EventArgs e)

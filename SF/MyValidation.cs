@@ -15,6 +15,9 @@ namespace SF
             if (string.IsNullOrEmpty(txt))
                 ok = false;
 
+            else if (txt.Length < min || txt.Length > max)
+                ok = false;
+
             return ok;
         }
 

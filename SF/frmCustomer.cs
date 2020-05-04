@@ -350,6 +350,7 @@ namespace SF
             {
                 MessageBox.Show("" + ex.TargetSite + "" + ex.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
+            pnlAdd.Visible = false;
         }
 
         void clearAddForm()
@@ -366,8 +367,6 @@ namespace SF
         private void getNumber(int noRows)
         {
             drCustomer = dsSurefill.Tables["Customer"].Rows[noRows - 1];
-
-
             lblAddActualCustomerNo.Text = ("C" + (int.Parse(drCustomer["CustomerNo"].ToString().Substring(1,5)) + 1).ToString());
         }
 
@@ -385,10 +384,12 @@ namespace SF
                 txtEditCustEmail.Enabled = true;
 
                 btnConfirmEditCust.Text = "Save";
-
+                
             }
+           
             else
             {
+                pnlEdit.Visible = false;
                 MyCustomer myCustomer = new MyCustomer();
                 bool ok = true;
                 errorProvider1.Clear();
@@ -522,6 +523,7 @@ namespace SF
                     MessageBox.Show("" + ex.TargetSite + "" + ex.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                 }
             }
+          
         }
 
         private void pnlDelete_Paint(object sender, PaintEventArgs e)
@@ -547,11 +549,12 @@ namespace SF
                     daCustomer.Update(dsSurefill, "Customer");
                 }
             }
+            pnlDelete.Visible = false;
         }
 
         private void btnCancelAddCust_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the addition of Customer No: " + lblAddActualCustomerNo.Text + "?", "Add Customer", MessageBoxButtons.YesNo) ==
+            if (MessageBox.Show("Are you sure you want to exit?" , "Add Customer", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes);
             {
                 pnlAdd.Visible = false;
@@ -560,7 +563,7 @@ namespace SF
 
         private void btnCancelEditCust_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the edit of Customer No: " + lblEditActaulCustNo.Text + "?", "Edit Customer", MessageBoxButtons.YesNo) ==
+            if (MessageBox.Show("Are you sure you want to exit?", "Edit Customer", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes);
             {
                 pnlEdit.Visible = false;
@@ -569,7 +572,7 @@ namespace SF
 
         private void btnDeleteCustCancel_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancel the deletion of Customer No: " + lblEditActaulCustNo.Text + "?", "Delete Customer", MessageBoxButtons.YesNo) ==
+            if (MessageBox.Show("Are you sure you want to exit?", "Delete Customer", MessageBoxButtons.YesNo) ==
             System.Windows.Forms.DialogResult.Yes) ;
             {
                 pnlDelete.Visible = false;
@@ -615,5 +618,12 @@ namespace SF
         {
             lblSearchCustomer.ForeColor = Color.DimGray;
         }
+        
+        //private void btnReturnMenu_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
+
+
     }
 }

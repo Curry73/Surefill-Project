@@ -34,17 +34,19 @@
             this.lblJobs = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.picBoxTitle = new System.Windows.Forms.PictureBox();
             this.pnlSide = new System.Windows.Forms.Panel();
             this.lblSupplier = new System.Windows.Forms.Label();
-            this.picBoxTitle = new System.Windows.Forms.PictureBox();
             this.picBoxSupplier = new System.Windows.Forms.PictureBox();
             this.picBoxStock = new System.Windows.Forms.PictureBox();
             this.picBoxCust = new System.Windows.Forms.PictureBox();
             this.picBoxJob = new System.Windows.Forms.PictureBox();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.btnPaymentsForm = new System.Windows.Forms.Button();
+            this.btnOrderForm = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
-            this.pnlSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTitle)).BeginInit();
+            this.pnlSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSupplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCust)).BeginInit();
@@ -55,7 +57,7 @@
             // 
             this.pnlHome.BackColor = System.Drawing.Color.Lime;
             this.pnlHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlHome.Location = new System.Drawing.Point(102, 94);
+            this.pnlHome.Location = new System.Drawing.Point(102, 100);
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(863, 405);
             this.pnlHome.TabIndex = 0;
@@ -105,6 +107,8 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.White;
+            this.pnlTop.Controls.Add(this.btnOrderForm);
+            this.pnlTop.Controls.Add(this.btnPaymentsForm);
             this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.picBoxTitle);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -116,13 +120,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 43);
+            this.button1.Location = new System.Drawing.Point(388, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // picBoxTitle
+            // 
+            this.picBoxTitle.BackgroundImage = global::SF.Properties.Resources.SFTitle1;
+            this.picBoxTitle.Location = new System.Drawing.Point(147, 27);
+            this.picBoxTitle.Name = "picBoxTitle";
+            this.picBoxTitle.Size = new System.Drawing.Size(593, 39);
+            this.picBoxTitle.TabIndex = 7;
+            this.picBoxTitle.TabStop = false;
             // 
             // pnlSide
             // 
@@ -155,15 +168,6 @@
             this.lblSupplier.Text = "Supplier";
             this.lblSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSupplier.Click += new System.EventHandler(this.lblSupp_Click);
-            // 
-            // picBoxTitle
-            // 
-            this.picBoxTitle.BackgroundImage = global::SF.Properties.Resources.SFTitle1;
-            this.picBoxTitle.Location = new System.Drawing.Point(147, 27);
-            this.picBoxTitle.Name = "picBoxTitle";
-            this.picBoxTitle.Size = new System.Drawing.Size(593, 39);
-            this.picBoxTitle.TabIndex = 7;
-            this.picBoxTitle.TabStop = false;
             // 
             // picBoxSupplier
             // 
@@ -224,6 +228,28 @@
             this.pnlLogo.Size = new System.Drawing.Size(104, 97);
             this.pnlLogo.TabIndex = 10;
             // 
+            // btnPaymentsForm
+            // 
+            this.btnPaymentsForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnPaymentsForm.Location = new System.Drawing.Point(754, 3);
+            this.btnPaymentsForm.Name = "btnPaymentsForm";
+            this.btnPaymentsForm.Size = new System.Drawing.Size(106, 91);
+            this.btnPaymentsForm.TabIndex = 9;
+            this.btnPaymentsForm.Text = "Payments";
+            this.btnPaymentsForm.UseVisualStyleBackColor = true;
+            this.btnPaymentsForm.Click += new System.EventHandler(this.btnPaymentsForm_Click);
+            // 
+            // btnOrderForm
+            // 
+            this.btnOrderForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
+            this.btnOrderForm.Location = new System.Drawing.Point(3, 3);
+            this.btnOrderForm.Name = "btnOrderForm";
+            this.btnOrderForm.Size = new System.Drawing.Size(106, 91);
+            this.btnOrderForm.TabIndex = 10;
+            this.btnOrderForm.Text = "Orders";
+            this.btnOrderForm.UseVisualStyleBackColor = true;
+            this.btnOrderForm.Click += new System.EventHandler(this.btnOrderForm_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,8 +263,8 @@
             this.Text = "frmMenu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlTop.ResumeLayout(false);
-            this.pnlSide.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTitle)).EndInit();
+            this.pnlSide.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSupplier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCust)).EndInit();
@@ -263,5 +289,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.PictureBox picBoxSupplier;
+        private System.Windows.Forms.Button btnPaymentsForm;
+        private System.Windows.Forms.Button btnOrderForm;
     }
 }

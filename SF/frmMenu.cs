@@ -26,6 +26,7 @@ namespace SF
             pnlHome.Controls.Add(newForm);
             pnlHome.Visible = true;
             newForm.Show();
+            
         }
 
         //JOB BUTTONS
@@ -158,6 +159,18 @@ namespace SF
             pnlHome.Controls.Add(newForm);
             pnlHome.Visible = true;
             newForm.Show();
+        }
+
+        private void btnPaymentsForm_Click(object sender, EventArgs e)
+        {
+            frmPayments frmPayments = new frmPayments();
+            frmPayments.Show();
+        }
+
+        private void btnOrderForm_Click(object sender, EventArgs e)
+        {
+            frmProductOrder frmProductOrder = new frmProductOrder();
+            frmProductOrder.Show();
         }
     }
 }

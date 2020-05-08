@@ -21,6 +21,10 @@ namespace SF
         SqlCommand cmdSupplierDetails, cmdPaymentDetails, cmdPaymentType, cmdOrders, cmdPaymentDet2;
         SqlCommandBuilder cmdBSupplier, cmdBOrders, cmdBPayment, cmdBPaymentDetails, cmdBPaymentDet2;
 
+        private void btnReturnMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         DataRow drSupplier;
 
@@ -281,6 +285,7 @@ namespace SF
             daPaymentDet2.Update(dsSurefill, "PaymentDetails");
             dsSurefill.Tables["Payments"].Clear();
             daPayments.Fill(dsSurefill, "Payments");
+            drPayments.Delete();
         }
 
         private void PopulateProductListview()

@@ -350,7 +350,7 @@ namespace SF
             {
                 MessageBox.Show("" + ex.TargetSite + "" + ex.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
-            pnlAdd.Visible = false;
+            //pnlAdd.Visible = false;
         }
 
         void clearAddForm()
@@ -549,7 +549,7 @@ namespace SF
                     daCustomer.Update(dsSurefill, "Customer");
                 }
             }
-            pnlDelete.Visible = false;
+            //pnlDelete.Visible = false;
         }
 
         private void btnCancelAddCust_Click(object sender, EventArgs e)

@@ -18,6 +18,59 @@ namespace SF
         SqlCommandBuilder cmdBJobs, cmdBCustomer, cmdBProduct, cmdBJobType, cmdBPaymentType, cmdBJobDetails, cmdBCavityType, cmdBWallDetails, cmdBOpeningDetails;
         DataRow drJobs, drProduct, drJobType, drPaymentType, drJobDetails, drCavityType, drWallDetails, drOpeningDetails;
 
+        private void txtOpeningLength_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter a valid number");
+            }
+        }
+
+        private void txtOpeningHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter a valid number");
+            }
+        }
+
+        private void btnReturnMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void btnDeleteJobCancel_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel the deletion of job: " + "?", "delete job", MessageBoxButtons.YesNo) ==
+System.Windows.Forms.DialogResult.Yes) ;
+            pnlDeleteJob.Visible = false;
+        }
+
+        private void txtAddWallHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter a valid number");
+            }
+        }
+
+        private void txtAddWallLength_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter a valid number");
+            }
+        }
+
         String connStr, sqlJobs, sqlCustomer, sqlProduct, sqlJobType, sqlPaymentType, sqlJobDetails, sqlCavityType, sqlWallDetails, sqlOpeningDetails;
 
         Dictionary<int, List<WallOpening>> openingMap = new System.Collections.Generic.Dictionary<int, List<WallOpening>>();

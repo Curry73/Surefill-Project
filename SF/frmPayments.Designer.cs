@@ -110,7 +110,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
             this.btnAdd.Location = new System.Drawing.Point(677, 71);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(22, 22);
+            this.btnAdd.Size = new System.Drawing.Size(33, 33);
             this.btnAdd.TabIndex = 115;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
@@ -633,7 +633,6 @@
             this.lblOrders.Size = new System.Drawing.Size(38, 13);
             this.lblOrders.TabIndex = 1;
             this.lblOrders.Text = "Orders";
-            //this.lblOrders.Click += new System.EventHandler(this.lblOrders_Click);
             // 
             // lblSupplierNo
             // 
@@ -654,6 +653,7 @@
             this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
             this.btnReturnMenu.TabIndex = 129;
             this.btnReturnMenu.UseVisualStyleBackColor = false;
+            this.btnReturnMenu.Click += new System.EventHandler(this.btnReturnMenu_Click);
             // 
             // lblReturnMenu
             // 
@@ -693,7 +693,7 @@
             this.lblEditSupplier.AutoSize = true;
             this.lblEditSupplier.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditSupplier.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEditSupplier.Location = new System.Drawing.Point(716, 120);
+            this.lblEditSupplier.Location = new System.Drawing.Point(716, 136);
             this.lblEditSupplier.Name = "lblEditSupplier";
             this.lblEditSupplier.Size = new System.Drawing.Size(39, 23);
             this.lblEditSupplier.TabIndex = 125;
@@ -720,7 +720,7 @@
             // btnEditSupplier
             // 
             this.btnEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(117)))), ((int)(((byte)(189)))));
-            this.btnEditSupplier.Location = new System.Drawing.Point(677, 117);
+            this.btnEditSupplier.Location = new System.Drawing.Point(677, 133);
             this.btnEditSupplier.Name = "btnEditSupplier";
             this.btnEditSupplier.Size = new System.Drawing.Size(33, 33);
             this.btnEditSupplier.TabIndex = 122;
@@ -747,7 +747,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(455, 364);
             this.Name = "frmPayments";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPayments";
             this.Load += new System.EventHandler(this.frmPayments_Load);
             this.pnlButtons.ResumeLayout(false);

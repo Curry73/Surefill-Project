@@ -45,7 +45,7 @@ namespace SF
             get { return name; }
             set
             {
-                if (MyValidation.validLength(value, 2, 15) && MyValidation.validName(value))
+                if (MyValidation.validLength(value, 2, 30) && MyValidation.validName(value))
                 {
                     name = MyValidation.firstLetterEachWordToUpper(value);
                 }

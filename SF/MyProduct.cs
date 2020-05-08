@@ -56,12 +56,12 @@ namespace SF
             get { return productDescription; }
             set
             {
-                if (MyValidation.validLength(value, 1, 20) && MyValidation.validLetterWhitespace(value))
+                if (MyValidation.validLength(value, 2, 30) && MyValidation.validLetterNumberWhitespace(value))
                 {
                     productDescription = MyValidation.firstLetterEachWordToUpper(value);
                 }
                 else
-                    throw new MyException("County must be 2-20 letters");
+                    throw new MyException("Product description must be 2-30 letters");
             }
         }
 

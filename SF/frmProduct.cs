@@ -443,8 +443,23 @@ System.Windows.Forms.DialogResult.Yes) ;
             if (!Char.IsDigit(chr) && chr != 8)
             {
                 e.Handled = true;
+                MessageBox.Show("Please enter a valid Qty");
+            }
+        }
+
+        private void txtAddProductPrice1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
+            {
+                e.Handled = true;
                 MessageBox.Show("Please enter a valid number");
             }
+        }
+
+        private void btnReturnMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnConfirmDeleteProduct_Click(object sender, EventArgs e)

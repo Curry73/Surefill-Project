@@ -92,9 +92,6 @@
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.btnEditSupplier = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
-            this.colOrderNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colProductNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvwOrder = new System.Windows.Forms.ListView();
             this.pnlButtons.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlAddEdit.SuspendLayout();
@@ -405,7 +402,6 @@
             this.panel1.Controls.Add(this.btnEditItem);
             this.panel1.Controls.Add(this.btnDeleteBooking);
             this.panel1.Controls.Add(this.btnDeleteItem);
-            this.panel1.Controls.Add(this.lvwOrder);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pnlEditBooking);
@@ -529,7 +525,7 @@
             this.pnlEditBooking.Enabled = false;
             this.pnlEditBooking.Location = new System.Drawing.Point(3, 176);
             this.pnlEditBooking.Name = "pnlEditBooking";
-            this.pnlEditBooking.Size = new System.Drawing.Size(220, 91);
+            this.pnlEditBooking.Size = new System.Drawing.Size(220, 143);
             this.pnlEditBooking.TabIndex = 105;
             // 
             // chkPaid
@@ -547,6 +543,7 @@
             this.txtQTY.Name = "txtQTY";
             this.txtQTY.Size = new System.Drawing.Size(107, 20);
             this.txtQTY.TabIndex = 115;
+            this.txtQTY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQTY_KeyPress);
             // 
             // lblBookingDate
             // 
@@ -803,29 +800,6 @@
             this.btnAddSupplier.TabIndex = 114;
             this.btnAddSupplier.UseVisualStyleBackColor = false;
             // 
-            // colOrderNo
-            // 
-            this.colOrderNo.Text = "Order No";
-            this.colOrderNo.Width = 112;
-            // 
-            // colProductNo
-            // 
-            this.colProductNo.Text = "Product No";
-            this.colProductNo.Width = 111;
-            // 
-            // lvwOrder
-            // 
-            this.lvwOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colOrderNo,
-            this.colProductNo});
-            this.lvwOrder.FullRowSelect = true;
-            this.lvwOrder.Location = new System.Drawing.Point(5, 273);
-            this.lvwOrder.Name = "lvwOrder";
-            this.lvwOrder.Size = new System.Drawing.Size(218, 71);
-            this.lvwOrder.TabIndex = 106;
-            this.lvwOrder.UseCompatibleStateImageBehavior = false;
-            this.lvwOrder.View = System.Windows.Forms.View.Details;
-            // 
             // frmEditDeleteProductOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -847,7 +821,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(455, 364);
             this.Name = "frmEditDeleteProductOrder";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditDeleteProductOrder";
             this.Load += new System.EventHandler(this.frmEditDeleteProductOrder_Load);
             this.pnlButtons.ResumeLayout(false);
@@ -930,8 +904,5 @@
         private System.Windows.Forms.Button btnDeleteSupplier;
         private System.Windows.Forms.Button btnEditSupplier;
         private System.Windows.Forms.Button btnAddSupplier;
-        private System.Windows.Forms.ListView lvwOrder;
-        private System.Windows.Forms.ColumnHeader colOrderNo;
-        private System.Windows.Forms.ColumnHeader colProductNo;
     }
 }

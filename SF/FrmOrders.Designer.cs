@@ -191,10 +191,12 @@
             // coProductNo
             // 
             this.coProductNo.Text = "Product No";
+            this.coProductNo.Width = 80;
             // 
             // coProductPrice
             // 
             this.coProductPrice.Text = "Product Price";
+            this.coProductPrice.Width = 82;
             // 
             // pnlPayment
             // 

@@ -549,7 +549,7 @@ namespace SF
                     daCustomer.Update(dsSurefill, "Customer");
                 }
             }
-            pnlDelete.Visible = false;
+            //pnlDelete.Visible = false;
         }
 
         private void btnCancelAddCust_Click(object sender, EventArgs e)

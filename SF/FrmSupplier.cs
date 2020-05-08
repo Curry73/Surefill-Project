@@ -543,6 +543,11 @@ namespace SF
             pnlSearchSupp.Visible = false;
         }
 
+        private void btnReturnMenu_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void txtSearchActualSupplierNo_TextChanged(object sender, EventArgs e)
         {
 
@@ -589,5 +594,10 @@ namespace SF
             lblSearchSupplier.ForeColor = Color.DimGray;
 
         }
+
+        //private void btnReturnMenu_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
     }
 }

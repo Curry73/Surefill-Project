@@ -26,6 +26,21 @@ namespace SF
 
         String sqlNames, sqlSupplierDetails, sqlProduct, sqlProductDetails, sqlOrders, sqlProductOrder;
 
+        private void btnReturnMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtOrderQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter a valid Qty");
+            }
+        }
+
         private void btnDeleteSupplier_Click(object sender, EventArgs e)
         {
             frmEditDeleteProductOrder frmEditDeleteProductOrder = new frmEditDeleteProductOrder();
@@ -129,6 +144,8 @@ namespace SF
             cmdSupplierDetails.Parameters["@Letter"].Value = str + "%";
             daSuppliers.Fill(dsSurefill, "Supplier");
 
+
+
             // fill listbox
             lstSupplier.DataSource = dsSurefill.Tables["Supplier"];
             lstSupplier.DisplayMember = "name";
@@ -139,12 +156,19 @@ namespace SF
         private void lstSupplier_Click(object sender, EventArgs e)
         {
 
+            if (lstSupplier.SelectedValue == null)
+            {
+                return;
+            }
             dsSurefill.Tables["Product"].Clear();
 
             // get all dog details for listbox
             cmdProductDetails.Parameters["@SuppNo"].Value = lstSupplier.SelectedValue;
 
             daProducts.Fill(dsSurefill, "Product");
+            
+
+
 
             // fill listbox
             lstProduct.DataSource = dsSurefill.Tables["Product"];

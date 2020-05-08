@@ -228,6 +228,7 @@
             this.txtOrderQty.Name = "txtOrderQty";
             this.txtOrderQty.Size = new System.Drawing.Size(99, 20);
             this.txtOrderQty.TabIndex = 100;
+            this.txtOrderQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrderQty_KeyPress);
             // 
             // lblBookingDate
             // 
@@ -672,6 +673,7 @@
             this.btnReturnMenu.Size = new System.Drawing.Size(33, 33);
             this.btnReturnMenu.TabIndex = 121;
             this.btnReturnMenu.UseVisualStyleBackColor = false;
+            this.btnReturnMenu.Click += new System.EventHandler(this.btnReturnMenu_Click);
             // 
             // lblReturnMenu
             // 
@@ -767,7 +769,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(455, 364);
             this.Name = "frmProductOrder";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sn";
             this.Load += new System.EventHandler(this.FrmProductOrder_Load);
             this.panel1.ResumeLayout(false);

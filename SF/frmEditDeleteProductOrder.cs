@@ -27,6 +27,16 @@ namespace SF
 
         String sqlNames, sqlSupplierDetails, sqlOrder, sqlOrders2, sqlProductOrderDet, sqlProductOrderDet2;
 
+        private void txtQTY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter a valid Qty");
+            }
+        }
+
         private void btnReturnMenu_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -258,9 +268,9 @@ namespace SF
 
         private void lstOrder_Click(object sender, EventArgs e)
         {
-            lvwOrder.Enabled = true;
+            //lvwOrder.Enabled = true;
 
-            lvwOrder.Items.Clear();
+            //lvwOrder.Items.Clear();
 
             if (lstOrder.Items.Count != 0)
             {
@@ -281,7 +291,7 @@ namespace SF
                 pnlAddEdit.Enabled = true;
                     chkPaid.Enabled = true;
                     txtQTY.Enabled = true;
-                    lvwOrder.Enabled = true;
+                    //lvwOrder.Enabled = true;
                 //}
 
                 //lstProduct.DataSource = null;

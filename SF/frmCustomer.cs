@@ -350,7 +350,7 @@ namespace SF
             {
                 MessageBox.Show("" + ex.TargetSite + "" + ex.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
             }
-            pnlAdd.Visible = false;
+            //pnlAdd.Visible = false;
         }
 
         void clearAddForm()
@@ -389,7 +389,7 @@ namespace SF
            
             else
             {
-                pnlEdit.Visible = false;
+                //pnlEdit.Visible = false;
                 MyCustomer myCustomer = new MyCustomer();
                 bool ok = true;
                 errorProvider1.Clear();
